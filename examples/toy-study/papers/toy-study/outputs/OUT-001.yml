@@ -1,0 +1,13 @@
+id: OUT-001
+status: provisional
+source: synthetic
+analysis_ref: A-001
+produced_by: 01_country_means.R
+run_by:
+approved_by:
+approved_at:
+privacy_control: project-policy
+note: country means from synthetic development file
+North: 7.0
+East: 5.3
+West: 8.0

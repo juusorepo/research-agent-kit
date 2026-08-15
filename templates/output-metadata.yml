@@ -1,0 +1,9 @@
+id: OUT-001
+status: provisional
+source: synthetic
+analysis_ref: A-001
+produced_by: analysis/01_draft.R
+run_by:
+approved_by:
+approved_at:
+privacy_control: project-policy

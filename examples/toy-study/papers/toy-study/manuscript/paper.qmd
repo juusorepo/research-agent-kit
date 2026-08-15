@@ -1,0 +1,21 @@
+---
+title: "Working title"
+author: "Lead researcher"
+format: html
+---
+
+<!--
+Cite numbers only from approved research result files.
+This stub does not enforce that (the later Quarto profile will).
+Google Docs / Word copies for co-authors are review snapshots.
+-->
+
+# Introduction
+
+# Methods
+
+# Results
+
+Do not paste draft or synthetic numbers here as if they were approved results.
+
+# Discussion

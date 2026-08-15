@@ -1,0 +1,21 @@
+kit_layout: 0.1.0
+code: r
+manuscript_format: quarto
+preset: by-paper
+papers:
+  - id: PAPER_SLUG
+    slug: PAPER_SLUG
+paths:
+  docs: docs
+  paper_root: papers/{paper}
+  overview: papers/{paper}/RESEARCH_CONTEXT.md
+  analysis_plan: papers/{paper}/ANALYSIS_PLAN.md
+  status: papers/{paper}/STATUS.md
+  tasks: papers/{paper}/TASKS.md
+  decisions: papers/{paper}/decisions
+  proposals: papers/{paper}/proposals
+  ai_use: papers/{paper}/ai-use
+  scripts: papers/{paper}/analysis
+  outputs: papers/{paper}/outputs
+  manuscript: papers/{paper}/manuscript
+  metadata: papers/{paper}/outputs
