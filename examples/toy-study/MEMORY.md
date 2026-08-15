@@ -10,7 +10,7 @@ These files are small on purpose. Do not turn them into logs.
 | `decisions/` | Research decision notes for important choices | Canonical once **accepted**. `INDEX.md` is a compact list, not a narrative. |
 | `contributions/` | Inbox from collaborators (or their assistants) | **Proposal only.** Must not overwrite the files above until you integrate. |
 | `notes/` | Working notebook | For later recall. **Do not load by default.** |
-| `ai-use/` | Optional notes of substantial AI work | Off unless ticked in `policies/what-is-on.md`. One short file per event — not a prompt log. |
+| `ai-use/` | Optional notes of substantial AI work | Off unless ticked in `policies/what-is-on.md`. One short file per event — not a prompt log. Off does not replace disclosure in the paper. |
 
 Conversation → contribution (inbox) → your review → canonical record.  
 A contribution never skips that path.

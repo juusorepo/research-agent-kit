@@ -38,7 +38,7 @@ When they say this folder is the kit, or **Copy the Research Agent Kit** from Gi
 
 ## Update the kit
 
-When they are in the kit folder and want a new public version: fetch GitHub again. **Keep** `policies/how-to-talk.md` and `templates/analysis/` if they have already edited those.
+When they are in the kit folder and want a new public version: fetch GitHub again. **Keep** `policies/how-to-talk.md`, `policies/ai-policy.md`, and `templates/analysis/` if they have already edited those.
 
 ---
 
@@ -50,7 +50,7 @@ When they are in the kit folder and want a new public version: fetch GitHub agai
 
 **If both folders are open:** use **their local kit**. Find it: they named a path; or a folder with `START.md` + `skills/` + `templates/`.
 
-Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/`, canonical `skills/`, `how-to-talk.md`, or `CLAUDE.md` into the paper. The agent file is `AGENTS.md`.
+Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/`, canonical `skills/`, `how-to-talk.md`, `ai-policy.md`, or `CLAUDE.md` into the paper. The agent file is `AGENTS.md`. Follow the kit `policies/ai-policy.md` unless the paper adds its own.
 
 ### 0. Look before you interview
 
@@ -117,7 +117,7 @@ Copy **only** this list, from the **kit** paths on the left:
 13. Quarto (or their format) from `templates/manuscript/<format>/` → `05-outputs/manuscript/` (or the layout `manuscript` path). If they already have a draft there, keep theirs.
 14. One R starting script from `templates/analysis/r/` → `02-scripts/` unless that folder already has scripts
 
-Do **not** copy `skills/`, `how-to-talk.md`, `CLAUDE.md`, or Cursor rule files. Agents follow `AGENTS.md`. Optional tool pointers live in the kit `adapters/` folder; the researcher can copy one later if a tool requires it.
+Do **not** copy `skills/`, `how-to-talk.md`, `ai-policy.md`, `CLAUDE.md`, or Cursor rule files. Agents follow `AGENTS.md`. Optional tool pointers live in the kit `adapters/` folder; the researcher can copy one later if a tool requires it.
 
 Tick the AI-use box in `what-is-on.md` only if they said yes.
 
@@ -146,3 +146,6 @@ First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) p
 - Skip writing their name into the kit `researcher.md` when it is still empty
 - Require Python or R
 - Offer literature search or other features marked “not in this version”
+- List an AI system as an author
+- Use another person’s unpublished manuscript or plan without permission
+- Treat an AI-suggested citation as a source already read

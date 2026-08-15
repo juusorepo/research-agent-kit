@@ -12,7 +12,7 @@ You may edit this file. The assistant should follow it.
 
 ## Optional (this version)
 
-- [ ] **Record of material AI use** — a short note when AI did substantial work (some journals ask). Default is off. Tick this box to turn it on.
+- [ ] **Record of material AI use** — a short note when AI did substantial work (some journals ask). Default is off. Tick this box to turn it on. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See `policies/ai-policy.md`.
 
 ## Not in this version
 

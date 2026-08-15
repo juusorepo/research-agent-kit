@@ -28,7 +28,7 @@ Do not invent files. Do not assume a blank project.
 5. `contributions/` — only if the question is about a pending proposal
 6. `notes/` and Git — **only if the researcher asks or the files above are not enough**
 
-Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-use rules, how-to-talk (paper if present, else kit), manuscript folder (is there a draft?), result-file metadata. If you cannot read the kit, stop and ask them to open it.
+Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-use rules, how-to-talk and `policies/ai-policy.md` (paper if present, else kit), manuscript folder (is there a draft?), result-file metadata. If you cannot read the kit, stop and ask them to open it.
 
 ## Say what kind of source it is
 

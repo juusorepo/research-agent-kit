@@ -25,6 +25,7 @@ Keep **one kit folder** on your computer. Edit R conventions and other defaults 
 | **Project status** (`STATUS.md`) | Where are we now? (a snapshot, not the last word) |
 | **Tasks** (`TASKS.md`) | What is in progress? |
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
+| **AI in research** (`policies/ai-policy.md`) | How this kit sits next to national guidance. A paper may override. |
 | **Extra context** (`06-docs/`) | Preregistration, ethics, proposals. Background only — it does not override the analysis plan |
 | **Manuscript** (`05-outputs/manuscript/`) | The file the paper is written in (Quarto by default). Google Docs / Word copies for co-authors are review snapshots |
 
@@ -86,7 +87,9 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 | Update the project record | After you accept something, put it in the right file |
 | Work on the manuscript | Cite approved result files only (Quarto) |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Not in this version: literature search, journal disclosure forms, Word/Stata toolchains.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains.
+
+The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
 **Start the project:** get **one kit folder** from GitHub. Start each paper from that kit. The assistant asks the interview questions (with defaults) and waits; then it reads any files you already have before suggesting next steps. The assistant uses a paper file if it exists, otherwise the kit. How it talks is in `policies/how-to-talk.md`.
 

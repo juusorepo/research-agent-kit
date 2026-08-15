@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 — 2026-08-15
+
+A short note now says how this kit sits next to national AI-in-research guidance, and where it does not try to replace it. The optional AI-use file is still off by default; that does not mean material use may stay hidden in the paper. Restricted data still means row-level files stay closed; a cloud assistant may still send project text to a vendor.
+
 ## 0.1.0 — 2026-08-15
 
 Frozen v0.1: skills, `layout.yml` presets, Quarto and R stubs, data-use policy, toy study, and file-assertion tests T1–T13.

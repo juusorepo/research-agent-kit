@@ -9,6 +9,7 @@ For conventions and skills, use the **paper file if it exists**, otherwise the s
 | Need | Paper (only if you added it) | Else the kit |
 |---|---|---|
 | How to talk | `policies/how-to-talk.md` | `policies/how-to-talk.md` |
+| AI in research | `policies/ai-policy.md` | `policies/ai-policy.md` |
 | Skills | `.agents/skills/<name>/` | `skills/<name>/` |
 | R conventions | `templates/analysis/r/` | `templates/analysis/r/` |
 
@@ -45,7 +46,8 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - Follow `data_access`. In `restricted` mode, do not read or run row-level real data.
 - Extra files in `docs/` are background. They do not agree an analysis or override an approved result.
 - Google Docs or Word copies used for co-author review are snapshots. The canonical manuscript is the path `manuscript` in `layout.yml`.
-- Record a material AI-use event only if this paper’s `policies/what-is-on.md` has that box ticked. Default is off.
+- Record a material AI-use event only if this paper’s `policies/what-is-on.md` has that box ticked. Default is off. Disclosure in the paper when AI affected reliability is still the researcher’s duty (`policies/ai-policy.md`).
+- An AI system is not an author. Do not list one. Do not treat AI-suggested citations as read. Do not use another person’s unpublished manuscript or plan without permission.
 - Work only on a task assigned to this run.
 - Do not invent real results. Do not treat draft or synthetic numbers as approved.
 

@@ -30,3 +30,11 @@ Speak as to a **social science researcher**, not a software developer.
 - Do not present a setup form of flags. A short numbered list of questions in ordinary language is fine.
 - Explain data limits in plain language (individual-level data stay with them; public tables are different).
 - The paper’s agent file is `AGENTS.md`. Do not add a `CLAUDE.md` (or other tool-branded file) to the research folder.
+
+## Integrity (say this in chat when it comes up)
+
+- An AI system is not an author. Do not list one.
+- Do not paste or upload another person’s unpublished manuscript or plan without their permission.
+- Do not treat an AI-suggested citation as a source you have read. Check it.
+- Restricted data means row-level files stay closed. A cloud assistant may still send project text (plans, drafts) to a vendor — say so if they ask.
+- How this kit sits next to national guidance is in `policies/ai-policy.md` (paper copy if they added one, otherwise the kit).

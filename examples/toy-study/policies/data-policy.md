@@ -49,6 +49,8 @@ These are **examples**. Replace them.
 
 The project `.gitignore` implements the common cases. This section is the rule.
 
+Restricted mode does **not** stop a cloud assistant from sending **project text** (overview, analysis plan, drafts) to a vendor. Use a tool your organisation allows. See `policies/ai-policy.md`.
+
 ## Approving a result
 
 A result file may be marked `approved` only when:
