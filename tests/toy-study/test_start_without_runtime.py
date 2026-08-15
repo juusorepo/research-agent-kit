@@ -12,7 +12,9 @@ def test_start_md_no_runtime():
     assert "empty folder" in text.lower()
     assert "github.com/juusorepo/research-agent-kit" in text
     assert "Download ZIP" not in text
-    assert "Start the project from https://github.com/juusorepo/research-agent-kit" in text
+    assert "Copy the Research Agent Kit from https://github.com/juusorepo/research-agent-kit" in text
+    assert "Start the project from my Research Agent Kit folder" in text
+    assert "This folder is the kit." in text
 
 
 def test_start_skill_is_copy_not_installer():
@@ -27,6 +29,9 @@ def test_start_skill_is_copy_not_installer():
     assert "Do **not** say: slug" in text or "Do not say: slug" in text
     assert "github.com/juusorepo/research-agent-kit" in text
     assert "does not need to download the kit themselves" in text
+    assert "Get the kit" in text
+    assert "local kit" in text.lower()
+    assert "skipping their local kit" in text
 
 
 def test_what_is_on_ai_use_default_off():

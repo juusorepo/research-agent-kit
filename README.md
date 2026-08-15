@@ -8,7 +8,7 @@ Repository: [github.com/juusorepo/research-agent-kit](https://github.com/juusore
 
 The idea is simple: **from chat memory to a shared research record.** The record lives in ordinary files in your project. Any colleague or AI tool can read the same files. Nothing important should exist only in a chat.
 
-Keep **one paper folder** on your computer per study. Day to day, open only that folder — the assistant already has its instructions there. See [`START.md`](START.md). You do not need Python or R. You do not need software-engineering vocabulary.
+Keep **one kit folder** on your computer. Edit R conventions and other defaults only there. Each paper is a separate folder. See [`START.md`](START.md). You do not need Python or R. You do not need software-engineering vocabulary.
 
 `SPEC.md` is the builder’s document (tests, metadata, invariants). This README is for researchers.
 
@@ -78,7 +78,7 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 
 | Skill | What it does |
 |---|---|
-| Start the project | Copy how-to files from GitHub into your folder, then ask you to copy any existing plan or draft into place |
+| Start the project | Copy how-to files from your kit folder into a new paper |
 | Understand the project | Where things stand (canonical vs proposal vs note), then what to do next |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
 | Consolidate contributions | You review the inbox; the assistant recommends, you decide |
@@ -90,7 +90,7 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 
 Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Not in this version: literature search, journal disclosure forms, Word/Stata toolchains.
 
-**Start the project:** create an empty folder, open it with an assistant, give your name. The assistant copies how-to files from GitHub and asks you to copy any existing plan or draft into `06-docs/` and `manuscript/`. Then say **Understand the project**. How it talks is in `policies/how-to-talk.md`.
+**Start the project:** first get **one kit folder** from GitHub. Edit R conventions only there. Then create an empty paper folder and start from that kit. How it talks is in `policies/how-to-talk.md`.
 
 You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`.
 
@@ -102,7 +102,7 @@ Small extra setup may be needed for Claude, Cursor, or another tool. That setup 
 
 ## Start on day one
 
-See [`START.md`](START.md). Create an empty folder, open it with an assistant, and paste the start line from that file (it includes the GitHub address). That is how the assistant knows what to copy.
+See [`START.md`](START.md). Get one kit folder from GitHub, then start each paper from that kit. Paste the lines in that file so the assistant knows which job you mean.
 
 Then fill the overview (the assistant can draft it from files you copied). The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
 

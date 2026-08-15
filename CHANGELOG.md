@@ -8,4 +8,4 @@ Lean project memory: overview + analysis plan + status; `decisions/INDEX.md`; co
 
 Usual start is an existing draft: copy into `06-docs/` and `manuscript/`; assistant drafts; researcher accepts; assistant writes. No reconstructed pre-history of decisions or AI use.
 
-Start path: create an empty paper folder, share it with an assistant, say **Start the project**. The assistant copies how-to files from GitHub. No Python or R required. `scripts/install.py` is optional (kit tests). Chat voice is in `policies/how-to-talk.md` (editable).
+Start path: one kit folder from GitHub (edit conventions only there); each paper is started from that local kit. No Python or R required. `scripts/install.py` is optional (kit tests). Chat voice is in `policies/how-to-talk.md` (editable).
