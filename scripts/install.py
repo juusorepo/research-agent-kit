@@ -9,6 +9,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -100,6 +101,11 @@ def write_layout(
         raise SystemExit(f"Unknown preset: {preset}")
     text = src.read_text(encoding="utf-8")
     text = text.replace("PAPER_SLUG", paper)
+    try:
+        kit_rel = os.path.relpath(root, target).replace("\\", "/")
+    except ValueError:
+        kit_rel = str(root).replace("\\", "/")
+    text = text.replace("KIT_PATH", kit_rel)
     text = text.replace("code: r", f"code: {code}", 1)
     text = text.replace("manuscript_format: quarto", f"manuscript_format: {manuscript}", 1)
     dest = target / "layout.yml"

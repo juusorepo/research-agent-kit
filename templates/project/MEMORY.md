@@ -15,6 +15,8 @@ These files are small on purpose. Do not turn them into logs.
 Conversation → contribution (inbox) → your review → canonical record.  
 A contribution never skips that path.
 
+Shared conventions live in the kit. This paper may add the same file to override that default.
+
 ## Who writes
 
 The assistant may draft these files. You accept (in chat is enough). Then the assistant updates the file. Accepting is the scientific act; typing is not.

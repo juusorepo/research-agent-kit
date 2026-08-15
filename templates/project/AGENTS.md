@@ -1,21 +1,36 @@
 # Agent instructions
 
-This project uses the Research Agent Kit. The installed version is recorded only in `kit-lock.yml`.
+This folder is a **paper**. Defaults and skills live in the Research Agent Kit (`kit_path` in `layout.yml`).
+
+## Paper first, then kit
+
+For conventions and skills, use the **paper file if it exists**, otherwise the same path in the kit.
+
+| Need | Paper (only if you added it) | Else the kit |
+|---|---|---|
+| How to talk | `policies/how-to-talk.md` | `policies/how-to-talk.md` |
+| Skills | `.agents/skills/<name>/` | `skills/<name>/` |
+| R conventions | `templates/analysis/r/` | `templates/analysis/r/` |
+
+Do not copy the kit into this folder. Override a default by adding that one file here.
+
+**This paper always has its own:** data-use rules (`policies/data-policy.md`), optional-features ticks (`policies/what-is-on.md`), overview, analysis plan, status, tasks, manuscript, data, scripts, outputs.
 
 ## Read first
 
-1. `kit-lock.yml` — installed kit and skill versions
-2. `layout.yml` — where folders live (do not assume `02-scripts` or `analysis/`)
-3. `policies/what-is-on.md` — what is optional in this project
-4. `policies/data-policy.md` — data-use rules, including `data_access`
-5. The paper’s project overview, analysis plan, status, and tasks (paths from `layout.yml`)
-6. `MEMORY.md` if present — which files are canonical vs proposal vs note
+1. `layout.yml` — folder map and `kit_path`
+2. `kit-lock.yml` — kit version this paper was started with
+3. This paper’s `policies/what-is-on.md` and `policies/data-policy.md`
+4. Overview, analysis plan, status, tasks (`layout.yml` paths)
+5. `MEMORY.md` if present
 
 Do not load `notes/` by default. Files in `contributions/` are proposals, not agreed analyses.
 
+If `kit_path` is missing or you cannot read the kit, **stop** and ask them to open the kit folder too.
+
 ## How to talk
 
-Follow `policies/how-to-talk.md` (the researcher may edit it).
+Follow `policies/how-to-talk.md` from the paper if it exists, otherwise from the kit.
 
 Speak as to a social science researcher. Say *analysis plan*, *research decision note*, *draft output*, *approved result*, *researcher decision needed*.  
 Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an approved file.
@@ -30,10 +45,8 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - Follow `data_access`. In `restricted` mode, do not read or run row-level real data.
 - Extra files in `docs/` are background. They do not agree an analysis or override an approved result.
 - Google Docs or Word copies used for co-author review are snapshots. The canonical manuscript is the path `manuscript` in `layout.yml`.
-- Record a material AI-use event only if `policies/what-is-on.md` has that box ticked. Default is off.
+- Record a material AI-use event only if this paper’s `policies/what-is-on.md` has that box ticked. Default is off.
 - Work only on a task assigned to this run.
 - Do not invent real results. Do not treat draft or synthetic numbers as approved.
 
-Skills are installed under `.agents/skills/`. Use them by name when the job matches.
-
-If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use `start-research-project`. Ask their name. Copy how-to files from the **local kit**, not from GitHub. Keep this folder’s name. Do not require Python or R.
+If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use the kit skill `start-research-project`. Read the name from the kit `researcher.md`. Keep this folder’s name. Do not require Python or R.

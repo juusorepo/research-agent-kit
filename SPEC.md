@@ -69,8 +69,8 @@ Agreement does **not** come from approving a result. Approving a result **requir
 | Researchers see | Builders implement |
 |---|---|
 | Shared research record | State files in the paper repo |
-| Research Agent Skills | Canonical `skills/` in the kit; installed as `.agents/skills/` in a paper |
-| Research and data rules | Canonical `policies/`; installed into the paper |
+| Research Agent Skills | Canonical `skills/` in the kit; a paper may override with `.agents/skills/` |
+| Research and data rules | Canonical `policies/` in the kit; paper `data-policy.md` / `what-is-on.md` are this study’s; how-to-talk overlays if present |
 | Tool-specific setup | `adapters/` in the kit; thin files in a paper that only **point** |
 
 Rules say how agents should behave. Technical controls enforce high-risk boundaries where the project’s data-access mode requires it. `AGENTS.md` is guidance; a chat can override it. A markdown file is not a security lock.
@@ -87,7 +87,7 @@ A **research result file** sits between the analysis script and the manuscript. 
 
 **Day one (shared research record):**
 
-1. Get **one kit folder** from GitHub (full kit). Customize R conventions and how-to-talk only there. Then create an empty paper folder and say **Start the project** from that local kit. If they are already inside the kit, the assistant creates a **new research folder** next to it (default name **paper-1**). Defaults: **numbered** folders (`01-data` … `99-archive`), **Quarto**, **R**. Word and Stata are reserved. `scripts/install.py` is optional (tests).
+1. Get **one kit folder** from GitHub (full kit). Shared conventions live there. Then start a paper from that kit (sibling folder). A paper file overrides the kit if present. Defaults: **numbered** folders (`01-data` … `99-archive`), **Quarto**, **R**. Word and Stata are reserved. `scripts/install.py` is optional (tests).
 2. Then you have:
    - `AGENTS.md` — how an agent should work here; points at `kit-lock.yml` for version
    - `layout.yml` — **folder map** (logical names → paths; researchers may edit)
@@ -254,6 +254,7 @@ Folder **names** are not the contract. `layout.yml` maps **logical names** (scri
 research-agent-kit/
 ├── README.md
 ├── START.md                           # get the kit once; then start each paper from it
+├── researcher.md                      # lead researcher name (kit-level)
 ├── SPEC.md
 ├── BACKLOG.md
 ├── CHANGELOG.md
@@ -590,12 +591,13 @@ Canonical copies live in `skills/<name>/`. Keep `SKILL.md` short; Appendix A exa
 ### `start-research-project`
 
 **When:** **Copy the Research Agent Kit** (this folder becomes the kit) or **Start the project** / Initiate (a paper).  
-**Get the kit:** fetch the public GitHub kit into this folder. Do not write a paper tree here. Conventions are edited only in this folder.  
-**Start a paper:** copy how-to files from the **local kit**, not from GitHub. Asks their **name**; then to copy existing plan/prereg/draft into `06-docs/` and `manuscript/`; AI-use from now on (default no).  
+**Get the kit:** fetch the public GitHub kit into this folder. Do not write a paper tree here. If `researcher.md` has no name, ask once and write it there.  
+**Start a paper:** write science files; set `kit_path`. Do **not** copy skills or how-to-talk. Asks their **name**; then to copy existing plan/prereg/draft into `06-docs/` and `manuscript/`; AI-use from now on (default no).  
+**Lookup:** paper file if it exists, otherwise the kit.  
 **Defaults if they only give a name:** restricted data; **numbered** folders; Quarto; R; AI-use off. Keep the current folder’s name. If run inside the kit, write a **new sibling folder** (default name **`paper-1`**).  
 **Then:** Understand the project. If they copied files and the plan is empty, draft overview + plan items from those files, then stop for acceptance.  
 **Writes:** a clean research folder (not a kit dump). No Python or R required. Researcher need not download ZIP.  
-**Must not:** start a paper by fetching GitHub and skipping their local kit; invent analyses; approve results; reconstruct a pre-history; skip asking for a name; require Python/R; ask them to download the kit; use developer slang in chat.
+**Must not:** copy skills into the paper; start a paper by fetching GitHub and skipping their local kit; invent analyses; approve results; reconstruct a pre-history; skip asking for a name; require Python/R; ask them to download the kit; use developer slang in chat.
 
 ### `understand-research-project`
 
@@ -670,7 +672,7 @@ Adapters are technical compatibility only. **No** fixed product role.
 | Cursor | `adapters/cursor/` → short rule: follow those files |
 | Any other coding agent | Same |
 
-**D1 settled:** one kit folder on the machine (fetched from GitHub). Researcher conventions (R templates, how-to-talk) are edited only there. Each paper is a separate folder; Start copies how-to files from that local kit. Daily: open the paper only. No git submodules. No Python or R required to start. `scripts/install.py` is an optional copy helper (and is used in kit tests).
+**D1 settled:** one kit folder on the machine (fetched from GitHub). Shared conventions and skills live there. Papers hold science files. Lookup: paper if present, else kit. Agent sessions need the kit visible. No git submodules. No Python or R required to start. `scripts/install.py` is an optional copy helper (and is used in kit tests).
 
 **D6:** short pointer (not symlink) unless a tool requires an import line.
 
@@ -718,7 +720,7 @@ Those stay in `BACKLOG.md`.
 
 | ID | Decision |
 |---|---|
-| D1 | **Settled:** one kit folder (from GitHub). Edit R conventions and how-to-talk only there. Each paper is a separate folder; Start copies how-to files from the local kit, not from GitHub. Daily: open the paper only. No fork-per-paper. No submodules. `install.py` optional (tests). |
+| D1 | **Settled:** one kit folder (from GitHub). Shared conventions and skills live there. Each paper is a separate folder of science files. Lookup: paper file if it exists, otherwise the kit (`kit_path`). Do not copy skills or how-to-talk into the paper unless it is an override. Agent sessions need the kit visible. No fork-per-paper. No submodules. `install.py` optional (tests). |
 | D2 | **Settled:** `kit-lock.yml` is the only version authority. |
 | D3 | **Open:** technical lock for `restricted` mode (adapter). Mode itself is settled. |
 | D4 | **Settled:** no kit-wide default cell size; each policy sets `privacy_control`. Toy study defines its own. |
@@ -727,9 +729,9 @@ Those stay in `BACKLOG.md`.
 | D7 | **Settled:** one file per AI-use event (`ai-use/AI-NNN.yml`). |
 | D8 | **Settled:** AI-use record is **opt-in** (`policies/what-is-on.md`, default off). If on: record when clearly material; ask only when ambiguous; never log orientation. |
 | D9 | **Settled:** `layout.yml` is the folder specification; default preset **`numbered`** (`01-data` … `99-archive` + `06-docs` + `manuscript`). Also `numbered-multipaper` and `by-paper`. Skills must not hard-code folder names. |
-| D10 | **Settled:** start-project interview asks **name**; keep the folder they opened. Default name **`paper-1`** only if Start runs inside the kit and they did not name a folder. Defaults Quarto + R; Word/Stata reserved. Chat follows `policies/how-to-talk.md` (researcher may edit). No Python/R required to start. |
+| D10 | **Settled:** lead researcher name is stored once in the kit (`researcher.md`). Ask only if that file has no name. Keep the paper folder they opened. Default paper folder **`paper-1`** only if Start runs inside the kit and they did not name a folder. Defaults Quarto + R; Word/Stata reserved. Chat follows `policies/how-to-talk.md` (researcher may edit). No Python/R required to start. |
 | D11 | **Settled:** `06-docs` is extra context (I10). Canonical manuscript is `paths.manuscript`. Review Docs/Word copies are snapshots. One *research folder* is usually one paper; several papers share numbered `01-data` / `02-scripts` via `numbered-multipaper`. |
-| D12 | **Settled:** update a paper = recopy how-to files from the **local kit**. Update the kit = fetch GitHub, keeping customized how-to-talk and R templates. Do not overwrite overview, plan, data, scripts, or manuscript. |
+| D12 | **Settled:** kit defaults apply until a paper adds an override file. Update the kit from GitHub, keeping customized how-to-talk and R templates. Do not recopy skills into papers. Do not overwrite overview, plan, data, scripts, or manuscript. |
 | D13 | **Settled (lean memory):** keep `ANALYSIS_PLAN.md` (do **not** add `ANALYSIS_SPEC.md`). Add `decisions/INDEX.md`, `contributions/` inbox, and `notes/` (not loaded by default). No `reviews/` folder in v0.1. AI-use stays one file per event, opt-in (D7/D8) — not a single `AI_USE_LOG.yaml`. Retrieve via `understand-research-project`. `contribute-to-project` / `consolidate-contributions` propose only. |
 | D14 | **Settled:** existing draft is the usual start. Copy into `06-docs/` and `manuscript/` as source material; assistant drafts overview/plan; researcher accepts (chat is enough); then `update-project-record` writes. Do not reconstruct decision or AI-use history from before the folder existed. One new note for a past choice that still governs is allowed. |
 

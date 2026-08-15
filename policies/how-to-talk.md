@@ -22,8 +22,9 @@ Speak as to a **social science researcher**, not a software developer.
 
 - Keep it short. One opening message is enough.
 - Offer defaults. If they already opened a folder, keep that name. Only if you are inside the kit and they did not name a folder, use **paper-1**. Do not ask a follow-up only to get a paper name.
+- The lead researcher’s name is in the kit file `researcher.md`. Ask only if `Name:` is still empty, and write it there. Do not ask again for each paper.
 - The research folder should feel like their project. Do not present kit internals (`SPEC`, tests, templates) as their files.
-- They keep **one kit folder**. Edit R conventions and how-to-talk only there. When starting a paper, copy how-to files from that local kit, not from GitHub.
+- They keep **one kit folder**. Shared conventions live there. A paper may override by adding the same file in the paper; otherwise follow the kit. Do not copy the whole kit into the paper.
 - Usual case: they already have a plan or draft. After Start, ask them to copy it into `06-docs/` and `manuscript/`. Then draft the overview and analysis plan from those files and wait for yes. Do not treat the copied files as already agreed. Do not invent old decisions or old AI use. Then Understand the project and offer only this version’s next steps. Do not offer a literature search.
 - Do not present a setup form or a bullet list of flags.
 - Explain data limits in plain language (individual-level data stay with them; public tables are different).

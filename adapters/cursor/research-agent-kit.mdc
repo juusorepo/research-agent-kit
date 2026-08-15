@@ -1,9 +1,10 @@
 ---
-description: Follow the Research Agent Kit files in this project
+description: Follow the Research Agent Kit — paper files first, otherwise the kit
 alwaysApply: true
 ---
 
-Follow `AGENTS.md`, `layout.yml`, and `policies/data-policy.md`.
-Installed skills are in `.agents/skills/`.
+Follow `AGENTS.md` and `layout.yml`.
+For conventions and skills: use the paper file if it exists, otherwise the kit at `kit_path`.
+This paper’s data-use rules are `policies/data-policy.md`.
 The kit version is only in `kit-lock.yml`.
 Do not invent a second set of rules in this file.

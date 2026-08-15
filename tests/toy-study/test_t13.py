@@ -52,6 +52,9 @@ def test_t13_fresh_init(tmp_path):
     assert (dest / "notes" / "README.md").exists()
     assert (dest / "decisions" / "INDEX.md").exists()
     assert (dest / "decisions" / "RDR-000-template.md").exists()
+    layout_text = (dest / "layout.yml").read_text(encoding="utf-8")
+    assert "KIT_PATH" not in layout_text
+    assert "kit_path:" in layout_text
 
 
 def test_numbered_preset(tmp_path):

@@ -78,7 +78,7 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 
 | Skill | What it does |
 |---|---|
-| Start the project | Copy how-to files from your kit folder into a new paper |
+| Start the project | Create a paper folder that follows the kit; the paper may override individual files |
 | Understand the project | Where things stand (canonical vs proposal vs note), then what to do next |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
 | Consolidate contributions | You review the inbox; the assistant recommends, you decide |
@@ -90,7 +90,7 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 
 Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Not in this version: literature search, journal disclosure forms, Word/Stata toolchains.
 
-**Start the project:** first get **one kit folder** from GitHub. Edit R conventions only there. Then create an empty paper folder and start from that kit. How it talks is in `policies/how-to-talk.md`.
+**Start the project:** get **one kit folder** from GitHub. Start each paper from that kit. The assistant uses a paper file if it exists, otherwise the kit. How it talks is in `policies/how-to-talk.md`.
 
 You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`.
 
@@ -102,7 +102,7 @@ Small extra setup may be needed for Claude, Cursor, or another tool. That setup 
 
 ## Start on day one
 
-See [`START.md`](START.md). Get one kit folder from GitHub, then start each paper from that kit. Paste the lines in that file so the assistant knows which job you mean.
+See [`START.md`](START.md). Get one kit folder, then start each paper from it. Paper files override the kit when present.
 
 Then fill the overview (the assistant can draft it from files you copied). The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
 

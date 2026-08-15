@@ -14,7 +14,9 @@ def test_start_md_no_runtime():
     assert "Download ZIP" not in text
     assert "Copy the Research Agent Kit from https://github.com/juusorepo/research-agent-kit" in text
     assert "Start the project from my Research Agent Kit folder" in text
-    assert "This folder is the kit." in text
+    assert "researcher.md" in text
+    assert "paper file if it exists" in text.lower() or "if it exists" in text.lower()
+    assert "otherwise from the **kit**" in text or "otherwise from the kit" in text.lower()
 
 
 def test_start_skill_is_copy_not_installer():
@@ -31,7 +33,10 @@ def test_start_skill_is_copy_not_installer():
     assert "does not need to download the kit themselves" in text
     assert "Get the kit" in text
     assert "local kit" in text.lower()
-    assert "skipping their local kit" in text
+    assert "researcher.md" in text
+    assert "Do not ask again for each paper" in text
+    assert "paper file if it exists" in text.lower() or "if it exists" in text
+    assert "Do **not** copy `skills/`" in text or "Do not copy `skills/`" in text
 
 
 def test_what_is_on_ai_use_default_off():

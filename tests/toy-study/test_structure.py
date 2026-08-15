@@ -17,6 +17,7 @@ def test_kit_tree_exists():
     for rel in (
         "README.md",
         "START.md",
+        "researcher.md",
         "SPEC.md",
         "BACKLOG.md",
         "CHANGELOG.md",
