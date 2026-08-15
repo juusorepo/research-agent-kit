@@ -1,26 +1,33 @@
 ---
 name: start-research-project
-description: Create a clean research project folder after a short interview, ask them to copy existing plans and drafts into place, then hand off to Understand the project.
+description: Copy how-to files from the public Research Agent Kit into the researcher's folder, ask them to copy existing plans and drafts into place, then hand off to Understand the project.
 license: MIT
-compatibility: Requires a project filesystem. No Python or R required.
+compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
   version: "0.1.0"
 ---
 
 # Start the project
 
-Follow `policies/how-to-talk.md` if present. No Python or R required.
+One researcher action: copy how-to files **and** create the paper folders in the directory they opened. Do not treat “copy the kit” and “start a paper” as two visits.
 
-## This folder vs the project
+Follow `policies/how-to-talk.md` if present. No Python or R required. The researcher does not need to download the kit themselves.
 
-If the current folder has `SPEC.md`, `skills/`, and `templates/`, it is the **kit**, not the research project.
+Public kit: https://github.com/juusorepo/research-agent-kit
 
-- Create a **new, empty project folder** next to the kit (default name **paper-1**).
-- Write only research-project files there.
-- Do **not** copy `SPEC.md`, `tests/`, `examples/`, `templates/`, or canonical `skills/` into that folder.
-- Then tell them to open the new folder.
+## Where to write
 
-If the current folder is already empty (or already a research project), write here.
+**Usual:** they created an empty folder and opened it with you. The first message must name the public kit (`https://github.com/juusorepo/research-agent-kit`). Fetch that. Write the research project **here**. Keep the folder’s name.
+
+**If this folder is the kit** (`SPEC.md` + `skills/` + `templates/`): create a **new, empty project folder** next to it (default name **paper-1**). Tell them to open that folder.
+
+Do **not** copy `SPEC.md`, `tests/`, `examples/`, `templates/`, or canonical `skills/` into the paper folder.
+
+## Where to copy from
+
+1. This folder, if it is already the kit.
+2. Else a kit folder on this computer, if you can see one.
+3. Else fetch the public kit (git clone to a temp folder, or download the ZIP from GitHub). Copy only the research-project files below. Then delete the temp copy.
 
 ## Interview
 
@@ -28,7 +35,7 @@ If the current folder is already empty (or already a research project), write he
 
 **Usual case:** they already have a protocol, preregistration, or draft paper. A blank page is the exception.
 
-**Defaults if they only send a name:** individual-level data stay closed; one paper; folder **paper-1**; Quarto; R; numbered folders; **AI-use record off**.
+**Defaults if they only send a name:** individual-level data stay closed; Quarto; R; numbered folders; **AI-use record off**. Keep the current folder’s name (use **paper-1** only if you had to create a new folder next to the kit).
 
 Also ask, in ordinary language (can be the same message or the next one):
 
@@ -41,15 +48,15 @@ Also ask, in ordinary language (can be the same message or the next one):
 
 ### Opening message
 
-> I’ll create a research project folder (01-data, 02-scripts, manuscript — not a software kit). Most papers already have a plan or draft: after the folders exist I’ll ask you to copy those in. I can draft the overview and analysis plan from them; you say yes before they become the record. I will not invent a history of old decisions or old AI use.
+> I’ll copy the how-to files from the public Research Agent Kit into this folder (01-data, 02-scripts, manuscript — not the kit’s tests). Most papers already have a plan or draft: I’ll ask you to copy those in. I can draft the overview and analysis plan from them; you say yes before they become the record. I will not invent a history of old decisions or old AI use.
 >
-> Your name? If you only send that, I’ll call it **paper-1**, use Quarto and R, and I won’t open individual-level data. I will not keep an AI-use log unless you ask.
+> Your name? If you only send that, I’ll use Quarto and R, keep this folder’s name, and I won’t open individual-level data. I will not keep an AI-use log unless you ask.
 
 Do **not** say: slug, repo, init, toolchain, agent-accessible, by-paper, data_access.
 
 ## Then write files into the **project** folder
 
-From the kit checkout, copy only:
+From the kit (local or fetched), copy only:
 
 1. `skills/<name>/` → `.agents/skills/<name>/`
 2. `policies/data-policy.md`, `how-to-talk.md`, and `what-is-on.md`
@@ -75,11 +82,12 @@ Set the AI-use box in `what-is-on.md` from the interview.
 
 ## Update the copied instructions
 
-Recopy how-to files from the kit on request. Do not overwrite overview, analysis plan, data, scripts, outputs, or the manuscript. Keep their `what-is-on.md` ticks unless they ask to reset them.
+On request, fetch the public kit again (or use a local kit if present). Recopy how-to files. Do not overwrite overview, analysis plan, data, scripts, outputs, or the manuscript. Keep their `what-is-on.md` ticks unless they ask to reset them.
 
 ## Must not
 
 - Dump kit internals into the research folder
+- Ask them to download ZIP or clone the kit themselves
 - Invent analyses, approve results, or reconstruct a history of old decisions / old AI use
 - Skip asking for their name
 - Require Python or R

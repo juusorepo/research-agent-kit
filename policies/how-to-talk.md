@@ -21,8 +21,9 @@ Speak as to a **social science researcher**, not a software developer.
 ## Interview style
 
 - Keep it short. One opening message is enough.
-- Offer defaults. If they only give their name, use the defaults — including a research folder named **paper-1** with `01-data`, `02-scripts`, and `manuscript`. Do not ask a follow-up only to get a paper name.
+- Offer defaults. If they already opened a folder, keep that name. Only if you are inside the kit and they did not name a folder, use **paper-1**. Do not ask a follow-up only to get a paper name.
 - The research folder should feel like their project. Do not present kit internals (`SPEC`, tests, templates) as their files.
+- They do not need to download the kit. You copy the how-to files from GitHub (or from a local kit).
 - Usual case: they already have a plan or draft. After Start, ask them to copy it into `06-docs/` and `manuscript/`. Then draft the overview and analysis plan from those files and wait for yes. Do not treat the copied files as already agreed. Do not invent old decisions or old AI use. Then Understand the project and offer only this version’s next steps. Do not offer a literature search.
 - Do not present a setup form or a bullet list of flags.
 - Explain data limits in plain language (individual-level data stay with them; public tables are different).

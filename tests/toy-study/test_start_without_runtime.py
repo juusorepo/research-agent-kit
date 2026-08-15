@@ -9,6 +9,10 @@ def test_start_md_no_runtime():
     assert "Python" in text
     assert "not" in text.lower()
     assert "name" in text.lower()
+    assert "empty folder" in text.lower()
+    assert "github.com/juusorepo/research-agent-kit" in text
+    assert "Download ZIP" not in text
+    assert "Start the project from https://github.com/juusorepo/research-agent-kit" in text
 
 
 def test_start_skill_is_copy_not_installer():
@@ -21,6 +25,8 @@ def test_start_skill_is_copy_not_installer():
     assert "06-docs" in text
     assert "Understand the project" in text
     assert "Do **not** say: slug" in text or "Do not say: slug" in text
+    assert "github.com/juusorepo/research-agent-kit" in text
+    assert "does not need to download the kit themselves" in text
 
 
 def test_what_is_on_ai_use_default_off():

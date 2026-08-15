@@ -36,4 +36,4 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 
 Skills are installed under `.agents/skills/`. Use them by name when the job matches.
 
-If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use `start-research-project`. Ask their name. If they only give a name, use paper name **paper-1** and the other defaults. Copy files — do not require Python or R.
+If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use `start-research-project`. Ask their name. Copy how-to files from a local kit or from GitHub. Keep this folder’s name. Do not require Python or R.
