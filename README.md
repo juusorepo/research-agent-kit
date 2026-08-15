@@ -10,8 +10,6 @@ The idea is simple: **from chat memory to a shared research record.** The record
 
 Keep **one kit folder** on your computer. Edit R conventions and other defaults only there. Each paper is a separate folder. See [`START.md`](START.md). You do not need Python or R. You do not need software-engineering vocabulary.
 
-`SPEC.md` is the builder’s document (tests, metadata, invariants). This README is for researchers.
-
 ---
 
 ## What you keep in the project
@@ -21,14 +19,14 @@ Keep **one kit folder** on your computer. Edit R conventions and other defaults 
 | **Folder map** (`layout.yml`) | Where do scripts, outputs, and the manuscript live? (you may change this) |
 | **Project overview** (`RESEARCH_CONTEXT.md`) | What are we studying? What do we know about the data? |
 | **Analysis plan** (`ANALYSIS_PLAN.md`) | What have we *agreed* to analyse and report? |
-| **Research decision notes** (`decisions/`) | Why did we make important methodological choices? (`INDEX.md` is a short list) |
-| **Contributions** (`contributions/`) | Inbox from collaborators — proposals until you accept them |
-| **Working notes** (`notes/`) | Chronological scratchpad — not loaded by default |
+| **Research decision notes** (`07-record/decisions/`) | Why did we make important methodological choices? (`INDEX.md` is a short list) |
+| **Contributions** (`07-record/contributions/`) | Inbox from collaborators — proposals until you accept them |
+| **Working notes** (`07-record/notes/`) | Chronological scratchpad — not loaded by default |
 | **Project status** (`STATUS.md`) | Where are we now? (a snapshot, not the last word) |
 | **Tasks** (`TASKS.md`) | What is in progress? |
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
-| **Extra context** (`docs/`) | Preregistration, ethics, proposals. Background only — it does not override the analysis plan |
-| **Manuscript** | The file the paper is written in (Quarto by default). Google Docs / Word copies for co-authors are review snapshots |
+| **Extra context** (`06-docs/`) | Preregistration, ethics, proposals. Background only — it does not override the analysis plan |
+| **Manuscript** (`05-outputs/manuscript/`) | The file the paper is written in (Quarto by default). Google Docs / Word copies for co-authors are review snapshots |
 
 The **analysis plan** is stricter than a loose methods paragraph, but it is still an analysis plan:
 
@@ -38,7 +36,7 @@ The assistant may draft that file. **You** accept (a yes in chat is enough). The
 
 Each agreed analysis has a short id (`A-014`). Table 1 can be an agreed item without a long decision note. A change to the sample, a scale, or the main model should get a **research decision note**.
 
-One Git folder can hold **several papers**. Shared rules live at the top; each paper has its own overview, plan, manuscript, and outputs.
+One Git folder is usually **one paper**. If several papers share the same data and scripts, keep the numbered folders shared; each paper has its own record under `07-record/<name>/` and manuscript under `05-outputs/<name>/manuscript`.
 
 ---
 
@@ -90,13 +88,13 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 
 Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Not in this version: literature search, journal disclosure forms, Word/Stata toolchains.
 
-**Start the project:** get **one kit folder** from GitHub. Start each paper from that kit. The assistant uses a paper file if it exists, otherwise the kit. How it talks is in `policies/how-to-talk.md`.
+**Start the project:** get **one kit folder** from GitHub. Start each paper from that kit. The assistant asks the interview questions (with defaults) and waits; then it reads any files you already have before suggesting next steps. The assistant uses a paper file if it exists, otherwise the kit. How it talks is in `policies/how-to-talk.md`.
 
-You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`.
+You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`. First-level folders stay numbered (`01-data` … `07-record`, `99-archive`). The manuscript sits in `05-outputs/manuscript/` next to figures and tables.
 
 The kit ships a **Quarto manuscript** (APA format) that reads **approved** result files only — the same approach as a quantitative paper that builds tables from those files and includes figures already written to `05-outputs/figures`. It does not read row-level data. `renv` and `{targets}` are later work.
 
-Small extra setup may be needed for Claude, Cursor, or another tool. That setup only *points* at these files. It does not invent a second set of rules.
+Small extra setup may be needed for a specific tool. That setup lives in the kit `adapters/` folder and only *points* at these files. Papers use `AGENTS.md`. Do not add a `CLAUDE.md` to the research folder.
 
 ---
 
@@ -106,13 +104,4 @@ See [`START.md`](START.md). Get one kit folder, then start each paper from it. P
 
 Then fill the overview (the assistant can draft it from files you copied). The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
 
-`scripts/install.py` is an optional shortcut if you already have Python. Kit *tests* use Python (`pytest`); researchers do not need it.
-
-**v0.1 does not migrate existing live papers.** The first test is `examples/toy-study`. Structural tests and T13 (for kit builders):
-
-```text
-pip install -r requirements-dev.txt
-pytest tests/toy-study
-```
-
-T1–T12 are scored on files after a separate agent run (`tests/toy-study/score.py`). Tag `v0.1.0` when those pass.
+**v0.1 does not migrate existing live papers.** A small worked example is in `examples/toy-study`.

@@ -11,7 +11,7 @@ metadata:
 
 For collaborators and their assistants.
 
-Write a file in `contributions/` (see `layout.yml` `paths.contributions` if set, else `contributions/`). Use `contributions/template.md`. Name it `C-NNN-short-title.md`. Leave `status: proposed`.
+Write a file in the contributions folder (see `layout.yml` `paths.contributions` if set, else `07-record/contributions/`). Use `contributions/template.md` from the kit (or the paper override). Name it `C-NNN-short-title.md`. Leave `status: proposed`.
 
 ## Must not
 

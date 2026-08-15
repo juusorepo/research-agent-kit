@@ -14,7 +14,7 @@ For conventions and skills, use the **paper file if it exists**, otherwise the s
 
 Do not copy the kit into this folder. Override a default by adding that one file here.
 
-**This paper always has its own:** data-use rules (`policies/data-policy.md`), optional-features ticks (`policies/what-is-on.md`), overview, analysis plan, status, tasks, manuscript, data, scripts, outputs.
+**This paper always has its own:** data-use rules (`policies/data-policy.md`), optional-features ticks (`policies/what-is-on.md`), overview, analysis plan, status, tasks, manuscript, data, scripts, outputs. Decision notes and working notes live under the record path in `layout.yml` (default `07-record/`).
 
 ## Read first
 
@@ -49,4 +49,4 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - Work only on a task assigned to this run.
 - Do not invent real results. Do not treat draft or synthetic numbers as approved.
 
-If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use the kit skill `start-research-project`. Read the name from the kit `researcher.md`. Keep this folder’s name. Do not require Python or R.
+If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use the kit skill `start-research-project`. Read the name from the kit `researcher.md`. Ask the interview questions (with defaults) and wait. Read existing and uploaded files before suggesting next steps. Keep this folder’s name. Do not copy `CLAUDE.md`. Do not require Python or R.

@@ -14,19 +14,20 @@ paths:
   scripts: 02-scripts
   supplementary: 03-supplementary
   notebooks: 04-notebooks
-  outputs: 05-outputs
+  outputs: 05-outputs/{paper}
   outputs_figures: 05-outputs/{paper}/figures
   outputs_tables: 05-outputs/{paper}/tables
-  docs: 06-docs
+  manuscript: 05-outputs/{paper}/manuscript
+  docs: 06-docs/{paper}
+  record: 07-record/{paper}
   archive: 99-archive
-  manuscript: 06-docs/{paper}/manuscript
-  paper_root: 06-docs/{paper}
-  overview: 06-docs/{paper}/RESEARCH_CONTEXT.md
-  analysis_plan: 06-docs/{paper}/ANALYSIS_PLAN.md
-  status: 06-docs/{paper}/STATUS.md
-  tasks: 06-docs/{paper}/TASKS.md
-  decisions: 06-docs/{paper}/decisions
-  proposals: 06-docs/{paper}/proposals
-  ai_use: 06-docs/{paper}/ai-use
-  notes: 06-docs/{paper}/notes
-  contributions: 06-docs/{paper}/contributions
+  paper_root: 07-record/{paper}
+  overview: 07-record/{paper}/RESEARCH_CONTEXT.md
+  analysis_plan: 07-record/{paper}/ANALYSIS_PLAN.md
+  status: 07-record/{paper}/STATUS.md
+  tasks: 07-record/{paper}/TASKS.md
+  decisions: 07-record/{paper}/decisions
+  proposals: 07-record/{paper}/proposals
+  ai_use: 07-record/{paper}/ai-use
+  notes: 07-record/{paper}/notes
+  contributions: 07-record/{paper}/contributions

@@ -22,7 +22,7 @@ The assistant writes your name in `researcher.md` in this folder. You will not b
 
 The assistant must see the **kit** (for defaults and skills). A chat that only has an empty paper folder is not enough.
 
-**Easiest:** open the **kit** folder. Say **Start the project**. The assistant uses the name in `researcher.md`. Then copy your plan or draft into `06-docs/` and `manuscript/`, and say **Understand the project**.
+**Easiest:** open the **kit** folder. Say **Start the project**. The assistant asks a short list of questions (with defaults) and waits. Then it creates a sibling folder of numbered science folders (`01-data` … `07-record`, `99-archive`). The paper lives in `05-outputs/manuscript/`.
 
 **Or** open **both** folders, and paste:
 
@@ -31,6 +31,12 @@ Start the project from my Research Agent Kit folder
 ```
 
 If `researcher.md` has no name yet, add `My name is` once — it is stored in the kit.
+
+Usual case: you already have a protocol, analysis plan, or draft. Put those in `06-docs/` and `05-outputs/manuscript/` (or attach them in chat). The assistant should **read them before** suggesting next steps.
+
+One folder is one paper unless you say this project has several papers that share data and scripts. Then the numbered data and scripts stay shared; each paper gets its own record under `07-record/<name>/` and manuscript under `05-outputs/<name>/manuscript`.
+
+The file agents follow is `AGENTS.md`. There is no `CLAUDE.md` in the paper folder.
 
 ## Later
 

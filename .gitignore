@@ -1,5 +1,14 @@
 .pytest_cache/
 __pycache__/
+
+# Workshop only — not in the public kit researchers copy
+dev/
+SPEC.md
+BACKLOG.md
+tests/
+pytest.ini
+requirements-dev.txt
+scripts/install.py
 .Rhistory
 .RData
 .Rproj.user/

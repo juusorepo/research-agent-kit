@@ -1,6 +1,6 @@
 # Folders
 
-This is a research project folder. Assistant-only files (`.agents`, `policies`, `layout.yml`) stay in the background.
+This is a research project folder. First-level folders are numbered. Assistant files (`AGENTS.md`, `layout.yml`, `policies/`) stay in the background.
 
 | Folder | What goes here |
 |---|---|
@@ -12,10 +12,9 @@ This is a research project folder. Assistant-only files (`.agents`, `policies`, 
 | `04-notebooks` | Notebooks and working notes |
 | `05-outputs/figures` | Graphs |
 | `05-outputs/tables` | Result tables |
+| `05-outputs/manuscript` | The paper you are writing |
 | `06-docs` | Preregistration, ethics, extra context (does not override the analysis plan) |
-| `manuscript` | The paper you are writing |
-| `contributions/` | Inbox from collaborators — proposals only |
-| `notes/` | Working notebook — not loaded by default |
+| `07-record` | Research decision notes, collaborator inbox, working notes |
 | `99-archive` | Old versions |
 
-Project overview, analysis plan, status, and tasks sit at the top. See `MEMORY.md` for how those files relate.
+Project overview, analysis plan, status, and tasks sit at the top of a one-paper folder. If this folder holds several papers, each paper’s record is under `07-record/<name>/` and its manuscript under `05-outputs/<name>/manuscript`. See `MEMORY.md` for how those files relate.

@@ -21,6 +21,6 @@ The assistant may draft these files. You accept (in chat is enough). Then the as
 
 ## Starting from work you already have
 
-Usual case. Copy the protocol, preregistration, or draft paper into `06-docs/` and `manuscript/`. Those files are **source material**. They do not become the analysis plan, and manuscript numbers do not become approved results, until you accept the corresponding record.
+Usual case. Copy the protocol, preregistration, or draft paper into the docs and manuscript folders (see `layout.yml`). Those files are **source material**. They do not become the analysis plan, and manuscript numbers do not become approved results, until you accept the corresponding record. The assistant should read them before suggesting next steps.
 
 Decision notes and AI-use notes start from when this folder was created. Do not invent a history of earlier choices or earlier AI use. One line in the overview is enough (record started on DATE from the existing draft). If a past choice still governs the work, record that one decision now — as a new note, not a reconstructed log.

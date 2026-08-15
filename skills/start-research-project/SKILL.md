@@ -22,13 +22,16 @@ Do **not** say: slug, repo, init, toolchain, agent-accessible, by-paper, data_ac
 
 **Lookup:** paper file if it exists, otherwise the same path in the kit. Do not duplicate the kit into the paper.
 
+**This file is complete.** Do not search workshop files (`dev/`, `SPEC.md`, `tests/`, `scripts/install.py`) or the toy example to learn how to start. Do not guess missing defaults.
+
 ---
 
 ## Get the kit
 
 When they say this folder is the kit, or **Copy the Research Agent Kit** from GitHub:
 
-- Fetch the public kit into **this** folder (git clone, or ZIP from GitHub). This is the full kit, including `templates/` and `skills/`.
+- Fetch the public kit into **this** folder (git clone, or ZIP from GitHub). This includes `templates/` and `skills/`.
+- Then **delete** these if they are present (workshop only; not for researchers): `dev/`, `SPEC.md`, `BACKLOG.md`, `tests/`, `pytest.ini`, `requirements-dev.txt`, `scripts/install.py`. Do not mention them.
 - Do **not** turn this folder into a paper. Do not write `01-data` or `ANALYSIS_PLAN.md` here.
 - If `researcher.md` has no name yet, ask once and write it there (`Name: …`).
 - Tell them: edit shared conventions here. For one paper only, add that file in the paper later.
@@ -41,70 +44,105 @@ When they are in the kit folder and want a new public version: fetch GitHub agai
 
 ## Start a paper
 
-**If this folder is the kit** (`SPEC.md` + `skills/` + `templates/`): create a **new, empty project folder** next to it (default name **paper-1**). Tell them to open that folder. This is the reliable path: you can already see the kit.
+**If this folder is the kit** (`START.md` + `skills/` + `templates/`): you will create a **new, empty project folder** next to it after the interview (default name **paper-1**).
 
 **If they opened only an empty paper folder:** you must also be able to read their kit. If you cannot, **stop**. Ask them to open the kit folder as well, or to start from the kit instead. Do not fetch GitHub as a substitute (that would skip their conventions).
 
-**If both folders are open:** use **their local kit**. Find it: they named a path; or a folder with `SPEC.md` + `skills/` + `templates/`.
+**If both folders are open:** use **their local kit**. Find it: they named a path; or a folder with `START.md` + `skills/` + `templates/`.
 
-Do **not** copy `SPEC.md`, `tests/`, `examples/`, `templates/`, canonical `skills/`, or `how-to-talk.md` into the paper.
+Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/`, canonical `skills/`, `how-to-talk.md`, or `CLAUDE.md` into the paper. The agent file is `AGENTS.md`.
 
-### Interview
+### 0. Look before you interview
 
-**Name:** read `researcher.md` in the **kit** (`Name:`). If it is set, use it. If it is empty, ask once, write it in the kit file, then continue. Do not ask again for each paper. A paper overview may still name a different lead researcher for that study.
+Read what is already here **and** what they attached in this chat (protocol, analysis plan, draft paper, codebook). Do not invent files.
 
-**Usual case:** they already have a protocol, preregistration, or draft paper. A blank page is the exception.
+If the target folder already has research files, you are starting **from existing work**. Never overwrite overview, analysis plan, manuscript, data, or scripts.
 
-**Defaults:** individual-level data stay closed; Quarto; R; numbered folders; **AI-use record off**. Keep the current folder’s name (use **paper-1** only if you had to create a new folder next to the kit).
+**Usual case:** they already have a protocol, preregistration, analysis plan, or draft paper. Those files are **source material**. Read them before suggesting next steps. Do not treat them as already agreed. We do not back-fill AI use **from now on** unless they opted in. Do not invent old decisions or old AI use.
 
-Also ask, in ordinary language (can be the same message or the next one):
+### Interview — always ask, then wait
 
-1. After the folders exist, **copy existing files into this project** (usual):
-   - plan / protocol / prereg → `06-docs/`
-   - draft paper → `manuscript/` (keep the kit `paper.qmd` or replace it; do not leave the draft only in Downloads)
-   Copied files are source material. They are not yet the analysis plan. Next we draft the overview and plan from them; they accept; you write.
-2. Do you want a short record when AI does substantial work **from now on**? **Default no.** We do not back-fill AI use from before this folder existed. Write the answer on `policies/what-is-on.md` (tick the box only if yes).
-3. When they say they have copied (or that there is nothing to copy), **look** in `06-docs/` and `manuscript/` and say what you found. Do not invent files. Refresh `STATUS.md` to a snapshot such as “existing draft copied; analysis plan not yet agreed” or “empty project.”
+Ask every question below, with the default in parentheses. One short message. Then **stop and wait** for a reply.
+
+Do not skip the questions because the defaults are fine. They may answer “defaults are fine” — that still counts as a reply. If they already answered a question in this chat, do not ask it again.
+
+**Name:** read `researcher.md` in the **kit** (`Name:`). If it is set, use it (say so). If it is empty, ask once, write it in the kit file, then continue. Do not ask again for each paper.
+
+**Questions:**
+
+1. Folder name? (keep this folder if it is not the kit; if you are creating a folder next to the kit, **paper-1**)
+2. One paper in this folder, or several that share the same data and scripts? (**one paper**)
+3. Manuscript in Quarto, Word, or Markdown? (**Quarto**)
+4. Analysis in R or Stata? (**R**)
+5. Keep individual-level data closed to the assistant? (**yes**)
+6. Keep a short note when AI does substantial work from now on? (**no**)
+7. Do you already have a protocol, analysis plan, or draft paper? (**usual: yes**) We will read those files before suggesting what to do next.
 
 ### Opening message
 
-> I’ll create the paper folders next to your kit. Shared conventions stay in the kit. This paper can override a default by adding that one file here. Most papers already have a plan or draft: I’ll ask you to copy those in.
+> I’ll create the project folders next to your kit. Shared conventions stay in the kit. This paper can override a default by adding that one file here.
 >
-> If the kit already has your name, I will use it. If you only send that, I’ll use Quarto and R, keep this folder’s name, and I won’t open individual-level data. I will not keep an AI-use log unless you ask.
+> Please confirm or change these (defaults in parentheses). “Defaults are fine” is enough once you have seen the list:
+>
+> 1. Folder name (**paper-1**, or keep this folder if it is already the project)
+> 2. One paper here, or several sharing data and scripts? (**one paper**)
+> 3. Manuscript: Quarto, Word, or Markdown? (**Quarto**)
+> 4. Analysis: R or Stata? (**R**)
+> 5. Keep individual-level data closed? (**yes**)
+> 6. Record substantial AI use from now on? (**no**)
+> 7. Do you already have a protocol, analysis plan, or draft? (**yes — we will read it before deciding next steps**)
+>
+> If the kit already has your name, I will use it.
 
-### Then write files into the **paper** folder
+### After they reply — write files into the **paper** folder
 
-Write the **science** tree. Set `kit_path` in `layout.yml` to their kit folder. Copy only:
+Use **numbered** folders (`templates/layout/numbered.yml`) for one paper. If they chose several papers sharing data, use `templates/layout/numbered-multipaper.yml`.
+
+Set `kit_path` in `layout.yml` to their kit folder (relative path). Replace `PAPER_SLUG` and `KIT_PATH`.
+
+Copy **only** this list, from the **kit** paths on the left:
 
 1. `templates/project/AGENTS.md` → `AGENTS.md`
-2. `templates/project/.gitignore` and `folders.md` → `FOLDERS.md`
-3. Claude / Cursor pointers (they should follow paper-then-kit)
-4. `kit-lock.yml`
-5. `templates/layout/numbered.yml` (or the layout they chose) → `layout.yml` with `kit_path` set
-6. Create every folder in `layout.yml` `paths`
-7. Overview, empty analysis plan, status, tasks, `MEMORY.md` — put the kit `researcher.md` name on the overview
-8. `policies/data-policy.md` and `policies/what-is-on.md` (this paper’s rules)
-9. `decisions/INDEX.md`, `decisions/RDR-000-template.md`, `contributions/`, `notes/`
-10. `01-data/raw/README.md`
-11. Quarto files → `manuscript/`; one R starting script from the kit’s `templates/analysis/r/` → `02-scripts/` (this becomes their analysis, not a second conventions folder)
+2. `templates/project/.gitignore` → `.gitignore`
+3. `templates/project/folders.md` → `FOLDERS.md`
+4. `templates/project/MEMORY.md` → `MEMORY.md`
+5. Write `kit-lock.yml` (kit `0.1.0` and the skill names)
+6. Chosen layout template → `layout.yml` with `kit_path` set
+7. Create every **folder** in `layout.yml` `paths` (not files that do not exist yet)
+8. If missing: overview, analysis plan, status, tasks from `templates/project/` — put the kit `researcher.md` name on the overview. **Skip any of these that already exist.**
+9. `policies/data-policy.md` and `policies/what-is-on.md` (this paper’s rules) unless they already exist
+10. `templates/decisions/INDEX.md` → `07-record/decisions/INDEX.md` (or the layout `decisions` path); `templates/decision-note.md` → `RDR-000-template.md` in that folder
+11. `templates/contributions/` → the layout `contributions` path; `templates/notes/README.md` → the layout `notes` path
+12. `templates/project/data-raw-README.md` → `01-data/raw/README.md`
+13. Quarto (or their format) from `templates/manuscript/<format>/` → `05-outputs/manuscript/` (or the layout `manuscript` path). If they already have a draft there, keep theirs.
+14. One R starting script from `templates/analysis/r/` → `02-scripts/` unless that folder already has scripts
 
-Do **not** copy `skills/` or `how-to-talk.md`. Those stay in the kit unless they later add a paper override.
+Do **not** copy `skills/`, `how-to-talk.md`, `CLAUDE.md`, or Cursor rule files. Agents follow `AGENTS.md`. Optional tool pointers live in the kit `adapters/` folder; the researcher can copy one later if a tool requires it.
 
-Set the AI-use box in `what-is-on.md` from the interview.
+Tick the AI-use box in `what-is-on.md` only if they said yes.
+
+First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) plus `policies/`. The manuscript lives in `05-outputs/manuscript/`, not as its own top-level folder. Do not put `decisions`, `notes`, `contributions`, `proposals`, or `ai-use` at the top level.
 
 ### After folders exist
 
-1. Ask them to copy existing plan/draft files (usual) or confirm there are none.
-2. Check `06-docs/` and `manuscript/` and say what is there. Do not treat those files as already agreed.
-3. If they are still in the kit folder, tell them to **open the new project folder** (keep the kit available) and say **Understand the project**.
-4. If you are already in the project folder and can read the kit, run **Understand the project** next.
+1. If they said they have existing files (or you already found some): ask them to put protocol/prereg/plan in `06-docs/` and a draft paper in `05-outputs/manuscript/` unless the files are already in the folder or attached in chat. You may move chat attachments into those folders.
+2. **Read** `06-docs/`, `05-outputs/manuscript/`, any `ANALYSIS_PLAN.md`, overview, and attachments. Say what you found. Do not invent files. Do not treat copied files as already agreed.
+3. Refresh `STATUS.md` from what you actually saw (“existing draft copied; analysis plan not yet agreed” or “empty project”).
+4. **Then** decide next steps (Understand the project). Next steps must follow the files you read. Do not offer a blank-project script if they already have a plan or draft.
+5. If they are still in the kit folder, tell them to **open the new project folder** (keep the kit available) and say **Understand the project**.
+6. If you are already in the project folder and can read the kit, run **Understand the project** next.
 
 ## Must not
 
 - Dump kit internals or a second copy of skills into the research folder
+- Copy `CLAUDE.md` or other tool-branded files into the paper
 - Ask them to download ZIP or clone the kit themselves
 - Start a paper by fetching GitHub and skipping their local kit
+- Skip the interview questions, or write folders before they reply
+- Search SPEC, tests, or `install.py` for how to start
 - Invent analyses, approve results, or reconstruct a history of old decisions / old AI use
+- Overwrite an existing overview, analysis plan, manuscript, or data
+- Suggest next steps before reading uploaded and copied files
 - Skip writing their name into the kit `researcher.md` when it is still empty
 - Require Python or R
 - Offer literature search or other features marked “not in this version”

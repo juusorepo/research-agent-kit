@@ -17,16 +17,17 @@ paths:
   outputs: 05-outputs
   outputs_figures: 05-outputs/figures
   outputs_tables: 05-outputs/tables
+  manuscript: 05-outputs/manuscript
   docs: 06-docs
+  record: 07-record
   archive: 99-archive
-  manuscript: manuscript
   paper_root: .
   overview: RESEARCH_CONTEXT.md
   analysis_plan: ANALYSIS_PLAN.md
   status: STATUS.md
   tasks: TASKS.md
-  notes: notes
-  contributions: contributions
-  decisions: decisions
-  proposals: proposals
-  ai_use: ai-use
+  notes: 07-record/notes
+  contributions: 07-record/contributions
+  decisions: 07-record/decisions
+  proposals: 07-record/proposals
+  ai_use: 07-record/ai-use
