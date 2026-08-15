@@ -6,16 +6,26 @@ papers:
   - id: PAPER_SLUG
     slug: PAPER_SLUG
 paths:
-  docs: 06-docs
-  paper_root: 06-docs/{paper}
-  overview: 06-docs/{paper}/RESEARCH_CONTEXT.md
-  analysis_plan: 06-docs/{paper}/ANALYSIS_PLAN.md
-  status: 06-docs/{paper}/STATUS.md
-  tasks: 06-docs/{paper}/TASKS.md
-  decisions: 06-docs/{paper}/decisions
-  proposals: 06-docs/{paper}/proposals
-  ai_use: 06-docs/{paper}/ai-use
-  scripts: 02-scripts
-  outputs: 05-outputs/{paper}
-  manuscript: 06-docs/{paper}/manuscript
+  data: 01-data
+  data_raw: 01-data/raw
+  data_processed: 01-data/processed
   metadata: 01-data/metadata
+  scripts: 02-scripts
+  supplementary: 03-supplementary
+  notebooks: 04-notebooks
+  outputs: 05-outputs
+  outputs_figures: 05-outputs/figures
+  outputs_tables: 05-outputs/tables
+  docs: 06-docs
+  archive: 99-archive
+  manuscript: manuscript
+  paper_root: .
+  overview: RESEARCH_CONTEXT.md
+  analysis_plan: ANALYSIS_PLAN.md
+  status: STATUS.md
+  tasks: TASKS.md
+  notes: notes
+  contributions: contributions
+  decisions: decisions
+  proposals: proposals
+  ai_use: ai-use

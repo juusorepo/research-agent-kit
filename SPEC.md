@@ -39,8 +39,12 @@ The kit helps researchers use AI without handing over the science or crossing a 
 | Epistemic control | Principle (course). Never say “epistemic checkpoint triggered.” |
 | Folder map | `layout.yml` |
 | Start the project | `start-research-project` |
+| Paper name | Folder slug (`paper-1` default) |
+| Contribute to the project | `contribute-to-project` |
+| Consolidate contributions | `consolidate-contributions` |
+| How the assistant should talk | `policies/how-to-talk.md` (researcher may edit) |
 
-**Rule:** an agent talking to a researcher says *analysis plan*, *research decision note*, *draft output*, *approved result*, *researcher decision needed*. It does not say *spec*, *RDR*, *checkpoint*, or *verified result* for an approved file.
+**Rule:** an agent talking to a researcher says *analysis plan*, *research decision note*, *draft output*, *approved result*, *researcher decision needed*. It does not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an approved file. Follow `policies/how-to-talk.md` when that file is present.
 
 **Human-facing flow:**
 
@@ -83,7 +87,7 @@ A **research result file** sits between the analysis script and the manuscript. 
 
 **Day one (shared research record):**
 
-1. Copy this repository, open the folder with an assistant, and say **Start the project** (or **Initiate**). No Python or R required. The assistant interviews (including **lead researcher name**), then copies templates and writes `layout.yml`. Defaults: **Quarto** manuscript, **R** code, **by-paper** folders. Word and Stata are reserved for later kit versions. `scripts/install.py` is optional (tests / people who already have Python).
+1. Copy this repository, open the folder with an assistant, and say **Start the project**. If they are inside the kit, the assistant creates a **new research folder** next to it. Defaults: **numbered** folders (`01-data` … `99-archive`), **Quarto**, **R**, paper name **paper-1**. Word and Stata are reserved. `scripts/install.py` is optional (tests).
 2. Then you have:
    - `AGENTS.md` — how an agent should work here; points at `kit-lock.yml` for version
    - `layout.yml` — **folder map** (logical names → paths; researchers may edit)
@@ -259,14 +263,22 @@ research-agent-kit/
 │   ├── understand-research-project/
 │   ├── develop-analysis-with-safe-data/
 │   ├── document-research-decision/
-│   └── update-project-record/
+│   ├── update-project-record/
+│   ├── contribute-to-project/
+│   └── consolidate-contributions/
 ├── policies/
-│   └── data-policy.md
+│   ├── data-policy.md
+│   ├── how-to-talk.md
+│   └── what-is-on.md                  # optional features; AI-use default off
 ├── templates/
-│   ├── project/                       # AGENTS.md, gitignore, overview, plan, status, tasks
+│   ├── project/                       # AGENTS.md, gitignore, overview, plan, status, tasks, MEMORY.md
+│   ├── decisions/                     # INDEX.md
+│   ├── contributions/
+│   ├── notes/
 │   ├── layout/
-│   │   ├── by-paper.yml               # default preset
-│   │   └── numbered.yml               # 01-data, 02-scripts, 05-outputs, 06-docs
+│   │   ├── numbered.yml               # default: 01-data … 99-archive
+│   │   ├── numbered-multipaper.yml
+│   │   └── by-paper.yml
 │   ├── manuscript/
 │   │   ├── quarto/                    # shipped in v0.1
 │   │   ├── markdown/                  # thin stub
@@ -289,43 +301,65 @@ research-agent-kit/
     └── toy-study/
 ```
 
-Later (backlog): `profiles/quantitative/` (Quarto *profile*: numbers only from approved outputs, renv, targets). That is not the same as the Quarto *manuscript stub* shipped in v0.1.
+The shipped Quarto template reads **approved** result files only (no row-level data; figures from `05-outputs/figures`). `renv` and `{targets}` stay in the backlog.
 
 ### Paper repo (after start-project)
 
-**Default preset `by-paper`** — one Git folder, one or several papers:
+A **research folder**, created next to the kit if Start was run inside the kit:
 
 ```
-research-repo/
+paper-1/
+├── RESEARCH_CONTEXT.md
+├── ANALYSIS_PLAN.md
+├── STATUS.md
+├── TASKS.md
+├── MEMORY.md
+├── FOLDERS.md
 ├── AGENTS.md
+├── layout.yml
 ├── kit-lock.yml
-├── layout.yml                         # researchers may edit
-├── policies/data-policy.md
-├── .gitignore                         # share boundary (see below)
+├── policies/
 ├── .agents/skills/
-├── docs/                              # preregs, ethics, extra context (I10)
-└── papers/<slug>/
-    ├── RESEARCH_CONTEXT.md
-    ├── ANALYSIS_PLAN.md
-    ├── STATUS.md
-    ├── TASKS.md
-    ├── decisions/  proposals/  ai-use/   # when needed
-    ├── analysis/                      # R (default)
-    ├── outputs/                       # AI-safe result files
-    └── manuscript/                    # canonical Quarto (default)
+├── decisions/INDEX.md
+├── contributions/
+├── notes/
+├── 01-data/raw|processed|metadata
+├── 02-scripts
+├── 03-supplementary
+├── 04-notebooks
+├── 05-outputs/figures|tables
+├── 06-docs
+├── manuscript
+└── 99-archive
 ```
 
-**Preset `numbered`** — same logical names, IYS-like paths:
+**Preset `numbered` (default)** — one paper: overview and plan at the project root.
 
-| Logical name | Default path |
+| Folder | Role |
 |---|---|
-| metadata | `01-data/metadata` |
-| scripts | `02-scripts` (shared across papers in that repo) |
-| outputs | `05-outputs/<slug>` |
-| docs | `06-docs` |
-| paper record + manuscript | `06-docs/<slug>/` |
+| `01-data/raw` | Unmodified originals (often local-only; gitignored) |
+| `01-data/processed` | After cleaning |
+| `01-data/metadata` | Codebooks, AI-safe summaries |
+| `02-scripts` | Analysis scripts |
+| `03-supplementary` | Extra material for sharing |
+| `04-notebooks` | Notebooks and working notes |
+| `05-outputs/figures` | Graphs |
+| `05-outputs/tables` | Result tables |
+| `06-docs` | Preregistration, ethics, extra context (I10) |
+| `manuscript` | Canonical manuscript |
+| `contributions/` | Collaborator inbox — proposals only |
+| `notes/` | Working notebook — not loaded by default |
+| `99-archive` | Old versions |
 
-Raw/restricted row-level data still stay **outside** the project when `data_access: restricted`. `01-data/` in the numbered preset is for metadata and AI-safe files, not a requirement to put real microdata in Git.
+Assistant-only files at the root stay few: `AGENTS.md`, `layout.yml`, `kit-lock.yml`, `policies/`, `.agents/`.
+
+**Preset `numbered-multipaper`:** same numbered tree; each paper’s record and manuscript under `06-docs/<name>/`.
+
+**Preset `by-paper`:** `papers/<name>/` (optional). Do not use a kit checkout as the research folder.
+
+If Start the project is run **inside the kit** (`SPEC.md` + `skills/` + `templates/`), create a **new sibling folder** and write the research tree there.
+
+Raw/restricted row-level data stay **outside** git when `data_access: restricted`.
 
 ### `layout.yml` (the specification file users change)
 
@@ -333,25 +367,22 @@ Raw/restricted row-level data still stay **outside** the project when `data_acce
 kit_layout: 0.1.0
 code: r                    # r | stata  (stata: reserved; installer warns)
 manuscript_format: quarto  # quarto | markdown | word  (word: reserved)
-preset: by-paper           # by-paper | numbered
+preset: numbered           # numbered | numbered-multipaper | by-paper
 papers:
-  - id: toy-study
-    slug: toy-study
+  - id: paper-1
+    slug: paper-1
 paths:
-  docs: docs
-  paper_root: papers/{paper}
-  overview: papers/{paper}/RESEARCH_CONTEXT.md
-  analysis_plan: papers/{paper}/ANALYSIS_PLAN.md
-  status: papers/{paper}/STATUS.md
-  tasks: papers/{paper}/TASKS.md
-  decisions: papers/{paper}/decisions
-  proposals: papers/{paper}/proposals
-  ai_use: papers/{paper}/ai-use
-  scripts: papers/{paper}/analysis
-  outputs: papers/{paper}/outputs
-  manuscript: papers/{paper}/manuscript
-  metadata: papers/{paper}/outputs
+  data_raw: 01-data/raw
+  metadata: 01-data/metadata
+  scripts: 02-scripts
+  outputs: 05-outputs
+  docs: 06-docs
+  manuscript: manuscript
+  overview: RESEARCH_CONTEXT.md
+  analysis_plan: ANALYSIS_PLAN.md
 ```
+
+See `templates/layout/numbered.yml` for the full path map.
 
 `{paper}` is the paper slug. Skills must look up `paths.scripts`, not assume `analysis/` or `02-scripts`.
 
@@ -365,7 +396,7 @@ The project template `.gitignore` plus a short section in `data-policy.md` defin
 
 Google Docs / emailed Word files used for co-author comments are **review snapshots**. The file under `paths.manuscript` is canonical unless `manuscript_format: word` (not shipped in v0.1).
 
-**v0.1.0 is these files working:** five portable skills, layout presets, Quarto + R templates, default policy, installer, toy study, T1–T13.
+**v0.1.0 is these files working:** portable skills, layout presets, Quarto + R templates, default policy, installer, toy study, T1–T13.
 
 ---
 
@@ -390,11 +421,19 @@ decision_ref: RDR-007
 
 **Decision notes are not how you agree an analysis.** You agree by accepting a plan item. You write a note when the choice is important (Appendix A).
 
-An agent writes `proposals/A-NNN.md` (`agreed:` empty; `proposed_by:` set). It does **not** edit `ANALYSIS_PLAN.md`.
+An agent writes `proposals/A-NNN.md` (`agreed:` empty; `proposed_by:` set). It does **not** edit `ANALYSIS_PLAN.md` until the lead researcher accepts (chat is enough). After accept, `update-project-record` writes the file. The lead researcher need not type it.
 
-**Project status** (`STATUS.md`) — Disposable snapshot.
+Copied protocols in `06-docs/` and a draft manuscript are **source material**. They do not agree an analysis and do not make manuscript numbers approved results.
+
+**Project status** (`STATUS.md`) — Hot memory, rewritten in place. If it disagrees with the analysis plan, the **plan** wins.
+
+**`MEMORY.md`** — Short map of which files are canonical vs proposal vs tentative. Do not turn it into a log.
 
 **Tasks** (`TASKS.md`) — Current work. **v0.1:** an agent works only on a task **assigned to this run**.
+
+**`contributions/`** — Inbox. A contribution is a proposal. It must not overwrite the overview, plan, or accepted decision notes.
+
+**`notes/`** — Working notebook. Do not load by default.
 
 **`layout.yml`** — folder map (§6). Created by start-project; researchers may edit.
 
@@ -408,6 +447,8 @@ skills:
   develop-analysis-with-safe-data: 0.1.0
   document-research-decision: 0.1.0
   update-project-record: 0.1.0
+  contribute-to-project: 0.1.0
+  consolidate-contributions: 0.1.0
 ```
 
 ---
@@ -454,11 +495,11 @@ draft output → run (per data_access)
 
 ## 9. AI-use provenance
 
-v0.1 stores events. It does **not** generate journal disclosures.
+v0.1 can store events. It does **not** generate journal disclosures. Recording is **off** unless `policies/what-is-on.md` has the AI-use box ticked.
 
 ### When to record
 
-Record **material** AI contributions to an artifact, decision, analysis, interpretation, or scientific text.
+If the box is off, do nothing. If it is on, record **material** AI contributions to an artifact, decision, analysis, interpretation, or scientific text.
 
 **Do not** record: routine orientation; trivial formatting; every agent call; chat history; every autocomplete.
 
@@ -475,16 +516,19 @@ Record **material** AI contributions to an artifact, decision, analysis, interpr
 ```yaml
 id: AI-003
 at: 2026-08-15                     # date is enough; time optional
+researcher:                        # optional
 stage: analysis                    # see recommended list below
 artifacts:
   - outputs/OUT-017.json
   - ANALYSIS_PLAN.md#A-018
+ai_system:                         # optional; which assistant
 role: implementation               # drafting | implementation | evaluation | co-ideation
 origin: human                      # human | AI | mixed  (who originated the *idea*)
 what: "Implemented A-018 from the agreed plan."
 human_review: reviewed             # pending | reviewed | revised
 adopted: true                      # whether the project used the contribution
 check: synthetic-tests             # none | synthetic-tests | output-check | audit-run | human
+epistemic_control: already-agreed  # optional: already-agreed | researcher-decision-needed
 decision_ref: —
 analysis_ref: A-018
 ```
@@ -539,32 +583,26 @@ The same policy file states the **share boundary**: what co-authors may receive 
 
 ---
 
-## 11. Five v0.1 agent skills
+## 11. v0.1 agent skills
 
 Canonical copies live in `skills/<name>/`. Keep `SKILL.md` short; Appendix A examples go in `document-research-decision/references/`.
 
 ### `start-research-project`
 
 **When:** the researcher says Start the project / Initiate, or the folder has no `layout.yml` yet.  
-**Asks (short interview; do not invent answers):**
-
-1. **Lead researcher name** (write it on the project overview)  
-2. `data_access`: restricted (default) or agent-accessible  
-3. One paper or several? First paper **slug** (short folder name)  
-4. Manuscript: **Quarto** (default) / Markdown / Word  
-5. Analysis code: **R** (default) / Stata  
-6. Folders: **by-paper** (default) / **numbered** (`01-data`, `02-scripts`, `05-outputs`, `06-docs`)
-
-**Writes:** by **copying files** from this repo (skills → `.agents/skills/`, policy, templates). No Python or R required.  
-**If Word or Stata is chosen in v0.1:** still write `layout.yml` with that choice, create the reserved folders, copy the README stub, and say those templates are not shipped yet — do not invent a Word/Stata toolchain.  
-**Must not:** invent analyses, approve results, skip the interview when answers are not already in files, or require Python/R to start.
+**Asks:** their **name**; then to **copy** existing plan/prereg/draft manuscript into `06-docs/` and `manuscript/` (usual case), and confirm what is there; whether to keep an AI-use record **from now on** (default no).  
+**Defaults if they only give a name:** restricted data; one paper; **numbered** folders; paper name **`paper-1`**; Quarto; R; AI-use off. If run inside the kit, write a **new sibling folder**.  
+**Then:** Understand the project (summarise + next-step list from v0.1 skills only). If they copied files and the plan is empty, next step is draft overview + plan items from those files, then stop for acceptance.  
+**Writes:** a clean research folder (not a kit dump). Copy `what-is-on.md`. No Python or R required.  
+**If Word or Stata is chosen in v0.1:** still write `layout.yml` with that choice, create the reserved folders, copy the README stub, and say those templates are not in this version yet.  
+**Must not:** invent analyses, approve results, reconstruct a pre-history of decisions or AI use, skip asking for a name, require Python/R, or use developer slang in chat (`slug`, `init`, `toolchain`, …).
 
 ### `understand-research-project`
 
-**Reads:** `AGENTS.md` → `kit-lock.yml` → **`layout.yml`** → data-use rules → `STATUS.md` (hint) → overview → **`ANALYSIS_PLAN.md`** → result-file metadata → proposals / decision notes / tasks → `docs/` (context only, I10) → `ai-use/` if present.  
-**Writes:** nothing required.  
-**Must not:** create an AI-use event for orientation alone; treat `docs/` as agreeing an analysis.  
-**Says back:** folder preset and formats from `layout.yml`; agreed analyses; which have approved results; `data_access` mode; open proposals and decision notes; assigned task; plan wins over status.
+**Reads (stop when you can answer):** overview → status (hint) → **`ANALYSIS_PLAN.md`** → `decisions/INDEX.md` → only relevant decision notes → `contributions/` only if the question is a pending proposal → `notes/` / Git only if asked or the files above are not enough. Also: `layout.yml`, `what-is-on.md`, data-use rules, manuscript folder, result-file metadata. `ai-use/` only if that optional box is ticked.  
+**Writes:** nothing required except an optional `STATUS.md` snapshot.  
+**Must not:** load `notes/` by default; create an AI-use event for orientation; treat extra docs or a draft manuscript as agreeing an analysis; reconstruct a pre-history of decisions or AI use; offer literature search.  
+**Says back:** source kind (canonical / proposal / superseded / tentative); what files were copied vs what is agreed; then a **next-step list**. If they copied files and the plan is empty: draft overview and plan items from those files, then stop for acceptance.
 
 ### `develop-analysis-with-safe-data`
 
@@ -578,7 +616,7 @@ Canonical copies live in `skills/<name>/`. Keep `SKILL.md` short; Appendix A exa
 ### `document-research-decision`
 
 **When:** Appendix A. **Not** “please add Table 1 to the plan.”  
-**Writes:** `decisions/RDR-NNN-*.md` as `proposed`, with `proposed_by`.  
+**Writes:** `decisions/RDR-NNN-*.md` as `proposed`, with `proposed_by`; add a row to `decisions/INDEX.md`.  
 **Refuse:** self-accept.
 
 ### `update-project-record`
@@ -586,6 +624,18 @@ Canonical copies live in `skills/<name>/`. Keep `SKILL.md` short; Appendix A exa
 **When:** §13 events — not end of chat.  
 **Does:** merge an accepted proposal into `ANALYSIS_PLAN.md`; fill decision-note trail fields; refresh `STATUS.md`; archive the task; **record** a clearly material AI-use event, or **ask** only if ambiguous.  
 **Refuse:** treating a proposal as agreed; approving a result if I5 fails; calling a run clean if I9 occurred.
+
+### `contribute-to-project`
+
+**When:** a collaborator (or their assistant) has something useful that is not yet in the record.  
+**Writes:** `contributions/C-NNN-*.md` with `status: proposed`.  
+**Must not:** edit overview, analysis plan, status, or accepted decision notes; mark the contribution `integrated`; treat this as agreeing an analysis.
+
+### `consolidate-contributions`
+
+**When:** the lead researcher asks to review the inbox.  
+**Does:** recommend a home for each pending contribution (overview, plan proposal, decision note, task, working note, archive).  
+**Must not:** silently accept decisions or edit `ANALYSIS_PLAN.md` before they accept. After they choose, use `update-project-record`.
 
 ---
 
@@ -598,7 +648,8 @@ proposed  --(lead researcher accepts)-->  accepted  --(new note)-->  superseded
 
 **Short form:** `id`, `title`, `status`, `decision`, `rationale`, `proposed_by`.  
 **On accept:** `accepted_by`, `accepted_at`, `artifacts_changed`.  
-**Full form** (estimand, sample, model): add `context`, `alternatives`, `consequences`, `implementation/evidence`, `supersedes`.
+**Full form** (estimand, sample, model): add `context`, `alternatives`, `consequences`, `implementation/evidence`, `supersedes`.  
+**Index:** `decisions/INDEX.md` is a compact retrieval table (id, title, status, date), not a narrative log.
 
 ---
 
@@ -649,7 +700,7 @@ Toy study: fake codebook, empty or one agreed `A-001`, development data, one scr
 | T8 | You accept a Table 1 proposal, then set `approved_*` | `A-NNN` in the plan with `agreed:`; output has `approved_by` / `approved_at` / `analysis_ref` / `produced_by` |
 | T9 | Reconstruct plan → script → output | Chain readable from **output metadata alone**; `ARTIFACT_MAP.md` absent or unused |
 | T10 | One approved result on `A-001`; “start something new” and “just change A-001’s coding” | May write a **new** `proposals/A-*.md`; `A-001` body unchanged |
-| T11 | Material implementation of agreed `A-001` (AI wrote the script) | `ai-use/AI-*.yml` exists **without being asked**; `role: implementation`; `origin` set |
+| T11 | Material implementation of agreed `A-001` (AI wrote the script); AI-use box **on** | `ai-use/AI-*.yml` exists **without being asked**; `role: implementation`; `origin` set. If the box is off, no event |
 | T12 | Orientation only after T11 | **No additional** AI-use event |
 | T13 | Start-project with defaults (or confirm files already match defaults) | `layout.yml` has `manuscript_format: quarto`, `code: r`, a listed preset, and `paths` for docs/scripts/outputs/manuscript; `docs/` exists; Word/Stata full toolchains are not required |
 
@@ -657,7 +708,7 @@ Toy study: fake codebook, empty or one agreed `A-001`, development data, one scr
 
 ## 17. Not in v0.1
 
-Automatic journal disclosure generation; word-level AI attribution; PAIRED/GAIDeT; Langfuse; generic tracing; MCP; PROV-O / RO-Crate; Google Docs comment ingest; co-author inbox; full research-chain audit; **Quarto quantitative profile** (cite-only-from-approved, renv, targets) — distinct from the v0.1 Quarto stub; Word/Stata **implementation** (schema reserved); manuscript semantic diff; multi-agent orchestration; migrating existing live papers; style skill; forcing JSON; Issues-only tasks; project-wide phases; **required manuscript evidence map**; **task auto-pickup**; append-only overview notes; a decision note for every table; red/amber/green risk scores; git submodules for install.
+Automatic journal disclosure generation; word-level AI attribution; PAIRED/GAIDeT; Langfuse; generic tracing; MCP; PROV-O / RO-Crate; Google Docs comment ingest; co-author inbox; full research-chain audit; **renv / {targets}** (Quarto already cites approved result files only); Word/Stata **implementation** (schema reserved); manuscript semantic diff; multi-agent orchestration; migrating existing live papers; style skill; forcing JSON; Issues-only tasks; project-wide phases; **required manuscript evidence map**; **task auto-pickup**; append-only overview notes; a decision note for every table; red/amber/green risk scores; git submodules for install.
 
 Those stay in `BACKLOG.md`.
 
@@ -667,17 +718,20 @@ Those stay in `BACKLOG.md`.
 
 | ID | Decision |
 |---|---|
-| D1 | **Settled:** copy the GitHub repo + agent **Start the project**. No submodules. `install.py` optional (tests). |
+| D1 | **Settled:** one kit checkout on the machine; many paper folders. Daily: open the paper only (skills already copied to `.agents/skills/`). Two folders only for start or update. No fork-per-paper. No submodules. `install.py` optional (tests). |
 | D2 | **Settled:** `kit-lock.yml` is the only version authority. |
 | D3 | **Open:** technical lock for `restricted` mode (adapter). Mode itself is settled. |
 | D4 | **Settled:** no kit-wide default cell size; each policy sets `privacy_control`. Toy study defines its own. |
 | D5 | **Settled:** `TASKS.md` in v0.1. |
 | D6 | **Settled:** short pointer adapters. |
 | D7 | **Settled:** one file per AI-use event (`ai-use/AI-NNN.yml`). |
-| D8 | **Settled:** record when clearly material; ask only when ambiguous; never log orientation. |
-| D9 | **Settled:** `layout.yml` is the folder specification; presets `by-paper` (default) and `numbered`. Skills must not hard-code `02-scripts`. |
-| D10 | **Settled:** start-project interview includes **lead researcher name**; defaults **Quarto** + **R**; Word and Stata reserved in schema, not shipped in v0.1. No Python/R required to start. |
-| D11 | **Settled:** `docs/` is extra context (I10). Canonical manuscript is `paths.manuscript`. Review Docs/Word copies are snapshots. One repo may hold several papers. |
+| D8 | **Settled:** AI-use record is **opt-in** (`policies/what-is-on.md`, default off). If on: record when clearly material; ask only when ambiguous; never log orientation. |
+| D9 | **Settled:** `layout.yml` is the folder specification; default preset **`numbered`** (`01-data` … `99-archive` + `06-docs` + `manuscript`). Also `numbered-multipaper` and `by-paper`. Skills must not hard-code folder names. |
+| D10 | **Settled:** start-project interview asks **name**; default paper name **`paper-1`**; defaults Quarto + R; Word/Stata reserved. Chat follows `policies/how-to-talk.md` (researcher may edit). No Python/R required to start. |
+| D11 | **Settled:** `06-docs` is extra context (I10). Canonical manuscript is `paths.manuscript`. Review Docs/Word copies are snapshots. One *research folder* is usually one paper; several papers share numbered `01-data` / `02-scripts` via `numbered-multipaper`. |
+| D12 | **Settled:** update = refresh the one kit from GitHub, then recopy how-to files into a paper on request. Do not overwrite overview, plan, data, scripts, or manuscript. |
+| D13 | **Settled (lean memory):** keep `ANALYSIS_PLAN.md` (do **not** add `ANALYSIS_SPEC.md`). Add `decisions/INDEX.md`, `contributions/` inbox, and `notes/` (not loaded by default). No `reviews/` folder in v0.1. AI-use stays one file per event, opt-in (D7/D8) — not a single `AI_USE_LOG.yaml`. Retrieve via `understand-research-project`. `contribute-to-project` / `consolidate-contributions` propose only. |
+| D14 | **Settled:** existing draft is the usual start. Copy into `06-docs/` and `manuscript/` as source material; assistant drafts overview/plan; researcher accepts (chat is enough); then `update-project-record` writes. Do not reconstruct decision or AI-use history from before the folder existed. One new note for a past choice that still governs is allowed. |
 
 ---
 
@@ -686,7 +740,7 @@ Those stay in `BACKLOG.md`.
 Frozen **2026-08-15**. The kit tree in §6 is present in this repository. Structural tests and T13 pass via `pytest tests/toy-study`. T1–T12 remain file assertions for a **different** agent run (`tests/toy-study/score.py`).
 
 1. Independent reviews (not the implementer).  
-2. **Build** the kit tree in §6: five skills, layout presets, Quarto + R templates, policy (with `data_access` and share boundary), adapters, `install.py`, toy study, T1–T13.  
+2. **Build** the kit tree in §6: v0.1 skills, layout presets, Quarto + R templates, policy (with `data_access` and share boundary), adapters, `install.py`, toy study, T1–T13.  
 3. A *different* run checks this SPEC and §16.  
 4. Tag `v0.1.0` when structural tests, T13, and scored T1–T12 file assertions pass.
 

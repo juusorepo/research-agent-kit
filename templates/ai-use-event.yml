@@ -1,13 +1,16 @@
 id: AI-001
 at: YYYY-MM-DD
+researcher:
 stage: analysis
 artifacts:
   - path/to/file
+ai_system:
 role: implementation
 origin: human
 what: "One sentence on the material contribution."
 human_review: pending
 adopted: true
 check: synthetic-tests
+epistemic_control: already-agreed
 decision_ref: —
 analysis_ref: A-001

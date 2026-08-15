@@ -50,6 +50,10 @@ Write the proposed note if needed. **Stop.** Do not implement and interpret in t
 - Reading restricted row-level real data when `data_access: restricted`
 - Putting real numbers in the manuscript when there is no qualifying approved result
 
+## Manuscript
+
+The Quarto file cites **approved** result files only. It must not read row-level data. Do not paste draft or synthetic numbers into Results.
+
 ## Output metadata
 
 Use `templates/output-metadata.yml`. Put metadata in the result file or a sidecar. Follow this project’s identifier and small-cell rules — the kit does not ban country or institution names unless the policy does.

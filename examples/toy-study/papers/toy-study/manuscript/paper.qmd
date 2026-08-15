@@ -1,21 +1,90 @@
 ---
 title: "Working title"
-author: "Lead researcher"
-format: html
+shorttitle: "Short title"
+lang: en
+author:
+  - name: Lead researcher
+    corresponding: true
+    affiliations:
+      - name: Affiliation
+author-note:
+  correspondence: "Correspondence concerning this article should be addressed to the corresponding author."
+abstract: "One paragraph. Cite numbers only from approved result files after they exist."
+keywords: [keyword-one, keyword-two]
+bibliography: references.bib
+link-citations: true
+floatsintext: true
+format:
+  apaquarto-docx:
+    output-file: paper.docx
+  apaquarto-html:
+    output-file: paper.html
+execute:
+  echo: false
+  warning: false
+  message: false
+editor:
+  markdown:
+    wrap: sentence
 ---
 
-<!--
-Cite numbers only from approved research result files.
-This stub does not enforce that (the later Quarto profile will).
-Google Docs / Word copies for co-authors are review snapshots.
--->
+```{r}
+#| label: setup
+#| include: false
+
+# No row-level data. Tables, figures, and in-text numbers come from
+# approved result files (01-data/metadata or 05-outputs) and from
+# figures already written to 05-outputs/figures.
+
+pkgs <- c("here", "jsonlite", "dplyr", "flextable", "knitr")
+missing <- setdiff(pkgs, rownames(installed.packages()))
+if (length(missing)) {
+  stop(
+    "Missing packages: ", paste(missing, collapse = ", "),
+    "\nInstall them and render again."
+  )
+}
+invisible(lapply(pkgs, require, character.only = TRUE))
+
+helpers <- here::here("manuscript/helpers.R")
+if (!file.exists(helpers)) {
+  helpers <- "helpers.R"
+}
+source(helpers)
+```
 
 # Introduction
 
-# Methods
+# Method
+
+## Data
+
+## Measures
+
+## Analytical strategy
 
 # Results
 
-Do not paste draft or synthetic numbers here as if they were approved results.
+Do not type estimates by hand.
+When an approved result file exists, load it in the setup chunk with `require_approved(read_result("….json"))` and build the table or figure from that object.
+
+```{r}
+#| label: tbl-example
+#| tbl-cap: "Replace this example once an approved result file exists."
+#| eval: false
+
+# obj <- require_approved(read_result("OUT-001.json"), "OUT-001")
+# flextable::flextable(as.data.frame(obj$table)) |> style_flextable()
+```
+
+```{r}
+#| label: fig-example
+#| fig-cap: "Replace with a figure written from an approved result."
+#| eval: false
+
+# knitr::include_graphics(figure_path("fig-example.png"))
+```
 
 # Discussion
+
+# References

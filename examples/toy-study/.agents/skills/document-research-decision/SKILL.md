@@ -15,11 +15,13 @@ Path: `paths.decisions` from `layout.yml` → `RDR-NNN-short-slug.md`.
 
 When unsure whether a note is needed, propose one and stop. See [when a note is needed](references/when-needed.md).
 
+Add a row to `decisions/INDEX.md` (id, title, status, date). Keep the index short.
+
 ## Short form (required)
 
 `id`, `title`, `status: proposed`, `decision`, `rationale`, `proposed_by` (`human` | `AI` | `mixed`).
 
-Use `templates/decision-note.md`. Add context / alternatives / consequences when the choice is an estimand, sample, or model.
+Use `decisions/RDR-000-template.md` if present, otherwise `templates/decision-note.md`. Add context / alternatives / consequences when the choice is an estimand, sample, or model.
 
 ## Not this skill
 

@@ -15,6 +15,8 @@ paths:
   decisions: papers/{paper}/decisions
   proposals: papers/{paper}/proposals
   ai_use: papers/{paper}/ai-use
+  notes: papers/{paper}/notes
+  contributions: papers/{paper}/contributions
   scripts: papers/{paper}/analysis
   outputs: papers/{paper}/outputs
   manuscript: papers/{paper}/manuscript

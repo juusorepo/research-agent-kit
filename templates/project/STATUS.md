@@ -1,15 +1,23 @@
 # Project status
 
-A disposable snapshot. If this file disagrees with the analysis plan, the **plan** wins.
+Hot memory. Rewrite in place. If this file disagrees with the analysis plan, the **plan** wins.
 
-## Where we are
+## Current stage
 
 Not started.
 
-## Open decisions
+## Active work
 
 None yet.
 
-## Notes
+## Blockers
 
-Keep this short. Do not treat it as the archive.
+None yet.
+
+## Unresolved scientific questions
+
+None yet.
+
+## Recently completed
+
+Keep this short. The archive is Git, not this file.

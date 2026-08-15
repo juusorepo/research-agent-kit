@@ -12,6 +12,11 @@ secrets/
 .DS_Store
 Thumbs.db
 
+# Raw originals — keep real microdata out of git
+01-data/raw/*
+!01-data/raw/README.md
+!01-data/raw/.gitkeep
+
 # Common restricted extracts — keep real microdata outside the repo
 *.sas7bdat
 # Uncomment if this project must never commit row-level tables:

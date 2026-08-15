@@ -1,26 +1,30 @@
 # Project overview
 
-What are we studying? What do we already know about the data?
+Stable orientation. Rewrite in place. Do not append a diary here (use `notes/` for that).
 
-Keep this current. Do not append a notes diary here.
+## Research problem
 
-## Study
+## Research questions
 
-- Working title:
-- Lead researcher:
-- Core question:
+## Study design
 
 ## Data
 
-- `data_access` is set in `policies/data-policy.md`
-- What the files are (survey, register, public tables, …):
-- Unit of analysis and clustering, if any:
+- Data-use rules are in `policies/data-policy.md`
+- What the files are:
+- Unit of analysis:
 - Waves or time points:
 
-## Outcomes and predictors
+## Central constructs
 
 Confirm names from a codebook before treating them as settled.
 
-## What is not yet confirmed
+## Terminology
 
-Do not guess these.
+## Key constraints
+
+- Shared record started: (date, or “from existing draft — earlier choices not reconstructed”)
+
+## Lead researcher
+
+- Name:

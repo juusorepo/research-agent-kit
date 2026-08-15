@@ -1,6 +1,6 @@
 ---
 name: understand-research-project
-description: Read the shared research record and say where the project stands. Use at the start of a session, before analysis, or when asked what is agreed.
+description: Retrieve project memory and suggest the next step. Use at the start of a session, after Start the project, or for questions like why did we do X.
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
@@ -9,36 +9,68 @@ metadata:
 
 # Understand the project
 
-Orientation only. Do not create an AI-use event for this skill alone.
+Orientation and retrieval. Do not create an AI-use event for this skill alone. Do not load everything.
 
-## Read in this order
+## Retrieval order (stop when you can answer)
 
-1. `AGENTS.md`
-2. `kit-lock.yml` (version lives only here)
-3. `layout.yml` — resolve every later path from `paths`
-4. `policies/data-policy.md` (`data_access`)
-5. `STATUS.md` as a **hint only**
-6. Project overview
-7. **`ANALYSIS_PLAN.md`** — this is what is agreed
-8. Result-file metadata under `paths.outputs`
-9. Proposals, decision notes, tasks
-10. `docs/` for extra context (prereg, ethics). **I10:** this does not agree an analysis or override an approved result
-11. `ai-use/` if present
+1. `RESEARCH_CONTEXT.md` — canonical orientation
+2. `STATUS.md` — hint only
+3. `ANALYSIS_PLAN.md` — canonical agreed analyses
+4. `decisions/INDEX.md` — then only the relevant decision notes
+5. `contributions/` — only if the question is about a pending proposal
+6. `notes/` and Git — **only if the researcher asks or the files above are not enough**
 
-If `STATUS.md` disagrees with the analysis plan, the **plan** wins. Say that.
+Also read: `layout.yml`, `policies/what-is-on.md`, data-use rules, manuscript folder (is there a draft?), result-file metadata.
 
-## Say back (researcher language)
+## Say what kind of source it is
 
-- Folder preset and manuscript/code formats from `layout.yml`
-- `data_access` mode
-- Agreed analyses (`A-NNN`) from the plan — invent none
-- Which of those have an **approved** result
-- Open proposals and proposed research decision notes
-- The task assigned to this run, if any
+| Kind | Where |
+|---|---|
+| Canonical | overview, agreed plan items, **accepted** decision notes, approved results |
+| Proposal | `contributions/`, `proposals/`, decision notes still `proposed` |
+| Superseded | decision notes with `status: superseded` |
+| Tentative | `notes/`, `STATUS.md` |
+
+If status and the analysis plan disagree, the **plan** wins. Extra files in `06-docs/` do not agree an analysis. A draft manuscript is not a set of approved results.
+
+## If they started from existing files (usual)
+
+Look in `06-docs/` and `manuscript/` as well as the templates.
+
+Say clearly:
+
+- What was copied (background / source material)
+- The analysis plan is empty until they accept items
+- Decision notes and AI-use are blank on purpose — the record starts now
+- Do not reconstruct a pre-history of choices or AI use unless they ask to record a **specific** past choice now (one new note, not a log)
+
+If the plan is empty and they copied source files, the fitting next step is: draft the overview and proposed plan items from those files (write `proposals/A-NNN.md` if useful), then **stop for acceptance**. After they accept, use **Update the project record**. You may refresh `STATUS.md` to “existing draft copied; analysis plan not yet agreed.”
+
+## Say back
+
+- What they already copied (plan, draft manuscript)
+- Agreed analyses — invent none
+- Which have an approved result
+- Open proposals, contributions, and proposed decisions
+- What is optional and off
+
+## Then suggest what to do next
+
+Only these, and only those that fit:
+
+1. Fill the overview  
+2. Specify the analysis plan  
+3. Record a research decision  
+4. Start or continue analysis  
+5. Work on the manuscript (approved results only)  
+6. Review pending contributions (if any)
+
+Do not offer a literature search.
 
 ## Must not
 
-- Invent facts or numbers
-- Treat `docs/` as agreeing an analysis
-- Write `ai-use/AI-*.yml` for orientation
-- Edit the analysis plan
+- Invent facts or a back-history of decisions / AI use
+- Load `notes/` by default
+- Write an AI-use event for orientation
+- Edit the analysis plan before they accept
+- Treat a copied protocol or draft paper as already agreed

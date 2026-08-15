@@ -22,9 +22,7 @@ def test_t13_fresh_init(tmp_path):
             str(dest),
             "--init",
             "--paper",
-            "demo",
-            "--preset",
-            "by-paper",
+            "paper-1",
             "--code",
             "r",
             "--manuscript",
@@ -40,8 +38,20 @@ def test_t13_fresh_init(tmp_path):
     layout = load_layout(dest)
     assert layout["manuscript_format"] == "quarto"
     assert layout["code"] == "r"
-    assert (dest / "docs").is_dir()
-    assert (dest / "papers" / "demo" / "manuscript" / "paper.qmd").exists()
+    assert layout["preset"] == "numbered"
+    assert (dest / "01-data" / "raw").is_dir()
+    assert (dest / "02-scripts").is_dir()
+    assert (dest / "05-outputs" / "figures").is_dir()
+    assert (dest / "06-docs").is_dir()
+    assert (dest / "99-archive").is_dir()
+    assert (dest / "ANALYSIS_PLAN.md").exists()
+    assert (dest / "manuscript" / "paper.qmd").exists()
+    assert (dest / "FOLDERS.md").exists()
+    assert (dest / "MEMORY.md").exists()
+    assert (dest / "contributions").is_dir()
+    assert (dest / "notes" / "README.md").exists()
+    assert (dest / "decisions" / "INDEX.md").exists()
+    assert (dest / "decisions" / "RDR-000-template.md").exists()
 
 
 def test_numbered_preset(tmp_path):
@@ -64,7 +74,31 @@ def test_numbered_preset(tmp_path):
     result = check_t13(dest)
     assert result.passed, result.detail
     assert (dest / "02-scripts").is_dir()
-    assert (dest / "06-docs" / "p1" / "ANALYSIS_PLAN.md").exists()
+    assert (dest / "01-data" / "metadata").is_dir()
+    assert (dest / "ANALYSIS_PLAN.md").exists()
+
+
+def test_by_paper_preset_still_works(tmp_path):
+    dest = tmp_path / "nested"
+    subprocess.run(
+        [
+            sys.executable,
+            str(INSTALL),
+            str(dest),
+            "--init",
+            "--paper",
+            "demo",
+            "--preset",
+            "by-paper",
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert (dest / "papers" / "demo" / "manuscript" / "paper.qmd").exists()
+    assert (dest / "papers" / "demo" / "contributions" / "template.md").exists()
+    assert (dest / "papers" / "demo" / "notes" / "README.md").exists()
+    assert (dest / "MEMORY.md").exists()
 
 
 def test_word_stata_reserved(tmp_path):
@@ -86,6 +120,30 @@ def test_word_stata_reserved(tmp_path):
         capture_output=True,
         text=True,
     )
-    assert "not shipped" in (proc.stderr or "").lower() or (dest / "papers" / "p1" / "manuscript" / "README.md").exists()
-    readme = (dest / "papers" / "p1" / "manuscript" / "README.md").read_text(encoding="utf-8")
+    readme_path = dest / "manuscript" / "README.md"
+    assert "not shipped" in (proc.stderr or "").lower() or readme_path.exists()
+    readme = readme_path.read_text(encoding="utf-8")
     assert "not shipped" in readme.lower() or "Word" in readme
+
+
+def test_numbered_multipaper_inbox_is_per_paper(tmp_path):
+    dest = tmp_path / "multi"
+    subprocess.run(
+        [
+            sys.executable,
+            str(INSTALL),
+            str(dest),
+            "--init",
+            "--paper",
+            "p1",
+            "--preset",
+            "numbered-multipaper",
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert (dest / "06-docs" / "p1" / "contributions" / "template.md").exists()
+    assert (dest / "06-docs" / "p1" / "notes" / "README.md").exists()
+    assert (dest / "06-docs" / "p1" / "decisions" / "INDEX.md").exists()
+    assert (dest / "MEMORY.md").exists()

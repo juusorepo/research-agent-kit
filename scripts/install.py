@@ -20,6 +20,8 @@ SKILLS = (
     "develop-analysis-with-safe-data",
     "document-research-decision",
     "update-project-record",
+    "contribute-to-project",
+    "consolidate-contributions",
 )
 REQUIRED_PATH_KEYS = (
     "docs",
@@ -60,6 +62,8 @@ def install_core(target: Path, adapters: list[str]) -> None:
     for name in SKILLS:
         copy_tree(root / "skills" / name, target / ".agents" / "skills" / name)
     copy_tree(root / "policies" / "data-policy.md", target / "policies" / "data-policy.md")
+    copy_tree(root / "policies" / "how-to-talk.md", target / "policies" / "how-to-talk.md")
+    copy_tree(root / "policies" / "what-is-on.md", target / "policies" / "what-is-on.md")
     copy_tree(root / "templates" / "project" / "AGENTS.md", target / "AGENTS.md")
     gitignore_src = root / "templates" / "project" / ".gitignore"
     if gitignore_src.exists() and not (target / ".gitignore").exists():
@@ -146,12 +150,27 @@ def init_project(
             raise SystemExit(f"layout.yml missing paths.{key}")
         return target / resolve_path(paths[key], paper)
 
-    docs = p("docs")
-    docs.mkdir(parents=True, exist_ok=True)
-    (docs / ".gitkeep").write_text("", encoding="utf-8")
+    for key, rel in paths.items():
+        dest = target / resolve_path(rel, paper)
+        if dest.suffix:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+        else:
+            dest.mkdir(parents=True, exist_ok=True)
 
-    paper_root = p("paper_root") if "paper_root" in paths else p("overview").parent
-    paper_root.mkdir(parents=True, exist_ok=True)
+    docs = p("docs")
+    if not any(docs.iterdir()) if docs.is_dir() else True:
+        docs.mkdir(parents=True, exist_ok=True)
+        (docs / ".gitkeep").write_text("", encoding="utf-8")
+
+    folders_src = root / "templates" / "project" / "folders.md"
+    if folders_src.exists() and not (target / "FOLDERS.md").exists():
+        shutil.copy2(folders_src, target / "FOLDERS.md")
+    raw_readme = root / "templates" / "project" / "data-raw-README.md"
+    if raw_readme.exists() and "data_raw" in paths:
+        dest_raw = p("data_raw") / "README.md"
+        if not dest_raw.exists():
+            dest_raw.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(raw_readme, dest_raw)
 
     for key, template_name in (
         ("overview", "RESEARCH_CONTEXT.md"),
@@ -165,10 +184,33 @@ def init_project(
             text = (root / "templates" / "project" / template_name).read_text(encoding="utf-8")
             if lead_researcher:
                 text = text.replace("Lead researcher:", f"Lead researcher: {lead_researcher}", 1)
+                text = text.replace("- Name:", f"- Name: {lead_researcher}", 1)
             dest.write_text(text, encoding="utf-8")
 
-    for key in ("scripts", "outputs", "manuscript"):
-        p(key).mkdir(parents=True, exist_ok=True)
+    memory_src = root / "templates" / "project" / "MEMORY.md"
+    if memory_src.exists() and not (target / "MEMORY.md").exists():
+        shutil.copy2(memory_src, target / "MEMORY.md")
+
+    def copy_into(dir_key: str, *rel_files: str) -> None:
+        if dir_key not in paths:
+            return
+        dest_dir = p(dir_key)
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        for rel in rel_files:
+            src = root / "templates" / rel
+            if src.exists():
+                dest = dest_dir / src.name
+                if not dest.exists():
+                    shutil.copy2(src, dest)
+
+    copy_into("decisions", "decisions/INDEX.md")
+    if "decisions" in paths:
+        rdr_template = p("decisions") / "RDR-000-template.md"
+        src_rdr = root / "templates" / "decision-note.md"
+        if src_rdr.exists() and not rdr_template.exists():
+            shutil.copy2(src_rdr, rdr_template)
+    copy_into("contributions", "contributions/README.md", "contributions/template.md")
+    copy_into("notes", "notes/README.md")
 
     ms_src = root / "templates" / "manuscript" / manuscript
     if ms_src.exists():
@@ -207,8 +249,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Install Research Agent Kit into a paper repo.")
     parser.add_argument("target", type=Path, help="Destination project folder")
     parser.add_argument("--init", action="store_true", help="Create layout.yml and paper folders")
-    parser.add_argument("--paper", default="paper1", help="First paper slug")
-    parser.add_argument("--preset", choices=("by-paper", "numbered"), default="by-paper")
+    parser.add_argument("--paper", default="paper-1", help="First paper name")
+    parser.add_argument(
+        "--preset",
+        choices=("numbered", "numbered-multipaper", "by-paper"),
+        default="numbered",
+    )
     parser.add_argument("--code", choices=("r", "stata"), default="r")
     parser.add_argument("--manuscript", choices=("quarto", "markdown", "word"), default="quarto")
     parser.add_argument(

@@ -8,7 +8,7 @@ Repository: [github.com/juusorepo/research-agent-kit](https://github.com/juusore
 
 The idea is simple: **from chat memory to a shared research record.** The record lives in ordinary files in your project. Any colleague or AI tool can read the same files. Nothing important should exist only in a chat.
 
-You start by copying this folder and asking an assistant to set it up. You do not need Python or R for that. You do not need software-engineering vocabulary.
+Keep **one** copy of this kit on your computer. Each paper is a separate research folder. Day to day, open only the paper — the assistant already has its instructions there. See [`START.md`](START.md). You do not need Python or R. You do not need software-engineering vocabulary.
 
 `SPEC.md` is the builder’s document (tests, metadata, invariants). This README is for researchers.
 
@@ -21,7 +21,9 @@ You start by copying this folder and asking an assistant to set it up. You do no
 | **Folder map** (`layout.yml`) | Where do scripts, outputs, and the manuscript live? (you may change this) |
 | **Project overview** (`RESEARCH_CONTEXT.md`) | What are we studying? What do we know about the data? |
 | **Analysis plan** (`ANALYSIS_PLAN.md`) | What have we *agreed* to analyse and report? |
-| **Research decision notes** (`decisions/`) | Why did we make important methodological choices? |
+| **Research decision notes** (`decisions/`) | Why did we make important methodological choices? (`INDEX.md` is a short list) |
+| **Contributions** (`contributions/`) | Inbox from collaborators — proposals until you accept them |
+| **Working notes** (`notes/`) | Chronological scratchpad — not loaded by default |
 | **Project status** (`STATUS.md`) | Where are we now? (a snapshot, not the last word) |
 | **Tasks** (`TASKS.md`) | What is in progress? |
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
@@ -31,6 +33,8 @@ You start by copying this folder and asking an assistant to set it up. You do no
 The **analysis plan** is stricter than a loose methods paragraph, but it is still an analysis plan:
 
 > The current record of analyses the research team has agreed to run or report.
+
+The assistant may draft that file. **You** accept (a yes in chat is enough). Then the assistant writes it. You do not have to type it yourself.
 
 Each agreed analysis has a short id (`A-014`). Table 1 can be an agreed item without a long decision note. A change to the sample, a scale, or the main model should get a **research decision note**.
 
@@ -74,24 +78,23 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 
 | Skill | What it does |
 |---|---|
-| Start the project | Short interview, then create folders and a folder map |
-| Understand the project | Read the shared record and say where things stand |
-| Develop analysis with safe data | Write and test analysis without crossing the data line |
+| Start the project | Folders, interview, then ask you to copy any existing plan or draft into place |
+| Understand the project | Where things stand (canonical vs proposal vs note), then what to do next |
+| Contribute to the project | Collaborator inbox — does not overwrite the record |
+| Consolidate contributions | You review the inbox; the assistant recommends, you decide |
+| Specify the analysis plan | Propose agreed analyses (you accept) |
 | Document a research decision | Record an important choice (not every Table 1) |
+| Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Update the project record | After you accept something, put it in the right file |
+| Work on the manuscript | Cite approved result files only (Quarto) |
 
-**Start-project questions** (defaults in **bold**):
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Not in this version: literature search, journal disclosure forms, Word/Stata toolchains.
 
-- Your name (lead researcher)
-- Restricted data or data the assistant may use?
-- One paper or several? First paper name
-- Manuscript: **Quarto**, Markdown, or Word (Word template comes later)
-- Analysis code: **R** or Stata (Stata template comes later)
-- Folders: **by-paper** (`papers/<name>/…`) or numbered (`01-data`, `02-scripts`, `05-outputs`, `06-docs`)
+**Start the project:** the assistant asks your name, creates a research folder, and asks you to copy any existing plan or draft manuscript into `06-docs/` and `manuscript/` (usual case). Then say **Understand the project**. Copied files are not yet the agreed plan; the assistant drafts from them after you accept. Decision notes and AI-use start from now. How it talks is in `policies/how-to-talk.md`.
 
 You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`.
 
-The kit ships a **Quarto manuscript stub** and an **R analysis stub**. A stricter Quarto *profile* (every number must come from an approved result file) is later work.
+The kit ships a **Quarto manuscript** (APA format) that reads **approved** result files only — the same approach as a quantitative paper that builds tables from those files and includes figures already written to `05-outputs/figures`. It does not read row-level data. `renv` and `{targets}` are later work.
 
 Small extra setup may be needed for Claude, Cursor, or another tool. That setup only *points* at these files. It does not invent a second set of rules.
 
@@ -99,9 +102,9 @@ Small extra setup may be needed for Claude, Cursor, or another tool. That setup 
 
 ## Start on day one
 
-See [`START.md`](START.md). Copy this repository, open the folder with an assistant, and say **Start the project**. No Python or R required.
+See [`START.md`](START.md). One kit folder on your computer; each paper is its own folder. Open the kit, say **Start the project**, then work in the new research folder. No Python or R required.
 
-Then fill the overview. The analysis plan may start empty. Add decision notes when a real choice appears.
+Then fill the overview (the assistant can draft it from files you copied). The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
 
 `scripts/install.py` is an optional shortcut if you already have Python. Kit *tests* use Python (`pytest`); researchers do not need it.
 

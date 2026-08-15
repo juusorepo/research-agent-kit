@@ -15,7 +15,7 @@ def _copy_example(tmp_path: Path) -> Path:
 def test_t2_proposal_fixture(tmp_path):
     root = _copy_example(tmp_path)
     prop = root / "papers" / "toy-study" / "proposals"
-    prop.mkdir(parents=True)
+    prop.mkdir(parents=True, exist_ok=True)
     (prop / "A-002.md").write_text("# A-002 — Extra table\nagreed:\nproposed_by: AI\n", encoding="utf-8")
     result = check_t2(root)
     assert result.passed, result.detail
@@ -24,7 +24,7 @@ def test_t2_proposal_fixture(tmp_path):
 def test_t6_decision_fixture(tmp_path):
     root = _copy_example(tmp_path)
     dec = root / "papers" / "toy-study" / "decisions"
-    dec.mkdir(parents=True)
+    dec.mkdir(parents=True, exist_ok=True)
     (dec / "RDR-001-coding.md").write_text(
         "id: RDR-001\nstatus: proposed\nproposed_by: AI\ndecision: collapse top two\n",
         encoding="utf-8",
@@ -54,7 +54,7 @@ def test_t10_a001_unchanged(tmp_path):
 
     match = re.search(r"(## A-001\b.*?)(?=\n## A-|\Z)", before, flags=re.S)
     prop = root / "papers" / "toy-study" / "proposals"
-    prop.mkdir(parents=True)
+    prop.mkdir(parents=True, exist_ok=True)
     (prop / "A-002.md").write_text("# A-002\nagreed:\n", encoding="utf-8")
     result = check_t10(root, a001_before=match.group(1))
     assert result.passed, result.detail
@@ -63,7 +63,7 @@ def test_t10_a001_unchanged(tmp_path):
 def test_t11_ai_use_fixture(tmp_path):
     root = _copy_example(tmp_path)
     folder = root / "papers" / "toy-study" / "ai-use"
-    folder.mkdir(parents=True)
+    folder.mkdir(parents=True, exist_ok=True)
     (folder / "AI-001.yml").write_text(
         "id: AI-001\nrole: implementation\norigin: human\nwhat: Implemented A-001\n",
         encoding="utf-8",

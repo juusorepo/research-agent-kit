@@ -88,15 +88,12 @@ These are the first additions after v0.1 because they are required to use the fr
 
 An optional profile for computational quantitative research rather than part of the universal core.
 
-**Already in v0.1 SPEC (do not rebuild here):** start-project interview; `layout.yml`; `docs/` vs canonical `manuscript/`; share/gitignore; multi-paper repos; a **Quarto manuscript stub** and **R analysis stub**. Word and Stata are reserved, not implemented.
+**Already in the kit:** start-project interview; `layout.yml`; numbered research folders; `06-docs` vs canonical `manuscript/`; share/gitignore; Quarto manuscript that reads **approved** result files only (APA format, `helpers.R`, no row-level data). Word and Stata are reserved.
 
-This backlog item is the stricter **profile**:
+This backlog item is the rest of the quantitative profile:
 
 Potential components:
 
-* approved machine-readable results as the numeric source of truth in Quarto;
-* tables and figures generated from those results;
-* no manual retyping of reported estimates where avoidable;
 * `renv` for computational environment;
 * `{targets}` where appropriate;
 * analysis-script manifest;
@@ -196,23 +193,15 @@ Potential functionality:
 
 ## Shared project contributions
 
+Minimal v0.1 is in the kit: `contributions/` inbox, `contribute-to-project` (proposal only), `consolidate-contributions` (recommend; lead researcher accepts).
+
+Later: richer automatic classification, contradiction detection, and multi-reviewer triage.
+
 Allow collaborators to use their preferred AI systems while contributing to a shared research record.
 
-Potential model:
+Potential later model:
 
 `co-author + agent → proposed contribution → project review → canonical record`
-
-Possible `contribute-to-project` skill.
-
-Contributions may include:
-
-* methodological proposals;
-* literature findings;
-* interpretation concerns;
-* new analysis suggestions;
-* reviewer-response work.
-
-Canonical project state should only change after appropriate human/team acceptance.
 
 ---
 
@@ -232,7 +221,9 @@ Extend the v0.1 project-update mechanism with:
 
 ## Research notes / lab notebook
 
-Optional chronological record for exploratory work that does not yet belong in canonical project state.
+Minimal v0.1: `notes/` exists; assistants must not load it by default.
+
+Later: optional chronological record for exploratory work that does not yet belong in canonical project state.
 
 Potential contents:
 
@@ -246,7 +237,9 @@ This should remain selectively retrieved rather than automatically loaded into e
 
 ## Project-memory querying
 
-Agent skill for questions such as:
+Minimal v0.1: retrieval order lives in `understand-research-project` (overview → status → plan → decision index → relevant notes → contributions if needed → `notes/` / Git only if necessary).
+
+Later agent skill for questions such as:
 
 * Why did we make this methodological choice?
 * Has this robustness analysis already been run?
@@ -302,12 +295,9 @@ Potential future development beyond the simple v0.1 decision point:
 Potential reusable skills beyond the v0.1 core:
 
 * `audit-research-chain`
-* `contribute-to-project`
 * `process-review-round`
 * `prepare-coauthor-review`
 * `generate-ai-disclosure`
-* `query-project-record`
-* `consolidate-project-record`
 * `create-synthetic-data`
 * `inspect-codebook`
 * `check-results-claims`
