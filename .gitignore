@@ -9,6 +9,7 @@ tests/
 pytest.ini
 requirements-dev.txt
 scripts/install.py
+.cursor/
 .Rhistory
 .RData
 .Rproj.user/

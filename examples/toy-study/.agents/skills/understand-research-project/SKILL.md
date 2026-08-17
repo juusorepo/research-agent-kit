@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use at the start
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Understand the project
@@ -23,10 +23,11 @@ Do not invent files. Do not assume a blank project.
 
 1. `RESEARCH_CONTEXT.md` — canonical orientation (path from `layout.yml`)
 2. `STATUS.md` — hint only
-3. `ANALYSIS_PLAN.md` — canonical agreed analyses
-4. Decision notes (`07-record/decisions/INDEX.md` unless `layout.yml` says otherwise) — then only the relevant notes
-5. `contributions/` — only if the question is about a pending proposal
-6. `notes/` and Git — **only if the researcher asks or the files above are not enough**. Do not load `audits/` as current scientific authority.
+3. Tasks (`layout.yml` path `tasks`) — remaining work; not a second analysis plan
+4. `ANALYSIS_PLAN.md` — canonical agreed analyses
+5. Decision notes (`07-record/decisions/INDEX.md` unless `layout.yml` says otherwise) — then only the relevant notes
+6. `contributions/` — only if the question is about a pending proposal
+7. `notes/` and Git — **only if the researcher asks or the files above are not enough**. Do not load `audits/` as current scientific authority.
 
 Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-use rules, how-to-talk and `policies/ai-policy.md` (paper if present, else kit), manuscript folder (is there a draft?), result-file metadata. If you cannot read the kit, stop and ask them to open it.
 
@@ -54,7 +55,9 @@ Say clearly:
 - Decision notes and AI-use are blank on purpose — the record starts now
 - Do not reconstruct a pre-history of choices or AI use unless they ask to record a **specific** past choice now (one new note, not a log)
 
-If the plan is empty and they copied source files, the fitting next step is: draft the overview and proposed plan items from those files (write `proposals/A-NNN.md` if useful), then **stop for acceptance**. After they accept, use **Update the project record**. You may refresh `STATUS.md` to “existing draft copied; analysis plan not yet agreed.”
+If the **overview is empty** and they copied a protocol, preregistration, or draft: **draft the overview in this reply** (chat is enough). Do not offer “fill the overview” as a later task. Do not write `RESEARCH_CONTEXT.md` until they accept.
+
+If the plan is empty and they copied source files, also draft proposed plan items in this reply (write `proposals/A-NNN.md` if useful), then **stop for acceptance**. After they accept, use **Update the project record**. You may refresh `STATUS.md` to “existing draft copied; analysis plan not yet agreed.”
 
 If they already have a filled analysis plan or a near-final draft, do not offer “fill the overview” as if nothing exists. Offer the matching next step (map the existing plan into agreed items, or continue analysis, or work from approved results).
 
@@ -64,13 +67,14 @@ If they already have a filled analysis plan or a near-final draft, do not offer 
 - Agreed analyses — invent none
 - Which have an approved result
 - Open proposals, contributions, and proposed decisions
+- Open tasks (id, kind of work, whether assigned to this run)
 - What is optional and off
 
 ## Then suggest what to do next
 
-Only after the read above. Only these, and only those that fit **this** folder:
+Only after the read above. If the task list has an open item that fits, name it (**Do T-004**) rather than inventing a parallel to-do. Only these, and only those that fit **this** folder:
 
-1. Fill the overview  
+1. Fill the overview — **only** if it is empty **and** there is no protocol, preregistration, or draft to draft from. If there is source material, draft the overview in this reply instead.  
 2. Specify the analysis plan  
 3. Record a research decision  
 4. Start or continue analysis  
@@ -88,3 +92,5 @@ Do not offer a literature search.
 - Edit the analysis plan before they accept
 - Treat a copied protocol or draft paper as already agreed
 - Suggest next steps before reading existing and uploaded files
+- Offer “fill the overview” as a later task when you can draft it now from a copied protocol, preregistration, or draft
+- Write `RESEARCH_CONTEXT.md` before they accept

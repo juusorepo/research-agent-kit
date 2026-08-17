@@ -6,6 +6,10 @@ If they say **Copy the Research Agent Kit** from GitHub: fetch the public kit in
 
 If they say **Start the project** or **Initiate**: use `skills/start-research-project/SKILL.md` and `policies/how-to-talk.md`. Ask the interview questions (with defaults) and wait. Create a new research folder next to the kit (default **paper-1**, numbered `01-data` … `07-record`, manuscript in `05-outputs/manuscript/`). Read existing and uploaded files before next steps. Do not copy `CLAUDE.md`. Use the name in `researcher.md`. Do not require Python or R.
 
+If they say **Update the kit**: use `skills/update-the-kit/SKILL.md`. Work only in this kit folder. Do not overwrite `researcher.md` or files they asked to keep. Do not touch paper folders.
+
+If they say **Update the skills**: use the same skill, skills-only path. Overwrite `skills/`. Do not edit the rest of the kit or any paper.
+
 Researchers start from `START.md` and `README.md`. A paper file overrides the same path in the kit. How the kit sits next to national guidance is in `policies/ai-policy.md`.
 
 If a `dev/` folder is present, this copy is a kit workshop — also follow `dev/AGENTS.md`.

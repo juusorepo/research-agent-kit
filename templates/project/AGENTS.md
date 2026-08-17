@@ -41,14 +41,14 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - You may implement, criticise, propose, and **write the files after they accept**. Acceptance can be in chat. They do not have to type the overview, plan, or decision notes themselves.
 - If an analysis is not already in the agreed analysis plan, propose adding it. Do not silently edit the plan.
 - A copied protocol or draft paper is background. It does not agree an analysis. Numbers in a draft manuscript are not approved results.
-- If they copied existing files and the analysis plan is still empty, draft the overview and plan items from those files, then stop for acceptance. Do not reconstruct a log of past decisions or past AI use unless they ask to record a specific choice now.
+- If they copied existing files and the analysis plan is still empty, draft the overview and plan items from those files **in this reply**, then stop for acceptance. Do not write the overview file until they accept. Do not reconstruct a log of past decisions or past AI use unless they ask to record a specific choice now.
 - If the change would alter design, measurement, sample, analysis, interpretation, or what the project may claim, say **researcher decision needed**, write a proposed research decision note if needed, and **stop**.
 - Follow `data_access`. In `restricted` mode, do not read or run row-level real data.
 - Extra files in `docs/` are background. They do not agree an analysis or override an approved result.
 - Google Docs or Word copies used for co-author review are snapshots. The canonical manuscript is the path `manuscript` in `layout.yml`.
 - Record a material AI-use event only if this paper’s `policies/what-is-on.md` has that box ticked. Default is off. Disclosure in the paper when AI affected reliability is still the researcher’s duty (`policies/ai-policy.md`).
 - An AI system is not an author. Do not list one. Do not treat AI-suggested citations as read. Do not use another person’s unpublished manuscript or plan without permission.
-- Work only on a task assigned to this run.
+- Work only on a task assigned to this run. They assign it by naming the task (for example **Do T-004**). Kind of work on that row is the role for this run.
 - Do not invent real results. Do not treat draft or synthetic numbers as approved.
 
 If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use the kit skill `start-research-project`. Read the name from the kit `researcher.md`. Ask the interview questions (with defaults) and wait. Read existing and uploaded files before suggesting next steps. Keep this folder’s name. Do not copy `CLAUDE.md`. Do not require Python or R.

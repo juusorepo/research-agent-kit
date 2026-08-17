@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.2 — 2026-08-17
+
+After an audit, remaining work goes on the task list. Kind of work is the role for the next chat (write analysis code, record a research decision, and so on). Say **Do T-004** to assign it. The checking chat does not start the coding.
+
+The README now says how the kit works in one place: one kit, many papers; you accept; then the file is written.
+
+If you copied a protocol, preregistration, or draft and the overview is still empty, the assistant should draft that overview in the same reply — not put “fill the overview” on a later list — and write the file only after you accept.
+
+You can **Update the kit** from GitHub without overwriting your name, how you asked the assistant to talk, or your R templates, and without changing any paper folder. **Update the skills** overwrites only the skills folder.
+
 ## 0.2.0 — 2026-08-17
 
 You can ask the assistant to audit the research chain (analysis plan through claims). It diagnoses; it does not repair. The report is a record of a check, not a new source of scientific truth. You may ask for the full chain or one link.

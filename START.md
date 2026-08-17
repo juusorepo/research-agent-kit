@@ -44,7 +44,7 @@ Agent work: keep the kit available (kit + paper, or start from the kit). RStudio
 
 To override a default for **this paper only**, add that file in the paper (same relative path). To change a default for **every paper**, edit the kit.
 
-How this kit treats AI in research — and where it does not replace national guidance — is in `policies/ai-policy.md`. The workflow design is in `DESIGN_PRINCIPLES.md`. You can ask to **audit the research chain** (full chain, or one link). The assistant diagnoses; it does not repair.
+How this kit treats AI in research — and where it does not replace national guidance — is in `policies/ai-policy.md`. The workflow design is in `DESIGN_PRINCIPLES.md`. You can ask to **audit the research chain** (full chain, or one link). The assistant diagnoses; it does not repair. Remaining work goes on the task list. A new chat does the coding when you say which task (for example **Do T-004**).
 
 New kit version from GitHub? Open the **kit** folder and paste:
 
@@ -52,3 +52,11 @@ New kit version from GitHub? Open the **kit** folder and paste:
 Update the kit from https://github.com/juusorepo/research-agent-kit
 Keep my how-to-talk and R templates.
 ```
+
+Only new skills (overwrite the skills folder, leave the rest of the kit)? Paste:
+
+```
+Update the skills from https://github.com/juusorepo/research-agent-kit
+```
+
+The assistant must not change any paper folder. On a full kit update it must not overwrite your name, how-to-talk, or R templates if you asked to keep them. **Update the skills** overwrites the skills folder only.

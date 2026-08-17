@@ -4,12 +4,22 @@ description: Write and test analysis under the project's data-use rules. Use whe
 license: MIT
 compatibility: Requires a project filesystem. R is needed only when running R scripts.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Develop analysis with safe data
 
 Resolve script and output folders from `layout.yml`. Do not assume `analysis/` or `02-scripts`.
+
+## This run
+
+Read the tasks file (`layout.yml` path `tasks`). Work only on a row with `assigned_to_this_run: yes`. They assign it by saying **Do T-004**.
+
+If none is assigned, **stop** and ask which task — unless they only asked to explore metadata or write a throwaway draft. Implementing an agreed analysis needs an assigned task.
+
+This skill is for **write analysis code** (and draft outputs). If the assigned row is another kind of work, stop and follow that kind instead.
+
+Restricted data: you may write scripts. **run on real data** is the authorised analyst, not this chat.
 
 ## Always allowed
 
@@ -44,6 +54,7 @@ Write the proposed note if needed. **Stop.** Do not implement and interpret in t
 ## Refuse
 
 - Silent edits to the analysis plan or an accepted decision note
+- Implementing an agreed analysis with no task assigned to this run
 - Inventing real numbers
 - Copying draft/synthetic numbers into approved files
 - Approving against a proposal

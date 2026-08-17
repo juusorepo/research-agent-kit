@@ -43,9 +43,11 @@ Each substantive finding:
 | expected | what the authoritative file says |
 | observed | what you found |
 | why it matters | scientific consequence |
-| next | concrete action (task, researcher decision needed, re-run, leave as note) |
+| next | concrete action (task with kind of work, researcher decision needed, re-run, leave as note) |
 
 A finding is an audit observation, **not** a research decision.
+
+If `next` is a task, name the **kind of work**. Do not treat **researcher decision needed** as write analysis code. Notes stay notes — they do not become tasks.
 
 ### Severity
 

@@ -126,7 +126,7 @@ The framework distinguishes:
 * **project overview** — what is currently known about the study;
 * **analysis plan** — analyses the researchers have agreed to perform or report;
 * **research decision notes** — why important choices were made;
-* **tasks** — temporary work still to be completed;
+* **tasks** — temporary work still to be completed; kind of work is the role for that run;
 * **project status** — a concise orientation summary;
 * **Git history** — how files changed over time.
 

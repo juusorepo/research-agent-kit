@@ -4,7 +4,7 @@ description: Audit whether scientific meaning held from agreed analysis plan thr
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run.
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Audit the research chain
@@ -73,9 +73,17 @@ Do not only concatenate four checklists. If an earlier link is broken, say so wh
 
 ## After the report
 
-- Straightforward corrections → propose tasks (do not start them here)
-- Methodological issues → **researcher decision needed** (do not accept)
-- Accepted changes later use **Update the project record**
+The work list is the tasks file (`layout.yml` path `tasks`). Do not start a second list.
+
+- Straightforward, already-agreed corrections → **propose** task rows. Leave `assigned_to_this_run` as `no`. Do not start them.
+- **Kind of work** (one): write analysis code · run on real data · record a research decision · update the analysis plan · check the research chain · work on the manuscript
+- **from**: finding ids (for example `AUD-002`). Point at an existing task if one already covers it.
+- Do not copy notes onto the task list.
+- Methodological issues → **researcher decision needed** (do not accept; do not make them write-analysis-code tasks).
+- If they accept the proposed rows, write them. Then **stop**. Say they can start a **new chat** and name the task (for example **Do T-004**).
+- Do not start another assistant from this run.
+- If the tasks file has no kind-of-work column yet, add the columns when you write the first proposed row.
+- Accepted changes later use **Update the project record**.
 
 Do not copy agreed analyses or output metadata into the report beyond what a finding needs.
 
@@ -84,6 +92,7 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 ## Must not
 
 - Repair the work you are auditing
+- Start an unassigned task, or another assistant, from this run
 - Treat a draft or synthetic output as an approved result
 - Call an approved result a *verified result*
 - Load working notes or old audit reports as current scientific authority

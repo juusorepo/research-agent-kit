@@ -12,6 +12,20 @@ Keep **one kit folder** on your computer. Edit R conventions and other defaults 
 
 ---
 
+## How it works
+
+One kit folder; each paper is a separate folder. The assistant uses a file from the **paper if it exists**, otherwise from the **kit**.
+
+**You** accept claims and important decisions (a yes in chat is enough). Then the assistant writes the files. Draft outputs are not approved results.
+
+For quantitative work the chain is:
+
+**agreed analysis plan → implementation → research output → manuscript → scientific claim**
+
+If the data are restricted, agents do not read row-level files. The longer *why* is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md). How this sits next to national guidance is in [`policies/ai-policy.md`](policies/ai-policy.md).
+
+---
+
 ## What you keep in the project
 
 | File | Question it answers |
@@ -24,7 +38,7 @@ Keep **one kit folder** on your computer. Edit R conventions and other defaults 
 | **Working notes** (`07-record/notes/`) | Chronological scratchpad — not loaded by default |
 | **Audit reports** (`07-record/audits/`) | A check of the research chain — history, not the analysis plan |
 | **Project status** (`STATUS.md`) | Where are we now? (a snapshot, not the last word) |
-| **Tasks** (`TASKS.md`) | What is in progress? |
+| **Tasks** (`TASKS.md`) | What is still to do? Kind of work is the role for the next chat. |
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
 | **AI in research** (`policies/ai-policy.md`) | How this kit sits next to national guidance. A paper may override. |
 | **Extra context** (`06-docs/`) | Preregistration, ethics, proposals. Background only — it does not override the analysis plan |
@@ -72,13 +86,14 @@ This is **epistemic control**: researcher decision points sit where the design, 
 
 ---
 
-## Agent skills (v0.2)
+## What you can say
 
-Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
+Say these in chat. The assistant should use ordinary verbs.
 
 | Skill | What it does |
 |---|---|
 | Start the project | Create a paper folder that follows the kit; the paper may override individual files |
+| Update the kit | Fetch a new public version into the kit folder; keep your name and files you asked to keep; do not touch papers. Say **Update the skills** to overwrite only the skills folder |
 | Understand the project | Where things stand (canonical vs proposal vs note), then what to do next |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
 | Consolidate contributions | You review the inbox; the assistant recommends, you decide |
@@ -86,10 +101,9 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 | Document a research decision | Record an important choice (not every Table 1) |
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Update the project record | After you accept something, put it in the right file |
-| Work on the manuscript | Cite approved result files only (Quarto) |
-| Audit the research chain | Check plan → code → output → manuscript → claims. Diagnose only; do not repair |
+| Audit the research chain | Check plan → code → output → manuscript → claims. Diagnose only; remaining work goes on the task list |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains, automatic background audits.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains, automatic background audits, the assistant starting unassigned tasks on its own.
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
@@ -107,6 +121,6 @@ Small extra setup may be needed for a specific tool. That setup lives in the kit
 
 See [`START.md`](START.md). Get one kit folder, then start each paper from it. Paper files override the kit when present.
 
-Then fill the overview (the assistant can draft it from files you copied). The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
+Then fill the overview. If you copied a protocol, preregistration, or draft and the overview is empty, the assistant should draft it **in that reply** and write the file after you accept. The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
 
 **v0.2 does not migrate existing live papers.** A small worked example is in `examples/toy-study`.
