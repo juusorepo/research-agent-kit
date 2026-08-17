@@ -22,6 +22,7 @@ Keep **one kit folder** on your computer. Edit R conventions and other defaults 
 | **Research decision notes** (`07-record/decisions/`) | Why did we make important methodological choices? (`INDEX.md` is a short list) |
 | **Contributions** (`07-record/contributions/`) | Inbox from collaborators — proposals until you accept them |
 | **Working notes** (`07-record/notes/`) | Chronological scratchpad — not loaded by default |
+| **Audit reports** (`07-record/audits/`) | A check of the research chain — history, not the analysis plan |
 | **Project status** (`STATUS.md`) | Where are we now? (a snapshot, not the last word) |
 | **Tasks** (`TASKS.md`) | What is in progress? |
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
@@ -71,7 +72,7 @@ This is **epistemic control**: researcher decision points sit where the design, 
 
 ---
 
-## Agent skills (v0.1)
+## Agent skills (v0.2)
 
 Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 
@@ -86,8 +87,9 @@ Reusable ways of doing recurring jobs. The assistant should use ordinary verbs:
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Update the project record | After you accept something, put it in the right file |
 | Work on the manuscript | Cite approved result files only (Quarto) |
+| Audit the research chain | Check plan → code → output → manuscript → claims. Diagnose only; do not repair |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains, automatic background audits.
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
@@ -107,4 +109,4 @@ See [`START.md`](START.md). Get one kit folder, then start each paper from it. P
 
 Then fill the overview (the assistant can draft it from files you copied). The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
 
-**v0.1 does not migrate existing live papers.** A small worked example is in `examples/toy-study`.
+**v0.2 does not migrate existing live papers.** A small worked example is in `examples/toy-study`.

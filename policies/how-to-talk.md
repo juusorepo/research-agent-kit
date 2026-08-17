@@ -10,6 +10,7 @@ Speak as to a **social science researcher**, not a software developer.
 - paper name, folder, manuscript, analysis code
 - “I will not open the individual-level data”
 - “researcher decision needed”
+- audit report, finding; “this link could not be checked”
 
 ## Avoid in chat (unless the researcher used the word first)
 

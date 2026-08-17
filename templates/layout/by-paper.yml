@@ -18,6 +18,7 @@ paths:
   ai_use: papers/{paper}/ai-use
   notes: papers/{paper}/notes
   contributions: papers/{paper}/contributions
+  audits: papers/{paper}/audits
   scripts: papers/{paper}/analysis
   outputs: papers/{paper}/outputs
   manuscript: papers/{paper}/manuscript

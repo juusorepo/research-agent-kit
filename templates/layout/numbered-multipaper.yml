@@ -31,3 +31,4 @@ paths:
   ai_use: 07-record/{paper}/ai-use
   notes: 07-record/{paper}/notes
   contributions: 07-record/{paper}/contributions
+  audits: 07-record/{paper}/audits

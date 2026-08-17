@@ -11,6 +11,7 @@ These files are small on purpose. Do not turn them into logs.
 | `contributions/` | Inbox from collaborators (or their assistants) | **Proposal only.** Must not overwrite the files above until you integrate. |
 | `notes/` | Working notebook | For later recall. **Do not load by default.** |
 | `ai-use/` | Optional notes of substantial AI work | Off unless ticked in `policies/what-is-on.md`. One short file per event — not a prompt log. Off does not replace disclosure in the paper. |
+| `audits/` | Reports from checking the research chain | History of a check. **Not** the analysis plan or an approved result. Do not load by default. |
 
 Conversation → contribution (inbox) → your review → canonical record.  
 A contribution never skips that path.

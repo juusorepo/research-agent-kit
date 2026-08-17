@@ -14,7 +14,7 @@ This is a research project folder. First-level folders are numbered. Assistant f
 | `05-outputs/tables` | Result tables |
 | `05-outputs/manuscript` | The paper you are writing |
 | `06-docs` | Preregistration, ethics, extra context (does not override the analysis plan) |
-| `07-record` | Research decision notes, collaborator inbox, working notes |
+| `07-record` | Research decision notes, collaborator inbox, working notes, audit reports |
 | `99-archive` | Old versions |
 
 Project overview, analysis plan, status, and tasks sit at the top of a one-paper folder. If this folder holds several papers, each paper’s record is under `07-record/<name>/` and its manuscript under `05-outputs/<name>/manuscript`. See `MEMORY.md` for how those files relate.

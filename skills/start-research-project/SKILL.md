@@ -106,13 +106,13 @@ Copy **only** this list, from the **kit** paths on the left:
 2. `templates/project/.gitignore` → `.gitignore`
 3. `templates/project/folders.md` → `FOLDERS.md`
 4. `templates/project/MEMORY.md` → `MEMORY.md`
-5. Write `kit-lock.yml` (kit `0.1.0` and the skill names)
+5. Write `kit-lock.yml` (kit `0.2.0` and the skill names, including `audit-research-chain`)
 6. Chosen layout template → `layout.yml` with `kit_path` set
 7. Create every **folder** in `layout.yml` `paths` (not files that do not exist yet)
 8. If missing: overview, analysis plan, status, tasks from `templates/project/` — put the kit `researcher.md` name on the overview. **Skip any of these that already exist.**
 9. `policies/data-policy.md` and `policies/what-is-on.md` (this paper’s rules) unless they already exist
 10. `templates/decisions/INDEX.md` → `07-record/decisions/INDEX.md` (or the layout `decisions` path); `templates/decision-note.md` → `RDR-000-template.md` in that folder
-11. `templates/contributions/` → the layout `contributions` path; `templates/notes/README.md` → the layout `notes` path
+11. `templates/contributions/` → the layout `contributions` path; `templates/notes/README.md` → the layout `notes` path; `templates/audits/README.md` → the layout `audits` path
 12. `templates/project/data-raw-README.md` → `01-data/raw/README.md`
 13. Quarto (or their format) from `templates/manuscript/<format>/` → `05-outputs/manuscript/` (or the layout `manuscript` path). If they already have a draft there, keep theirs.
 14. One R starting script from `templates/analysis/r/` → `02-scripts/` unless that folder already has scripts
@@ -121,7 +121,7 @@ Do **not** copy `skills/`, `how-to-talk.md`, `ai-policy.md`, `CLAUDE.md`, or Cur
 
 Tick the AI-use box in `what-is-on.md` only if they said yes.
 
-First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) plus `policies/`. The manuscript lives in `05-outputs/manuscript/`, not as its own top-level folder. Do not put `decisions`, `notes`, `contributions`, `proposals`, or `ai-use` at the top level.
+First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) plus `policies/`. The manuscript lives in `05-outputs/manuscript/`, not as its own top-level folder. Do not put `decisions`, `notes`, `contributions`, `proposals`, `ai-use`, or `audits` at the top level.
 
 ### After folders exist
 

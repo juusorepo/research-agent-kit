@@ -26,7 +26,7 @@ Do not invent files. Do not assume a blank project.
 3. `ANALYSIS_PLAN.md` — canonical agreed analyses
 4. Decision notes (`07-record/decisions/INDEX.md` unless `layout.yml` says otherwise) — then only the relevant notes
 5. `contributions/` — only if the question is about a pending proposal
-6. `notes/` and Git — **only if the researcher asks or the files above are not enough**
+6. `notes/` and Git — **only if the researcher asks or the files above are not enough**. Do not load `audits/` as current scientific authority.
 
 Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-use rules, how-to-talk and `policies/ai-policy.md` (paper if present, else kit), manuscript folder (is there a draft?), result-file metadata. If you cannot read the kit, stop and ask them to open it.
 
@@ -75,14 +75,15 @@ Only after the read above. Only these, and only those that fit **this** folder:
 3. Record a research decision  
 4. Start or continue analysis  
 5. Work on the manuscript (approved results only)  
-6. Review pending contributions (if any)
+6. Review pending contributions (if any)  
+7. Audit the research chain (if they have a plan and code, outputs, or a manuscript to check)
 
 Do not offer a literature search.
 
 ## Must not
 
 - Invent facts or a back-history of decisions / AI use
-- Load `notes/` by default
+- Load `notes/` or `audits/` by default
 - Write an AI-use event for orientation
 - Edit the analysis plan before they accept
 - Treat a copied protocol or draft paper as already agreed

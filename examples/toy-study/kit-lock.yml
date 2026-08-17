@@ -1,4 +1,4 @@
-kit: 0.1.0
+kit: 0.2.0
 skills:
   start-research-project: 0.1.0
   understand-research-project: 0.1.0
@@ -7,3 +7,4 @@ skills:
   update-project-record: 0.1.0
   contribute-to-project: 0.1.0
   consolidate-contributions: 0.1.0
+  audit-research-chain: 0.2.0

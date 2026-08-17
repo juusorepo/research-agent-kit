@@ -36,3 +36,4 @@ If AI wrote the script for an agreed human plan: `origin: human`, `role: impleme
 - Approving a result unless `analysis_ref` is already an agreed plan item
 - Calling a run clean if propose → implement → interpret happened in one run
 - Writing an AI-use event for understand-the-project orientation
+- Treating an audit report as agreeing an analysis, approving a result, or replacing the analysis plan

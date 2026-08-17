@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0 — 2026-08-17
+
+You can ask the assistant to audit the research chain (analysis plan through claims). It diagnoses; it does not repair. The report is a record of a check, not a new source of scientific truth. You may ask for the full chain or one link.
+
 ## 0.1.1 — 2026-08-15
 
 A short note now says how this kit sits next to national AI-in-research guidance, and where it does not try to replace it. The optional AI-use file is still off by default; that does not mean material use may stay hidden in the paper. Restricted data still means row-level files stay closed; a cloud assistant may still send project text to a vendor.
