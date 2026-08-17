@@ -6,6 +6,8 @@ The audit report is the diagnosis. This file is remaining work. Do not copy ever
 
 Kind of work (the role for that run): write analysis code · run on real data · record a research decision · update the analysis plan · check the research chain · work on the manuscript
 
+Status: `open` · `later` · `done`. `later` stays on the list so it is not forgotten.
+
 | id | task | kind of work | from | assigned_to_this_run | status |
 |---|---|---|---|---|---|
 | T-001 | Fill the project overview | — | — | no | open |

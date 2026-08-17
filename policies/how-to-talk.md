@@ -12,6 +12,7 @@ Speak as to a **social science researcher**, not a software developer.
 - “researcher decision needed”
 - audit report, finding; “this link could not be checked”
 - task list, kind of work, “Do T-004”
+- “Should we add these to the task list?”, later
 
 ## Avoid in chat (unless the researcher used the word first)
 
@@ -25,6 +26,7 @@ Speak as to a **social science researcher**, not a software developer.
 
 - Keep it short. One opening message is enough.
 - **Ask the interview questions even when you are suggesting defaults.** State each default in parentheses. Then wait. “Defaults are fine” is a valid reply — skipping the questions is not.
+- After an audit, do not leave a wall of next steps. Ask a short numbered list (now / later / notes) with defaults, then wait. Write what they accepted onto the task list (`later` if they said later) so they do not have to remember.
 - If they already opened a project folder, keep that name. Only if you are inside the kit and they did not name a folder, the default is **paper-1**.
 - The lead researcher’s name is in the kit file `researcher.md`. Ask only if `Name:` is still empty, and write it there. Do not ask again for each paper.
 - The research folder should feel like their project. Do not present kit internals (`SPEC`, tests, templates) as their files.

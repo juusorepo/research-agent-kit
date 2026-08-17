@@ -13,7 +13,7 @@ The saved file is a **record of a check**. It is not the analysis plan, not an a
 3. Overall assessment (a few sentences)
 4. Findings, ordered by severity
 5. Links that could not be checked, and why
-6. Recommended next actions
+6. Recommended next actions — three short groups only: decide now / task list now / later. Not a repeat of every finding.
 
 For a full audit, include this compact status. Do not let it replace the findings.
 
@@ -59,3 +59,16 @@ If `next` is a task, name the **kind of work**. Do not treat **researcher decisi
 Do not add more levels.
 
 If the next action is a methodological choice, write **researcher decision needed** in `next`. Do not implement the change in this run.
+
+## After the report (in chat)
+
+Do not add a second essay. Ask a short numbered list, state defaults, **wait**.
+
+Example (only the buckets that apply):
+
+1. Draft a research decision note for AUD-001 (standardisation)? (default: yes, proposed only — not accepted)
+2. Keep A-006 and A-007 on T-004? (default: yes)
+3. Add AUD-004–006 to the task list now, or later? (default: later)
+4. Leave AUD-007–009 as notes? (default: yes)
+
+“Defaults are fine” is a valid reply. After they answer, write the task list, then stop. Coding is a **new chat**.

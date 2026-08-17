@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use at the start
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Understand the project
@@ -67,12 +67,12 @@ If they already have a filled analysis plan or a near-final draft, do not offer 
 - Agreed analyses — invent none
 - Which have an approved result
 - Open proposals, contributions, and proposed decisions
-- Open tasks (id, kind of work, whether assigned to this run)
+- Open tasks (id, kind of work, whether assigned to this run). Mention `later` items only so they are not forgotten; do not offer them as the next step.
 - What is optional and off
 
 ## Then suggest what to do next
 
-Only after the read above. If the task list has an open item that fits, name it (**Do T-004**) rather than inventing a parallel to-do. Only these, and only those that fit **this** folder:
+Only after the read above. If the task list has an **open** item that fits, name it (**Do T-004**) rather than inventing a parallel to-do. Skip `later` unless they ask. Only these, and only those that fit **this** folder:
 
 1. Fill the overview — **only** if it is empty **and** there is no protocol, preregistration, or draft to draft from. If there is source material, draft the overview in this reply instead.  
 2. Specify the analysis plan  

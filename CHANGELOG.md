@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+After an audit, the assistant asks a short list — decide now, add to the task list, or later — then waits. What you accept is written on the task list (`later` if you said later), so you do not have to remember.
+
 ## 0.2.2 — 2026-08-17
 
 After an audit, remaining work goes on the task list. Kind of work is the role for the next chat (write analysis code, record a research decision, and so on). Say **Do T-004** to assign it. The checking chat does not start the coding.

@@ -4,7 +4,7 @@ description: Audit whether scientific meaning held from agreed analysis plan thr
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run.
 metadata:
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # Audit the research chain
@@ -75,15 +75,22 @@ Do not only concatenate four checklists. If an earlier link is broken, say so wh
 
 The work list is the tasks file (`layout.yml` path `tasks`). Do not start a second list.
 
-- Straightforward, already-agreed corrections → **propose** task rows. Leave `assigned_to_this_run` as `no`. Do not start them.
-- **Kind of work** (one): write analysis code · run on real data · record a research decision · update the analysis plan · check the research chain · work on the manuscript
-- **from**: finding ids (for example `AUD-002`). Point at an existing task if one already covers it.
-- Do not copy notes onto the task list.
-- Methodological issues → **researcher decision needed** (do not accept; do not make them write-analysis-code tasks).
-- If they accept the proposed rows, write them. Then **stop**. Say they can start a **new chat** and name the task (for example **Do T-004**).
-- Do not start another assistant from this run.
-- If the tasks file has no kind-of-work column yet, add the columns when you write the first proposed row.
-- Accepted changes later use **Update the project record**.
+Save the report. Then in chat ask a **short numbered list** (defaults in parentheses) and **wait**. Do not leave a wall of next steps. Follow [report format](references/report-format.md) for the questions.
+
+Group only in those questions:
+
+1. **Decide now** — researcher decision needed, or anything that blocks approving results
+2. **Task list now** — already-agreed work they want as `open` (point at an existing task if one covers it)
+3. **Later** — still write a task row with status `later`, so it is not forgotten
+4. **Notes** — default: leave as notes; do not copy them onto the task list
+
+**Kind of work** (one): write analysis code · run on real data · record a research decision · update the analysis plan · check the research chain · work on the manuscript. **from**: finding ids (for example `AUD-002`).
+
+After they answer: write the accepted rows (`open` or `later`; `assigned_to_this_run` stays `no`). If they asked for a research decision note, draft it as **proposed** and stop. Do not start write-analysis-code in this run. If they want coding, say: new chat, **Do T-004**.
+
+If the tasks file has no kind-of-work or status column yet, add them when you write the first proposed row.
+
+Accepted changes later use **Update the project record**.
 
 Do not copy agreed analyses or output metadata into the report beyond what a finding needs.
 
