@@ -49,7 +49,7 @@ These are **examples**. Replace them.
 
 The project `.gitignore` implements the common cases. This section is the rule.
 
-Restricted mode does **not** stop a cloud assistant from sending **project text** (overview, analysis plan, drafts) to a vendor. Use a tool your organisation allows. See `policies/ai-policy.md`.
+`restricted` is a **rule** the assistant must follow. It is not a technical lock on the files. Keep row-level real data **outside** this folder and gitignored. A cloud assistant can still send **project text** (overview, analysis plan, drafts) to a vendor. Use a tool your organisation allows. See `policies/ai-policy.md`.
 
 ## Approving a result
 

@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.2.3 — 2026-08-18
+
+The example paper follows the kit for skills (no extra copy in the paper). Agreeing analyses is a next step after Understand the project — not a separate skill. The Quarto helpers follow the folder map. Restricted data remains a rule the assistant follows; it is not a lock on the files.
 
 Say **Start the project**. The assistant finds the kit, writes only into the paper folder, and asks the usual questions. You do not need a longer paste.
 

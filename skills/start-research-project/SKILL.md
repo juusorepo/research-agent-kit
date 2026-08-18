@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Start the project
@@ -111,7 +111,7 @@ Copy **only** this list, from the **kit** paths on the left:
 2. `templates/project/.gitignore` → `.gitignore`
 3. `templates/project/folders.md` → `FOLDERS.md`
 4. `templates/project/MEMORY.md` → `MEMORY.md`
-5. Write `kit-lock.yml` (kit `0.2.2` and the skill names, including `audit-research-chain` and `update-the-kit`)
+5. Copy `templates/project/kit-lock.yml` → `kit-lock.yml` (do not invent version numbers)
 6. Chosen layout template → `layout.yml` with `kit_path` set
 7. Create every **folder** in `layout.yml` `paths` (not files that do not exist yet)
 8. If missing: overview, analysis plan, status, tasks from `templates/project/` — put the kit `researcher.md` name on the overview. **Skip any of these that already exist.**

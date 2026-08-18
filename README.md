@@ -94,10 +94,9 @@ Say these in chat. The assistant should use ordinary verbs.
 |---|---|
 | Start the project | Create a paper folder that follows the kit. Writes only into the paper, not the kit |
 | Update the kit | Fetch a new public version into the kit folder; keep your name and files you asked to keep; do not touch papers. Say **Update the skills** to overwrite only the skills folder |
-| Understand the project | Where things stand (canonical vs proposal vs note), then what to do next |
+| Understand the project | Where things stand (canonical vs proposal vs note), then what to do next. Agreeing analyses is a next step here: the assistant proposes items, you accept, then the analysis plan is written |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
 | Consolidate contributions | You review the inbox; the assistant recommends, you decide |
-| Specify the analysis plan | Propose agreed analyses (you accept) |
 | Document a research decision | Record an important choice (not every Table 1) |
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Update the project record | After you accept something, put it in the right file |

@@ -18,3 +18,4 @@ Thumbs.db
 *.pyc
 .venv/
 venv/
+examples/toy-study-score/
