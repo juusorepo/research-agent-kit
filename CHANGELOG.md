@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+Say **Start the project**. The assistant finds the kit, writes only into the paper folder, and asks the usual questions. You do not need a longer paste.
+
 After an audit, the assistant asks a short list — decide now, add to the task list, or later — then waits. What you accept is written on the task list (`later` if you said later), so you do not have to remember.
 
 ## 0.2.2 — 2026-08-17

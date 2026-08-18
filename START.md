@@ -22,13 +22,13 @@ The assistant writes your name in `researcher.md` in this folder. You will not b
 
 The assistant must see the **kit** (for defaults and skills). A chat that only has an empty paper folder is not enough.
 
-**Easiest:** open the **kit** folder. Say **Start the project**. The assistant asks a short list of questions (with defaults) and waits. Then it creates a sibling folder of numbered science folders (`01-data` … `07-record`, `99-archive`). The paper lives in `05-outputs/manuscript/`.
-
-**Or** open **both** folders, and paste:
+**Easiest:** open the **kit** folder, or the kit **and** an empty paper folder. Paste:
 
 ```
-Start the project from my Research Agent Kit folder
+Start the project
 ```
+
+The assistant finds the kit, writes only into the paper (it will not add files to the kit), asks a short list of questions (with defaults), and waits. If no paper folder is open yet, it creates one next to the kit (default **paper-1**). Numbered science folders (`01-data` … `07-record`, `99-archive`); the paper lives in `05-outputs/manuscript/`.
 
 If `researcher.md` has no name yet, add `My name is` once — it is stored in the kit.
 

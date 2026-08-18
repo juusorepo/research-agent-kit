@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Start the project
@@ -44,11 +44,16 @@ When they are in the kit folder and say **Update the kit** or **Update the skill
 
 ## Start a paper
 
-**If this folder is the kit** (`START.md` + `skills/` + `templates/`): you will create a **new, empty project folder** next to it after the interview (default name **paper-1**).
+They only need to say **Start the project**. Do not ask them to name the kit or the paper again if you can see the folders.
 
-**If they opened only an empty paper folder:** you must also be able to read their kit. If you cannot, **stop**. Ask them to open the kit folder as well, or to start from the kit instead. Do not fetch GitHub as a substitute (that would skip their conventions).
+**Which folder is which**
 
-**If both folders are open:** use **their local kit**. Find it: they named a path; or a folder with `START.md` + `skills/` + `templates/`.
+- **Kit** = the folder with `START.md` + `skills/` + `templates/`. Never write science files here (`01-data`, overview, analysis plan, manuscript, …). The only kit write allowed at start is `researcher.md` if the name is still empty.
+- **Paper** = any other opened folder. If one is already open, **keep its name** and write the project **only there**.
+- **Only the kit is open:** after the interview, create a sibling folder (default **paper-1**).
+- **Kit plus paper are both open:** use their local kit; write only into the paper.
+- **Paper only, and you cannot read the kit:** **stop**. Ask them to open the kit too. Do not fetch GitHub as a substitute (that would skip their conventions).
+- If more than one non-kit folder is open and it is unclear which is this paper, ask once.
 
 Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/`, canonical `skills/`, `how-to-talk.md`, `ai-policy.md`, or `CLAUDE.md` into the paper. The agent file is `AGENTS.md`. Follow the kit `policies/ai-policy.md` unless the paper adds its own.
 
@@ -70,7 +75,7 @@ Do not skip the questions because the defaults are fine. They may answer “defa
 
 **Questions:**
 
-1. Folder name? (keep this folder if it is not the kit; if you are creating a folder next to the kit, **paper-1**)
+1. Folder name? (keep the paper folder if one is already open; if you are creating a folder next to the kit, **paper-1**)
 2. One paper in this folder, or several that share the same data and scripts? (**one paper**)
 3. Manuscript in Quarto, Word, or Markdown? (**Quarto**)
 4. Analysis in R or Stata? (**R**)
@@ -80,11 +85,11 @@ Do not skip the questions because the defaults are fine. They may answer “defa
 
 ### Opening message
 
-> I’ll create the project folders next to your kit. Shared conventions stay in the kit. This paper can override a default by adding that one file here.
+> I’ll set up the paper folder. Shared conventions stay in the kit. I will not add project files to the kit. This paper can override a default by adding that one file here.
 >
 > Please confirm or change these (defaults in parentheses). “Defaults are fine” is enough once you have seen the list:
 >
-> 1. Folder name (**paper-1**, or keep this folder if it is already the project)
+> 1. Folder name (**keep this paper folder** if one is already open; otherwise **paper-1**)
 > 2. One paper here, or several sharing data and scripts? (**one paper**)
 > 3. Manuscript: Quarto, Word, or Markdown? (**Quarto**)
 > 4. Analysis: R or Stata? (**R**)
@@ -139,6 +144,7 @@ First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) p
 - Ask them to download ZIP or clone the kit themselves
 - Start a paper by fetching GitHub and skipping their local kit
 - Skip the interview questions, or write folders before they reply
+- Add project files to the kit (except `researcher.md` when the name is still empty)
 - Search SPEC, tests, or `install.py` for how to start
 - Invent analyses, approve results, or reconstruct a history of old decisions / old AI use
 - Overwrite an existing overview, analysis plan, manuscript, or data

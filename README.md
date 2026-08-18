@@ -92,7 +92,7 @@ Say these in chat. The assistant should use ordinary verbs.
 
 | Skill | What it does |
 |---|---|
-| Start the project | Create a paper folder that follows the kit; the paper may override individual files |
+| Start the project | Create a paper folder that follows the kit. Writes only into the paper, not the kit |
 | Update the kit | Fetch a new public version into the kit folder; keep your name and files you asked to keep; do not touch papers. Say **Update the skills** to overwrite only the skills folder |
 | Understand the project | Where things stand (canonical vs proposal vs note), then what to do next |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
