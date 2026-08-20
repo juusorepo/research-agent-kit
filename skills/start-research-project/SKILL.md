@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.1.3"
+  version: "0.3.0"
 ---
 
 # Start the project
@@ -119,7 +119,7 @@ Copy **only** this list, from the **kit** paths on the left:
 10. `templates/decisions/INDEX.md` → `07-record/decisions/INDEX.md` (or the layout `decisions` path); `templates/decision-note.md` → `RDR-000-template.md` in that folder
 11. `templates/contributions/` → the layout `contributions` path; `templates/notes/README.md` → the layout `notes` path; `templates/audits/README.md` → the layout `audits` path
 12. `templates/project/data-raw-README.md` → `01-data/raw/README.md`
-13. Quarto (or their format) from `templates/manuscript/<format>/` → `05-outputs/manuscript/` (or the layout `manuscript` path). If they already have a draft there, keep theirs.
+13. Quarto (or their format) from `templates/manuscript/<format>/` → `05-outputs/manuscript/` (or the layout `manuscript` path). If they already have a draft there, keep theirs. Copy `templates/review-copy.yml` into that manuscript folder unless a `review-copy.yml` already exists.
 14. One R starting script from `templates/analysis/r/` → `02-scripts/` unless that folder already has scripts
 
 Do **not** copy `skills/`, `how-to-talk.md`, `ai-policy.md`, `CLAUDE.md`, or Cursor rule files. Agents follow `AGENTS.md`. Optional tool pointers live in the kit `adapters/` folder; the researcher can copy one later if a tool requires it.

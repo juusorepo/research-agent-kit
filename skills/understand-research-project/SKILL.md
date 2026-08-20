@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use when they sa
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.4"
+  version: "0.3.0"
 ---
 
 # Understand the project
@@ -79,8 +79,10 @@ Only after the read above. If the task list has an **open** item that fits, name
 3. Record a research decision  
 4. Start or continue analysis  
 5. Work on the manuscript (approved results only)  
-6. Review pending contributions (if any)  
-7. Audit the research chain (if they have a plan and code, outputs, or a manuscript to check)
+6. Review pending contributions (if any)
+7. Prepare a review copy / ingest open comments / sync the review copy (if they are using a Google Doc with co-authors)
+8. Review the manuscript (AI) — findings go to the inbox; not an audit of the research chain
+9. Audit the research chain (if they have a plan and code, outputs, or a manuscript to check)
 
 Do not offer a literature search.
 

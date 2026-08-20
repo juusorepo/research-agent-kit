@@ -12,7 +12,7 @@ This is a research project folder. First-level folders are numbered. Assistant f
 | `04-notebooks` | Notebooks and working notes |
 | `05-outputs/figures` | Graphs |
 | `05-outputs/tables` | Result tables |
-| `05-outputs/manuscript` | The paper you are writing |
+| `05-outputs/manuscript` | The paper you are writing (plus `review-copy.yml` for a Google Docs snapshot) |
 | `06-docs` | Preregistration, ethics, extra context (does not override the analysis plan) |
 | `07-record` | Research decision notes, collaborator inbox, working notes, audit reports |
 | `99-archive` | Old versions |

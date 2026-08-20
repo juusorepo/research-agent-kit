@@ -22,4 +22,5 @@ paths:
   scripts: papers/{paper}/analysis
   outputs: papers/{paper}/outputs
   manuscript: papers/{paper}/manuscript
+  review_copy: papers/{paper}/manuscript/review-copy.yml
   metadata: papers/{paper}/outputs

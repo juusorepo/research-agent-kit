@@ -4,7 +4,7 @@ description: After the lead researcher accepts something, write it into the shar
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.1"
+  version: "0.3.0"
 ---
 
 # Update the project record
@@ -23,6 +23,7 @@ Do this when one of these happened — not because a chat ended:
 - After they accept a drafted overview, write it into `RESEARCH_CONTEXT.md`
 - Fill `accepted_by`, `accepted_at`, `artifacts_changed` on an accepted decision note; set that row’s status in `decisions/INDEX.md`
 - After they accept a contribution: apply the chosen home, then set the contribution `status` to `integrated` or `archived`
+- After they accept a **Sync the review copy**, the manuscript update is already done in that skill; here only refresh `STATUS.md` if still stale
 - Refresh `STATUS.md` as a snapshot
 - Archive or close the assigned task
 - **Record** a clearly material AI-use event only if `policies/what-is-on.md` has that box ticked. If the box is off, do not write `ai-use/` and do not ask. If the box is on: record when clearly material; ask only if ambiguous; never record orientation.

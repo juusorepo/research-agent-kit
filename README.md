@@ -42,7 +42,7 @@ If the data are restricted, agents do not read row-level files. The longer *why*
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
 | **AI in research** (`policies/ai-policy.md`) | How this kit sits next to national guidance. A paper may override. |
 | **Extra context** (`06-docs/`) | Preregistration, ethics, proposals. Background only — it does not override the analysis plan |
-| **Manuscript** (`05-outputs/manuscript/`) | The file the paper is written in (Quarto by default). Google Docs / Word copies for co-authors are review snapshots |
+| **Manuscript** (`05-outputs/manuscript/`) | The file the paper is written in (Quarto by default). A Google Docs copy for co-authors is a review copy |
 
 The **analysis plan** is stricter than a loose methods paragraph, but it is still an analysis plan:
 
@@ -97,12 +97,16 @@ Say these in chat. The assistant should use ordinary verbs.
 | Understand the project | Where things stand (canonical vs proposal vs note), then what to do next. Agreeing analyses is a next step here: the assistant proposes items, you accept, then the analysis plan is written |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
 | Consolidate contributions | You review the inbox; the assistant recommends, you decide |
+| Prepare a review copy | Google Docs snapshot for co-authors (not the paper file itself) |
+| Ingest review comments | Leftover open comments → inbox. Skip wording already accepted in the Doc |
+| Sync the review copy | After you accept suggestions in the Doc, update the manuscript once |
+| Review the manuscript | AI pass; findings go to the inbox. Not an audit of the research chain |
 | Document a research decision | Record an important choice (not every Table 1) |
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Update the project record | After you accept something, put it in the right file |
 | Audit the research chain | Check plan → code → output → manuscript → claims. Diagnose only; full report is a file; chat asks what to put on the task list now or later. Next work: **Do T-004**, not a pasted prompt |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains, automatic background audits, the assistant starting unassigned tasks on its own.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own.
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 

@@ -1,11 +1,15 @@
-kit: 0.2.5
+kit: 0.3.0
 skills:
-  start-research-project: 0.1.3
-  understand-research-project: 0.1.4
+  start-research-project: 0.3.0
+  understand-research-project: 0.3.0
   develop-analysis-with-safe-data: 0.1.2
   document-research-decision: 0.1.1
-  update-project-record: 0.1.1
-  contribute-to-project: 0.1.1
-  consolidate-contributions: 0.1.1
+  update-project-record: 0.3.0
+  contribute-to-project: 0.3.0
+  consolidate-contributions: 0.3.0
+  prepare-review-copy: 0.3.0
+  ingest-review-comments: 0.3.0
+  sync-review-copy: 0.3.0
+  review-the-manuscript: 0.3.0
   audit-research-chain: 0.2.4
   update-the-kit: 0.2.2

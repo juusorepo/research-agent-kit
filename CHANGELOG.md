@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 — 2026-08-20
+
+Co-authors can work in a **Google Docs review copy**. Small wording is accepted there (like track changes), then you **sync** once back to the paper. Leftover **open comments**, journal points, and an **AI manuscript review** land in the same contributions inbox — not a second reviews folder, and not one file per comma. Word comment ingest is not in this version. Google’s Docs tools, if the assistant has them, are optional; a pasted comment list still works.
+
 ## 0.2.5 — 2026-08-20
 
 A short phrase is enough. The paper `AGENTS.md` now lists which phrase opens which skill (Understand the project, Audit the research chain, Record a research decision, and the rest). How each skill works is still only in that skill file. Each skill’s short description names the same phrase, so tools that match descriptions and tools that read the table agree.

@@ -26,8 +26,12 @@ Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SK
 | Develop analysis with safe data · Do T-NNN (write analysis code) | `skills/develop-analysis-with-safe-data/SKILL.md` | Write and test analysis under the data-use rules |
 | Document a research decision · Record a research decision | `skills/document-research-decision/SKILL.md` | Record a consequential choice as a proposed note |
 | Audit the research chain (full chain or one link) | `skills/audit-research-chain/SKILL.md` | Check plan → code → output → manuscript → claim; diagnose only |
-| Contribute to the project | `skills/contribute-to-project/SKILL.md` | File a collaborator's remark in `contributions/` |
+| Contribute to the project | `skills/contribute-to-project/SKILL.md` | File a collaborator's remark or an open review issue in `contributions/` |
 | Consolidate contributions | `skills/consolidate-contributions/SKILL.md` | Review the inbox; recommend a home for each |
+| Prepare a review copy | `skills/prepare-review-copy/SKILL.md` | Google Docs snapshot for co-authors; not the canonical manuscript |
+| Ingest review comments | `skills/ingest-review-comments/SKILL.md` | Open Doc comments → inbox; skip accepted suggestions |
+| Sync the review copy | `skills/sync-review-copy/SKILL.md` | After suggestions are accepted in the Doc, update the manuscript |
+| Review the manuscript · AI review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; not an audit of the research chain |
 | Update the project record | `skills/update-project-record/SKILL.md` | After acceptance, write it into the shared record |
 | Update the kit · Update the skills (in the kit folder, not a paper) | `skills/update-the-kit/SKILL.md` | Fetch a new kit or skills version into the kit |
 
@@ -63,7 +67,7 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - If the change would alter design, measurement, sample, analysis, interpretation, or what the project may claim, say **researcher decision needed**, write a proposed research decision note if needed, and **stop**.
 - Follow `data_access`. In `restricted` mode, do not read or run row-level real data.
 - Extra files in `docs/` are background. They do not agree an analysis or override an approved result.
-- Google Docs or Word copies used for co-author review are snapshots. The canonical manuscript is the path `manuscript` in `layout.yml`.
+- Google Docs used for co-author review is a **review copy** (snapshot). Accept small wording there, then **Sync the review copy**. Open comments become contributions. The canonical manuscript is the path `manuscript` in `layout.yml`. Word comment ingest is not in this version.
 - Record a material AI-use event only if this paper’s `policies/what-is-on.md` has that box ticked. Default is off. Disclosure in the paper when AI affected reliability is still the researcher’s duty (`policies/ai-policy.md`).
 - An AI system is not an author. Do not list one. Do not treat AI-suggested citations as read. Do not use another person’s unpublished manuscript or plan without permission.
 - Work only on a task assigned to this run. They assign it by naming the task (for example **Do T-004**). Kind of work on that row is the role for this run.

@@ -13,10 +13,11 @@ Speak as to a **social science researcher**, not a software developer.
 - audit report, finding; “this link could not be checked”
 - task list, kind of work, “Do T-004”
 - “Should we add these to the task list?”, later
+- review copy, suggestion, open comment, “sync the review copy”
 
 ## Avoid in chat (unless the researcher used the word first)
 
-- slug, repo, init, toolchain, CLI, API, spec, schema, checkpoint
+- slug, repo, init, toolchain, CLI, API, MCP, spec, schema, checkpoint
 - agent-accessible, data_access, by-paper, preset, layout.yml
 - “verified result” for an approved file
 - RDR, epistemic checkpoint

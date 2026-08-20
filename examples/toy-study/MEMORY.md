@@ -9,13 +9,15 @@ These files are small on purpose. Do not turn them into logs.
 | `TASKS.md` | Remaining work. Kind of work is the role for the next run. | Temporary. Not the analysis plan. |
 | `ANALYSIS_PLAN.md` | What analyses are **agreed** | Canonical. Agents propose; you accept. |
 | `decisions/` | Research decision notes for important choices | Canonical once **accepted**. `INDEX.md` is a compact list, not a narrative. |
-| `contributions/` | Inbox from collaborators (or their assistants) | **Proposal only.** Must not overwrite the files above until you integrate. |
+| `contributions/` | Inbox from collaborators, leftover Doc comments, journal points, AI review | **Proposal only.** Open issues, not accepted wording suggestions. |
+| `review-copy.yml` (next to the manuscript) | Pointer to the current Google Docs review copy | Snapshot. Canonical paper is the manuscript folder. |
 | `notes/` | Working notebook | For later recall. **Do not load by default.** |
 | `ai-use/` | Optional notes of substantial AI work | Off unless ticked in `policies/what-is-on.md`. One short file per event — not a prompt log. Off does not replace disclosure in the paper. |
 | `audits/` | Reports from checking the research chain | History of a check. **Not** the analysis plan or an approved result. Do not load by default. |
 
-Conversation → contribution (inbox) → your review → canonical record.  
-A contribution never skips that path.
+Conversation or Google Doc comment → contribution (inbox) → your review → canonical record.  
+Accepted wording in the Google Doc → **Sync the review copy** (not one contribution per comma).  
+A contribution never skips the inbox path.
 
 ## Who writes
 

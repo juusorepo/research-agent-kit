@@ -16,4 +16,4 @@ You may edit this file. The assistant should follow it.
 
 ## Not in this version
 
-Literature search, journal disclosure forms, Word/Stata toolchains, and automatic background audits. On-demand “audit the research chain” is in this version. Do not offer the others as kit features.
+Literature search, journal disclosure forms, Word/Stata toolchains, Word comment ingest, and automatic background audits. On-demand “audit the research chain” is in this version. A Google Docs review copy (suggestions there, open comments to the inbox) is in this version. Do not offer the others as kit features.

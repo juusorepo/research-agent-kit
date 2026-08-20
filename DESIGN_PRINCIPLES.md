@@ -350,6 +350,8 @@ while maintaining governance over what becomes accepted project knowledge.
 
 Collaborators and their agents may propose analyses, interpretations, literature findings, or manuscript changes. Those contributions should be distinguishable from the authoritative project record until they have been reviewed appropriately.
 
+For co-author wording, use a **review copy** (Google Docs). Suggestions are accepted there; leftover open comments become inbox items. Do not duplicate every small edit in the project folder.
+
 This makes AI-assisted collaboration a property of the project rather than a collection of disconnected private chats.
 
 ---

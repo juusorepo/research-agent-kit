@@ -46,6 +46,8 @@ To override a default for **this paper only**, add that file in the paper (same 
 
 How this kit treats AI in research — and where it does not replace national guidance — is in `policies/ai-policy.md`. The workflow design is in `DESIGN_PRINCIPLES.md`. You can ask to **audit the research chain** (full chain, or one link). The assistant diagnoses; it does not repair. The full report is a file under the record path. In chat it asks a short list (now / later / notes) with defaults, then waits. A new chat does the next task when you say which one (for example **Do T-004**). Do not paste the audit into that chat.
 
+Co-author review: say **Prepare a review copy** (Google Doc). Accept small wording in the Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox.
+
 New kit version from GitHub? Open the **kit** folder and paste:
 
 ```

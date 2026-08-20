@@ -1,6 +1,6 @@
 # Quarto manuscript
 
-This is the paper. Google Docs or Word copies sent to co-authors are review snapshots.
+This is the paper. A Google Docs copy for co-authors is a **review copy**. Accept small wording there, then sync back. Open comments go to the contributions inbox. Word comment ingest is not in this version.
 
 ## Approach
 

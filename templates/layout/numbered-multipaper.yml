@@ -18,6 +18,7 @@ paths:
   outputs_figures: 05-outputs/{paper}/figures
   outputs_tables: 05-outputs/{paper}/tables
   manuscript: 05-outputs/{paper}/manuscript
+  review_copy: 05-outputs/{paper}/manuscript/review-copy.yml
   docs: 06-docs/{paper}
   record: 07-record/{paper}
   archive: 99-archive
