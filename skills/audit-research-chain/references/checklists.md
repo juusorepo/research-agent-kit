@@ -4,6 +4,17 @@ Use the scopes they asked for. A full audit uses all four, then the cross-chain 
 
 Distinguish a **substantive** deviation from a harmless implementation detail (file names, comment wording, equivalent syntax).
 
+## What is currently agreed (always)
+
+Before the four links, establish what you are checking against:
+
+- agreed analysis plan items
+- accepted research decision notes (and their index)
+
+If those conflict with each other, or with STATUS or the task list about whether a choice is already accepted, record a finding. Ask them in the numbered questions. Do not resolve it in the report.
+
+Do not treat STATUS, working notes, or old audit reports as what is agreed. Do not turn a full audit into a documentation tidy-up. Skip stale wording that does not change the scientific target.
+
 ## Analysis plan ↔ code
 
 Does implementation match the agreed analysis?

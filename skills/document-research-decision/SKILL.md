@@ -1,10 +1,10 @@
 ---
 name: document-research-decision
-description: Record an important methodological choice as a proposed research decision note. Use when design, measurement, sample, or claims would change. Do not use merely to add Table 1 to the plan.
+description: Record an important methodological choice as a proposed research decision note. Use when they say Document a research decision or Record a research decision, or when design, measurement, sample, or claims would change. Do not use merely to add Table 1 to the plan.
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Document a research decision

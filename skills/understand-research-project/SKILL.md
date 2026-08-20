@@ -1,10 +1,10 @@
 ---
 name: understand-research-project
-description: Retrieve project memory and suggest the next step. Use at the start of a session, after Start the project, or for questions like why did we do X.
+description: Retrieve project memory and suggest the next step. Use when they say Understand the project, at the start of a session, after Start the project, or for questions like why did we do X.
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.3"
+  version: "0.1.4"
 ---
 
 # Understand the project

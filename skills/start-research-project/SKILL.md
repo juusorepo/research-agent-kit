@@ -1,10 +1,10 @@
 ---
 name: start-research-project
-description: Get the kit from GitHub into one folder, or start a paper that follows the kit with optional paper overrides. Use when they say Copy the Research Agent Kit or Start the project.
+description: Get the kit from GitHub into one folder, or start a paper that follows the kit with optional paper overrides. Use when they say Copy the Research Agent Kit, Start the project, or Initiate.
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Start the project

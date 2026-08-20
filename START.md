@@ -44,7 +44,7 @@ Agent work: keep the kit available (kit + paper, or start from the kit). RStudio
 
 To override a default for **this paper only**, add that file in the paper (same relative path). To change a default for **every paper**, edit the kit.
 
-How this kit treats AI in research — and where it does not replace national guidance — is in `policies/ai-policy.md`. The workflow design is in `DESIGN_PRINCIPLES.md`. You can ask to **audit the research chain** (full chain, or one link). The assistant diagnoses; it does not repair. Then it asks what to add to the task list now or later. A new chat does the coding when you say which task (for example **Do T-004**).
+How this kit treats AI in research — and where it does not replace national guidance — is in `policies/ai-policy.md`. The workflow design is in `DESIGN_PRINCIPLES.md`. You can ask to **audit the research chain** (full chain, or one link). The assistant diagnoses; it does not repair. The full report is a file under the record path. In chat it asks a short list (now / later / notes) with defaults, then waits. A new chat does the next task when you say which one (for example **Do T-004**). Do not paste the audit into that chat.
 
 New kit version from GitHub? Open the **kit** folder and paste:
 

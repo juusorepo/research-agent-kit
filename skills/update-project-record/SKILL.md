@@ -1,10 +1,10 @@
 ---
 name: update-project-record
-description: After the lead researcher accepts something, write it into the shared record. Use when a proposal is accepted, a result is approved, a task finishes, or a material AI contribution should be kept. Not at the end of every chat.
+description: After the lead researcher accepts something, write it into the shared record. Use when they say Update the project record, or when a proposal is accepted, a result is approved, a task finishes, or a material AI contribution should be kept. Not at the end of every chat.
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Update the project record

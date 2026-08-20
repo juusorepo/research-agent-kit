@@ -1,12 +1,14 @@
 # Audit report format
 
-Write the report in this chat. Then save a copy under `paths.audits` in `layout.yml` (default `07-record/audits/`). Create that folder if needed.
+Save the full report under `paths.audits` in `layout.yml` (default `07-record/audits/`). Create that folder if needed.
 
 Use a dated file name, for example `2026-08-17-full.md`. Do not overwrite an older report.
 
 The saved file is a **record of a check**. It is not the analysis plan, not an approved result, and not a research decision.
 
-## Report contents
+In **this chat**, do not reprint the whole report. Write: the compact status (full audit), a few sentences on what holds and what does not, the path of the saved file, then the numbered questions. Wait.
+
+## Report contents (saved file)
 
 1. Scope audited (full chain, or which link)
 2. Material checked (plan items, scripts, result files, manuscript sections)
@@ -14,6 +16,8 @@ The saved file is a **record of a check**. It is not the analysis plan, not an a
 4. Findings, ordered by severity
 5. Links that could not be checked, and why
 6. Recommended next actions — three short groups only: decide now / task list now / later. Not a repeat of every finding.
+
+If plan or accepted notes conflict with STATUS or the task list about what is agreed, record that as a finding. Do not give it a fifth status row.
 
 For a full audit, include this compact status. Do not let it replace the findings.
 
@@ -43,11 +47,13 @@ Each substantive finding:
 | expected | what the authoritative file says |
 | observed | what you found |
 | why it matters | scientific consequence |
-| next | concrete action (task with kind of work, researcher decision needed, re-run, leave as note) |
+| next | kind of work, researcher decision needed, or leave as note |
 
 A finding is an audit observation, **not** a research decision.
 
 If `next` is a task, name the **kind of work**. Do not treat **researcher decision needed** as write analysis code. Notes stay notes — they do not become tasks.
+
+Do not put an implementation sketch in `next` (script design, extra checks, new metadata fields) unless that design is already agreed.
 
 ### Severity
 
@@ -62,7 +68,7 @@ If the next action is a methodological choice, write **researcher decision neede
 
 ## After the report (in chat)
 
-Do not add a second essay. Ask a short numbered list, state defaults, **wait**.
+Do not add a second essay. Do not paste a prompt for a later coding chat. Ask a short numbered list, state defaults, **wait**.
 
 Example (only the buckets that apply):
 
@@ -71,4 +77,4 @@ Example (only the buckets that apply):
 3. Add AUD-004–006 to the task list now, or later? (default: later)
 4. Leave AUD-007–009 as notes? (default: yes)
 
-“Defaults are fine” is a valid reply. After they answer, write the task list, then stop. Coding is a **new chat**.
+“Defaults are fine” is a valid reply. After they answer, write the task list, then stop. If they want the next piece of work: new chat, **Do T-004**. A default in a question does not accept a research decision or close a conflict.

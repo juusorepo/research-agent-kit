@@ -1,10 +1,10 @@
 ---
 name: develop-analysis-with-safe-data
-description: Write and test analysis under the project's data-use rules. Use when drafting scripts, producing draft outputs, or implementing an agreed analysis. Never cross a restricted data line.
+description: Write and test analysis under the project's data-use rules. Use when they say Develop analysis with safe data or are assigned a write-analysis-code task (Do T-NNN), or when drafting scripts, producing draft outputs, or implementing an agreed analysis. Never cross a restricted data line.
 license: MIT
 compatibility: Requires a project filesystem. R is needed only when running R scripts.
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Develop analysis with safe data

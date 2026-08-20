@@ -1,10 +1,10 @@
 ---
 name: consolidate-contributions
-description: For the lead researcher. Review pending contributions and recommend where each should go. Do not silently change the analysis plan or accept decisions.
+description: For the lead researcher. Review pending contributions and recommend where each should go. Use when they say Consolidate contributions. Do not silently change the analysis plan or accept decisions.
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Consolidate contributions

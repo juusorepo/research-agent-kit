@@ -12,4 +12,6 @@ If they say **Update the skills**: use the same skill, skills-only path. Overwri
 
 Researchers start from `START.md` and `README.md`. A paper file overrides the same path in the kit. How the kit sits next to national guidance is in `policies/ai-policy.md`.
 
+Paper skill phrases (Understand the project, Audit the research chain, Record a research decision, and the rest) live in that paper’s AGENTS.md skill-trigger table — same table as `templates/project/AGENTS.md`. The phrase is enough; do not ask for a long prompt. Each skill file holds its own rules.
+
 If a `dev/` folder is present, this copy is a kit workshop — also follow `dev/AGENTS.md`.

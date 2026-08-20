@@ -1,10 +1,10 @@
 ---
 name: contribute-to-project
-description: Turn a collaborator's useful remark into a contribution file in contributions/. Use when someone proposes a finding, method, issue, or decision but must not edit the analysis plan or accepted decisions.
+description: Turn a collaborator's useful remark into a contribution file in contributions/. Use when they say Contribute to the project, or when someone proposes a finding, method, issue, or decision, but must not edit the analysis plan or accepted decisions.
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Contribute to the project

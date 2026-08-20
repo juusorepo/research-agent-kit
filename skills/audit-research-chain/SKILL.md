@@ -1,10 +1,10 @@
 ---
 name: audit-research-chain
-description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Diagnose only; do not repair. Use for a full chain check or one link.
+description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Diagnose only; do not repair. Use when they say Audit the research chain, for a full chain check or one link.
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run.
 metadata:
-  version: "0.2.2"
+  version: "0.2.4"
 ---
 
 # Audit the research chain
@@ -45,15 +45,21 @@ If they do not say, do a **full** audit.
 
 Do not infer the intended analysis from the manuscript or the overview when an agreed plan exists.
 
-If authoritative files conflict, **report the conflict**. Do not resolve it.
+**What is agreed** is always in scope. Read the analysis plan and accepted decision notes before judging any link. `STATUS.md` and the task list are not scientific authority.
+
+If authoritative files conflict, **report the conflict**. Do not pick a winner in the report. Ask one numbered question about it (defaults in parentheses) and wait. Their answer is theirs; a default in the question is not an accepted research decision.
 
 Copied protocols and extra docs are background. Draft outputs are not approved results. An audit report is **history**, not a new analysis plan.
 
+Record hygiene (stale STATUS lines, open tasks that only say “accept/reject”) belongs in the audit **only when it changes what counts as agreed**. Do not add a fifth PASS / ISSUES / NOT VERIFIED row for documentation.
+
 ## Diagnose, do not repair
 
-**Do:** name discrepancies; say when a link cannot be checked; classify severity; say why it matters; point to files; propose a next action.
+**Do:** name discrepancies; say when a link cannot be checked; classify severity; say why it matters; point to files; name the **kind of work** for a next action (or **researcher decision needed**).
 
-**Do not:** edit the analysis plan; accept a research decision; change analysis code; regenerate results; rewrite manuscript claims; mark a finding resolved because you proposed a fix.
+**Do not:** edit the analysis plan; accept a research decision; change analysis code; regenerate results; rewrite manuscript claims; mark a finding resolved because you proposed a fix; draft a patch, script, or protocol in this run.
+
+A finding may say that implementation should match the agreed sample. It may not specify an unagreed design (how to resume a run, which extra checks to add, which metadata fields to invent) unless that design is already in the plan or an accepted note.
 
 If a fix needs a methodological choice, say **researcher decision needed**. Do not write or accept that decision in this run unless they separately ask to record a research decision.
 
@@ -73,9 +79,9 @@ Do not only concatenate four checklists. If an earlier link is broken, say so wh
 
 ## After the report
 
-The work list is the tasks file (`layout.yml` path `tasks`). Do not start a second list.
+Save the full report under `paths.audits`. In chat, do **not** reprint every finding. Give the compact status, a short “what holds / what does not,” point at the file, then ask a **short numbered list** (defaults in parentheses) and **wait**. Follow [report format](references/report-format.md).
 
-Save the report. Then in chat ask a **short numbered list** (defaults in parentheses) and **wait**. Do not leave a wall of next steps. Follow [report format](references/report-format.md) for the questions.
+The work list is the tasks file (`layout.yml` path `tasks`). Do not start a second list. Do not end with a block for them to paste into another chat. The task row is the next assignment.
 
 Group only in those questions:
 
@@ -86,7 +92,7 @@ Group only in those questions:
 
 **Kind of work** (one): write analysis code · run on real data · record a research decision · update the analysis plan · check the research chain · work on the manuscript. **from**: finding ids (for example `AUD-002`).
 
-After they answer: write the accepted rows (`open` or `later`; `assigned_to_this_run` stays `no`). If they asked for a research decision note, draft it as **proposed** and stop. Do not start write-analysis-code in this run. If they want coding, say: new chat, **Do T-004**.
+After they answer: write the accepted rows (`open` or `later`; `assigned_to_this_run` stays `no`). If they asked for a research decision note, draft it as **proposed** and stop. Do not start write-analysis-code in this run. Do not start another assistant. If they want coding, one line: new chat, **Do T-004**.
 
 If the tasks file has no kind-of-work or status column yet, add them when you write the first proposed row.
 
@@ -104,3 +110,4 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 - Call an approved result a *verified result*
 - Load working notes or old audit reports as current scientific authority
 - Cross a restricted data line in order to “complete” the audit
+- Print a prompt for them to paste to a later coding chat

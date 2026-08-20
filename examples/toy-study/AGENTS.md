@@ -15,6 +15,24 @@ For conventions and skills, use the **paper file if it exists**, otherwise the s
 
 Do not copy the kit into this folder. Override a default by adding that one file here.
 
+## Skill triggers
+
+Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SKILL.md` if the paper has it, otherwise the kit `skills/<name>/SKILL.md`. The phrase is enough — no long prompt. If more than one row could fit, ask which. This table only routes; each skill file holds its own rules.
+
+| If the researcher says (or means) | Skill file | For |
+|---|---|---|
+| Understand the project · Where do we stand · Why did we do X | `skills/understand-research-project/SKILL.md` | Orient from the record, then suggest the next step |
+| Start the project · Initiate (when `layout.yml` is missing) | `skills/start-research-project/SKILL.md` | Set up a paper folder that follows the kit |
+| Develop analysis with safe data · Do T-NNN (write analysis code) | `skills/develop-analysis-with-safe-data/SKILL.md` | Write and test analysis under the data-use rules |
+| Document a research decision · Record a research decision | `skills/document-research-decision/SKILL.md` | Record a consequential choice as a proposed note |
+| Audit the research chain (full chain or one link) | `skills/audit-research-chain/SKILL.md` | Check plan → code → output → manuscript → claim; diagnose only |
+| Contribute to the project | `skills/contribute-to-project/SKILL.md` | File a collaborator's remark in `contributions/` |
+| Consolidate contributions | `skills/consolidate-contributions/SKILL.md` | Review the inbox; recommend a home for each |
+| Update the project record | `skills/update-project-record/SKILL.md` | After acceptance, write it into the shared record |
+| Update the kit · Update the skills (in the kit folder, not a paper) | `skills/update-the-kit/SKILL.md` | Fetch a new kit or skills version into the kit |
+
+Agreeing the analysis plan is **not** a separate skill: propose items under **Understand the project**, the researcher accepts, then **Update the project record** writes the file.
+
 **This paper always has its own:** data-use rules (`policies/data-policy.md`), optional-features ticks (`policies/what-is-on.md`), overview, analysis plan, status, tasks, manuscript, data, scripts, outputs. Decision notes and working notes live under the record path in `layout.yml` (default `07-record/`).
 
 ## Read first

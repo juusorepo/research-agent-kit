@@ -26,7 +26,7 @@ Speak as to a **social science researcher**, not a software developer.
 
 - Keep it short. One opening message is enough.
 - **Ask the interview questions even when you are suggesting defaults.** State each default in parentheses. Then wait. “Defaults are fine” is a valid reply — skipping the questions is not.
-- After an audit, do not leave a wall of next steps. Ask a short numbered list (now / later / notes) with defaults, then wait. Write what they accepted onto the task list (`later` if they said later) so they do not have to remember.
+- After an audit, the full report is the saved file. In chat: compact status, a short what holds / what does not, then a numbered list (now / later / notes) with defaults. Wait. Write what they accepted onto the task list (`later` if they said later). Next work is **Do T-004** in a new chat — not a prompt to paste.
 - If they already opened a project folder, keep that name. Only if you are inside the kit and they did not name a folder, the default is **paper-1**.
 - The lead researcher’s name is in the kit file `researcher.md`. Ask only if `Name:` is still empty, and write it there. Do not ask again for each paper.
 - The research folder should feel like their project. Do not present kit internals (`SPEC`, tests, templates) as their files.

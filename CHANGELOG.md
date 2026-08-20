@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.5 — 2026-08-20
+
+A short phrase is enough. The paper `AGENTS.md` now lists which phrase opens which skill (Understand the project, Audit the research chain, Record a research decision, and the rest). How each skill works is still only in that skill file. Each skill’s short description names the same phrase, so tools that match descriptions and tools that read the table agree.
+
+## 0.2.4 — 2026-08-20
+
+After an audit, the full report is the saved file. Chat stays short: what holds, the four links, then a numbered list with defaults. Findings may name the kind of work; they do not draft a patch or a prompt to paste into a coding chat. Next work is **Do T-004**. What is agreed (plan and accepted notes) is always read first; a stale STATUS line is only in scope when it changes that.
+
 ## 0.2.3 — 2026-08-18
 
 The example paper follows the kit for skills (no extra copy in the paper). Agreeing analyses is a next step after Understand the project — not a separate skill. The Quarto helpers follow the folder map. Restricted data remains a rule the assistant follows; it is not a lock on the files.
