@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # Start the project
@@ -118,7 +118,7 @@ Copy **only** this list, from the **kit** paths on the left:
 9. `policies/data-policy.md` and `policies/what-is-on.md` (this paper’s rules) unless they already exist
 10. `templates/decisions/INDEX.md` → `07-record/decisions/INDEX.md` (or the layout `decisions` path); `templates/decision-note.md` → `RDR-000-template.md` in that folder
 11. `templates/contributions/` → the layout `contributions` path; `templates/notes/README.md` → the layout `notes` path; `templates/audits/README.md` → the layout `audits` path
-12. `templates/project/data-raw-README.md` → `01-data/raw/README.md`
+12. `templates/project/data-raw-README.md` → `01-data/raw/README.md`; `templates/project/data-processed-README.md` → `01-data/processed/README.md`
 13. Quarto (or their format) from `templates/manuscript/<format>/` → `05-outputs/manuscript/` (or the layout `manuscript` path). If they already have a draft there, keep theirs. Copy `templates/review-copy.yml` into that manuscript folder unless a `review-copy.yml` already exists.
 14. One R starting script from `templates/analysis/r/` → `02-scripts/` unless that folder already has scripts
 
@@ -132,7 +132,7 @@ First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) p
 
 1. If they said they have existing files (or you already found some): ask them to put protocol/prereg/plan in `06-docs/` and a draft paper in `05-outputs/manuscript/` unless the files are already in the folder or attached in chat. You may move chat attachments into those folders.
 2. **Read** `06-docs/`, `05-outputs/manuscript/`, any `ANALYSIS_PLAN.md`, overview, and attachments. Say what you found. Do not invent files. Do not treat copied files as already agreed.
-3. Refresh `STATUS.md` from what you actually saw (“existing draft copied; analysis plan not yet agreed” or “empty project”).
+3. Rewrite `STATUS.md` in place under the template headings from what you actually saw (“existing draft copied; analysis plan not yet agreed” or “empty project”). Do not append a dated section.
 4. **Then** decide next steps (Understand the project). Next steps must follow the files you read. Do not offer a blank-project script if they already have a plan or draft.
 5. If they are still in the kit folder, tell them to **open the new project folder** (keep the kit available) and say **Understand the project**.
 6. If you are already in the project folder and can read the kit, run **Understand the project** next.

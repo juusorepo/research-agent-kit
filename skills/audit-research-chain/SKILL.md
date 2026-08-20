@@ -4,7 +4,7 @@ description: Audit whether scientific meaning held from agreed analysis plan thr
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run.
 metadata:
-  version: "0.2.4"
+  version: "0.2.5"
 ---
 
 # Audit the research chain

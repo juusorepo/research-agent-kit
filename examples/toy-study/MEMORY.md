@@ -5,7 +5,7 @@ These files are small on purpose. Do not turn them into logs.
 | File | Role | How to treat it |
 |---|---|---|
 | `RESEARCH_CONTEXT.md` | Stable orientation: problem, questions, design, data, constructs, terms, constraints | Canonical. Rewrite in place. |
-| `STATUS.md` | Hot memory: stage, active work, blockers, open scientific questions | Hint only. The analysis plan wins if they disagree. |
+| `STATUS.md` | Hot memory: stage, active work, blockers, open scientific questions | Hint only. Rewrite in place under the template headings. The analysis plan wins if they disagree. |
 | `TASKS.md` | Remaining work. Kind of work is the role for the next run. | Temporary. Not the analysis plan. |
 | `ANALYSIS_PLAN.md` | What analyses are **agreed** | Canonical. Agents propose; you accept. |
 | `decisions/` | Research decision notes for important choices | Canonical once **accepted**. `INDEX.md` is a compact list, not a narrative. |

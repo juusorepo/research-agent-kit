@@ -41,6 +41,8 @@ Look especially for:
 
 - synthetic or development results presented as real
 - a draft output (`status: provisional`) treated as approved
+- a result file with no sidecar metadata
+- analysis inputs pointing at raw data (conversion may read raw; it must write processed)
 - `analysis_ref` pointing at the wrong or missing plan item
 - `produced_by` pointing at a script that does not implement that analysis
 - unexplained numbers (no metadata)

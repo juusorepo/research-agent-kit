@@ -4,7 +4,7 @@ description: Write and test analysis under the project's data-use rules. Use whe
 license: MIT
 compatibility: Requires a project filesystem. R is needed only when running R scripts.
 metadata:
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Develop analysis with safe data
@@ -21,9 +21,31 @@ This skill is for **write analysis code** (and draft outputs). If the assigned r
 
 Restricted data: you may write scripts. **run on real data** is the authorised analyst, not this chat.
 
+## Inputs
+
+`01-data/raw` is original files only. Do not overwrite them. Conversion and cleaning write to `01-data/processed` (layout path `data_processed`). Analysis scripts and configs read **processed**, never raw. Metadata and codebooks may live under `01-data/metadata`.
+
+## Outputs
+
+Canonical tables and figures go in the layout output folders. Pilots, smokes, and throwaways go under a `_dev` folder there (for example `05-outputs/tables/_dev/`). Do not leave them next to results a later search would treat as real.
+
+If a file should go away and delete fails (common on Windows / OneDrive), move it to `99-archive/quarantine/` instead of retrying delete.
+
+If this project uses a canonical unit id (study, country, wave, and so on), that id is a **column** on derived tables. The filename is only a hint.
+
+## Keys
+
+Do not put keys in chat, in committed configs, or in the manuscript. Inject them at run time from the environment (`.env` / `.Renviron`, already gitignored). Do not commit files that contain keys.
+
+## Output metadata
+
+Every result file needs a **sidecar** next to it (same stem, `.yml`), using `templates/output-metadata.yml`. Default `status: provisional`. Required fields: `id`, `status`, `source`, `analysis_ref`, `produced_by`, `privacy_control`. Set `run_by` when a person ran it. Follow this project’s identifier and small-cell rules — the kit does not ban country or institution names unless the policy does.
+
+Do not treat a table without a sidecar as an approved result.
+
 ## Always allowed
 
-Explore and draft under `data_access`. Write **draft** outputs (`status: provisional`) with output metadata (`id`, `status`, `source`, `produced_by`, `privacy_control`).
+Explore and draft under `data_access`. Write **draft** outputs (`status: provisional`) with a sidecar metadata file.
 
 ## Implementing
 
@@ -47,6 +69,7 @@ Write the proposed note if needed. **Stop.** Do not implement and interpret in t
 
 - `analysis_ref` is an agreed plan item (a proposal does not count)
 - The run followed `data_access`
+- A sidecar exists for the result file
 - `approved_by` / `approved_at` are set by the **lead researcher**, not by you
 - If `source: real`, `run_by` is set
 - If the policy has `approval_requires_real: true`, do not mark synthetic as approved
@@ -59,12 +82,10 @@ Write the proposed note if needed. **Stop.** Do not implement and interpret in t
 - Copying draft/synthetic numbers into approved files
 - Approving against a proposal
 - Reading restricted row-level real data when `data_access: restricted`
+- Pointing analysis inputs at `01-data/raw` (conversion may read raw; it must write processed)
+- Writing a result file with no sidecar metadata
 - Putting real numbers in the manuscript when there is no qualifying approved result
 
 ## Manuscript
 
 The Quarto file cites **approved** result files only. It must not read row-level data. Do not paste draft or synthetic numbers into Results.
-
-## Output metadata
-
-Use `templates/output-metadata.yml`. Put metadata in the result file or a sidecar. Follow this project’s identifier and small-cell rules — the kit does not ban country or institution names unless the policy does.

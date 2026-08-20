@@ -50,13 +50,22 @@ The project `.gitignore` implements the common cases. This section is the rule.
 
 `restricted` is a **rule** the assistant must follow. It is not a technical lock on the files. Keep row-level real data **outside** this folder and gitignored. A cloud assistant can still send **project text** (overview, analysis plan, drafts) to a vendor. Use a tool your organisation allows. See `policies/ai-policy.md`.
 
+## Raw and processed
+
+`01-data/raw` holds original files and is not overwritten. Conversion and cleaning write to `01-data/processed`. Analysis reads processed only.
+
+## Keys
+
+Do not put keys in chat or in files you commit. Load them at run time from the environment (`.env` / `.Renviron`). Keep them in `secrets/` or equivalent, which is gitignored.
+
 ## Approving a result
 
 A result file may be marked `approved` only when:
 
 1. `analysis_ref` points at an agreed analysis in `ANALYSIS_PLAN.md`
-2. The run followed this file’s `data_access` mode
-3. If `source: real`, `run_by` names the authorised analyst
-4. If `approval_requires_real: true`, `source` must be `real` (synthetic stays a draft output)
+2. A sidecar metadata file sits next to the result (`status` then becomes `approved`)
+3. The run followed this file’s `data_access` mode
+4. If `source: real`, `run_by` names the authorised analyst
+5. If `approval_requires_real: true`, `source` must be `real` (synthetic stays a draft output)
 
 Approval is not an independent audit.

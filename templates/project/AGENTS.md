@@ -66,6 +66,8 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - If they copied existing files and the analysis plan is still empty, draft the overview and plan items from those files **in this reply**, then stop for acceptance. Do not write the overview file until they accept. Do not reconstruct a log of past decisions or past AI use unless they ask to record a specific choice now.
 - If the change would alter design, measurement, sample, analysis, interpretation, or what the project may claim, say **researcher decision needed**, write a proposed research decision note if needed, and **stop**.
 - Follow `data_access`. In `restricted` mode, do not read or run row-level real data.
+- Analysis reads `01-data/processed`, not `01-data/raw`. Raw stays original.
+- Every result file needs a sidecar metadata record (`status: provisional` until approved).
 - Extra files in `docs/` are background. They do not agree an analysis or override an approved result.
 - Google Docs used for co-author review is a **review copy** (snapshot). Accept small wording there, then **Sync the review copy**. Open comments become contributions. The canonical manuscript is the path `manuscript` in `layout.yml`. Word comment ingest is not in this version.
 - Record a material AI-use event only if this paper’s `policies/what-is-on.md` has that box ticked. Default is off. Disclosure in the paper when AI affected reliability is still the researcher’s duty (`policies/ai-policy.md`).

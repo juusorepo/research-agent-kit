@@ -37,7 +37,7 @@ If the data are restricted, agents do not read row-level files. The longer *why*
 | **Contributions** (`07-record/contributions/`) | Inbox from collaborators — proposals until you accept them |
 | **Working notes** (`07-record/notes/`) | Chronological scratchpad — not loaded by default |
 | **Audit reports** (`07-record/audits/`) | A check of the research chain — history, not the analysis plan |
-| **Project status** (`STATUS.md`) | Where are we now? (a snapshot, not the last word) |
+| **Project status** (`STATUS.md`) | Where are we now? (a snapshot you rewrite in place, not a log) |
 | **Tasks** (`TASKS.md`) | What is still to do? Kind of work is the role for the next chat. |
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
 | **AI in research** (`policies/ai-policy.md`) | How this kit sits next to national guidance. A paper may override. |

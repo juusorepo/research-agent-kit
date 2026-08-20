@@ -4,7 +4,7 @@ description: Record an important methodological choice as a proposed research de
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Document a research decision
@@ -26,6 +26,10 @@ Use `decisions/RDR-000-template.md` if present, otherwise `templates/decision-no
 ## Not this skill
 
 “Please add Table 1 to the analysis plan” → write a proposal (`proposals/A-NNN.md`), `decision_ref: —`. No decision note.
+
+## Changing a note that already exists
+
+Rewrite the Decision and Rationale in place. If the old choice is no longer in force, set that note `superseded`, point `supersedes` on the new note, and do not leave the old paragraph as current text above a new one. Acceptance is a separate skill.
 
 ## Must not
 
