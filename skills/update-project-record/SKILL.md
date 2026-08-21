@@ -4,7 +4,7 @@ description: After the lead researcher accepts something, write it into the shar
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.3.1"
+  version: "0.3.2"
 ---
 
 # Update the project record
@@ -59,3 +59,4 @@ If the same heading appears more than once, or the file has accreted dated secti
 - Calling a run clean if propose → implement → interpret happened in one run
 - Writing an AI-use event for understand-the-project orientation
 - Treating an audit report as agreeing an analysis, approving a result, or replacing the analysis plan
+- Aligning this paper to a new kit version (`kit-lock.yml`, paper `AGENTS.md`, `what-is-on.md`). That is **Adjust this project to the new kit version**

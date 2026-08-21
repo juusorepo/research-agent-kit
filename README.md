@@ -105,6 +105,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Update the project record | After you accept something, put it in the right file |
 | Audit the research chain | Check plan → code → output → manuscript → claims. Diagnose only; full report is a file; chat asks what to put on the task list now or later. Next work: **Do T-004**, not a pasted prompt |
+| Adjust this project to the new kit version | After you updated the kit, align this paper’s instructions and version note. Science files stay as they are |
 
 Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own.
 

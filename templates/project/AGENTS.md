@@ -17,7 +17,7 @@ Do not copy the kit into this folder. Override a default by adding that one file
 
 ## Skill triggers
 
-Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SKILL.md` if the paper has it, otherwise the kit `skills/<name>/SKILL.md`. The phrase is enough — no long prompt. If more than one row could fit, ask which. This table only routes; each skill file holds its own rules.
+Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SKILL.md` if the paper has it, otherwise the kit `skills/<name>/SKILL.md`. The phrase is enough — no long prompt. If more than one row could fit, ask which. This table only routes; each skill file holds its own rules. If they say a phrase for a skill that exists in the kit for this paper’s `kit-lock.yml` version, use that skill even if the row is missing from the table.
 
 | If the researcher says (or means) | Skill file | For |
 |---|---|---|
@@ -33,6 +33,7 @@ Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SK
 | Sync the review copy | `skills/sync-review-copy/SKILL.md` | After suggestions are accepted in the Doc, update the manuscript |
 | Review the manuscript · AI review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; not an audit of the research chain |
 | Update the project record | `skills/update-project-record/SKILL.md` | After acceptance, write it into the shared record |
+| Adjust this project to the new kit version | `skills/adjust-project-to-kit/SKILL.md` | Align this paper’s instructions and version note; do not edit science files |
 | Update the kit · Update the skills (in the kit folder, not a paper) | `skills/update-the-kit/SKILL.md` | Fetch a new kit or skills version into the kit |
 
 Agreeing the analysis plan is **not** a separate skill: propose items under **Understand the project**, the researcher accepts, then **Update the project record** writes the file.
@@ -42,7 +43,7 @@ Agreeing the analysis plan is **not** a separate skill: propose items under **Un
 ## Read first
 
 1. `layout.yml` — folder map and `kit_path`
-2. `kit-lock.yml` — kit version this paper was started with
+2. `kit-lock.yml` — kit version this paper follows (started with, or last adjusted to)
 3. This paper’s `policies/what-is-on.md` and `policies/data-policy.md`
 4. Overview, analysis plan, status, tasks (`layout.yml` paths)
 5. `MEMORY.md` if present
