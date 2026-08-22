@@ -1,5 +1,6 @@
 # Draft analysis stub. When data_access is restricted, develop only against
 # synthetic or development data. Do not mark outputs approved from this file.
+# Manuscript tables/figures: displays.R and templates/analysis/manuscript-displays.md.
 
 out_dir <- Sys.getenv("RAK_OUTPUT_DIR", unset = "outputs")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)

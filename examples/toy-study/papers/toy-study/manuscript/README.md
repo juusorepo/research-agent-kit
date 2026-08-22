@@ -12,6 +12,8 @@ Typical chain:
 
 If a result is still a draft, or was produced only from synthetic data, do not cite it here.
 
+Tables and figures in this file follow `templates/analysis/manuscript-displays.md` (APA 7 for the paper). Number and title are the chunk caption, not part of the image. Poster and talk displays are a different destination.
+
 ## Once on this computer
 
 The template uses the [apaquarto](https://github.com/wjschne/apaquarto) format (Word and HTML). From the project folder:

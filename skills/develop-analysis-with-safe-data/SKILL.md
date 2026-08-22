@@ -4,7 +4,7 @@ description: Write and test analysis under the project's data-use rules. Use whe
 license: MIT
 compatibility: Requires a project filesystem. R is needed only when running R scripts.
 metadata:
-  version: "0.1.4"
+  version: "0.1.5"
 ---
 
 # Develop analysis with safe data
@@ -28,6 +28,14 @@ Restricted data: you may write scripts. **run on real data** is the authorised a
 ## Outputs
 
 Canonical tables and figures go in the layout output folders. Pilots, smokes, and throwaways go under a `_dev` folder there (for example `05-outputs/tables/_dev/`). Do not leave them next to results a later search would treat as real.
+
+## Destination (tables and figures)
+
+Default: the display will be used in the **manuscript**. Follow `templates/analysis/manuscript-displays.md` (paper file if they added it, otherwise the kit) and the language folder (`templates/analysis/r/` or `templates/analysis/stata/`).
+
+If they asked for a **poster or a talk**, do not force manuscript APA (larger type, titles on the image, colour for the room are fine). `_dev/` pilots are throwaways; do not spend the run on manuscript polish.
+
+If destination is unclear, ask once (default: manuscript) and **wait**.
 
 If a file should go away and delete fails (common on Windows / OneDrive), move it to `99-archive/quarantine/` instead of retrying delete.
 

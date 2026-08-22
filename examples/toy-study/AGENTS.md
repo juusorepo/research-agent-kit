@@ -13,6 +13,7 @@ For conventions and skills, use the **paper file if it exists**, otherwise the s
 | Skills | `.agents/skills/<name>/` | `skills/<name>/` |
 | R conventions | `templates/analysis/r/` | `templates/analysis/r/` |
 | Stata conventions | `templates/analysis/stata/` | `templates/analysis/stata/` |
+| Tables and figures in the manuscript | `templates/analysis/manuscript-displays.md` | `templates/analysis/manuscript-displays.md` |
 
 Do not copy the kit into this folder. Override a default by adding that one file here.
 

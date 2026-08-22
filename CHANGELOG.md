@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 — 2026-08-22
+
+Tables and figures that go into the **paper** follow a shared APA 7 list. Posters and talks do not. R scripts get a manuscript ggplot helper; the Quarto file supplies the number and title. **Review the manuscript** checks the list as editorial findings. An audit still checks whether a display can be read as evidence; missing italics or extra lines do not fail the two statuses.
+
 ## 0.4.0 — 2026-08-22
 
 Start can choose Stata as well as R. If you chose Stata, you can say **Run approved Stata analysis** to run one named `.do` file for an agreed analysis on an assigned task. Configure this computer’s Stata path; the kit does not guess it. A fresh Stata start records kit 0.4.0 and the full skill list, including this run skill. A non-zero Stata exit is a failed run even if the log looks finished; the helper reports the expected log path and does not approve the result. Word automation is still not in this version.

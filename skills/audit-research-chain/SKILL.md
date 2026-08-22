@@ -4,7 +4,7 @@ description: Audit whether scientific meaning held from agreed analysis plan thr
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run.
 metadata:
-  version: "0.2.6"
+  version: "0.2.7"
 ---
 
 # Audit the research chain
@@ -43,6 +43,8 @@ The saved report, and the compact status in chat, must show **two** statuses:
 2. **Estimand / claim validity** — does the design and evidence support what is claimed?
 
 A project may pass the first and still have ISSUES or NOT VERIFIED on the second. Do **not** flatten the two into one overall PASS. Passing numbers never implies that the claims are supported.
+
+APA table and figure cosmetics (italic titles, vertical lines, typeface) are **not** a third gate. They are for **Review the manuscript**. An ordinary audit still checks whether a display can be read as evidence (see the checklists).
 
 Where this paper’s data-use rules prevent tracing a link (including closed row-level real data), that link is **NOT VERIFIED**. Do not treat the gap as a pass.
 
@@ -122,6 +124,7 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 
 - Repair the work you are auditing
 - Flatten the two gates into one overall PASS
+- Fail Numbers or Claims for APA cosmetics (italic title, vertical lines, typeface)
 - Add data construction unless they asked
 - Start an unassigned task, or another assistant, from this run
 - Treat a draft or synthetic output as an approved result

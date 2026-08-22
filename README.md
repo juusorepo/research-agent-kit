@@ -116,7 +116,7 @@ The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
 You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`. First-level folders stay numbered (`01-data` … `07-record`, `99-archive`). The manuscript sits in `05-outputs/manuscript/` next to figures and tables.
 
-The kit ships a **Quarto manuscript** (APA format) that reads **approved** result files only — the same approach as a quantitative paper that builds tables from those files and includes figures already written to `05-outputs/figures`. It does not read row-level data. `renv` and `{targets}` are later work.
+The kit ships a **Quarto manuscript** (APA format) that reads **approved** result files only — the same approach as a quantitative paper that builds tables from those files and includes figures already written to `05-outputs/figures`. It does not read row-level data. Tables and figures that go into the paper follow the manuscript display list (APA 7); posters and talks do not. `renv` and `{targets}` are later work.
 
 Small extra setup may be needed for a specific tool. That setup lives in the kit `adapters/` folder and only *points* at these files. Papers use `AGENTS.md`. Do not add a `CLAUDE.md` to the research folder.
 

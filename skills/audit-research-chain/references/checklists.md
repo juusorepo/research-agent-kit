@@ -71,6 +71,9 @@ Look especially for:
 - labels or reference groups that do not match the output
 - confidence intervals, p-values, sample sizes, units, scales, or signs reported incorrectly
 - text describing a different analysis from the one that produced the result
+- a table or figure that cannot be read as the result (missing units or axis labels; probability stars or notes that do not match the test)
+
+Do not treat APA cosmetics (italic title, vertical lines, typeface) as a Numbers / reproducibility issue. Those are for **Review the manuscript**.
 
 Do not require a particular manuscript or output format. Use whatever provenance this paper has. If machine-linked citations exist, use them. If they do not, audit as far as possible and state the limit.
 
@@ -86,6 +89,7 @@ This is claim calibration, not copy-editing. Check Results, Discussion, Abstract
 
 Look especially for:
 
+- a caption that claims something the table or figure does not show
 - causal language the design does not support
 - construct overreach
 - population or generalisation overreach
@@ -98,7 +102,7 @@ Look especially for:
 - wording that overstates or understates the magnitude
 - statements contradicted by the reported result
 
-Do not enforce style preferences. Focus on scientific meaning and evidential support.
+Do not enforce style preferences. Missing italics, extra vertical lines, or font choice are **not** audit findings — those belong in **Review the manuscript**. A caption that claims more than the display shows is still in scope here.
 
 Matching numbers on Gate 1 never implies a pass here.
 

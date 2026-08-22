@@ -131,12 +131,13 @@ require_approved <- function(obj, label = "result file") {
 
 p_stars <- function(p) {
   if (is.null(p) || length(p) != 1L || is.na(p)) return("")
-  if (p < 0.001) "***" else if (p < 0.01) "**" else if (p < 0.05) "*" else ""
+  if (p < .001) "***" else if (p < .01) "**" else if (p < .05) "*" else ""
 }
 
 format_p <- function(p) {
   if (is.null(p) || length(p) != 1L || is.na(p)) return("")
-  if (p < 0.001) "<0.001" else sprintf("%.3f", p)
+  if (p < .001) return("< .001")
+  sub("^0\\.", ".", sprintf("%.3f", as.numeric(p)))
 }
 
 format_est_se <- function(estimate, se, digits = 3) {
@@ -152,9 +153,14 @@ format_est_se_p <- function(estimate, se, p, digits = 3) {
 }
 
 style_flextable <- function(ft) {
-  flextable::theme_booktabs(ft) |>
+  # APA 7 three-line table. Format cell text before calling this.
+  themed <- if ("theme_apa" %in% getNamespaceExports("flextable")) {
+    flextable::theme_apa(ft)
+  } else {
+    flextable::theme_booktabs(ft)
+  }
+  themed |>
     flextable::fontsize(size = 10, part = "all") |>
-    flextable::padding(padding = 3, part = "all") |>
     flextable::align(align = "center", part = "header") |>
     flextable::align(j = 1, align = "left", part = "body") |>
     flextable::autofit()
