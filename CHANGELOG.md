@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3 — 2026-08-22
+
+The design note now states plainly that this is not an autonomous paper factory: the assistant may compare, extract, and do assigned work; researchers judge and stay accountable. Specialised methods stay optional, not the default path.
+
 ## 0.3.2 — 2026-08-21
 
 You can **Adjust this project to the new kit version**. The assistant inspects this paper, shows the exact instruction and version-note patches, and waits for a yes. It does not edit the analysis plan, decision notes, outputs, manuscript, or data. Updating the kit still leaves every paper folder untouched until you ask.

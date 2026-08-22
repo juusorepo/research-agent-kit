@@ -19,6 +19,12 @@ A central principle is:
 
 > **Epistemic control is not a property of the AI model. It is a property of the research workflow.**
 
+The kit is not an autonomous paper factory. It is a lightweight, human-governed workflow that makes the research chain easier to inspect.
+
+AI may extract, compare, generate alternatives, and run bounded assigned tasks. Researchers contextualise, judge, decide, and remain accountable for claims.
+
+There is one ordinary route for all projects. Specialised methods are optional extensions a project can turn on later. They are not part of the default path.
+
 Agents may implement, transform, critique, propose, and help verify. Researchers retain control over consequential methodological choices, interpretation, and scientific claims.
 
 For quantitative research, the framework additionally supports a traceable chain:
@@ -449,7 +455,7 @@ The workflow should survive changes in AI vendors and tools.
 
 ### Progressive complexity
 
-Start with a small working core; add collaboration, auditing, formal provenance, and integrations only when needed.
+Start with a small ordinary route. Add specialised methods only when a project turns them on.
 
 ### Cite existing integrity guidance
 
