@@ -9,3 +9,11 @@ run_by:
 approved_by:
 approved_at:
 privacy_control: project-policy
+# Local Stata run (optional; same sidecar, not a second provenance file)
+stata_version:
+command:
+script_hash:
+started_at:
+ended_at:
+run_status:
+log_path:

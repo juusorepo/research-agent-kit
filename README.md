@@ -103,11 +103,12 @@ Say these in chat. The assistant should use ordinary verbs.
 | Review the manuscript | AI pass; findings go to the inbox. Not an audit of the research chain |
 | Document a research decision | Record an important choice (not every Table 1) |
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
+| Run approved Stata analysis | If start chose Stata: run one named `.do` file for an agreed analysis on an assigned **run on real data** task. Configure this computer’s Stata path; do not assume one. Windows first |
 | Update the project record | After you accept something, put it in the right file |
 | Audit the research chain | Check plan → code → output → manuscript → claims. The saved report keeps **two** statuses: whether numbers match, and whether the claims are supported. Matching numbers is not enough. Diagnose only; chat asks what to put on the task list now or later. Next work: **Do T-004**, not a pasted prompt |
 | Adjust this project to the new kit version | After you updated the kit, align this paper’s instructions and version note. Science files stay as they are |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: journal disclosure forms, Word/Stata toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own.
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 

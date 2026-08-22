@@ -12,6 +12,7 @@ For conventions and skills, use the **paper file if it exists**, otherwise the s
 | AI in research | `policies/ai-policy.md` | `policies/ai-policy.md` |
 | Skills | `.agents/skills/<name>/` | `skills/<name>/` |
 | R conventions | `templates/analysis/r/` | `templates/analysis/r/` |
+| Stata conventions | `templates/analysis/stata/` | `templates/analysis/stata/` |
 
 Do not copy the kit into this folder. Override a default by adding that one file here.
 
@@ -24,6 +25,7 @@ Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SK
 | Understand the project · Where do we stand · Why did we do X | `skills/understand-research-project/SKILL.md` | Orient from the record, then suggest the next step |
 | Start the project · Initiate (when `layout.yml` is missing) | `skills/start-research-project/SKILL.md` | Set up a paper folder that follows the kit |
 | Develop analysis with safe data · Do T-NNN (write analysis code) | `skills/develop-analysis-with-safe-data/SKILL.md` | Write and test analysis under the data-use rules |
+| Run approved Stata analysis · Do T-NNN (run on real data, Stata) | `skills/run-approved-stata-analysis/SKILL.md` | Run one named `.do` file for an agreed analysis; Windows first |
 | Document a research decision · Record a research decision | `skills/document-research-decision/SKILL.md` | Record a consequential choice as a proposed note |
 | Audit the research chain (full chain or one link) | `skills/audit-research-chain/SKILL.md` | Check plan → code → output → manuscript → claim; diagnose only |
 | Contribute to the project | `skills/contribute-to-project/SKILL.md` | File a collaborator's remark or an open review issue in `contributions/` |

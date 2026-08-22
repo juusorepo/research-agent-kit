@@ -1,0 +1,3 @@
+# Machine-only. Copy to stata_bin.local.yml in the paper folder (gitignored).
+# Full path to this computer's Stata executable. Do not assume a default path.
+stata_bin: ""

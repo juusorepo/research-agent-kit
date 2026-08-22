@@ -4,7 +4,7 @@ description: Write and test analysis under the project's data-use rules. Use whe
 license: MIT
 compatibility: Requires a project filesystem. R is needed only when running R scripts.
 metadata:
-  version: "0.1.3"
+  version: "0.1.4"
 ---
 
 # Develop analysis with safe data
@@ -17,9 +17,9 @@ Read the tasks file (`layout.yml` path `tasks`). Work only on a row with `assign
 
 If none is assigned, **stop** and ask which task — unless they only asked to explore metadata or write a throwaway draft. Implementing an agreed analysis needs an assigned task.
 
-This skill is for **write analysis code** (and draft outputs). If the assigned row is another kind of work, stop and follow that kind instead.
+This skill is for **write analysis code** (and draft outputs). If the assigned row is **run on real data** and this paper’s `layout.yml` has `code: stata`, use `skills/run-approved-stata-analysis/SKILL.md` instead. If the assigned row is another kind of work, stop and follow that kind.
 
-Restricted data: you may write scripts. **run on real data** is the authorised analyst, not this chat.
+Restricted data: you may write scripts. **run on real data** is the authorised analyst, not this chat — except the Stata run skill, which still must follow this paper’s data-use rules.
 
 ## Inputs
 

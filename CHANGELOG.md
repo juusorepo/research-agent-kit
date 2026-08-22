@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 — 2026-08-22
+
+Start can choose Stata as well as R. If you chose Stata, you can say **Run approved Stata analysis** to run one named `.do` file for an agreed analysis on an assigned task. Configure this computer’s Stata path; the kit does not guess it. A failed run keeps the log and does not change the analysis. Word automation is still not in this version.
+
 ## 0.3.4 — 2026-08-22
 
 An audit now reports **two** statuses in the saved file: whether numbers match, and whether the claims are supported. Passing the first does not mean the second passed. If a link cannot be checked, it is not treated as a pass. **Audit data construction** is available if you ask for it: one central claim, not part of an ordinary check. The project overview has a short Data section for source, access, coverage, and limits; that description does not override the analysis plan or approved results.

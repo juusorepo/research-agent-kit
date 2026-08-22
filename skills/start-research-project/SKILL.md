@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.3.2"
+  version: "0.4.0"
 ---
 
 # Start the project
@@ -112,7 +112,7 @@ Copy **only** this list, from the **kit** paths on the left:
 3. `templates/project/folders.md` → `FOLDERS.md`
 4. `templates/project/MEMORY.md` → `MEMORY.md`
 5. Copy `templates/project/kit-lock.yml` → `kit-lock.yml` (do not invent version numbers)
-6. Chosen layout template → `layout.yml` with `kit_path` set
+6. Chosen layout template → `layout.yml` with `kit_path` set. Set `code: r` or `code: stata` from question 4 (default **R**).
 7. Create every **folder** in `layout.yml` `paths` (not files that do not exist yet)
 8. If missing: overview, analysis plan, status, tasks from `templates/project/` — put the kit `researcher.md` name on the overview. **Skip any of these that already exist.**
 9. `policies/data-policy.md` and `policies/what-is-on.md` (this paper’s rules) unless they already exist
@@ -120,7 +120,7 @@ Copy **only** this list, from the **kit** paths on the left:
 11. `templates/contributions/` → the layout `contributions` path; `templates/notes/README.md` → the layout `notes` path; `templates/audits/README.md` → the layout `audits` path
 12. `templates/project/data-raw-README.md` → `01-data/raw/README.md`; `templates/project/data-processed-README.md` → `01-data/processed/README.md`
 13. Quarto (or their format) from `templates/manuscript/<format>/` → `05-outputs/manuscript/` (or the layout `manuscript` path). If they already have a draft there, keep theirs. Copy `templates/review-copy.yml` into that manuscript folder unless a `review-copy.yml` already exists.
-14. One R starting script from `templates/analysis/r/` → `02-scripts/` unless that folder already has scripts
+14. Analysis stub into `02-scripts/` unless that folder already has scripts: `templates/analysis/r/` if they chose R; `templates/analysis/stata/` (including `01_draft.do` and the path-config example) if they chose Stata. Copy `stata_bin.local.yml.example` only as an example — do not invent a Stata path.
 
 Do **not** copy `skills/`, `how-to-talk.md`, `ai-policy.md`, `CLAUDE.md`, or Cursor rule files. Agents follow `AGENTS.md`. Optional tool pointers live in the kit `adapters/` folder; the researcher can copy one later if a tool requires it.
 
@@ -150,7 +150,7 @@ First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) p
 - Overwrite an existing overview, analysis plan, manuscript, or data
 - Suggest next steps before reading uploaded and copied files
 - Skip writing their name into the kit `researcher.md` when it is still empty
-- Require Python or R
+- Require Python, R, or Stata to start
 - Offer features marked “not in this version”
 - List an AI system as an author
 - Use another person’s unpublished manuscript or plan without permission

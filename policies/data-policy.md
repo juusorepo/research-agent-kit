@@ -50,6 +50,15 @@ The project `.gitignore` implements the common cases. This section is the rule.
 
 `restricted` is a **rule** the assistant must follow. It is not a technical lock on the files. Keep row-level real data **outside** this folder and gitignored. A cloud assistant can still send **project text** (overview, analysis plan, drafts) to a vendor. Use a tool your organisation allows. See `policies/ai-policy.md`.
 
+## Running analysis on this machine
+
+A local Stata run uses the same `data_access` rule as any other run.
+
+- Closed individual-level data (`restricted`): the assistant must not invoke Stata on row-level real data. The authorised analyst may run a named `.do` file on their machine.
+- Permitted data (`agent-accessible`): the assistant may run locally only on the data named in this file.
+
+The path to this computer’s Stata program is machine config (`stata_bin.local.yml` or `STATA_BIN`). It is not a data path. Do not commit it. Do not put restricted data locations in committed `.do` files.
+
 ## Raw and processed
 
 `01-data/raw` holds original files and is not overwritten. Conversion and cleaning write to `01-data/processed`. Analysis reads processed only.

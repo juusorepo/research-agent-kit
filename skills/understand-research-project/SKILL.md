@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use when they sa
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.3.3"
+  version: "0.4.0"
 ---
 
 # Understand the project
@@ -84,6 +84,7 @@ Only after the read above. If the task list has an **open** item that fits, name
 8. Review the manuscript (AI) — findings go to the inbox; not an audit of the research chain
 9. Audit the research chain (if they have a plan and code, outputs, or a manuscript to check)
 10. Adjust this project to the new kit version — **only** if this paper’s `kit-lock.yml` `kit:` is older than the kit `templates/project/kit-lock.yml`
+11. Run approved Stata analysis — **only** if `layout.yml` has `code: stata` and an open task is **run on real data**
 
 ## Must not
 

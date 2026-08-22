@@ -9,6 +9,7 @@ raw_data_path.R
 *_local_only*
 *_full_local_only*
 secrets/
+stata_bin.local.yml
 .DS_Store
 Thumbs.db
 

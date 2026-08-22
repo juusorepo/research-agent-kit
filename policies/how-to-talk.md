@@ -15,6 +15,7 @@ Speak as to a **social science researcher**, not a software developer.
 - “Should we add these to the task list?”, later
 - review copy, suggestion, open comment, “sync the review copy”
 - “adjust this project to the new kit version”
+- “run approved Stata analysis”
 
 ## Avoid in chat (unless the researcher used the word first)
 
