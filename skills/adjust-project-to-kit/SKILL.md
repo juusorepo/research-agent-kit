@@ -4,7 +4,7 @@ description: Align this paper's instructions and version note with the current k
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required.
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # Adjust this project to the new kit version
@@ -119,5 +119,5 @@ Say what changed. Remind them: agreed analyses, decision notes, outputs, manuscr
 - Align the paper without a yes in this chat
 - Fetch GitHub or update the kit folder (that is **Update the kit**)
 - Treat this as **Update the project record**
-- Offer literature search or other features marked “not in this version”
+- Offer features marked “not in this version”
 - Use developer slang in chat

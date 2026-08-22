@@ -1,7 +1,7 @@
-kit: 0.3.2
+kit: 0.3.4
 skills:
-  start-research-project: 0.3.1
-  understand-research-project: 0.3.2
+  start-research-project: 0.3.2
+  understand-research-project: 0.3.3
   develop-analysis-with-safe-data: 0.1.3
   document-research-decision: 0.1.2
   update-project-record: 0.3.2
@@ -11,6 +11,6 @@ skills:
   ingest-review-comments: 0.3.0
   sync-review-copy: 0.3.1
   review-the-manuscript: 0.3.0
-  audit-research-chain: 0.2.5
-  update-the-kit: 0.3.2
-  adjust-project-to-kit: 0.3.2
+  audit-research-chain: 0.2.6
+  update-the-kit: 0.3.3
+  adjust-project-to-kit: 0.3.3

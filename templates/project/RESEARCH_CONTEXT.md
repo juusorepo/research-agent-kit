@@ -10,10 +10,17 @@ Stable orientation. Rewrite in place. Do not append a diary here (use `notes/` f
 
 ## Data
 
+Document what data are available and their limits. This section is **description**. It does not override the analysis plan, accepted research decision notes, or approved result files.
+
 - Data-use rules are in `policies/data-policy.md`
-- What the files are:
+- Source:
+- Access constraints:
 - Unit of analysis:
-- Waves or time points:
+- Coverage (population, period, waves):
+- Construction path (raw → processed):
+- Measurement limitations:
+- Known sample risks:
+- What the files are:
 
 ## Central constructs
 

@@ -4,7 +4,7 @@ These files are small on purpose. Do not turn them into logs.
 
 | File | Role | How to treat it |
 |---|---|---|
-| `RESEARCH_CONTEXT.md` | Stable orientation: problem, questions, design, data, constructs, terms, constraints | Canonical. Rewrite in place. |
+| `RESEARCH_CONTEXT.md` | Stable orientation: problem, questions, design, data and its limits, constructs, terms, constraints | Canonical orientation. Rewrite in place. The Data section describes available data; it does not override the analysis plan, accepted notes, or approved results. |
 | `STATUS.md` | Hot memory: stage, active work, blockers, open scientific questions | Hint only. Rewrite in place under the template headings. The analysis plan wins if they disagree. |
 | `TASKS.md` | Remaining work. Kind of work is the role for the next run. | Temporary. Not the analysis plan. |
 | `ANALYSIS_PLAN.md` | What analyses are **agreed** | Canonical. Agents propose; you accept. |

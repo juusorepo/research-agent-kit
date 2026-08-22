@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.3.1"
+  version: "0.3.2"
 ---
 
 # Start the project
@@ -151,7 +151,7 @@ First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) p
 - Suggest next steps before reading uploaded and copied files
 - Skip writing their name into the kit `researcher.md` when it is still empty
 - Require Python or R
-- Offer literature search or other features marked “not in this version”
+- Offer features marked “not in this version”
 - List an AI system as an author
 - Use another person’s unpublished manuscript or plan without permission
 - Treat an AI-suggested citation as a source already read

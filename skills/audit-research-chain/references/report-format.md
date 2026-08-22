@@ -6,33 +6,47 @@ Use a dated file name, for example `2026-08-17-full.md`. Do not overwrite an old
 
 The saved file is a **record of a check**. It is not the analysis plan, not an approved result, and not a research decision.
 
-In **this chat**, do not reprint the whole report. Write: the compact status (full audit), a few sentences on what holds and what does not, the path of the saved file, then the numbered questions. Wait.
+In **this chat**, do not reprint the whole report. Write: the **two gate statuses**, a few sentences on what holds and what does not, the path of the saved file, then the numbered questions. Wait.
 
 ## Report contents (saved file)
 
-1. Scope audited (full chain, or which link)
-2. Material checked (plan items, scripts, result files, manuscript sections)
-3. Overall assessment (a few sentences)
+1. Scope audited (full chain, which link, or data construction)
+2. Material checked (plan items, scripts, result files, manuscript sections; the one central claim if data construction was asked)
+3. Two gate statuses, then a few sentences of assessment — **not** one overall PASS
 4. Findings, ordered by severity
 5. Links that could not be checked, and why
 6. Recommended next actions — three short groups only: decide now / task list now / later. Not a repeat of every finding.
 
 If plan or accepted notes conflict with STATUS or the task list about what is agreed, record that as a finding. Do not give it a fifth status row.
 
-For a full audit, include this compact status. Do not let it replace the findings.
+For a full audit, include this compact status. Do not let it replace the findings. Do **not** add a combined PASS line.
 
 ```
-Analysis plan → code       PASS / ISSUES / NOT VERIFIED
-Code → output              PASS / ISSUES / NOT VERIFIED
-Output → manuscript        PASS / ISSUES / NOT VERIFIED
-Results → claims           PASS / ISSUES / NOT VERIFIED
+Numbers / reproducibility     PASS / ISSUES / NOT VERIFIED
+Estimand / claim validity     PASS / ISSUES / NOT VERIFIED
+
+Analysis plan → code          PASS / ISSUES / NOT VERIFIED
+Code → output                 PASS / ISSUES / NOT VERIFIED
+Output → manuscript           PASS / ISSUES / NOT VERIFIED
+Results → claims              PASS / ISSUES / NOT VERIFIED
 ```
 
-- **PASS** — this link holds, given what you could check
-- **ISSUES** — at least one substantive finding on this link
-- **NOT VERIFIED** — you could not establish the link (missing provenance, cannot run the code, draft output only). Do not treat this as PASS
+A project may pass numbers / reproducibility and still have ISSUES or NOT VERIFIED on estimand / claim validity.
 
-Do not call an approved result a *verified result*. These labels are about **links**, not about promoting a file.
+If they asked to audit data construction, add one extra line (omit it otherwise):
+
+```
+Data construction             PASS / ISSUES / NOT VERIFIED
+Central claim: …
+```
+
+- **PASS** — this gate or link holds, given what you could check
+- **ISSUES** — at least one substantive finding
+- **NOT VERIFIED** — you could not establish the link (missing provenance, cannot run the code, draft output only, or data-use rules close the files). Do not treat this as PASS
+
+Set each **gate** from the links in that gate: PASS only if every in-scope link is PASS; ISSUES if any is ISSUES; otherwise NOT VERIFIED if any is NOT VERIFIED.
+
+Do not call an approved result a *verified result*. These labels are about **gates and links**, not about promoting a file.
 
 ## Finding fields
 
@@ -41,7 +55,7 @@ Each substantive finding:
 | Field | Content |
 |---|---|
 | id | `AUD-001`, `AUD-002`, … (this report only) |
-| transition | `plan→code`, `code→output`, `output→manuscript`, `results→claims` (more than one if the problem spans links) |
+| transition | `plan→code`, `code→output`, `output→manuscript`, `results→claims`, `data-construction` (more than one if the problem spans links) |
 | severity | `critical` / `major` / `minor` / `note` |
 | where | file and location |
 | expected | what the authoritative file says |

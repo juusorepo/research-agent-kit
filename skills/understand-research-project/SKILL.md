@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use when they sa
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # Understand the project
@@ -55,7 +55,7 @@ Say clearly:
 - Decision notes and AI-use are blank on purpose — the record starts now
 - Do not reconstruct a pre-history of choices or AI use unless they ask to record a **specific** past choice now (one new note, not a log)
 
-If the **overview is empty** and they copied a protocol, preregistration, or draft: **draft the overview in this reply** (chat is enough). Do not offer “fill the overview” as a later task. Do not write `RESEARCH_CONTEXT.md` until they accept.
+If the **overview is empty** and they copied a protocol, preregistration, or draft: **draft the overview in this reply** (chat is enough), including the Data headings in the template. The Data section describes available data and limits; it does not agree an analysis or approve a result. Do not offer “fill the overview” as a later task. Do not write `RESEARCH_CONTEXT.md` until they accept.
 
 If the plan is empty and they copied source files, also draft proposed plan items in this reply (write `proposals/A-NNN.md` if useful), then **stop for acceptance**. After they accept, use **Update the project record**. You may refresh `STATUS.md` to “existing draft copied; analysis plan not yet agreed.” Rewrite the template headings in place. Do not append a dated section.
 
@@ -85,8 +85,6 @@ Only after the read above. If the task list has an **open** item that fits, name
 9. Audit the research chain (if they have a plan and code, outputs, or a manuscript to check)
 10. Adjust this project to the new kit version — **only** if this paper’s `kit-lock.yml` `kit:` is older than the kit `templates/project/kit-lock.yml`
 
-Do not offer a literature search.
-
 ## Must not
 
 - Invent facts or a back-history of decisions / AI use
@@ -97,3 +95,4 @@ Do not offer a literature search.
 - Suggest next steps before reading existing and uploaded files
 - Offer “fill the overview” as a later task when you can draft it now from a copied protocol, preregistration, or draft
 - Write `RESEARCH_CONTEXT.md` before they accept
+- Treat the overview Data section as agreeing an analysis or as an approved result

@@ -1,10 +1,10 @@
 ---
 name: audit-research-chain
-description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Diagnose only; do not repair. Use when they say Audit the research chain, for a full chain check or one link.
+description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Report numbers/reproducibility and estimand/claim validity as separate statuses. Diagnose only; do not repair. Use when they say Audit the research chain, for a full chain check or one link. Use when they say Audit data construction to trace one named central claim (opt-in only).
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run.
 metadata:
-  version: "0.2.5"
+  version: "0.2.6"
 ---
 
 # Audit the research chain
@@ -31,7 +31,20 @@ They ask to audit the research chain, or one link:
 - output and manuscript
 - results and scientific claims
 
-If they do not say, do a **full** audit.
+**Audit data construction** only if they asked for it. It is not part of an ordinary full audit. Trace **one** material central claim. If they did not name the claim, ask which (default: the manuscript’s main empirical claim) and **wait**.
+
+If they do not say a scope, do a **full** audit of the four links. Do not add data construction unless they asked.
+
+## Two gates (never one overall PASS)
+
+The saved report, and the compact status in chat, must show **two** statuses:
+
+1. **Numbers / reproducibility** — do code, outputs, tables, and manuscript agree?
+2. **Estimand / claim validity** — does the design and evidence support what is claimed?
+
+A project may pass the first and still have ISSUES or NOT VERIFIED on the second. Do **not** flatten the two into one overall PASS. Passing numbers never implies that the claims are supported.
+
+Where this paper’s data-use rules prevent tracing a link (including closed row-level real data), that link is **NOT VERIFIED**. Do not treat the gap as a pass.
 
 ## Authority (do not invent a second one)
 
@@ -41,6 +54,7 @@ If they do not say, do a **full** audit.
 | Why was an important choice made? | Accepted research decision notes |
 | How was this result produced and approved? | Output metadata on the result file |
 | What do we currently report? | Canonical manuscript (`paths.manuscript`) |
+| What data are available, and what are the limits? | Overview Data section — **description only**. It does not override the plan, accepted notes, or result files |
 | What changed in the past? | Git — history, not current scientific authority |
 
 Do not infer the intended analysis from the manuscript or the overview when an agreed plan exists.
@@ -67,7 +81,7 @@ If a fix needs a methodological choice, say **researcher decision needed**. Do n
 
 If you cannot establish a link, the status is **NOT VERIFIED** — not PASS, and not a reconstructed story.
 
-Examples: no `produced_by`; the named script is missing; output is still a draft; a manuscript number has no identifiable approved source; you cannot run the code (including **restricted** row-level real data).
+Examples: no `produced_by`; the named script is missing; output is still a draft; a manuscript number has no identifiable approved source; you cannot run the code; this paper’s data-use rules close the files you would need.
 
 Do not re-run against row-level real data when this paper’s data-use rules forbid it. Partial audit from files is still useful — say what you could not check.
 
@@ -77,9 +91,11 @@ Do not assume that a file existing proves the stated script produced it.
 
 Do not only concatenate four checklists. If an earlier link is broken, say so when judging a later one (for example: the manuscript copies a number that came from code that does not match the plan).
 
+Set each gate from the links in that gate. Gate PASS only if every in-scope link for that gate is PASS. If any is ISSUES, the gate is ISSUES. Else if any is NOT VERIFIED, the gate is NOT VERIFIED. Never roll the two gates into one line.
+
 ## After the report
 
-Save the full report under `paths.audits`. In chat, do **not** reprint every finding. Give the compact status, a short “what holds / what does not,” point at the file, then ask a **short numbered list** (defaults in parentheses) and **wait**. Follow [report format](references/report-format.md).
+Save the full report under `paths.audits`. In chat, do **not** reprint every finding. Give the **two gate statuses**, a short “what holds / what does not,” point at the file, then ask a **short numbered list** (defaults in parentheses) and **wait**. Follow [report format](references/report-format.md).
 
 The work list is the tasks file (`layout.yml` path `tasks`). Do not start a second list. Do not end with a block for them to paste into another chat. The task row is the next assignment.
 
@@ -105,9 +121,12 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 ## Must not
 
 - Repair the work you are auditing
+- Flatten the two gates into one overall PASS
+- Add data construction unless they asked
 - Start an unassigned task, or another assistant, from this run
 - Treat a draft or synthetic output as an approved result
 - Call an approved result a *verified result*
 - Load working notes or old audit reports as current scientific authority
+- Treat the overview Data section as overriding the plan, accepted notes, or result files
 - Cross a restricted data line in order to “complete” the audit
 - Print a prompt for them to paste to a later coding chat

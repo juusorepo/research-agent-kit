@@ -4,7 +4,7 @@ description: Fetch a new public kit version into the kit folder, or overwrite sk
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # Update the kit
@@ -132,4 +132,4 @@ If they then want a paper to record the new kit version, wait for that ask. In t
 - Mix keep and public text in the same file
 - Ask them to download ZIP or clone the kit themselves
 - Align a paper’s `kit-lock.yml` or `AGENTS.md` (that is **Adjust this project to the new kit version**)
-- Offer literature search or other features marked “not in this version”
+- Offer features marked “not in this version”

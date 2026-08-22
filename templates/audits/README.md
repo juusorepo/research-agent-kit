@@ -1,6 +1,6 @@
 # Audit reports
 
-Records of checks on the research chain (analysis plan → code → output → manuscript → claims).
+Records of checks on the research chain (analysis plan → code → output → manuscript → claims). The saved report keeps two statuses: whether numbers match, and whether the claims are supported. Do not read one overall pass from the file.
 
 These files are **history**, not current scientific authority. The analysis plan, accepted research decision notes, and approved result files still win.
 

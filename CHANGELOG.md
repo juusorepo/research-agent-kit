@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.4 — 2026-08-22
+
+An audit now reports **two** statuses in the saved file: whether numbers match, and whether the claims are supported. Passing the first does not mean the second passed. If a link cannot be checked, it is not treated as a pass. **Audit data construction** is available if you ask for it: one central claim, not part of an ordinary check. The project overview has a short Data section for source, access, coverage, and limits; that description does not override the analysis plan or approved results.
+
 ## 0.3.3 — 2026-08-22
 
 The design note now states plainly that this is not an autonomous paper factory: the assistant may compare, extract, and do assigned work; researchers judge and stay accountable. Specialised methods stay optional, not the default path.
