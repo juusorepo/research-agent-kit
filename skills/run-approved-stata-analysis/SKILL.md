@@ -27,8 +27,11 @@ Stop unless **all** of these hold:
 2. A task is assigned to this run (`assigned_to_this_run: yes`) and kind of work is **run on real data**
 3. The `.do` file is **named** (in the task, the plan item, or this chat) and lives under the scripts path
 4. `analysis_ref` on the run is an agreed `A-NNN` in the analysis plan
+5. A **named output sidecar** already exists for the result this script is meant to write
 
 If they did not name the `.do` file, ask which one (one question) and **wait**. Do not pick a script to “be helpful.”
+
+If they did not name the sidecar, ask which one (one question) and **wait**. Do not create a sidecar in order to start the run.
 
 If `code:` is not Stata, **stop**. Do not invent an R runner here.
 
@@ -54,39 +57,39 @@ This version is **Windows first**. On Windows, batch run is `/e do "path\to\file
 
 ## Run
 
-1. Record start time.
-2. SHA-256 of the `.do` file if practical.
-3. Create `02-scripts/logs/` (or the scripts path + `/logs`) if needed.
-4. Run only that named file. Do not chain extra scripts. Do not start a second job in the background.
-5. Keep the log where it was written (default: `02-scripts/logs/<stem>.log` if the do-file opened a log there; otherwise the Stata log next to the working directory).
-6. If the log shows a Stata error (`r(#);`) or there is no log, **stop**. Leave the log. Do not edit the `.do` file, the plan, or the data to make the run succeed.
-7. If the run finished, update the **existing** output sidecar (`templates/output-metadata.yml`) for the result this script writes. Default `status: provisional`. Do not mark `approved`.
+1. Confirm the named sidecar exists. If it does not, **stop**. Do not write a new one to start the run.
+2. Record start time.
+3. SHA-256 of the `.do` file if practical.
+4. Create `02-scripts/logs/` (or the scripts path + `/logs`) if needed.
+5. Run only that named file, in the foreground. Pass the helper an explicit expected `-LogPath` and the existing `-SidecarPath`. Do not chain extra scripts. Do not start a second job in the background.
+6. The expected log path is the one you passed (default if omitted: `<scripts>/logs/<stem>.log`). Report **that exact path**. Do not treat a log written somewhere else as success.
+7. If the Stata process exits non-zero, the log shows a Stata error (`r(#);`), or there is no log at the expected path, the run **failed**. Leave the log. Do not edit the `.do` file, the plan, the data, or result files to make the run succeed. A log that says `end of do-file` does not override a non-zero process exit.
+8. After the helper returns, the **existing** sidecar should already hold the technical provenance below. If you filled it by hand from a log, write only those fields. Keep `status: provisional`. Do not mark `approved`. Do not change `approved_by` or `approved_at`.
 
-Sidecar fields to set or update (same file, not a second provenance system):
+Sidecar fields the helper emits for that existing file (same file, not a second provenance system):
 
-- `produced_by` — the `.do` path
-- `analysis_ref` — the agreed `A-NNN`
-- `run_by` — who ran it (the authorised analyst when the assistant must not run)
-- `stata_version` — from the log header if present
 - `command` — the executable and arguments actually used
 - `script_hash` — SHA-256 of the `.do` file
 - `started_at` / `ended_at`
-- `run_status` — `completed` or `failed`
-- `log_path`
+- `run_status` — `completed` or `failed` (process exit, then the log)
+- `log_path` — the expected log path you passed
+- `stata_version` — from the log header if present
 
-If no sidecar exists for the output, write one as **provisional**. Do not invent numbers in the manuscript.
+You may also set `produced_by`, `analysis_ref`, and `run_by` on that same sidecar. Do not invent numbers in the manuscript.
 
 ## After a failed run
 
-In chat: the log path, that the run failed, and that the analysis was not changed. Ask whether they want a **write analysis code** task (new chat, **Do T-NNN**) or to leave it. Wait.
+In chat: the expected log path, that the run failed, and that the analysis was not changed. Ask whether they want a **write analysis code** task (new chat, **Do T-NNN**) or to leave it. Wait.
 
 ## Must not
 
 - Run if the analysis is not already agreed, or if no run-on-real-data task is assigned to this run
+- Run if the named output sidecar does not already exist
 - Run more than one unnamed `.do` file
+- Run a file that is not `.do`, or that sits outside the project scripts path
 - Run against row-level real data when this paper’s rules close that data
 - Assume a Stata install path
 - Start a background or queued job
-- Edit the `.do` file, the analysis plan, or the data to repair a failed run
-- Mark the result `approved`
+- Edit the `.do` file, the analysis plan, the data, or result files to repair a failed run
+- Mark the result `approved` or change `status` away from `provisional`
 - Compile a paper, run Word, or start other assistants
