@@ -17,7 +17,7 @@ Do not copy the kit into this folder. Override a default by adding that one file
 
 ## Skill triggers
 
-Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SKILL.md` if the paper has it, otherwise the kit `skills/<name>/SKILL.md`. The phrase is enough — no long prompt. If more than one row could fit, ask which. This table only routes; each skill file holds its own rules.
+Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SKILL.md` if the paper has it, otherwise the kit `skills/<name>/SKILL.md`. The phrase is enough — no long prompt. If more than one row could fit, ask which. This table only routes; each skill file holds its own rules. If they say a phrase for a skill that exists in the kit for this paper’s `kit-lock.yml` version, use that skill even if the row is missing from the table.
 
 | If the researcher says (or means) | Skill file | For |
 |---|---|---|
@@ -33,6 +33,7 @@ Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SK
 | Sync the review copy | `skills/sync-review-copy/SKILL.md` | After suggestions are accepted in the Doc, update the manuscript |
 | Review the manuscript · AI review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; not an audit of the research chain |
 | Update the project record | `skills/update-project-record/SKILL.md` | After acceptance, write it into the shared record |
+| Adjust this project to the new kit version | `skills/adjust-project-to-kit/SKILL.md` | Align this paper’s instructions and version note; do not edit science files |
 | Update the kit · Update the skills (in the kit folder, not a paper) | `skills/update-the-kit/SKILL.md` | Fetch a new kit or skills version into the kit |
 
 Agreeing the analysis plan is **not** a separate skill: propose items under **Understand the project**, the researcher accepts, then **Update the project record** writes the file.
@@ -42,7 +43,7 @@ Agreeing the analysis plan is **not** a separate skill: propose items under **Un
 ## Read first
 
 1. `layout.yml` — folder map and `kit_path`
-2. `kit-lock.yml` — kit version this paper was started with
+2. `kit-lock.yml` — kit version this paper follows (started with, or last adjusted to)
 3. This paper’s `policies/what-is-on.md` and `policies/data-policy.md`
 4. Overview, analysis plan, status, tasks (`layout.yml` paths)
 5. `MEMORY.md` if present
@@ -66,6 +67,8 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - If they copied existing files and the analysis plan is still empty, draft the overview and plan items from those files **in this reply**, then stop for acceptance. Do not write the overview file until they accept. Do not reconstruct a log of past decisions or past AI use unless they ask to record a specific choice now.
 - If the change would alter design, measurement, sample, analysis, interpretation, or what the project may claim, say **researcher decision needed**, write a proposed research decision note if needed, and **stop**.
 - Follow `data_access`. In `restricted` mode, do not read or run row-level real data.
+- Analysis reads `01-data/processed`, not `01-data/raw`. Raw stays original.
+- Every result file needs a sidecar metadata record (`status: provisional` until approved).
 - Extra files in `docs/` are background. They do not agree an analysis or override an approved result.
 - Google Docs used for co-author review is a **review copy** (snapshot). Accept small wording there, then **Sync the review copy**. Open comments become contributions. The canonical manuscript is the path `manuscript` in `layout.yml`. Word comment ingest is not in this version.
 - Record a material AI-use event only if this paper’s `policies/what-is-on.md` has that box ticked. Default is off. Disclosure in the paper when AI affected reliability is still the researcher’s duty (`policies/ai-policy.md`).

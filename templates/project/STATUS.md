@@ -1,6 +1,6 @@
 # Project status
 
-Hot memory. Rewrite in place. If this file disagrees with the analysis plan, the **plan** wins.
+Hot memory. Rewrite in place. Use **only** these headings — never duplicate them or add dated sections. If this file disagrees with the analysis plan, the **plan** wins.
 
 ## Current stage
 

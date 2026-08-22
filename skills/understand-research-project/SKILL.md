@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use when they sa
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.3.0"
+  version: "0.3.2"
 ---
 
 # Understand the project
@@ -57,7 +57,7 @@ Say clearly:
 
 If the **overview is empty** and they copied a protocol, preregistration, or draft: **draft the overview in this reply** (chat is enough). Do not offer “fill the overview” as a later task. Do not write `RESEARCH_CONTEXT.md` until they accept.
 
-If the plan is empty and they copied source files, also draft proposed plan items in this reply (write `proposals/A-NNN.md` if useful), then **stop for acceptance**. After they accept, use **Update the project record**. You may refresh `STATUS.md` to “existing draft copied; analysis plan not yet agreed.”
+If the plan is empty and they copied source files, also draft proposed plan items in this reply (write `proposals/A-NNN.md` if useful), then **stop for acceptance**. After they accept, use **Update the project record**. You may refresh `STATUS.md` to “existing draft copied; analysis plan not yet agreed.” Rewrite the template headings in place. Do not append a dated section.
 
 If they already have a filled analysis plan or a near-final draft, do not offer “fill the overview” as if nothing exists. Offer the matching next step (map the existing plan into agreed items, or continue analysis, or work from approved results).
 
@@ -83,6 +83,7 @@ Only after the read above. If the task list has an **open** item that fits, name
 7. Prepare a review copy / ingest open comments / sync the review copy (if they are using a Google Doc with co-authors)
 8. Review the manuscript (AI) — findings go to the inbox; not an audit of the research chain
 9. Audit the research chain (if they have a plan and code, outputs, or a manuscript to check)
+10. Adjust this project to the new kit version — **only** if this paper’s `kit-lock.yml` `kit:` is older than the kit `templates/project/kit-lock.yml`
 
 Do not offer a literature search.
 

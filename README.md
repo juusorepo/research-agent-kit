@@ -37,7 +37,7 @@ If the data are restricted, agents do not read row-level files. The longer *why*
 | **Contributions** (`07-record/contributions/`) | Inbox from collaborators — proposals until you accept them |
 | **Working notes** (`07-record/notes/`) | Chronological scratchpad — not loaded by default |
 | **Audit reports** (`07-record/audits/`) | A check of the research chain — history, not the analysis plan |
-| **Project status** (`STATUS.md`) | Where are we now? (a snapshot, not the last word) |
+| **Project status** (`STATUS.md`) | Where are we now? (a snapshot you rewrite in place, not a log) |
 | **Tasks** (`TASKS.md`) | What is still to do? Kind of work is the role for the next chat. |
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
 | **AI in research** (`policies/ai-policy.md`) | How this kit sits next to national guidance. A paper may override. |
@@ -105,6 +105,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Update the project record | After you accept something, put it in the right file |
 | Audit the research chain | Check plan → code → output → manuscript → claims. Diagnose only; full report is a file; chat asks what to put on the task list now or later. Next work: **Do T-004**, not a pasted prompt |
+| Adjust this project to the new kit version | After you updated the kit, align this paper’s instructions and version note. Science files stay as they are |
 
 Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: literature search, journal disclosure forms, Word/Stata toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own.
 

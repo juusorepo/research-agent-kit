@@ -1,15 +1,23 @@
 # Project status
 
-A disposable snapshot. If this file disagrees with the analysis plan, the **plan** wins.
+A disposable snapshot. Rewrite in place under these headings only. If this file disagrees with the analysis plan, the **plan** wins.
 
-## Where we are
+## Current stage
 
 Draft script and a draft output exist for A-001. No approved result yet.
 
-## Open decisions
+## Active work
 
 None.
 
-## Notes
+## Blockers
 
-STATUS is a hint only.
+None.
+
+## Unresolved scientific questions
+
+None.
+
+## Recently completed
+
+None.

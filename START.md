@@ -62,3 +62,11 @@ Update the skills from https://github.com/juusorepo/research-agent-kit
 ```
 
 The assistant must not change any paper folder. On a full kit update it must not overwrite your name, how-to-talk, or R templates if you asked to keep them. **Update the skills** overwrites the skills folder only.
+
+A paper still on an older kit version? Open that **paper** folder (keep the kit available) and paste:
+
+```
+Adjust this project to the new kit version
+```
+
+The assistant inspects this paper, shows the exact proposed changes to instructions and the version note, and waits. It must not edit the analysis plan, decision notes, outputs, manuscript, or data.

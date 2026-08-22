@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.2 — 2026-08-21
+
+You can **Adjust this project to the new kit version**. The assistant inspects this paper, shows the exact instruction and version-note patches, and waits for a yes. It does not edit the analysis plan, decision notes, outputs, manuscript, or data. Updating the kit still leaves every paper folder untouched until you ask.
+
+## 0.3.1 — 2026-08-20
+
+Acceptance is one routine: the decision note, who accepted it and when, the plan’s link to that note, the matching task, and STATUS are updated together. STATUS keeps five headings and is rewritten in place. Analysis reads processed data, not raw originals. Every result file needs a sidecar metadata record (draft until you approve it). Pilots stay in a `_dev` folder; if a file cannot be deleted, it goes to quarantine. Keys stay out of chat and out of committed files.
+
 ## 0.3.0 — 2026-08-20
 
 Co-authors can work in a **Google Docs review copy**. Small wording is accepted there (like track changes), then you **sync** once back to the paper. Leftover **open comments**, journal points, and an **AI manuscript review** land in the same contributions inbox — not a second reviews folder, and not one file per comma. Word comment ingest is not in this version. Google’s Docs tools, if the assistant has them, are optional; a pasted comment list still works.

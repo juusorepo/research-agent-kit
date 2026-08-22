@@ -4,7 +4,7 @@ description: Fetch a new public kit version into the kit folder, or overwrite sk
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.2.2"
+  version: "0.3.2"
 ---
 
 # Update the kit
@@ -41,13 +41,13 @@ If both kit and paper are open: work only in the kit path.
 
 ## Must not touch
 
-- Any **paper** folder next to the kit (overview, analysis plan, decisions, data, scripts, manuscript)
+- Any **paper** folder next to the kit (overview, analysis plan, decisions, data, scripts, manuscript, `kit-lock.yml`, `AGENTS.md`, `STATUS.md`, `what-is-on.md`)
 
 On a **full** kit update, also leave the **keep list** (below).
 
 On **Update the skills**, overwrite `skills/` even if a skill file was edited locally. Touch nothing else.
 
-Do not copy the kit into a paper. Do not update a paper’s `kit-lock.yml` in this skill. That is a later, separate step if they ask.
+Do not copy the kit into a paper. Do not update a paper’s `kit-lock.yml` in this skill. If they then want this paper aligned, they say **Adjust this project to the new kit version** in the paper.
 
 ---
 
@@ -108,7 +108,7 @@ Keep `researcher.md`, how-to-talk, R templates, and all paper folders. Do not ed
 3. In one short message, say what you will **keep** and what you will **replace**. If a keep-file also changed upstream, stop and wait. Otherwise continue (their “Update the kit” is enough).
 4. Copy only the replace paths into **this** kit folder. Leave keep files as they are.
 5. Remove the temporary folder. Delete workshop files if present.
-6. Say what changed (new skills, new templates). Remind them: papers still follow this kit; a paper file overrides the same path. Updating a paper’s version note (`kit-lock.yml`) is optional and only if they ask.
+6. Say what changed (new skills, new templates). Remind them: papers still follow this kit; a paper file overrides the same path. To record the new kit version on a paper, they open that paper and say **Adjust this project to the new kit version**.
 
 Do not require them to copy files by hand.
 
@@ -118,7 +118,7 @@ Do not require them to copy files by hand.
 
 Shared conventions they kept still apply. New skills are available on the next request (paper file if it exists, otherwise the kit). Do not copy skills into papers.
 
-If they then want a paper to record the new kit version, wait for that ask. Use **Update the project record** only in the paper, and only for `kit-lock.yml` plus a status line — not for science files.
+If they then want a paper to record the new kit version, wait for that ask. In the **paper**, use **Adjust this project to the new kit version**. Do not use **Update the project record** for kit versions.
 
 ---
 
@@ -131,4 +131,5 @@ If they then want a paper to record the new kit version, wait for that ask. Use 
 - Start a paper, fill an overview, or edit an analysis plan
 - Mix keep and public text in the same file
 - Ask them to download ZIP or clone the kit themselves
+- Align a paper’s `kit-lock.yml` or `AGENTS.md` (that is **Adjust this project to the new kit version**)
 - Offer literature search or other features marked “not in this version”

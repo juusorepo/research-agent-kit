@@ -14,6 +14,7 @@ Speak as to a **social science researcher**, not a software developer.
 - task list, kind of work, “Do T-004”
 - “Should we add these to the task list?”, later
 - review copy, suggestion, open comment, “sync the review copy”
+- “adjust this project to the new kit version”
 
 ## Avoid in chat (unless the researcher used the word first)
 
@@ -22,6 +23,7 @@ Speak as to a **social science researcher**, not a software developer.
 - “verified result” for an approved file
 - RDR, epistemic checkpoint
 - queue, ticket, handoff
+- migrate, upgrade (for a kit version)
 
 ## Interview style
 
