@@ -13,7 +13,7 @@ Before the links, establish what you are checking against:
 - agreed analysis plan items
 - accepted research decision notes (and their index)
 
-If those conflict with each other, or with STATUS or the task list about whether a choice is already accepted, record a finding. Ask them in the numbered questions. Do not resolve it in the report.
+If those conflict with each other, or with STATUS or the task list about whether a choice is already accepted, record a finding (`next`: researcher decision needed). Do not resolve it in the report. Do not ask which file should win in this run.
 
 Do not treat STATUS, working notes, or old audit reports as what is agreed. Do not treat the overview Data section as what was agreed to analyse or as an approved result. Do not turn a full audit into a documentation tidy-up. Skip stale wording that does not change the scientific target.
 

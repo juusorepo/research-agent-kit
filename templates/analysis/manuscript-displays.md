@@ -57,4 +57,5 @@ If destination is unclear, ask once (default: manuscript) and wait.
 
 - **Writing analysis code** — follow it when the output will be cited in the paper. Language how-to: `templates/analysis/r/` (R) or `templates/analysis/stata/` (Stata how-to later; the list still applies).
 - **Review the manuscript** — editorial check against this list. Findings go to the inbox. Not an audit.
+- **Audit APA presentation** — the same list on the **rendered** Word file and a PDF exported from it (clipping, notes, heading order). Not the research chain.
 - **Audit the research chain** — check whether the display can be read as evidence (numbers, units, notes that match the test, caption vs claim). Do not fail the two audit statuses for missing italics or an extra vertical line.

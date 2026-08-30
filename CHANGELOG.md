@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.4.5 — 2026-08-30
+
+The assistant does not invent bibliography records or citation keys. `references.bib` comes from a Zotero (or other) export. If the file is empty, it asks for that export first, then matches `[@key]` in the paper. A paper chat may propose kit wording as a note; it does not edit the kit folder.
+
+## 0.4.4 — 2026-08-30
+
+You can say **Audit APA presentation** (or **Check tables and figures in Word**). The assistant checks the rendered Word file and a PDF exported from it: whether the render is intact, and whether tables, figures, and the manuscript frame hold. Four statuses, not one overall pass. Missing Word or PDF means tables cannot pass from the source file alone. This is not an audit of the research chain and not a peer-style manuscript review. Diagnose only; if anything needs work, one row on the task list.
+
+## 0.4.3 — 2026-08-30
+
+**Prepare a review copy** uploads a Word snapshot you already rendered. If that file is missing or older than the paper, the assistant stops and asks you to render; it does not knit a workaround unless you say to. A new approved result can make the Word file stale even if you did not edit the text. The Google Doc remains a snapshot; the Quarto file remains the paper.
+
+## 0.4.2 — 2026-08-23
+
+After an audit, the assistant writes the report and, if anything needs work, one row on the task list. It does not ask how to fix the findings or wait for you to sort them into now / later / notes. The next chat does that work when you say **Do T-004**.
+
 ## 0.4.1 — 2026-08-22
 
 Tables and figures that go into the **paper** follow a shared APA 7 list. Posters and talks do not. R scripts get a manuscript ggplot helper; the Quarto file supplies the number and title. **Review the manuscript** checks the list as editorial findings. An audit still checks whether a display can be read as evidence; missing italics or extra lines do not fail the two statuses.

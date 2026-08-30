@@ -28,10 +28,11 @@ Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SK
 | Develop analysis with safe data · Do T-NNN (write analysis code) | `skills/develop-analysis-with-safe-data/SKILL.md` | Write and test analysis under the data-use rules |
 | Run approved Stata analysis · Do T-NNN (run on real data, Stata) | `skills/run-approved-stata-analysis/SKILL.md` | Run one named `.do` file for an agreed analysis; Windows first |
 | Document a research decision · Record a research decision | `skills/document-research-decision/SKILL.md` | Record a consequential choice as a proposed note |
-| Audit the research chain (full chain or one link) | `skills/audit-research-chain/SKILL.md` | Check plan → code → output → manuscript → claim; diagnose only |
+| Audit the research chain (full chain or one link) | `skills/audit-research-chain/SKILL.md` | Check plan → code → output → manuscript → claim; diagnose only; write the report and a task if needed |
+| Audit APA presentation · Check tables and figures in Word · APA layout audit | `skills/audit-apa-presentation/SKILL.md` | Layout of the rendered Word/PDF; diagnose only; not the research chain |
 | Contribute to the project | `skills/contribute-to-project/SKILL.md` | File a collaborator's remark or an open review issue in `contributions/` |
 | Consolidate contributions | `skills/consolidate-contributions/SKILL.md` | Review the inbox; recommend a home for each |
-| Prepare a review copy | `skills/prepare-review-copy/SKILL.md` | Google Docs snapshot for co-authors; not the canonical manuscript |
+| Prepare a review copy | `skills/prepare-review-copy/SKILL.md` | Google Docs snapshot from a Word file you rendered; not the canonical manuscript |
 | Ingest review comments | `skills/ingest-review-comments/SKILL.md` | Open Doc comments → inbox; skip accepted suggestions |
 | Sync the review copy | `skills/sync-review-copy/SKILL.md` | After suggestions are accepted in the Doc, update the manuscript |
 | Review the manuscript · AI review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; not an audit of the research chain |
@@ -76,6 +77,8 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - Google Docs used for co-author review is a **review copy** (snapshot). Accept small wording there, then **Sync the review copy**. Open comments become contributions. The canonical manuscript is the path `manuscript` in `layout.yml`. Word comment ingest is not in this version.
 - Record a material AI-use event only if this paper’s `policies/what-is-on.md` has that box ticked. Default is off. Disclosure in the paper when AI affected reliability is still the researcher’s duty (`policies/ai-policy.md`).
 - An AI system is not an author. Do not list one. Do not treat AI-suggested citations as read. Do not use another person’s unpublished manuscript or plan without permission.
+- Do not invent bibliography records or citation keys. The file `references.bib` next to the manuscript comes from their Zotero (or other reference manager) export. If it is empty or a source is missing, ask them to export or attach it first; then put `[@key]` to match those keys. After they overwrite the file, update any `[@…]` that no longer match. Do not invent DOIs, years, or a reference list.
+- Do not edit the kit from this paper. Propose kit wording as a note under the record path (`07-record/notes/`).
 - Work only on a task assigned to this run. They assign it by naming the task (for example **Do T-004**). Kind of work on that row is the role for this run.
 - Do not invent real results. Do not treat draft or synthetic numbers as approved.
 

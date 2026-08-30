@@ -6,7 +6,7 @@ Use a dated file name, for example `2026-08-17-full.md`. Do not overwrite an old
 
 The saved file is a **record of a check**. It is not the analysis plan, not an approved result, and not a research decision.
 
-In **this chat**, do not reprint the whole report. Write: the **two gate statuses**, a few sentences on what holds and what does not, the path of the saved file, then the numbered questions. Wait.
+In **this chat**, do not reprint the whole report. Write: the **two gate statuses**, a few sentences on what holds and what does not, the path of the saved file, and the new task id if you added one. Then stop. Do not ask how to fix the findings.
 
 ## Report contents (saved file)
 
@@ -15,7 +15,7 @@ In **this chat**, do not reprint the whole report. Write: the **two gate statuse
 3. Two gate statuses, then a few sentences of assessment — **not** one overall PASS
 4. Findings, ordered by severity
 5. Links that could not be checked, and why
-6. Recommended next actions — three short groups only: decide now / task list now / later. Not a repeat of every finding.
+6. If a task row was added, name it. Do not list how to repair each finding. The `next` field on each finding is enough.
 
 If plan or accepted notes conflict with STATUS or the task list about what is agreed, record that as a finding. Do not give it a fifth status row.
 
@@ -65,7 +65,7 @@ Each substantive finding:
 
 A finding is an audit observation, **not** a research decision.
 
-If `next` is a task, name the **kind of work**. Do not treat **researcher decision needed** as write analysis code. Notes stay notes — they do not become tasks.
+If `next` names work, name the **kind of work**. Do not treat **researcher decision needed** as write analysis code. Notes stay notes — they do not become tasks.
 
 Do not put an implementation sketch in `next` (script design, extra checks, new metadata fields) unless that design is already agreed.
 
@@ -78,17 +78,18 @@ Do not put an implementation sketch in `next` (script design, extra checks, new 
 
 Do not add more levels.
 
-If the next action is a methodological choice, write **researcher decision needed** in `next`. Do not implement the change in this run.
+If the next action is a methodological choice, write **researcher decision needed** in `next`. Do not implement the change in this run. Do not ask which design to pick.
 
 ## After the report (in chat)
 
-Do not add a second essay. Do not paste a prompt for a later coding chat. Ask a short numbered list, state defaults, **wait**.
+Do not add a second essay. Do not paste a prompt for a later coding chat. Do not ask a numbered list.
 
-Example (only the buckets that apply):
+Example:
 
-1. Draft a research decision note for AUD-001 (standardisation)? (default: yes, proposed only — not accepted)
-2. Keep A-006 and A-007 on T-004? (default: yes)
-3. Add AUD-004–006 to the task list now, or later? (default: later)
-4. Leave AUD-007–009 as notes? (default: yes)
+Numbers / reproducibility: ISSUES. Estimand / claim validity: ISSUES.
 
-“Defaults are fine” is a valid reply. After they answer, write the task list, then stop. If they want the next piece of work: new chat, **Do T-004**. A default in a question does not accept a research decision or close a conflict.
+The plan→code link holds for the main models. Two major findings (AUD-002, AUD-003) need work; the notes stay in the report.
+
+Saved: `07-record/audits/2026-08-23-full.md`. Added **T-010** on the task list.
+
+If they want the next piece of work: new chat, **Do T-010**. That chat reads the report. This chat stops here.

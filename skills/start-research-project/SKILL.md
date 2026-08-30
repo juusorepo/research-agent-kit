@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # Start the project
@@ -131,7 +131,7 @@ First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) p
 ### After folders exist
 
 1. If they said they have existing files (or you already found some): ask them to put protocol/prereg/plan in `06-docs/` and a draft paper in `05-outputs/manuscript/` unless the files are already in the folder or attached in chat. You may move chat attachments into those folders.
-2. **Read** `06-docs/`, `05-outputs/manuscript/`, any `ANALYSIS_PLAN.md`, overview, and attachments. Say what you found. Do not invent files. Do not treat copied files as already agreed.
+2. **Read** `06-docs/`, `05-outputs/manuscript/`, any `ANALYSIS_PLAN.md`, overview, and attachments. Say what you found. Do not invent files. Do not treat copied files as already agreed. If they will cite sources and `references.bib` is still the empty template, ask them to export from Zotero (or attach a `.bib`) before you add citations.
 3. Rewrite `STATUS.md` in place under the template headings from what you actually saw (“existing draft copied; analysis plan not yet agreed” or “empty project”). Do not append a dated section.
 4. **Then** decide next steps (Understand the project). Next steps must follow the files you read. Do not offer a blank-project script if they already have a plan or draft.
 5. If they are still in the kit folder, tell them to **open the new project folder** (keep the kit available) and say **Understand the project**.
@@ -155,3 +155,4 @@ First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) p
 - List an AI system as an author
 - Use another person’s unpublished manuscript or plan without permission
 - Treat an AI-suggested citation as a source already read
+- Invent bibliography records, citation keys, DOIs, or years

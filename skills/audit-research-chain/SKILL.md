@@ -1,10 +1,10 @@
 ---
 name: audit-research-chain
-description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Report numbers/reproducibility and estimand/claim validity as separate statuses. Diagnose only; do not repair. Use when they say Audit the research chain, for a full chain check or one link. Use when they say Audit data construction to trace one named central claim (opt-in only).
+description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Report numbers/reproducibility and estimand/claim validity as separate statuses. Diagnose only; write the report and, if anything needs work, one task. Do not repair or ask how to repair. Use when they say Audit the research chain, for a full chain check or one link. Use when they say Audit data construction to trace one named central claim (opt-in only).
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run.
 metadata:
-  version: "0.2.7"
+  version: "0.2.9"
 ---
 
 # Audit the research chain
@@ -35,6 +35,8 @@ They ask to audit the research chain, or one link:
 
 If they do not say a scope, do a **full** audit of the four links. Do not add data construction unless they asked.
 
+If they asked for APA layout, tables in Word, or a presentation check of the rendered paper, use `skills/audit-apa-presentation/SKILL.md` instead. Do not fold that into this skill.
+
 ## Two gates (never one overall PASS)
 
 The saved report, and the compact status in chat, must show **two** statuses:
@@ -44,7 +46,7 @@ The saved report, and the compact status in chat, must show **two** statuses:
 
 A project may pass the first and still have ISSUES or NOT VERIFIED on the second. Do **not** flatten the two into one overall PASS. Passing numbers never implies that the claims are supported.
 
-APA table and figure cosmetics (italic titles, vertical lines, typeface) are **not** a third gate. They are for **Review the manuscript**. An ordinary audit still checks whether a display can be read as evidence (see the checklists).
+APA table and figure cosmetics (italic titles, vertical lines, typeface) are **not** a third gate here. Source wording is **Review the manuscript**. The rendered Word/PDF is **Audit APA presentation**. An ordinary research-chain audit still checks whether a display can be read as evidence (see the checklists).
 
 Where this paper’s data-use rules prevent tracing a link (including closed row-level real data), that link is **NOT VERIFIED**. Do not treat the gap as a pass.
 
@@ -63,7 +65,7 @@ Do not infer the intended analysis from the manuscript or the overview when an a
 
 **What is agreed** is always in scope. Read the analysis plan and accepted decision notes before judging any link. `STATUS.md` and the task list are not scientific authority.
 
-If authoritative files conflict, **report the conflict**. Do not pick a winner in the report. Ask one numbered question about it (defaults in parentheses) and wait. Their answer is theirs; a default in the question is not an accepted research decision.
+If authoritative files conflict, **report the conflict** as a finding (`next`: **researcher decision needed**). Do not pick a winner. Do not ask which file should win in this run.
 
 Copied protocols and extra docs are background. Draft outputs are not approved results. An audit report is **history**, not a new analysis plan.
 
@@ -71,13 +73,13 @@ Record hygiene (stale STATUS lines, open tasks that only say “accept/reject”
 
 ## Diagnose, do not repair
 
-**Do:** name discrepancies; say when a link cannot be checked; classify severity; say why it matters; point to files; name the **kind of work** for a next action (or **researcher decision needed**).
+**Do:** name discrepancies; say when a link cannot be checked; classify severity; say why it matters; point to files; in the saved report, name the **kind of work** for a next action (or **researcher decision needed**).
 
-**Do not:** edit the analysis plan; accept a research decision; change analysis code; regenerate results; rewrite manuscript claims; mark a finding resolved because you proposed a fix; draft a patch, script, or protocol in this run.
+**Do not:** edit the analysis plan; accept a research decision; change analysis code; regenerate results; rewrite manuscript claims; mark a finding resolved because you proposed a fix; draft a patch, script, or protocol in this run; ask how a finding should be framed or which unagreed design to pick.
 
 A finding may say that implementation should match the agreed sample. It may not specify an unagreed design (how to resume a run, which extra checks to add, which metadata fields to invent) unless that design is already in the plan or an accepted note.
 
-If a fix needs a methodological choice, say **researcher decision needed**. Do not write or accept that decision in this run unless they separately ask to record a research decision.
+If a fix needs a methodological choice, write **researcher decision needed** in that finding’s `next`. Do not write or accept that decision in this run. Do not ask them to choose among designs here.
 
 ## Do not invent missing evidence
 
@@ -97,24 +99,31 @@ Set each gate from the links in that gate. Gate PASS only if every in-scope link
 
 ## After the report
 
-Save the full report under `paths.audits`. In chat, do **not** reprint every finding. Give the **two gate statuses**, a short “what holds / what does not,” point at the file, then ask a **short numbered list** (defaults in parentheses) and **wait**. Follow [report format](references/report-format.md).
+Save the full report under `paths.audits`. Follow [report format](references/report-format.md).
 
-The work list is the tasks file (`layout.yml` path `tasks`). Do not start a second list. Do not end with a block for them to paste into another chat. The task row is the next assignment.
+Then, if anything needs work, add **one** unassigned row on the tasks file (`layout.yml` path `tasks`). Do not start a second list. Do not copy every finding onto the list. Notes stay notes.
 
-Group only in those questions:
+Add that row when either gate is ISSUES or NOT VERIFIED, or when any finding is `critical`, `major`, or `minor`. Do not add a row if both gates are PASS and leftover findings are `note` only. If an open task already points at this same report file, do not add another.
 
-1. **Decide now** — researcher decision needed, or anything that blocks approving results
-2. **Task list now** — already-agreed work they want as `open` (point at an existing task if one covers it)
-3. **Later** — still write a task row with status `later`, so it is not forgotten
-4. **Notes** — default: leave as notes; do not copy them onto the task list
+The row:
 
-**Kind of work** (one): write analysis code · run on real data · record a research decision · update the analysis plan · check the research chain · work on the manuscript. **from**: finding ids (for example `AUD-002`).
+- **task** — address findings in the saved report (name the file)
+- **kind of work** — if every work finding shares one kind, use that; if they differ, use `—` (the later chat reads the report)
+- **from** — finding ids (for example `AUD-002`)
+- **assigned_to_this_run** — `no`
+- **status** — `open`
 
-After they answer: write the accepted rows (`open` or `later`; `assigned_to_this_run` stays `no`). If they asked for a research decision note, draft it as **proposed** and stop. Do not start write-analysis-code in this run. Do not start another assistant. If they want coding, one line: new chat, **Do T-004**.
+**Kind of work** (one, when they share it): write analysis code · run on real data · record a research decision · update the analysis plan · check the research chain · work on the manuscript. **Researcher decision needed** is not write analysis code; if that is the only remaining work, the kind is record a research decision.
 
-If the tasks file has no kind-of-work or status column yet, add them when you write the first proposed row.
+If the tasks file has no kind-of-work or status column yet, add them when you write this row.
 
-Accepted changes later use **Update the project record**.
+In chat, do **not** reprint every finding. Give the **two gate statuses**, a short “what holds / what does not,” the path of the saved file, and the new task id if you added one. Then **stop**.
+
+Do not ask a numbered list. Do not ask how to frame or fix a finding. Do not ask whether to add the task. Do not draft a research decision note. Do not start write-analysis-code in this run. Do not start another assistant. Do not end with a block for them to paste into another chat.
+
+If they want the next piece of work: new chat, **Do T-004** (the row you added). That later chat — not this one — chooses designs, records decisions, and edits files.
+
+Accepted scientific changes later use **Update the project record**.
 
 Do not copy agreed analyses or output metadata into the report beyond what a finding needs.
 
@@ -126,7 +135,8 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 - Flatten the two gates into one overall PASS
 - Fail Numbers or Claims for APA cosmetics (italic title, vertical lines, typeface)
 - Add data construction unless they asked
-- Start an unassigned task, or another assistant, from this run
+- Ask how to frame or fix a finding, or which unagreed design to pick
+- Start an unassigned task, or another assistant, from this run (writing one task *row* is not starting the task)
 - Treat a draft or synthetic output as an approved result
 - Call an approved result a *verified result*
 - Load working notes or old audit reports as current scientific authority

@@ -12,6 +12,8 @@ If they say **Update the skills**: use the same skill, skills-only path. Overwri
 
 If they say **Adjust this project to the new kit version**: they must be in a **paper** folder. Use `skills/adjust-project-to-kit/SKILL.md`. Inspect, propose instruction and version changes, wait. Do not edit science files. If they are still in the kit, stop and ask them to open the paper.
 
+If they are in a **paper** folder and propose a kit change: write a note under that paper’s record path. Do not edit this kit folder from the paper.
+
 Researchers start from `START.md` and `README.md`. A paper file overrides the same path in the kit. How the kit sits next to national guidance is in `policies/ai-policy.md`.
 
 Paper skill phrases (Understand the project, Audit the research chain, Record a research decision, and the rest) live in that paper’s AGENTS.md skill-trigger table — same table as `templates/project/AGENTS.md`. The phrase is enough; do not ask for a long prompt. Each skill file holds its own rules.

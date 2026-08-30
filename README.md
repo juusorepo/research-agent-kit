@@ -97,7 +97,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Understand the project | Where things stand (canonical vs proposal vs note), then what to do next. Agreeing analyses is a next step here: the assistant proposes items, you accept, then the analysis plan is written |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
 | Consolidate contributions | You review the inbox; the assistant recommends, you decide |
-| Prepare a review copy | Google Docs snapshot for co-authors (not the paper file itself) |
+| Prepare a review copy | Google Docs snapshot for co-authors. You render a Word file first; the assistant uploads it. Not the paper file itself |
 | Ingest review comments | Leftover open comments → inbox. Skip wording already accepted in the Doc |
 | Sync the review copy | After you accept suggestions in the Doc, update the manuscript once |
 | Review the manuscript | AI pass; findings go to the inbox. Not an audit of the research chain |
@@ -105,7 +105,8 @@ Say these in chat. The assistant should use ordinary verbs.
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Run approved Stata analysis | If start chose Stata: run one named `.do` file for an agreed analysis on an assigned **run on real data** task. Configure this computer’s Stata path; do not assume one. Windows first |
 | Update the project record | After you accept something, put it in the right file |
-| Audit the research chain | Check plan → code → output → manuscript → claims. The saved report keeps **two** statuses: whether numbers match, and whether the claims are supported. Matching numbers is not enough. Diagnose only; chat asks what to put on the task list now or later. Next work: **Do T-004**, not a pasted prompt |
+| Audit the research chain | Check plan → code → output → manuscript → claims. The saved report keeps **two** statuses: whether numbers match, and whether the claims are supported. Matching numbers is not enough. Diagnose only; if anything needs work, add one task pointing at the report, then stop. Next work: **Do T-004** in a new chat, not a pasted prompt |
+| Audit APA presentation | Layout of the rendered Word file and a PDF exported from it. Four statuses (render, tables, figures, manuscript frame). Not the research chain. Diagnose only |
 | Adjust this project to the new kit version | After you updated the kit, align this paper’s instructions and version note. Science files stay as they are |
 
 Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own.

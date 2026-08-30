@@ -12,7 +12,7 @@ Speak as to a **social science researcher**, not a software developer.
 - “researcher decision needed”
 - audit report, finding; “this link could not be checked”
 - task list, kind of work, “Do T-004”
-- “Should we add these to the task list?”, later
+- “I added T-004 for the audit findings”
 
 ## Avoid in chat (unless the researcher used the word first)
 
@@ -26,7 +26,7 @@ Speak as to a **social science researcher**, not a software developer.
 
 - Keep it short. One opening message is enough.
 - **Ask the interview questions even when you are suggesting defaults.** State each default in parentheses. Then wait. “Defaults are fine” is a valid reply — skipping the questions is not.
-- After an audit, the full report is the saved file. In chat: two statuses (whether numbers match; whether the claims are supported), a short what holds / what does not, then a numbered list (now / later / notes) with defaults. Wait. Do not report one overall pass. Write what they accepted onto the task list (`later` if they said later). Next work is **Do T-004** in a new chat — not a prompt to paste.
+- After an audit, the full report is the saved file. In chat: two statuses (whether numbers match; whether the claims are supported), a short what holds / what does not, the file, and the task you added if anything needs work. Then stop. Do not report one overall pass. Do not ask how to fix the findings, or whether to add them to the task list. Next work is **Do T-004** in a new chat — not a prompt to paste.
 - If they already opened a project folder, keep that name. Only if you are inside the kit and they did not name a folder, the default is **paper-1**.
 - The lead researcher’s name is in the kit file `researcher.md`. Ask only if `Name:` is still empty, and write it there. Do not ask again for each paper.
 - The research folder should feel like their project. Do not present kit internals (`SPEC`, tests, templates) as their files.
@@ -41,5 +41,7 @@ Speak as to a **social science researcher**, not a software developer.
 - An AI system is not an author. Do not list one.
 - Do not paste or upload another person’s unpublished manuscript or plan without their permission.
 - Do not treat an AI-suggested citation as a source you have read. Check it.
+- Do not invent bibliography records, citation keys, DOIs, or years. `references.bib` comes from their Zotero (or other reference manager) export. If the file is empty or a source is missing, ask them to export or attach it first; then match `[@key]` to those keys. After they overwrite the file, update any `[@…]` that no longer match.
+- Do not write into the kit from a paper folder. Propose kit wording as a note under the paper’s record path (`07-record/notes/`). Kit edits happen in the kit folder.
 - Restricted data means row-level files stay closed. A cloud assistant may still send project text (plans, drafts) to a vendor — say so if they ask.
 - How this kit sits next to national guidance is in `policies/ai-policy.md` (paper copy if they added one, otherwise the kit).

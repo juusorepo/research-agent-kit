@@ -8,7 +8,7 @@ The review copy is a **snapshot**. The canonical manuscript is `paths.manuscript
 
 | Skill | Needs from the Doc |
 |---|---|
-| Prepare a review copy | Create or upload a Google Doc from the manuscript; store `file_id` / url in `review-copy.yml` |
+| Prepare a review copy | Upload a Word snapshot they already rendered; store `file_id` / url in `review-copy.yml`. Do not knit unless they ask |
 | Ingest review comments | List **open comment threads**. Do not turn suggestions (deferred edits) into contributions |
 | Sync the review copy | After suggestions are accepted in the Doc, export the text and update the manuscript |
 

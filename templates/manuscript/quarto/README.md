@@ -32,4 +32,12 @@ From the **project** folder (the one that contains `layout.yml`):
 quarto render 05-outputs/manuscript/paper.qmd
 ```
 
+That writes a Word file next to the paper (`paper.docx` with the apaquarto Word format). For co-authors, render that Word file first, then say **Prepare a review copy**. The assistant uploads it as a Google Doc; it does not rebuild the paper unless you ask.
+
+To **Audit APA presentation**, export a PDF from that same Word file (File → Save As → PDF, or Print to PDF). Say the phrase in the **paper** folder. Do not use a Google Docs review copy as the object of that check.
+
+## Bibliography
+
+`references.bib` is their export (Zotero or another manager). Prefer Better BibTeX so keys stay stable. The assistant does not invent records or keys. If the file is empty, they export or attach it first; then citations in the Quarto file use those keys (`[@key]`). After they overwrite the `.bib`, ask the assistant to update any `[@…]` that no longer match.
+
 Edit `paper.qmd` for the text. Change folder names in `layout.yml`; `helpers.R` reads that file.
