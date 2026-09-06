@@ -4,7 +4,7 @@ description: After the lead researcher accepts something, write it into the shar
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # Update the project record
@@ -34,7 +34,7 @@ If any step is still open, acceptance is not finished. Finish it before other wo
 ## Do
 
 - Merge an **accepted** proposal into `ANALYSIS_PLAN.md` (only after the human accepted). They do not have to type the file.
-- After they accept a drafted overview, write it into `RESEARCH_CONTEXT.md`
+- After they accept a drafted overview, write it into `RESEARCH_CONTEXT.md` (including the intellectual anchor if they accepted that wording). Do not invent or average an empty anchor.
 - Fill `accepted_by`, `accepted_at`, `artifacts_changed` on an accepted decision note; set that row’s status in `decisions/INDEX.md`
 - After they accept a contribution: apply the chosen home, then set the contribution `status` to `integrated` or `archived`
 - After they accept a **Sync the review copy**, the manuscript update is already done in that skill; here only refresh `STATUS.md` if still stale

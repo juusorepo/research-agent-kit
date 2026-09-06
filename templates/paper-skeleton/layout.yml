@@ -1,0 +1,35 @@
+kit_layout: 0.1.0
+kit_path: KIT_PATH
+code: r
+manuscript_format: quarto
+preset: numbered
+papers:
+  - id: PAPER_SLUG
+    slug: PAPER_SLUG
+paths:
+  data: 01-data
+  data_raw: 01-data/raw
+  data_processed: 01-data/processed
+  metadata: 01-data/metadata
+  scripts: 02-scripts
+  supplementary: 03-supplementary
+  notebooks: 04-notebooks
+  outputs: 05-outputs
+  outputs_figures: 05-outputs/figures
+  outputs_tables: 05-outputs/tables
+  manuscript: 05-outputs/manuscript
+  review_copy: 05-outputs/manuscript/review-copy.yml
+  docs: 06-docs
+  record: 07-record
+  archive: 99-archive
+  paper_root: .
+  overview: RESEARCH_CONTEXT.md
+  analysis_plan: ANALYSIS_PLAN.md
+  status: STATUS.md
+  tasks: TASKS.md
+  notes: 07-record/notes
+  contributions: 07-record/contributions
+  decisions: 07-record/decisions
+  proposals: 07-record/proposals
+  ai_use: 07-record/ai-use
+  audits: 07-record/audits

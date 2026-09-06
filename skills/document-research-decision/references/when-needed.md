@@ -15,6 +15,8 @@ When unsure, propose a note and stop. **Do not** open a note merely to put Table
 | Write a profiling table | Draft output; not yet in the plan |
 | Approve that table as a result | Need an agreed `A-NNN` first (ordinary item: no note) |
 | Swap linear grade for a knot because a plot “looks bent” | Decision note |
+| Narrow or replace what the paper is for (intellectual anchor) | Decision note |
+| Copy-edit the introduction without changing the contribution | Edit the manuscript |
 | Implement a knot `A-NNN` already names | Implement (already agreed) |
 
 Failure mode: the agent recodes surprise values, runs it, and writes Results as if that were the only possible choice.

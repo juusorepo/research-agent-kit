@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+**Start the project:** after the answers, setup is copy-then-patch from a ready-made paper skeleton (four line patches). The assistant does not read template files and does not use Cursor’s create-project helper. Understand the project is the next message.
+
+The project overview may hold a short **intellectual anchor** (why this paper exists in the researcher’s own terms). The assistant reads it before consequential framing work and flags a narrowing instead of silently smoothing it away. Empty is fine; the assistant does not invent it.
+
+**Explore alternative framings:** when you ask, the assistant generates genuinely different interpretations independently, then stops for you to choose. It does not use fictional personas, and it does not average the alternatives into one wording before you have seen them.
+
 ## 0.4.5 — 2026-08-30
 
 The assistant does not invent bibliography records or citation keys. `references.bib` comes from a Zotero (or other) export. If the file is empty, it asks for that export first, then matches `[@key]` in the paper. A paper chat may propose kit wording as a note; it does not edit the kit folder.

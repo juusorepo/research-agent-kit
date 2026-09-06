@@ -1,0 +1,8 @@
+# Pointer to the current Google Docs review copy. Snapshot only.
+# The canonical manuscript is the path `manuscript` in layout.yml.
+provider: google-docs
+file_id:
+url:
+round:
+updated_at:
+synced_at:

@@ -4,7 +4,7 @@ description: Turn a collaborator's useful remark or an open review issue into a 
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # Contribute to the project
@@ -14,6 +14,8 @@ For collaborators and their assistants. Also used by **Ingest review comments** 
 Write a file in the contributions folder (see `layout.yml` `paths.contributions` if set, else `07-record/contributions/`). Use `contributions/template.md` from the kit (or the paper override). Name it `C-NNN-short-title.md`. Leave `status: proposed`.
 
 Set `source` (`collaborator`, `docs-comment`, `journal-review`, or `ai-review`). If this is a Google Doc comment, set `external_id` and `excerpt`. Do not write a file for a wording **suggestion** that belongs on the review copy.
+
+If they asked to keep alternative framings from **Explore alternative framings**, write **one contribution file per alternative** (`type: interpretation`). Do not merge them into one averaged proposal.
 
 ## Must not
 

@@ -1,0 +1,32 @@
+# Restricted / local-only (share boundary)
+.env
+.env.*
+*.Rproj.user
+.Rhistory
+.RData
+.Renviron
+raw_data_path.R
+*_local_only*
+*_full_local_only*
+secrets/
+stata_bin.local.yml
+.DS_Store
+Thumbs.db
+
+# Raw originals — keep real microdata out of git
+01-data/raw/*
+!01-data/raw/README.md
+!01-data/raw/.gitkeep
+
+# Common restricted extracts — keep real microdata outside the repo
+*.sas7bdat
+# Uncomment if this project must never commit row-level tables:
+# *.csv
+# *.rds
+# *.dta
+
+# Python / R caches
+__pycache__/
+.pytest_cache/
+renv/library/
+.Rproj.user/

@@ -28,11 +28,11 @@ The assistant must see the **kit** (for defaults and skills). A chat that only h
 Start the project
 ```
 
-The assistant finds the kit, writes only into the paper (it will not add files to the kit), asks a short list of questions (with defaults), and waits. If no paper folder is open yet, it creates one next to the kit (default **paper-1**). Numbered science folders (`01-data` … `07-record`, `99-archive`); the paper lives in `05-outputs/manuscript/`.
+The assistant finds the kit, writes only into the paper (it will not add files to the kit), asks a short list of questions (with defaults), and waits. After you answer, setup is copy-then-patch, not a second interview. If no paper folder is open yet, it creates one next to the kit (default **paper-1**). Numbered science folders (`01-data` … `07-record`, `99-archive`); the paper lives in `05-outputs/manuscript/`.
 
 If `researcher.md` has no name yet, add `My name is` once — it is stored in the kit.
 
-Usual case: you already have a protocol, analysis plan, or draft. Put those in `06-docs/` and `05-outputs/manuscript/` (or attach them in chat). The assistant should **read them before** suggesting next steps.
+Usual case: you already have a protocol, analysis plan, or draft. Put those in `06-docs/` and `05-outputs/manuscript/` (or attach them in chat). After the folder exists, say **Understand the project**. The assistant should **read those files before** suggesting next steps.
 
 One folder is one paper unless you say this project has several papers that share data and scripts. Then the numbered data and scripts stay shared; each paper gets its own record under `07-record/<name>/` and manuscript under `05-outputs/<name>/manuscript`.
 
@@ -46,7 +46,7 @@ To override a default for **this paper only**, add that file in the paper (same 
 
 How this kit treats AI in research — and where it does not replace national guidance — is in `policies/ai-policy.md`. The workflow design is in `DESIGN_PRINCIPLES.md`. You can ask to **audit the research chain** (full chain, or one link). The assistant diagnoses; it does not repair. The full report is a file under the record path. It keeps two statuses: whether numbers match, and whether the claims are supported — not one overall pass. If anything needs work, it adds one row on the task list and stops. It does not ask how to fix the findings. A new chat does the next task when you say which one (for example **Do T-004**). Do not paste the audit into that chat. After you have a Word file of the paper, export a PDF from that Word file and say **Audit APA presentation** to check layout (tables, figures, title page, headings). That is not the research-chain check. If start chose Stata, you can later say **Run approved Stata analysis** for one named `.do` file on an assigned run-on-real-data task. Put this computer’s Stata path in `stata_bin.local.yml` (not in git) or `STATA_BIN` — do not assume a path.
 
-Co-author review: render a Word file of the paper first (see the manuscript README), then say **Prepare a review copy**. Accept small wording in the Google Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox.
+Co-author review: render a Word file of the paper first (see the manuscript README), then say **Prepare a review copy**. Accept small wording in the Google Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox. Say **Explore alternative framings** when you want genuinely different interpretations before any combined wording.
 
 New kit version from GitHub? Open the **kit** folder and paste:
 

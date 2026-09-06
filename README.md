@@ -31,7 +31,7 @@ If the data are restricted, agents do not read row-level files. The longer *why*
 | File | Question it answers |
 |---|---|
 | **Folder map** (`layout.yml`) | Where do scripts, outputs, and the manuscript live? (you may change this) |
-| **Project overview** (`RESEARCH_CONTEXT.md`) | What are we studying? What do we know about the data? |
+| **Project overview** (`RESEARCH_CONTEXT.md`) | What are we studying? What do we know about the data? Optional **intellectual anchor**: why this project exists in the researcher’s own terms |
 | **Analysis plan** (`ANALYSIS_PLAN.md`) | What have we *agreed* to analyse and report? |
 | **Research decision notes** (`07-record/decisions/`) | Why did we make important methodological choices? (`INDEX.md` is a short list) |
 | **Contributions** (`07-record/contributions/`) | Inbox from collaborators — proposals until you accept them |
@@ -101,6 +101,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Ingest review comments | Leftover open comments → inbox. Skip wording already accepted in the Doc |
 | Sync the review copy | After you accept suggestions in the Doc, update the manuscript once |
 | Review the manuscript | AI pass; findings go to the inbox. Not an audit of the research chain |
+| Explore alternative framings | Genuinely different interpretations, generated independently, then you choose. Optional. Not for routine editing |
 | Document a research decision | Record an important choice (not every Table 1) |
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Run approved Stata analysis | If start chose Stata: run one named `.do` file for an agreed analysis on an assigned **run on real data** task. Configure this computer’s Stata path; do not assume one. Windows first |
@@ -113,7 +114,7 @@ Optional in this version: a record of material AI use — **off** unless you tic
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
-**Start the project:** get **one kit folder** from GitHub. Start each paper from that kit. The assistant asks the interview questions (with defaults) and waits; then it reads any files you already have before suggesting next steps. The assistant uses a paper file if it exists, otherwise the kit. How it talks is in `policies/how-to-talk.md`.
+**Start the project:** get **one kit folder** from GitHub. Start each paper from that kit. The assistant asks the interview questions (with defaults) and waits; after the answers, setup is copy-then-patch, not a second interview. Understand the project is the next message (it reads any protocol or draft then). The assistant uses a paper file if it exists, otherwise the kit. How it talks is in `policies/how-to-talk.md`.
 
 You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`. First-level folders stay numbered (`01-data` … `07-record`, `99-archive`). The manuscript sits in `05-outputs/manuscript/` next to figures and tables.
 
@@ -127,6 +128,6 @@ Small extra setup may be needed for a specific tool. That setup lives in the kit
 
 See [`START.md`](START.md). Get one kit folder, then start each paper from it. Paper files override the kit when present.
 
-Then fill the overview. If you copied a protocol, preregistration, or draft and the overview is empty, the assistant should draft it **in that reply** and write the file after you accept. The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
+Then fill the overview. If you copied a protocol, preregistration, or draft and the overview is empty, the assistant should draft it **in that reply** and write the file after you accept. It should leave the intellectual anchor for you to dictate — it must not invent why you are doing the paper. The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
 
 **v0.2 does not migrate existing live papers.** A small worked example is in `examples/toy-study`.

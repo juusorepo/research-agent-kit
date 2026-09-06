@@ -4,18 +4,20 @@ description: Retrieve project memory and suggest the next step. Use when they sa
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
 ---
 
 # Understand the project
 
 Orientation and retrieval. Do not create an AI-use event for this skill alone. Do not load everything.
 
+If this chat just copied the paper skeleton (**Start the project**), wait for the **next** message. Do not run this skill in the same turn as that copy.
+
 ## Before you suggest next steps
 
 Read what is already in the folder **and** what they attached in this chat. Do this before the next-step list.
 
-Look for: protocol, preregistration, analysis plan, draft manuscript, codebook, overview. Paths are in `layout.yml` (defaults: `06-docs/`, `05-outputs/manuscript/`). Also any `ANALYSIS_PLAN.md` they already wrote.
+Look for: protocol, preregistration, analysis plan, draft manuscript, codebook, overview (including the intellectual anchor, if written, and any linked framing memo). Paths are in `layout.yml` (defaults: `06-docs/`, `05-outputs/manuscript/`). Also any `ANALYSIS_PLAN.md` they already wrote.
 
 Do not invent files. Do not assume a blank project.
 
@@ -35,7 +37,8 @@ Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-us
 
 | Kind | Where |
 |---|---|
-| Canonical | overview, agreed plan items, **accepted** decision notes, approved results |
+| Canonical | overview (except the intellectual anchor — see below), agreed plan items, **accepted** decision notes, approved results |
+| Researcher-owned | Intellectual anchor in the overview, and any linked framing memo. Preserve unless they explicitly revise it. Not an agreed analysis, approved result, or factual authority |
 | Proposal | `contributions/`, `proposals/`, decision notes still `proposed` |
 | Superseded | decision notes with `status: superseded` |
 | Tentative | `notes/`, `STATUS.md` |
@@ -55,7 +58,7 @@ Say clearly:
 - Decision notes and AI-use are blank on purpose — the record starts now
 - Do not reconstruct a pre-history of choices or AI use unless they ask to record a **specific** past choice now (one new note, not a log)
 
-If the **overview is empty** and they copied a protocol, preregistration, or draft: **draft the overview in this reply** (chat is enough), including the Data headings in the template. The Data section describes available data and limits; it does not agree an analysis or approve a result. Do not offer “fill the overview” as a later task. Do not write `RESEARCH_CONTEXT.md` until they accept.
+If the **overview is empty** and they copied a protocol, preregistration, or draft: **draft the overview in this reply** (chat is enough), including the Data headings and the Intellectual anchor headings in the template. The Data section describes available data and limits; it does not agree an analysis or approve a result. **Do not invent** why they are doing the paper, its distinctive contribution, or what it must not become. Invite them to dictate the intellectual anchor (or point at a longer memo in `06-docs/` and record its path). You may organise wording they dictated; they must accept it. Do not offer “fill the overview” as a later task. Do not write `RESEARCH_CONTEXT.md` until they accept.
 
 If the plan is empty and they copied source files, also draft proposed plan items in this reply (write `proposals/A-NNN.md` if useful), then **stop for acceptance**. After they accept, use **Update the project record**. You may refresh `STATUS.md` to “existing draft copied; analysis plan not yet agreed.” Rewrite the template headings in place. Do not append a dated section.
 
@@ -64,6 +67,7 @@ If they already have a filled analysis plan or a near-final draft, do not offer 
 ## Say back
 
 - What they already copied or uploaded (plan, draft manuscript)
+- Whether an intellectual anchor is written, empty, or only a linked memo
 - Agreed analyses — invent none
 - Which have an approved result
 - Open proposals, contributions, and proposed decisions
@@ -86,6 +90,8 @@ Only after the read above. If the task list has an **open** item that fits, name
 10. Audit APA presentation — **only** if they have a rendered Word file and a PDF exported from it (layout of the paper, not the research chain)
 11. Adjust this project to the new kit version — **only** if this paper’s `kit-lock.yml` `kit:` is older than the kit `templates/project/kit-lock.yml`
 12. Run approved Stata analysis — **only** if `layout.yml` has `code: stata` and an open task is **run on real data**
+13. Explore alternative framings — **only** if they asked for genuinely different interpretations, or the current framing is under dispute. Not for routine analysis or copy-edits
+14. Dictate an intellectual anchor — **only** if the overview exists but that section is empty and they have a distinctive motivation worth preserving. Invite; do not invent it
 
 ## Must not
 
@@ -98,3 +104,5 @@ Only after the read above. If the task list has an **open** item that fits, name
 - Offer “fill the overview” as a later task when you can draft it now from a copied protocol, preregistration, or draft
 - Write `RESEARCH_CONTEXT.md` before they accept
 - Treat the overview Data section as agreeing an analysis or as an approved result
+- Invent the intellectual anchor, or treat an empty one as blocking technical work
+- Treat the intellectual anchor as an agreed analysis, approved result, or something the agent must agree with

@@ -4,7 +4,7 @@ description: Record an important methodological choice as a proposed research de
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Document a research decision

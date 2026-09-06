@@ -1,10 +1,10 @@
 ---
 name: start-research-project
-description: Get the kit from GitHub into one folder, or start a paper that follows the kit with optional paper overrides. Use when they say Copy the Research Agent Kit, Start the project, or Initiate.
+description: Get the kit from GitHub into one folder, or start a paper that follows the kit with optional paper overrides. Use when they say Copy the Research Agent Kit, Start the project, or Initiate. After the start interview, copy the paper skeleton and patch four lines; do not read template files.
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
 ---
 
 # Start the project
@@ -22,7 +22,7 @@ Do **not** say: slug, repo, init, toolchain, agent-accessible, by-paper, data_ac
 
 **Lookup:** paper file if it exists, otherwise the same path in the kit. Do not duplicate the kit into the paper.
 
-**This file is complete.** Do not search workshop files (`dev/`, `SPEC.md`, `tests/`, `scripts/install.py`) or the toy example to learn how to start. Do not guess missing defaults.
+**This file is complete.** Do not search workshop files (`dev/`, `SPEC.md`, `tests/`, `scripts/install.py`) or the toy example to learn how to start. Do not guess missing defaults. Do not treat start as a reading tour of `templates/`.
 
 ---
 
@@ -55,15 +55,15 @@ They only need to say **Start the project**. Do not ask them to name the kit or 
 - **Paper only, and you cannot read the kit:** **stop**. Ask them to open the kit too. Do not fetch GitHub as a substitute (that would skip their conventions).
 - If more than one non-kit folder is open and it is unclear which is this paper, ask once.
 
-Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/`, canonical `skills/`, `how-to-talk.md`, `ai-policy.md`, or `CLAUDE.md` into the paper. The agent file is `AGENTS.md`. Follow the kit `policies/ai-policy.md` unless the paper adds its own.
+Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/` as a whole, canonical `skills/`, `how-to-talk.md`, `ai-policy.md`, or `CLAUDE.md` into the paper. Copy **only** `templates/paper-skeleton/` (below). The agent file is `AGENTS.md`. Follow the kit `policies/ai-policy.md` unless the paper adds its own.
 
 ### 0. Look before you interview
 
-Read what is already here **and** what they attached in this chat (protocol, analysis plan, draft paper, codebook). Do not invent files.
+Read what is already in the **target paper folder** (if it exists) **and** what they attached in this chat (protocol, analysis plan, draft paper, codebook). Do not invent files. Do not read kit template bodies.
 
 If the target folder already has research files, you are starting **from existing work**. Never overwrite overview, analysis plan, manuscript, data, or scripts.
 
-**Usual case:** they already have a protocol, preregistration, analysis plan, or draft paper. Those files are **source material**. Read them before suggesting next steps. Do not treat them as already agreed. We do not back-fill AI use **from now on** unless they opted in. Do not invent old decisions or old AI use.
+**Usual case:** they already have a protocol, preregistration, analysis plan, or draft paper. Those files are **source material**. After the folder exists, put them in place if they are attached. Do not treat them as already agreed. We do not back-fill AI use **from now on** unless they opted in. Do not invent old decisions or old AI use.
 
 ### Interview — always ask, then wait
 
@@ -99,43 +99,64 @@ Do not skip the questions because the defaults are fine. They may answer “defa
 >
 > If the kit already has your name, I will use it.
 
-### After they reply — write files into the **paper** folder
+### After they reply — copy, then patch
 
-Use **numbered** folders (`templates/layout/numbered.yml`) for one paper. If they chose several papers sharing data, use `templates/layout/numbered-multipaper.yml`.
+Do **not** read template bodies. Copy, then patch a few lines. Do not assemble the paper from a per-file list. Do not send the assistant through Cursor’s create-project helper (or any other app step that is not in this skill).
 
-Set `kit_path` in `layout.yml` to their kit folder (relative path). Replace `PAPER_SLUG` and `KIT_PATH`.
+The skeleton is a ready-made numbered paper (one paper, Quarto, R, individual-level data closed, material AI-use notes off).
 
-Copy **only** this list, from the **kit** paths on the left:
+1. Create the paper folder if needed (sibling of the kit, default **paper-1**). If a paper folder is already open, use it. Create the directory only (`mkdir` / `New-Item`). Do not initialise git.
+2. Copy `templates/paper-skeleton/` into that folder with **one** command (block below). Numbered folders are already there.
+3. Apply **four patches only** (search-and-replace in those two files; do not restudy them):
+   - **Paper folder name** — in `layout.yml`, replace `PAPER_SLUG` with that name
+   - **Path to the kit** — in `layout.yml`, replace `KIT_PATH` with a relative path from the paper to the kit (forward slashes)
+   - **Individual-level data allowed or closed** — in `policies/data-policy.md`, keep `restricted` if closed (default); write `agent-accessible` only if they allowed it
+   - **Material AI-use notes on or off** — in `policies/what-is-on.md`, tick the box only if they said yes
+4. Write the kit `researcher.md` name onto the overview Lead researcher line. Skip if that line already has a name.
 
-1. `templates/project/AGENTS.md` → `AGENTS.md`
-2. `templates/project/.gitignore` → `.gitignore`
-3. `templates/project/folders.md` → `FOLDERS.md`
-4. `templates/project/MEMORY.md` → `MEMORY.md`
-5. Copy `templates/project/kit-lock.yml` → `kit-lock.yml` (do not invent version numbers)
-6. Chosen layout template → `layout.yml` with `kit_path` set. Set `code: r` or `code: stata` from question 4 (default **R**).
-7. Create every **folder** in `layout.yml` `paths` (not files that do not exist yet)
-8. If missing: overview, analysis plan, status, tasks from `templates/project/` — put the kit `researcher.md` name on the overview. **Skip any of these that already exist.**
-9. `policies/data-policy.md` and `policies/what-is-on.md` (this paper’s rules) unless they already exist
-10. `templates/decisions/INDEX.md` → `07-record/decisions/INDEX.md` (or the layout `decisions` path); `templates/decision-note.md` → `RDR-000-template.md` in that folder
-11. `templates/contributions/` → the layout `contributions` path; `templates/notes/README.md` → the layout `notes` path; `templates/audits/README.md` → the layout `audits` path
-12. `templates/project/data-raw-README.md` → `01-data/raw/README.md`; `templates/project/data-processed-README.md` → `01-data/processed/README.md`
-13. Quarto (or their format) from `templates/manuscript/<format>/` → `05-outputs/manuscript/` (or the layout `manuscript` path). If they already have a draft there, keep theirs. Copy `templates/review-copy.yml` into that manuscript folder unless a `review-copy.yml` already exists.
-14. Analysis stub into `02-scripts/` unless that folder already has scripts: `templates/analysis/r/` if they chose R; `templates/analysis/stata/` (including `01_draft.do` and the path-config example) if they chose Stata. Copy `stata_bin.local.yml.example` only as an example — do not invent a Stata path.
+If the paper folder already has research files, copy only missing paths. Never overwrite overview, analysis plan, manuscript, data, or scripts.
 
-Do **not** copy `skills/`, `how-to-talk.md`, `ai-policy.md`, `CLAUDE.md`, or Cursor rule files. Agents follow `AGENTS.md`. Optional tool pointers live in the kit `adapters/` folder; the researcher can copy one later if a tool requires it.
+#### Copy command (Windows PowerShell)
 
-Tick the AI-use box in `what-is-on.md` only if they said yes.
+```powershell
+$kit = "<kit folder>"
+$paper = "<paper folder>"
+New-Item -ItemType Directory -Force -Path $paper | Out-Null
+Get-ChildItem -Force -Path (Join-Path $kit "templates\paper-skeleton") |
+  Copy-Item -Destination $paper -Recurse -Force
+```
 
-First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) plus `policies/`. The manuscript lives in `05-outputs/manuscript/`, not as its own top-level folder. Do not put `decisions`, `notes`, `contributions`, `proposals`, `ai-use`, or `audits` at the top level.
+`Get-ChildItem -Force` is required so `.gitignore` is copied.
 
-### After folders exist
+#### Copy command (Unix)
 
-1. If they said they have existing files (or you already found some): ask them to put protocol/prereg/plan in `06-docs/` and a draft paper in `05-outputs/manuscript/` unless the files are already in the folder or attached in chat. You may move chat attachments into those folders.
-2. **Read** `06-docs/`, `05-outputs/manuscript/`, any `ANALYSIS_PLAN.md`, overview, and attachments. Say what you found. Do not invent files. Do not treat copied files as already agreed. If they will cite sources and `references.bib` is still the empty template, ask them to export from Zotero (or attach a `.bib`) before you add citations.
-3. Rewrite `STATUS.md` in place under the template headings from what you actually saw (“existing draft copied; analysis plan not yet agreed” or “empty project”). Do not append a dated section.
-4. **Then** decide next steps (Understand the project). Next steps must follow the files you read. Do not offer a blank-project script if they already have a plan or draft.
+```bash
+mkdir -p "$paper"
+cp -R "$kit/templates/paper-skeleton/." "$paper/"
+```
+
+Run this in the terminal yourself. Do not use Cursor `create_project`. Do not use `move_agent_to_root` as a substitute for the copy. Do not use Python or a per-file copy list.
+
+#### If they did not take the defaults
+
+Copy the matching extra tree. Do not read those files.
+
+- **Several papers** sharing data: copy `templates/layout/numbered-multipaper.yml` onto `layout.yml`, then repeat the kit-path and paper-name patches. Make `07-record/<name>/` and `05-outputs/<name>/manuscript/` as that file maps them.
+- **Word:** copy `templates/manuscript/word/` into `05-outputs/manuscript/`; set `manuscript_format: word` in `layout.yml`.
+- **Markdown:** copy `templates/manuscript/markdown/` into `05-outputs/manuscript/`; set `manuscript_format: markdown` in `layout.yml`.
+- **Stata:** copy `templates/analysis/stata/` into `02-scripts/` (include the path-config example; do not invent a Stata path); set `code: stata` in `layout.yml`. You may remove the R stubs.
+
+Do not add a second skill for a “fast start.”
+
+First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) plus `policies/`. The manuscript lives in `05-outputs/manuscript/` (or `05-outputs/<name>/manuscript` if several papers). Do not put `decisions`, `notes`, `contributions`, `proposals`, `ai-use`, or `audits` at the top level.
+
+### After the folder exists
+
+1. If they attached files in this chat, put protocol / preregistration / plan in `06-docs/` and a draft paper in `05-outputs/manuscript/` unless those files are already there. Keep an existing draft.
+2. If they said they have those files and they are not in the folder, ask them to put them there.
+3. If a protocol or draft is already present, name the files you found. Do not invent a blank-project analysis.
+4. Do **not** run **Understand the project** in this turn. That is the next message, once protocol or draft is in the folder — or they confirm the folder is empty.
 5. If they are still in the kit folder, tell them to **open the new project folder** (keep the kit available) and say **Understand the project**.
-6. If you are already in the project folder and can read the kit, run **Understand the project** next.
 
 ## Must not
 
@@ -146,9 +167,13 @@ First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) p
 - Skip the interview questions, or write folders before they reply
 - Add project files to the kit (except `researcher.md` when the name is still empty)
 - Search SPEC, tests, or `install.py` for how to start
+- Treat start as a reading tour of `templates/`
+- Read template bodies after they reply; copy, then patch
+- Send the assistant through Cursor’s create-project helper (or any app step that is not in this skill)
+- Run **Understand the project** in the same turn as the copy
 - Invent analyses, approve results, or reconstruct a history of old decisions / old AI use
 - Overwrite an existing overview, analysis plan, manuscript, or data
-- Suggest next steps before reading uploaded and copied files
+- Suggest next steps before protocol or draft is in the folder (or they confirm there is none)
 - Skip writing their name into the kit `researcher.md` when it is still empty
 - Require Python, R, or Stata to start
 - Offer features marked “not in this version”

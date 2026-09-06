@@ -96,7 +96,7 @@ Agents may:
 
 Agents should not silently convert their own proposals into accepted scientific decisions.
 
-When a proposed action would materially change the study design, measurement, sample, analysis, interpretation, or claims, the workflow should surface a **researcher decision needed** point.
+When a proposed action would materially change the study design, measurement, sample, analysis, interpretation, claims, or the researcher’s stated intellectual purpose, the workflow should surface a **researcher decision needed** point.
 
 The objective is not constant human approval of trivial actions. Human attention should instead be concentrated on **epistemically consequential transitions**.
 
@@ -129,7 +129,7 @@ Different kinds of research information should not be mixed into a single growin
 
 The framework distinguishes:
 
-* **project overview** — what is currently known about the study;
+* **project overview** — what is currently known about the study; may include a researcher-owned **intellectual anchor** (why the project exists in their terms), which is preserved unless they explicitly revise it;
 * **analysis plan** — analyses the researchers have agreed to perform or report;
 * **research decision notes** — why important choices were made;
 * **tasks** — temporary work still to be completed; kind of work is the role for that run;
@@ -327,6 +327,8 @@ For example:
 **AI proposes a methodological change → implements it → interprets the resulting pattern → revises the manuscript**
 
 Each individual step may appear reasonable, while the overall workflow has allowed the AI to make the scientific decision.
+
+A second, quieter risk is that repeated reasonable revisions make the paper smoother and more conventional, until the researcher’s distinctive motivation is no longer visible. The overview may hold a short **intellectual anchor** for that purpose. When the researcher asks for genuinely different interpretations, those alternatives should be generated independently **before** they are compared or combined.
 
 The framework therefore treats such transitions explicitly.
 
