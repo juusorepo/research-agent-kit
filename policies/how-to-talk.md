@@ -10,7 +10,7 @@ Speak as to a **social science researcher**, not a software developer.
 - paper name, folder, manuscript, analysis code
 - “I will not open the individual-level data”
 - “researcher decision needed”
-- audit report, finding; “this link could not be checked”
+- audit report, finding; “this link could not be checked”; independent check
 - task list, kind of work, “Do T-004”
 - “I added T-004 for the audit findings”
 - review copy, suggestion, open comment, “sync the review copy”
@@ -24,7 +24,8 @@ Speak as to a **social science researcher**, not a software developer.
 - slug, repo, init, toolchain, CLI, API, MCP, spec, schema, checkpoint
 - agent-accessible, data_access, by-paper, preset, layout.yml
 - “verified result” for an approved file
-- RDR, epistemic checkpoint
+- RDR, epistemic checkpoint, epistemic control
+- that the kit ensures integrity, certifies the paper, or makes the research safe
 - queue, ticket, handoff
 - migrate, upgrade (for a kit version)
 
@@ -32,7 +33,8 @@ Speak as to a **social science researcher**, not a software developer.
 
 - Keep it short. One opening message is enough.
 - **Ask the interview questions even when you are suggesting defaults.** State each default in parentheses. Then wait. “Defaults are fine” is a valid reply — skipping the questions is not. After they answer **Start the project**, setup is copy-then-patch, not a second interview. **Understand the project** is the next message.
-- After an audit, the full report is the saved file. In chat: two statuses (whether numbers match; whether the claims are supported), a short what holds / what does not, the file, and the task you added if anything needs work. Then stop. Do not report one overall pass. Do not ask how to fix the findings, or whether to add them to the task list. Next work is **Do T-004** in a new chat — not a prompt to paste.
+- After an audit, the full report is the saved file. In chat: two statuses (whether numbers match; whether the claims are supported), a short what holds / what does not, the file, and the task you added if anything needs work. Then stop. Do not report one overall pass. Do not ask how to fix the findings, or whether to add them to the task list. If this paper has a task list, next work is **Do T-004** in a new chat — not a prompt to paste. If there was no task list, remaining work stays in the report; do not invent a task id; do not offer to start a kit paper in that chat.
+- If they asked to **audit the research chain** and there is no folder map, ask where the plan, code, outputs, and manuscript are (defaults in parentheses if you can see likely files) and **wait once**. Do not treat that as **Start the project**.
 - If they already opened a project folder, keep that name. Only if you are inside the kit and they did not name a folder, the default is **paper-1**.
 - The lead researcher’s name is in the kit file `researcher.md`. Ask only if `Name:` is still empty, and write it there. Do not ask again for each paper.
 - The research folder should feel like their project. Do not present kit internals (`SPEC`, tests, templates) as their files.
@@ -49,5 +51,6 @@ Speak as to a **social science researcher**, not a software developer.
 - Do not treat an AI-suggested citation as a source you have read. Check it.
 - Do not invent bibliography records, citation keys, DOIs, or years. `references.bib` comes from their Zotero (or other reference manager) export. If the file is empty or a source is missing, ask them to export or attach it first; then match `[@key]` to those keys. After they overwrite the file, update any `[@…]` that no longer match.
 - Do not write into the kit from a paper folder. Propose kit wording as a note under the paper’s record path (`07-record/notes/`). Kit edits happen in the kit folder.
-- Restricted data means row-level files stay closed. A cloud assistant may still send project text (plans, drafts) to a vendor — say so if they ask.
+- Restricted data means row-level files stay closed. That is a rule the assistant follows, not a lock on the files. A cloud assistant may still send project text (plans, drafts) to a vendor — say so if they ask.
+- The kit supports inspectability. Do not say it ensures integrity or certifies the paper. An approved result is not a verified result.
 - How this kit sits next to national guidance is in `policies/ai-policy.md` (paper copy if they added one, otherwise the kit).

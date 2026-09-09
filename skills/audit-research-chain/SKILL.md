@@ -1,10 +1,10 @@
 ---
 name: audit-research-chain
-description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Report numbers/reproducibility and estimand/claim validity as separate statuses. Diagnose only; write the report and, if anything needs work, one task. Do not repair or ask how to repair. Use when they say Audit the research chain, for a full chain check or one link. Use when they say Audit data construction to trace one named central claim (opt-in only).
+description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Works with a kit folder map or, if that file is missing, a short intake of where the plan, code, outputs, and manuscript are. Report numbers/reproducibility and estimand/claim validity as separate statuses. Diagnose only; write the report and, if a task list already exists and anything needs work, one task. Do not repair or ask how to repair. Use when they say Audit the research chain, for a full chain check or one link. Use when they say Audit data construction to trace one named central claim (opt-in only).
 license: MIT
-compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run.
+compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run. A kit folder map is not required.
 metadata:
-  version: "0.2.9"
+  version: "0.3.0"
 ---
 
 # Audit the research chain
@@ -19,7 +19,32 @@ If this same chat produced or changed the files you would be checking, **stop**.
 
 Follow [checklists](references/checklists.md) and [report format](references/report-format.md).
 
-Resolve folders from `layout.yml`. Do not assume `02-scripts` or `07-record/`.
+If `layout.yml` is present, resolve folders from it. Do not assume `02-scripts` or `07-record/`.
+
+If `layout.yml` is **missing**, this is an **intake** check. It is not **Start the project**. Do not copy a paper skeleton. Do not write `layout.yml`, an analysis plan, an overview, or a task list.
+
+If the folder you would check is this **kit** (`START.md` and `skills/` at the top), **stop**. Ask which paper or project folder to check.
+
+### Intake (no folder map)
+
+You still need to read this skill from the kit. If you cannot, ask them to open the kit too.
+
+**Four locations.** If they already named or attached them, proceed. Otherwise propose a mapping from files you can see (defaults in parentheses) and **wait once**:
+
+1. What was agreed to analyse? (analysis plan, protocol, preregistration, or “there isn’t a written plan”)
+2. Where is the analysis code?
+3. Where are the result files used in the paper?
+4. Where is the manuscript?
+
+A protocol or draft is **background** unless they say it is what was agreed. Do not invent an analysis plan from the manuscript. If there is no written plan, the plan→code link is **NOT VERIFIED**.
+
+Put the four locations in the saved report under **Where the files were**. Do not write a second folder-map file.
+
+**Data.** If this folder has no data-use rules file, do not open files that look like individual-level or row-level real data. Work from scripts, codebooks, aggregate outputs, and the manuscript. If a link would need those closed files, that link is **NOT VERIFIED**. Default: individual-level files stay closed.
+
+**Save the report** in `audits/` in the folder they asked you to check (create that folder if needed). Dated file name as in the report format.
+
+**After the report.** Do not add a task row unless a tasks file **already exists**. Remaining work stays in the report. In chat: two statuses, what holds / what does not, the saved file, then **stop**. Do not offer to start a kit paper in this run.
 
 ## When
 
@@ -54,14 +79,14 @@ Where this paper’s data-use rules prevent tracing a link (including closed row
 
 | Question | What wins |
 |---|---|
-| What analyses are agreed? | Analysis plan |
-| Why was an important choice made? | Accepted research decision notes |
-| How was this result produced and approved? | Output metadata on the result file |
-| What do we currently report? | Canonical manuscript (`paths.manuscript`) |
+| What analyses are agreed? | Analysis plan — or, on intake, only the file they named as what was agreed. If they said there is none, there is none |
+| Why was an important choice made? | Accepted research decision notes (absent on intake unless they pointed at them) |
+| How was this result produced and approved? | Output metadata on the result file (if none, the code→output link may be NOT VERIFIED) |
+| What do we currently report? | Canonical manuscript (`paths.manuscript`), or the manuscript they named on intake |
 | What data are available, and what are the limits? | Overview Data section — **description only**. It does not override the plan, accepted notes, or result files |
 | What changed in the past? | Git — history, not current scientific authority |
 
-Do not infer the intended analysis from the manuscript or the overview when an agreed plan exists.
+Do not infer the intended analysis from the manuscript or the overview when an agreed plan exists. On intake, do not reconstruct a plan from the manuscript.
 
 **What is agreed** is always in scope. Read the analysis plan and accepted decision notes before judging any link. `STATUS.md` and the task list are not scientific authority.
 
@@ -99,9 +124,9 @@ Set each gate from the links in that gate. Gate PASS only if every in-scope link
 
 ## After the report
 
-Save the full report under `paths.audits`. Follow [report format](references/report-format.md).
+Save the full report under `paths.audits` if `layout.yml` exists; otherwise under `audits/` in the folder you checked. Follow [report format](references/report-format.md).
 
-Then, if anything needs work, add **one** unassigned row on the tasks file (`layout.yml` path `tasks`). Do not start a second list. Do not copy every finding onto the list. Notes stay notes.
+Then, if anything needs work **and a tasks file already exists**, add **one** unassigned row on that file (`layout.yml` path `tasks` when there is a folder map). If there is no tasks file, do not create one. Do not start a second list. Do not copy every finding onto the list. Notes stay notes.
 
 Add that row when either gate is ISSUES or NOT VERIFIED, or when any finding is `critical`, `major`, or `minor`. Do not add a row if both gates are PASS and leftover findings are `note` only. If an open task already points at this same report file, do not add another.
 
@@ -121,7 +146,7 @@ In chat, do **not** reprint every finding. Give the **two gate statuses**, a sho
 
 Do not ask a numbered list. Do not ask how to frame or fix a finding. Do not ask whether to add the task. Do not draft a research decision note. Do not start write-analysis-code in this run. Do not start another assistant. Do not end with a block for them to paste into another chat.
 
-If they want the next piece of work: new chat, **Do T-004** (the row you added). That later chat — not this one — chooses designs, records decisions, and edits files.
+If they want the next piece of work and you added a task row: new chat, **Do T-004** (the row you added). That later chat — not this one — chooses designs, records decisions, and edits files. If there was no tasks file, the next work is in the report; do not invent a task id.
 
 Accepted scientific changes later use **Update the project record**.
 
@@ -131,6 +156,7 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 
 ## Must not
 
+- Start the project, copy a skeleton, or write a folder map in this run
 - Repair the work you are auditing
 - Flatten the two gates into one overall PASS
 - Fail Numbers or Claims for APA cosmetics (italic title, vertical lines, typeface)

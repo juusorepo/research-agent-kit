@@ -1,6 +1,6 @@
 # How this kit treats AI in research
 
-This file is the kit’s clarifying note. It does **not** replace national or institutional rules. Using the kit is not an ethics review and not a stamp of good scientific practice.
+This file is the kit’s clarifying note. It does **not** replace national or institutional rules. Using the kit is not an ethics review, not a stamp of good scientific practice, and not a certificate that the paper is sound.
 
 A paper may add the same path here to override this default. Otherwise follow the kit copy.
 

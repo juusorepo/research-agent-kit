@@ -1,6 +1,6 @@
 # Audit report format
 
-Save the full report under `paths.audits` in `layout.yml` (default `07-record/audits/`). Create that folder if needed.
+Save the full report under `paths.audits` in `layout.yml` (default `07-record/audits/`) when that folder map exists. If it does not, save under `audits/` in the folder you checked. Create the folder if needed.
 
 Use a dated file name, for example `2026-08-17-full.md`. Do not overwrite an older report.
 
@@ -11,11 +11,12 @@ In **this chat**, do not reprint the whole report. Write: the **two gate statuse
 ## Report contents (saved file)
 
 1. Scope audited (full chain, which link, or data construction)
-2. Material checked (plan items, scripts, result files, manuscript sections; the one central claim if data construction was asked)
-3. Two gate statuses, then a few sentences of assessment — **not** one overall PASS
-4. Findings, ordered by severity
-5. Links that could not be checked, and why
-6. If a task row was added, name it. Do not list how to repair each finding. The `next` field on each finding is enough.
+2. **Where the files were** — plan, code, outputs, manuscript (or “none / not provided”). Required when there was no folder map
+3. Material checked (plan items, scripts, result files, manuscript sections; the one central claim if data construction was asked)
+4. Two gate statuses, then a few sentences of assessment — **not** one overall PASS
+5. Findings, ordered by severity
+6. Links that could not be checked, and why
+7. If a task row was added, name it. If none was added (no task list), say so. Do not list how to repair each finding. The `next` field on each finding is enough.
 
 If plan or accepted notes conflict with STATUS or the task list about what is agreed, record that as a finding. Do not give it a fifth status row.
 
@@ -93,3 +94,5 @@ The plan→code link holds for the main models. Two major findings (AUD-002, AUD
 Saved: `07-record/audits/2026-08-23-full.md`. Added **T-010** on the task list.
 
 If they want the next piece of work: new chat, **Do T-010**. That chat reads the report. This chat stops here.
+
+If there was no task list, omit the “Added T-…” line. Remaining work stays in the report.

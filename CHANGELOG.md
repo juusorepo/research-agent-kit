@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+The kit states two jobs: **doing the research** (an experimental file workflow) and an **independent check** of artefacts. The check in this version is the research-chain audit (two statuses, no certificate, new chat). You can run that check on a folder that was never set up with the kit: the assistant asks where the plan, code, outputs, and manuscript are, and does not create a kit paper. The kit supports inspectability; it does not ensure integrity. Restricted data remains a rule the assistant follows, not a lock. Numbered folders, Quarto/APA, and the Google Docs copy are the default working setup, not the method. Further independent checks may be added later.
+
 **Start the project:** after the answers, setup is copy-then-patch from a ready-made paper skeleton (four line patches). The assistant does not read template files and does not use Cursor’s create-project helper. Understand the project is the next message.
 
 The project overview may hold a short **intellectual anchor** (why this paper exists in the researcher’s own terms). The assistant reads it before consequential framing work and flags a narrowing instead of silently smoothing it away. Empty is fine; the assistant does not invent it.

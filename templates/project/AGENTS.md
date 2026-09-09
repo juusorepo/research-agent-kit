@@ -28,8 +28,8 @@ Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SK
 | Develop analysis with safe data · Do T-NNN (write analysis code) | `skills/develop-analysis-with-safe-data/SKILL.md` | Write and test analysis under the data-use rules |
 | Run approved Stata analysis · Do T-NNN (run on real data, Stata) | `skills/run-approved-stata-analysis/SKILL.md` | Run one named `.do` file for an agreed analysis; Windows first |
 | Document a research decision · Record a research decision | `skills/document-research-decision/SKILL.md` | Record a consequential choice as a proposed note |
-| Audit the research chain (full chain or one link) | `skills/audit-research-chain/SKILL.md` | Check plan → code → output → manuscript → claim; diagnose only; write the report and a task if needed |
-| Audit APA presentation · Check tables and figures in Word · APA layout audit | `skills/audit-apa-presentation/SKILL.md` | Layout of the rendered Word/PDF; diagnose only; not the research chain |
+| Audit the research chain (full chain or one link) | `skills/audit-research-chain/SKILL.md` | Independent check of plan → code → output → manuscript → claim; new chat; diagnose only; not a certificate |
+| Audit APA presentation · Check tables and figures in Word · APA layout audit | `skills/audit-apa-presentation/SKILL.md` | Independent check of the rendered Word/PDF; diagnose only; not the research chain |
 | Contribute to the project | `skills/contribute-to-project/SKILL.md` | File a collaborator's remark or an open review issue in `contributions/` |
 | Consolidate contributions | `skills/consolidate-contributions/SKILL.md` | Review the inbox; recommend a home for each |
 | Prepare a review copy | `skills/prepare-review-copy/SKILL.md` | Google Docs snapshot from a Word file you rendered; not the canonical manuscript |
@@ -55,7 +55,7 @@ Agreeing the analysis plan is **not** a separate skill: propose items under **Un
 
 Do not load `notes/` by default. Files in `contributions/` are proposals, not agreed analyses.
 
-If `kit_path` is missing or you cannot read the kit, **stop** and ask them to open the kit folder too.
+If `kit_path` is missing or you cannot read the kit, **stop** and ask them to open the kit folder too — unless they asked to **audit the research chain** and `layout.yml` is missing, in which case follow the kit audit skill (intake) if you can already read that skill.
 
 ## How to talk
 
@@ -83,5 +83,7 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - Do not edit the kit from this paper. Propose kit wording as a note under the record path (`07-record/notes/`).
 - Work only on a task assigned to this run. They assign it by naming the task (for example **Do T-004**). Kind of work on that row is the role for this run.
 - Do not invent real results. Do not treat draft or synthetic numbers as approved.
+
+If the researcher says **Audit the research chain** and `layout.yml` is missing, use the kit skill `audit-research-chain` (intake). Do not Start the project. Do not write a folder map or an analysis plan in that run.
 
 If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use the kit skill `start-research-project`. Read the name from the kit `researcher.md`. Ask the interview questions (with defaults) and wait. After they reply, copy the paper skeleton and patch; do not read template files. Understand the project is the next message. Keep this folder’s name. Do not copy `CLAUDE.md`. Do not require Python or R.

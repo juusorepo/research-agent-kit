@@ -10,8 +10,10 @@ Keep **two gates**. Do not flatten them into one overall PASS.
 
 Before the links, establish what you are checking against:
 
-- agreed analysis plan items
-- accepted research decision notes (and their index)
+- agreed analysis plan items — or, on intake, only the file they named as what was agreed
+- accepted research decision notes (and their index), if those files exist
+
+If they said there is no written plan, the plan→code link is **NOT VERIFIED**. Do not reconstruct a plan from the manuscript. A protocol or draft is background unless they said it is what was agreed.
 
 If those conflict with each other, or with STATUS or the task list about whether a choice is already accepted, record a finding (`next`: researcher decision needed). Do not resolve it in the report. Do not ask which file should win in this run.
 
@@ -77,7 +79,7 @@ Do not treat APA cosmetics (italic title, vertical lines, typeface) as a Numbers
 
 Do not require a particular manuscript or output format. Use whatever provenance this paper has. If machine-linked citations exist, use them. If they do not, audit as far as possible and state the limit.
 
-Review copies (Google Docs, emailed Word) are snapshots. The canonical manuscript is `paths.manuscript`.
+Review copies (Google Docs, emailed Word) are snapshots. The canonical manuscript is `paths.manuscript` when a folder map exists, otherwise the manuscript file they named.
 
 ## Gate 2 — estimand / claim validity
 

@@ -2,9 +2,14 @@
 
 ## In brief
 
-Research Agent Kit is a platform-agnostic framework for using AI agents in research while keeping scientific judgment, data governance, and accountability under researcher control.
+Research Agent Kit is a platform-agnostic method, recorded in ordinary files, for using AI agents in research while keeping scientific judgment, data governance, and accountability with the researcher.
 
-The core idea is simple: **AI should not merely be added to existing research tasks as an ad hoc assistant. Research workflows should be designed so that agents can contribute efficiently, while important decisions, evidence, and provenance remain explicit, inspectable, and portable.**
+The kit has **two jobs**, kept separate:
+
+* **Doing the research** — an experimental workflow that moves important decisions, evidence, and provenance out of chat into inspectable files. It does not guarantee the quality of the paper.
+* **Independent check** — a later look at artefacts (plan, code, outputs, manuscript, claims), in a new run, that reports what held and what could not be checked. It does not certify the paper. The research-chain audit is the check in this version; further independent checks may be added without changing how a paper is conducted.
+
+The core idea is simple: **AI should not merely be added to existing research tasks as an ad hoc assistant. Research workflows should be designed so that agents can contribute, while important decisions, evidence, and provenance remain explicit, inspectable, and portable.**
 
 The framework therefore separates four things that are often mixed together:
 
@@ -13,19 +18,21 @@ The framework therefore separates four things that are often mixed together:
 * **Research and data rules** — constraints on what agents may do.
 * **Tool-specific setup** — minimal configuration for particular AI systems.
 
-The aim is not to automate research end to end. It is to support **safe delegation with epistemic control**.
+The aim is not to automate research end to end. It is to support **delegation with inspectable decisions**.
 
 A central principle is:
 
-> **Epistemic control is not a property of the AI model. It is a property of the research workflow.**
+> **Who decides, and what may count as evidence, is a property of the research workflow — not of the AI model.**
+
+In this file, **epistemic control** means that operational distinction (already agreed vs researcher decision needed; draft vs approved). It does not mean a technical lock, a certificate, or a guarantee of integrity.
 
 The kit is not an autonomous paper factory. It is a lightweight, human-governed workflow that makes the research chain easier to inspect.
 
 AI may extract, compare, generate alternatives, and run bounded assigned tasks. Researchers contextualise, judge, decide, and remain accountable for claims.
 
-There is one ordinary route for all projects. Specialised methods are optional extensions a project can turn on later. They are not part of the default path.
+There is one ordinary route for **doing the research**. Specialised methods are optional extensions a project can turn on later. They are not part of the default path. **Independent check** is a separate run, not a step inside that route.
 
-Agents may implement, transform, critique, propose, and help verify. Researchers retain control over consequential methodological choices, interpretation, and scientific claims.
+Agents may implement, transform, critique, and propose. They may run an independent check when asked. Researchers retain control over consequential methodological choices, interpretation, and scientific claims.
 
 For quantitative research, the framework additionally supports a traceable chain:
 
@@ -55,14 +62,13 @@ Research Agent Kit addresses this by making the research workflow explicit.
 
 Rather than relying on a single long AI conversation or proprietary project memory, important project information is stored in a shared research record. Rather than repeatedly prompting an AI to perform common research tasks, reusable procedures are encoded as agent skills. Rather than relying on researchers to remember when AI should stop, the workflow identifies researcher decision points where substantive scientific choices require explicit human judgment.
 
-The result is intended to make AI-assisted research simultaneously:
+The intended effects (aims, not measured outcomes) are:
 
-* faster where delegation is appropriate;
 * more explicit where scientific judgment matters;
-* safer where data access is restricted;
-* more reproducible where computation matters;
+* clearer data-use limits, where the project’s rules close row-level files;
+* more reconstructable computation, where provenance is kept;
 * more transparent about the role of AI;
-* and more verifiable from analysis through manuscript claims.
+* and an independent check of specified links from analysis through manuscript claims.
 
 ---
 
@@ -247,6 +253,8 @@ The general principle is:
 
 > **High-risk boundaries should be enforced structurally where possible, not merely requested in natural-language instructions.**
 
+**In this version of the kit**, restricted-data protection is **placement plus instruction**: row-level files stay outside the project folder; agents are told not to open them. That is a documentary and procedural control. A markdown file is not a lock on the disk. Where an environment already provides a technical barrier (secure research environment, authorised analyst, export rules), use that. The kit does not replace it.
+
 Projects using public or otherwise agent-accessible data may use a less restrictive data-access profile.
 
 Restricted mode covers **row-level real data**. A cloud assistant may still send **project text** (plans, drafts, notes) to a vendor. That is a separate boundary. Use a tool your organisation allows.
@@ -285,9 +293,11 @@ Examples include:
 * Does the manuscript accurately describe the statistical result?
 * Does the scientific claim exceed what the design permits?
 
-The run that produced a change should not be treated as sufficient independent verification of that same change.
+The run that produced a change should not be treated as sufficient independent verification of that same change. Use a **new chat** (and, where possible, a different checker) for an independent check.
 
-Different models, tools, computational checks, or human review may provide stronger forms of verification depending on the importance of the task.
+Independent check is a **separate job** from doing the research. In this version the main check is the research-chain audit (two statuses: numbers/reproducibility; estimand/claim validity; **not verified** when a link cannot be traced). It can run on a paper that uses the kit folder map, or on a folder that does not: then the researcher names where the plan, code, outputs, and manuscript are. Further independent checks may be added later. They must not become a second analysis plan, and they must not repair the files they are checking.
+
+Different models, tools, computational checks, or human review may provide stronger forms of checking depending on the importance of the task. An audit report is a record of a check. It does not certify the paper.
 
 ---
 
@@ -342,7 +352,7 @@ The relevant choice has already been made by the researchers. The agent may impl
 
 The proposed action would materially change the science. The agent should surface the decision rather than silently proceed.
 
-This is the operational meaning of **epistemic control** in the framework.
+This is the operational meaning of **epistemic control** in the framework: inspectable decision points, not enforcement software and not a stamp that the claims are true.
 
 ---
 
@@ -384,20 +394,13 @@ The objective is to combine useful existing conventions into a coherent research
 
 ## 16. Keep the core simple and extend through profiles
 
-The core workflow should remain small enough to understand and adopt.
+The core should remain small enough to understand: a shared record, data-use rules, proposed vs agreed vs approved, researcher decision points, and a separate independent check.
 
-More specialised capabilities should be added as optional profiles or skills.
+**Doing the research** may use a working profile. The kit’s default new-paper setup (numbered folders, Quarto and APA, Google Docs co-author copy, optional Stata on Windows) is one such profile, documented from real use. It is not the definition of the method.
 
-Examples include:
+**Independent check** is not a conducting extra. It is the second job. The research-chain audit is in this version. Further independent checks may be added as evaluation work develops. They stay optional, diagnose-only, and out of the ordinary doing-the-research route until a project turns them on.
 
-* quantitative research / Quarto workflow;
-* register-research data boundaries;
-* research-chain auditing;
-* co-author review;
-* journal reviewer-response workflows;
-* AI-use disclosure generation;
-* more formal provenance;
-* systematic skill evaluation.
+Other specialised capabilities (register-data profiles, journal-response workflows, disclosure generators, systematic skill evaluation) remain optional extensions.
 
 This prevents specialised requirements from making the basic workflow unnecessarily complex.
 
@@ -437,7 +440,7 @@ Agents can explore freely within data rules, but draft work is distinct from acc
 
 ### Structural controls for structural risks
 
-Sensitive-data access should be technically restricted where possible.
+Sensitive-data access should be technically restricted where the environment allows it. In this kit version the restricted-data rule is placement plus instruction, not a file lock.
 
 ### Provenance over recollection
 
@@ -484,4 +487,4 @@ The framework should also make it possible for another researcher, another agent
 
 That is the core proposition:
 
-> **AI agents should increase research capacity without making the scientific process less inspectable, less reproducible, or less researcher-controlled.**
+> **AI agents should increase research capacity without making the scientific process less inspectable or less researcher-controlled.** The kit supports that inspectability. It does not, by itself, ensure integrity or certify results.

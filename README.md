@@ -1,20 +1,31 @@
 # Research Agent Kit
 
-Research Agent Kit is an experimental, platform-agnostic toolkit for conducting research with AI agents while retaining epistemic control. It provides reusable research workflows, structured project memory, decision and provenance patterns, verification practices, and agent skills that can be used across Claude, Codex, Gemini, Cursor, local agents, and future platforms.
+An experimental kit of ordinary files and short phrases for using AI on a research paper. Works with Claude, Codex, Gemini, Cursor, local agents, and similar tools.
 
-**Status: early development / v0.x.** APIs, structures, and conventions are expected to change.
+**Status: early development / v0.x.** Conventions will change.
+
+When AI agents write analysis, they often make measurement and design choices that nobody recorded. A draft number can look like a result. A manuscript claim can outrun the design. (See Gao and Xiao, 2026, [Nonstandard Errors in AI Agents](https://arxiv.org/abs/2603.16744).)
+
+This kit has **two jobs**:
+
+1. **Doing the research** — keep an agreed analysis plan, decisions, and approved results in files the team can read. Chat is a working space, not the record. This workflow is experimental. It does not guarantee quality.
+2. **Independent check** — in a **new chat**, check artefacts: did meaning hold from plan through code, output, manuscript, and claim? The check in this version is **Audit the research chain**. It reports two statuses (whether numbers match; whether the claims are supported) and says when a link could not be checked. It does not repair, certify the paper, or collapse those into one pass. You can say this in a folder that was never set up with the kit; the assistant asks where the plan, code, outputs, and manuscript are if that is not already clear. Further independent checks may be added later; they stay separate from doing the research.
+
+The kit **supports inspectability**. It does not ensure integrity. Restricted individual-level data is a **rule the assistant follows** (those files stay outside the project). It is not a lock on the disk.
 
 Repository: [github.com/juusorepo/research-agent-kit](https://github.com/juusorepo/research-agent-kit)
 
-The idea is simple: **from chat memory to a shared research record.** The record lives in ordinary files in your project. Any colleague or AI tool can read the same files. Nothing important should exist only in a chat.
+Keep **one kit folder** on your computer. Each paper is a separate folder. See [`START.md`](START.md). You do not need Python or R. You do not need software-engineering vocabulary.
 
-Keep **one kit folder** on your computer. Edit R conventions and other defaults only there. Each paper is a separate folder. See [`START.md`](START.md). You do not need Python or R. You do not need software-engineering vocabulary.
+The defaults for a new paper (numbered folders, Quarto and APA, a Google Docs co-author copy, Stata on Windows if you chose it) are a **working setup used in real papers**. They are not the method. You can change folder names in `layout.yml`.
 
 ---
 
 ## How it works
 
-One kit folder; each paper is a separate folder. The assistant uses a file from the **paper if it exists**, otherwise from the **kit**.
+The conducting idea: **from chat memory to a shared research record.** The record lives in ordinary files. Any colleague or AI tool can read the same files. Nothing important should exist only in a chat.
+
+One kit folder; each paper is a separate folder. The assistant uses a file from the **paper if it exists**, otherwise from the **kit**. Edit R conventions and other defaults only in the kit.
 
 **You** accept claims and important decisions (a yes in chat is enough). Then the assistant writes the files. Draft outputs are not approved results.
 
@@ -82,7 +93,7 @@ AI may implement, criticise, and propose.
 
 If your data are restricted, individual-level files stay **outside** the project folder and agents work from codebooks, synthetic/test data, and **AI-safe research outputs**. Public or in-repo teaching data can be marked agent-accessible in the project rules.
 
-This is **epistemic control**: researcher decision points sit where the design, the analysis, or a claim would change — not after every keystroke, and not as a slogan the assistant repeats.
+Researcher decision points sit where the design, the analysis, or a claim would change — not after every keystroke. **You** accept; then the assistant records that acceptance. That record is inspectable. It is not tamper-proof, and it is not a certificate that the science is sound.
 
 ---
 
@@ -106,11 +117,11 @@ Say these in chat. The assistant should use ordinary verbs.
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
 | Run approved Stata analysis | If start chose Stata: run one named `.do` file for an agreed analysis on an assigned **run on real data** task. Configure this computer’s Stata path; do not assume one. Windows first |
 | Update the project record | After you accept something, put it in the right file |
-| Audit the research chain | Check plan → code → output → manuscript → claims. The saved report keeps **two** statuses: whether numbers match, and whether the claims are supported. Matching numbers is not enough. Diagnose only; if anything needs work, add one task pointing at the report, then stop. Next work: **Do T-004** in a new chat, not a pasted prompt |
-| Audit APA presentation | Layout of the rendered Word file and a PDF exported from it. Four statuses (render, tables, figures, manuscript frame). Not the research chain. Diagnose only |
+| Audit the research chain | Independent check: plan → code → output → manuscript → claims. Use a **new chat**, not the one that wrote the files. Works on a kit paper or on a folder that was never set up with the kit (the assistant asks where the four pieces are). The saved report keeps **two** statuses: whether numbers match, and whether the claims are supported. Matching numbers is not enough. Diagnose only. If this paper already has a task list and anything needs work, add one task pointing at the report, then stop. Next work: **Do T-004** in a new chat, not a pasted prompt. If there is no task list, remaining work stays in the report |
+| Audit APA presentation | Independent check of the rendered Word file and a PDF exported from it. Four statuses (render, tables, figures, manuscript frame). Not the research chain. Diagnose only |
 | Adjust this project to the new kit version | After you updated the kit, align this paper’s instructions and version note. Science files stay as they are |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own. Further independent checks (beyond the research-chain and APA presentation audits) may be added later; they are not in this version.
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
