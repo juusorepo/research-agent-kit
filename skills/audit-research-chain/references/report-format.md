@@ -1,6 +1,6 @@
 # Audit report format
 
-Save the full report under `paths.audits` in `layout.yml` (default `07-record/audits/`) when that folder map exists. If it does not, save under `audits/` in the folder you checked. Create the folder if needed.
+Save the full report under `paths.audits` in `layout.yml` (default `07-record/audits/`) when that folder map exists. If it does not, save under `audits/` in the folder you checked. Create the folder if needed. On intake, wait once for the four file locations.
 
 Use a dated file name, for example `2026-08-17-full.md`. Do not overwrite an older report.
 
@@ -34,6 +34,15 @@ Results → claims              PASS / ISSUES / NOT VERIFIED
 
 A project may pass numbers / reproducibility and still have ISSUES or NOT VERIFIED on estimand / claim validity.
 
+If they asked to audit literature claims, add (omit it otherwise):
+
+```
+Literature claims             PASS / ISSUES / NOT VERIFIED
+(source existence, support, and design warrant kept separate in findings)
+```
+
+Do not treat a research packet as passing this check.
+
 If they asked to audit data construction, add one extra line (omit it otherwise):
 
 ```
@@ -56,7 +65,7 @@ Each substantive finding:
 | Field | Content |
 |---|---|
 | id | `AUD-001`, `AUD-002`, … (this report only) |
-| transition | `plan→code`, `code→output`, `output→manuscript`, `results→claims`, `data-construction` (more than one if the problem spans links) |
+| transition | `plan→code`, `code→output`, `output→manuscript`, `results→claims`, `data-construction`, `literature-claim` (more than one if the problem spans links) |
 | severity | `critical` / `major` / `minor` / `note` |
 | where | file and location |
 | expected | what the authoritative file says |

@@ -1,0 +1,23 @@
+source_id: zotero:ITEMKEY
+zotero:
+  item_key: ITEMKEY
+  collection_keys: []
+bibliography:
+  title: ""
+  year:
+  doi: ""
+  citation_key: ""
+  item_type: ""
+status:
+  project_member: true
+  full_text_available: false
+  missing_full_text: true
+  restricted: false
+  corpus_copy: none
+file:
+  hash_sha256: ""
+representations:
+  drive:
+    filename: ""
+  notebooklm:
+    source_label: ""

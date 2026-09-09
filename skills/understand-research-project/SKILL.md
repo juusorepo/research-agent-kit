@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use when they sa
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.4.2"
+  version: "0.4.4"
 ---
 
 # Understand the project
@@ -31,7 +31,7 @@ Do not invent files. Do not assume a blank project.
 6. `contributions/` — only if the question is about a pending proposal
 7. `notes/` and Git — **only if the researcher asks or the files above are not enough**. Do not load `audits/` as current scientific authority.
 
-Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-use rules, how-to-talk and `policies/ai-policy.md` (paper if present, else kit), manuscript folder (is there a draft?), result-file metadata. If you cannot read the kit, stop and ask them to open it.
+Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-use rules, how-to-talk and `policies/ai-policy.md` (paper if present, else `.rak/runtime/policies/` if present, else kit), manuscript folder (is there a draft?), result-file metadata. If you cannot read the kit **and** there is no `.rak/runtime/`, stop and ask them to open the kit. If `.rak/runtime/` is present, continue.
 
 ## Say what kind of source it is
 
@@ -88,10 +88,14 @@ Only after the read above. If the task list has an **open** item that fits, name
 8. Review the manuscript (AI) — findings go to the inbox; not an audit of the research chain
 9. Audit the research chain (if they have a plan and code, outputs, or a manuscript to check)
 10. Audit APA presentation — **only** if they have a rendered Word file and a PDF exported from it (layout of the paper, not the research chain)
-11. Adjust this project to the new kit version — **only** if this paper’s `kit-lock.yml` `kit:` is older than the kit `templates/project/kit-lock.yml`
+11. Adjust this project to the new kit version — **only** if this paper’s `kit-lock.yml` `kit:` is older than a readable kit, **or** they want a GitHub refresh (then **Update the kit** from GitHub also works in this paper)
 12. Run approved Stata analysis — **only** if `layout.yml` has `code: stata` and an open task is **run on real data**
 13. Explore alternative framings — **only** if they asked for genuinely different interpretations, or the current framing is under dispute. Not for routine analysis or copy-edits
 14. Dictate an intellectual anchor — **only** if the overview exists but that section is empty and they have a distinctive motivation worth preserving. Invite; do not invent it
+15. Make this paper self-contained — **only** if they need an assistant that cannot see the kit folder and `.rak/runtime/` is missing (local kit or GitHub)
+16. Map the evidence — **only** if they asked to map sources for a named question (draft packet; not an audit)
+17. Sync the bibliography — **only** if they asked to refresh the source list from Zotero or `references.bib`
+18. Update the kit — **only** if they asked to refresh generated kit files from GitHub in this paper, or to fetch a new public kit into the kit folder
 
 ## Must not
 

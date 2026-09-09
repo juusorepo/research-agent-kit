@@ -4,11 +4,11 @@ Early development. You do not need Python or R.
 
 This kit has two jobs: **doing the research** (files for the plan, decisions, and approved results) and an **independent check** of those artefacts (in this version: **Audit the research chain**). The first is an experimental workflow. The second reports what it could and could not check; it does not certify the paper. Use a **new chat** for the check — not the chat that wrote the files.
 
-Keep **one kit folder**. Defaults live there. Each paper is a separate folder. Numbered folders, Quarto/APA, and a Google Docs co-author copy are the default working setup for a paper started here. They are not required to understand the two jobs.
+Keep **one kit folder** if you want shared conventions on disk. Each paper is a separate folder. A colleague who only has a paper folder can start and refresh generated kit files from GitHub instead. Numbered folders, Quarto/APA, and a Google Docs co-author copy are the default working setup for a paper started here. They are not required to understand the two jobs.
 
-The assistant uses a file from the **paper if it exists**, otherwise from the **kit**. Put a file in the paper only to override a default (for example this study’s R habits). Do not copy the whole kit into the paper.
+The assistant uses a file from the **paper if it exists** (a deliberate override), otherwise generated kit files in the paper if present, otherwise from the **kit**. Put `policies/how-to-talk.md` in the paper only to change how the assistant talks. Do not edit generated kit files. Do not copy the whole kit into the paper.
 
-## 1. Get the kit (do this once)
+## 1. Get the kit (optional — only if you keep a kit folder)
 
 Create an empty folder (for example `research-agent-kit`). Open it with your AI assistant. Paste:
 
@@ -18,21 +18,32 @@ This folder is the kit.
 My name is
 ```
 
-The assistant writes your name in `researcher.md` in this folder. You will not be asked again for each paper.
+The assistant writes your name in `researcher.md` in this folder. You will not be asked again for each paper. Skip this if you only work in a paper folder (Claude on Drive): go to **2b**.
 
 ## 2. Start a new project or paper
 
-The assistant must see the **kit** (for defaults and skills). A chat that only has an empty paper folder is not enough.
+### 2a. You have the kit folder
 
-**Easiest:** open the **kit** folder, or the kit **and** an empty paper folder. Paste:
+**Easiest for sharing:** create an empty folder in **Google Drive for Desktop**. Open the **kit** folder **and** that empty paper folder. Paste:
 
 ```
 Start the project
 ```
 
-The assistant finds the kit, writes only into the paper (it will not add files to the kit), asks a short list of questions (with defaults), and waits. After you answer, setup is copy-then-patch, not a second interview. If no paper folder is open yet, it creates one next to the kit (default **paper-1**). Numbered science folders (`01-data` … `07-record`, `99-archive`); the paper lives in `05-outputs/manuscript/`.
+The assistant finds the kit, writes only into the paper, asks a short list of questions (with defaults), and waits. After you answer, setup is copy-then-patch. If you said this paper should work without the kit folder (the default when a paper folder is already open), it also writes **generated kit files** into the paper — do not edit those.
 
-If `researcher.md` has no name yet, add `My name is` once — it is stored in the kit.
+### 2b. Paper folder only (Claude, Drive, no kit)
+
+Create an empty folder (Drive if co-authors or NotebookLM will use it). Open **only that folder**. Paste:
+
+```
+Start the project from https://github.com/juusorepo/research-agent-kit
+This folder is the paper. Fetch the kit into a temporary folder, not here.
+```
+
+The assistant fetches the public kit into a **temporary** folder, writes a self-contained paper **here**, then deletes the temporary copy. This folder must not become a clone of the whole repository. Do not say **Copy the Research Agent Kit** here — that would turn this folder into a kit.
+
+If `researcher.md` has no name yet (kit path only), add `My name is` once. On a paper-only start, the assistant asks your name and writes it on the overview.
 
 Usual case: you already have a protocol, analysis plan, or draft. Put those in `06-docs/` and `05-outputs/manuscript/` (or attach them in chat). After the folder exists, say **Understand the project**. The assistant should **read those files before** suggesting next steps.
 
@@ -40,11 +51,11 @@ One folder is one paper unless you say this project has several papers that shar
 
 The file agents follow is `AGENTS.md`. There is no `CLAUDE.md` in the paper folder.
 
+Numbered science folders (`01-data` … `07-record`, `99-archive`); the paper lives in `05-outputs/manuscript/`.
+
 ## Later
 
-Agent work: keep the kit available (kit + paper, or start from the kit). RStudio/writing can be the paper alone.
-
-To override a default for **this paper only**, add that file in the paper (same relative path). To change a default for **every paper**, edit the kit.
+Agent work: a paper with generated kit files can be the only folder. To refresh those files from GitHub (Claude on Drive, no kit): paste **Update the kit from https://github.com/juusorepo/research-agent-kit**. The assistant fetches a temporary copy and replaces generated files only — not a full clone. To change how the assistant talks for **this paper only**, add `policies/how-to-talk.md` in the paper. Do not edit generated kit files.
 
 How this kit treats AI in research — and where it does not replace national guidance — is in `policies/ai-policy.md`. The workflow design is in `DESIGN_PRINCIPLES.md`.
 
@@ -56,25 +67,40 @@ If start chose Stata, you can later say **Run approved Stata analysis** for one 
 
 Co-author review: render a Word file of the paper first (see the manuscript README), then say **Prepare a review copy**. Accept small wording in the Google Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox. Say **Explore alternative framings** when you want genuinely different interpretations before any combined wording.
 
-New kit version from GitHub? Open the **kit** folder and paste:
+New kit version from GitHub into the **kit** folder? Open the kit and paste:
 
 ```
 Update the kit from https://github.com/juusorepo/research-agent-kit
 Keep my how-to-talk and R templates.
 ```
 
-Only new skills (overwrite the skills folder, leave the rest of the kit)? Paste:
+New kit version **in a paper** (no kit folder open)? Open that paper and paste:
+
+```
+Update the kit from https://github.com/juusorepo/research-agent-kit
+This folder is the paper. Fetch into a temporary folder; replace generated kit files only.
+```
+
+The assistant must not clone the whole repository into the paper. It replaces generated kit files only. It must not edit the analysis plan, decision notes, outputs, manuscript, or data.
+
+Only new skills in the **kit** folder (overwrite the skills folder, leave the rest)? Paste:
 
 ```
 Update the skills from https://github.com/juusorepo/research-agent-kit
 ```
 
-The assistant must not change any paper folder. On a full kit update it must not overwrite your name, how-to-talk, or R templates if you asked to keep them. **Update the skills** overwrites the skills folder only.
+On a full **kit folder** update it must not overwrite your name, how-to-talk, or R templates if you asked to keep them.
 
-A paper still on an older kit version? Open that **paper** folder (keep the kit available) and paste:
+A paper still on an older kit version, with the **kit** open? You can also paste:
 
 ```
 Adjust this project to the new kit version
 ```
 
-The assistant inspects this paper, shows the exact proposed changes to instructions and the version note, and waits. It must not edit the analysis plan, decision notes, outputs, manuscript, or data.
+The assistant inspects this paper, shows what generated kit files would change (or a small instruction patch if this paper has no generated files), and waits. It must not edit the analysis plan, decision notes, outputs, manuscript, or data.
+
+A paper that must work when ChatGPT or a co-author cannot see the kit? Open the paper (keep the kit available) and paste:
+
+```
+Make this paper self-contained
+```

@@ -4,7 +4,9 @@ alwaysApply: true
 ---
 
 Follow `AGENTS.md` and `layout.yml`.
-For conventions and skills: use the paper file if it exists, otherwise the kit at `kit_path`.
+For conventions and skills: paper override (`.agents/skills/`) if present, else generated files under `.rak/runtime/` if present, else the kit at `kit_path`.
 This paper’s data-use rules are `policies/data-policy.md`.
 The kit version is only in `kit-lock.yml`.
+Do not edit generated kit files (`.rak/runtime/` or a generated `AGENTS.md`).
+**Update the kit** from GitHub in this paper replaces those generated files (temporary fetch; not a full clone).
 Do not invent a second set of rules in this file.

@@ -54,7 +54,7 @@ Agreeing the analysis plan is **not** a separate skill: propose items under **Un
 
 Do not load `notes/` by default. Files in `contributions/` are proposals, not agreed analyses.
 
-If `kit_path` is missing or you cannot read the kit, **stop** and ask them to open the kit folder too.
+If `kit_path` is missing or you cannot read the kit, **stop** and ask them to open the kit folder too — unless `.rak/runtime/` is present (then continue).
 
 ## How to talk
 

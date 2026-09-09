@@ -1,10 +1,25 @@
 # Audit checklists
 
-Use the scopes they asked for. A full audit uses the four links, then the cross-chain paragraph. Do **not** add data construction unless they asked.
+Use the scopes they asked for. A full audit uses the four links, then the cross-chain paragraph. Do **not** add data construction unless they asked. Do **not** add literature-claim checking unless they asked.
 
 Distinguish a **substantive** deviation from a harmless implementation detail (file names, comment wording, equivalent syntax).
 
 Keep **two gates**. Do not flatten them into one overall PASS.
+
+## Literature claims (opt-in only)
+
+Run this **only** if they asked to **audit literature claims** or **check claim support**. Do not add it to an ordinary full audit.
+
+Keep four statuses uncollapsed for each named statement:
+
+1. Source existence — cited record found / probable / ambiguous / not found / not checked. **Not found ≠ does not exist.**
+2. Relevant evidence — a passage in that source addresses the statement, or not enough information
+3. Support — the passage supports the wording, contradicts it, or is too weak to say
+4. Design warrant — causal or effectiveness language the study design cannot support
+
+Do not treat a research packet, NotebookLM note, or evidential-status YAML as what the source says. Read identifiable sources.
+
+Golden case: “Students choosing tutoring had higher subsequent scores” does **not** warrant “Tutoring improved scores.” Citation may exist (source grounded) while causal warrant fails.
 
 ## What is currently agreed (always)
 

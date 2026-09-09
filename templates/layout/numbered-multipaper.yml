@@ -33,3 +33,5 @@ paths:
   notes: 07-record/{paper}/notes
   contributions: 07-record/{paper}/contributions
   audits: 07-record/{paper}/audits
+  sources: sources
+  source_records: 07-record/{paper}/sources

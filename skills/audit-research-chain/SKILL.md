@@ -1,10 +1,10 @@
 ---
 name: audit-research-chain
-description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Works with a kit folder map or, if that file is missing, a short intake of where the plan, code, outputs, and manuscript are. Report numbers/reproducibility and estimand/claim validity as separate statuses. Diagnose only; write the report and, if a task list already exists and anything needs work, one task. Do not repair or ask how to repair. Use when they say Audit the research chain, for a full chain check or one link. Use when they say Audit data construction to trace one named central claim (opt-in only).
+description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Works with a kit folder map or, if that file is missing, a short intake. Report numbers/reproducibility and estimand/claim validity as separate statuses. Use when they say Audit the research chain. Use when they say Audit literature claims or Check claim support to check literature statements against identifiable sources (opt-in; do not trust a research packet or NotebookLM). Use when they say Audit data construction to trace one named central claim (opt-in only). Diagnose only.
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run. A kit folder map is not required.
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # Audit the research chain
@@ -27,7 +27,7 @@ If the folder you would check is this **kit** (`START.md` and `skills/` at the t
 
 ### Intake (no folder map)
 
-You still need to read this skill from the kit. If you cannot, ask them to open the kit too.
+You still need to read this skill. Prefer `.rak/runtime/skills/audit-research-chain/SKILL.md` if present, otherwise the kit. If you cannot read either, ask them to open the kit too. Do **not** require `.rak/runtime/` on the folder under review. Intake still runs on a folder that never used this kit.
 
 **Four locations.** If they already named or attached them, proceed. Otherwise propose a mapping from files you can see (defaults in parentheses) and **wait once**:
 
@@ -58,7 +58,20 @@ They ask to audit the research chain, or one link:
 
 **Audit data construction** only if they asked for it. It is not part of an ordinary full audit. Trace **one** material central claim. If they did not name the claim, ask which (default: the manuscript’s main empirical claim) and **wait**.
 
-If they do not say a scope, do a **full** audit of the four links. Do not add data construction unless they asked.
+**Audit literature claims** (or **Check claim support**) only if they asked for it. It is not part of an ordinary full audit. It is not **Map the evidence**. New chat. Diagnose only.
+
+Keep **four questions separate** (do not collapse):
+
+1. Does the cited source exist (as a record they can point to)?
+2. Is there a relevant passage in that source?
+3. Does that passage support the statement as written?
+4. Does the study design warrant the strength or causal language?
+
+Quote a span, or say **not enough information**. **Not found in these sources** is not **no evidence exists**. Association is not causation. Example that must **not** pass claim warrant: source says students who chose tutoring later had higher scores; manuscript says tutoring improved scores.
+
+Do **not** treat a research packet, evidential-status note, NotebookLM answer, or provider confidence as authority. Read the manuscript and identifiable sources (PDFs, quoted exports they attached, `references.bib`). A packet may be background, like `06-docs/`.
+
+If they do not say a scope, do a **full** audit of the four links. Do not add data construction or literature claims unless they asked.
 
 If they asked for APA layout, tables in Word, or a presentation check of the rendered paper, use `skills/audit-apa-presentation/SKILL.md` instead. Do not fold that into this skill.
 
@@ -161,6 +174,8 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 - Flatten the two gates into one overall PASS
 - Fail Numbers or Claims for APA cosmetics (italic title, vertical lines, typeface)
 - Add data construction unless they asked
+- Add literature-claim checking unless they asked
+- Trust a research packet or NotebookLM as what a source supports
 - Ask how to frame or fix a finding, or which unagreed design to pick
 - Start an unassigned task, or another assistant, from this run (writing one task *row* is not starting the task)
 - Treat a draft or synthetic output as an approved result

@@ -1,0 +1,44 @@
+# Files copied into a paper’s generated kit bundle (.rak/runtime/).
+# Do not copy this list by guess: follow this file.
+# Layers are tags only; do not reorganise skills/ in the kit.
+
+core:
+  skills:
+    - understand-research-project
+    - document-research-decision
+    - update-project-record
+    - contribute-to-project
+    - consolidate-contributions
+    - develop-analysis-with-safe-data
+    - explore-alternative-framings
+    - update-the-kit
+  policies:
+    - how-to-talk.md
+    - ai-policy.md
+
+profile:
+  skills:
+    - prepare-review-copy
+    - ingest-review-comments
+    - sync-review-copy
+    - review-the-manuscript
+    - sync-project-sources
+    - map-the-evidence
+  skills_if_stata:
+    - run-approved-stata-analysis
+  skills_if_word_render:
+    - audit-apa-presentation
+  templates_if_r:
+    - templates/analysis/r
+    - templates/analysis/manuscript-displays.md
+  templates_if_stata:
+    - templates/analysis/stata
+    - templates/analysis/manuscript-displays.md
+
+audit:
+  skills:
+    - audit-research-chain
+
+# Not copied into the paper (need a local kit folder, or GitHub fetch in start):
+# start-research-project, adjust-project-to-kit, make-paper-self-contained
+# update-the-kit IS copied: paper-only Claude can refresh generated files from GitHub.

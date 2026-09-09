@@ -15,7 +15,7 @@ The kit **supports inspectability**. It does not ensure integrity. Restricted in
 
 Repository: [github.com/juusorepo/research-agent-kit](https://github.com/juusorepo/research-agent-kit)
 
-Keep **one kit folder** on your computer. Each paper is a separate folder. See [`START.md`](START.md). You do not need Python or R. You do not need software-engineering vocabulary.
+Keep **one kit folder** if you want it on disk. Each paper is a separate folder. A paper folder alone can start and refresh generated kit files from GitHub. See [`START.md`](START.md). You do not need Python or R. You do not need software-engineering vocabulary.
 
 The defaults for a new paper (numbered folders, Quarto and APA, a Google Docs co-author copy, Stata on Windows if you chose it) are a **working setup used in real papers**. They are not the method. You can change folder names in `layout.yml`.
 
@@ -25,7 +25,7 @@ The defaults for a new paper (numbered folders, Quarto and APA, a Google Docs co
 
 The conducting idea: **from chat memory to a shared research record.** The record lives in ordinary files. Any colleague or AI tool can read the same files. Nothing important should exist only in a chat.
 
-One kit folder; each paper is a separate folder. The assistant uses a file from the **paper if it exists**, otherwise from the **kit**. Edit R conventions and other defaults only in the kit.
+One kit folder; each paper is a separate folder. Shared papers meant for co-authors or NotebookLM live in a **Google Drive** synced folder so everyone uses the same files — do not copy sources elsewhere. The assistant uses a **deliberate paper override** if it exists, otherwise **generated kit files** in the paper if present, otherwise the **kit**. Edit R conventions and other defaults only in the kit. Do not edit generated kit files in the paper.
 
 **You** accept claims and important decisions (a yes in chat is enough). Then the assistant writes the files. Draft outputs are not approved results.
 
@@ -103,8 +103,9 @@ Say these in chat. The assistant should use ordinary verbs.
 
 | Skill | What it does |
 |---|---|
-| Start the project | Create a paper folder that follows the kit. Writes only into the paper, not the kit |
-| Update the kit | Fetch a new public version into the kit folder; keep your name and files you asked to keep; do not touch papers. Say **Update the skills** to overwrite only the skills folder |
+| Start the project | Create a paper folder that follows the kit. With a local kit, writes only into the paper. With only a paper folder, paste **Start the project from https://github.com/juusorepo/research-agent-kit** (temporary fetch; not a full clone) |
+| Make this paper self-contained | Write generated kit files into this paper so an assistant can work without opening the kit. Do not edit those files |
+| Update the kit | In the **kit** folder: fetch a new public version; keep your name and files you asked to keep. In a **paper**: replace generated kit files from GitHub (temporary fetch; not a full clone). Say **Update the skills** only in the kit folder |
 | Understand the project | Where things stand (canonical vs proposal vs note), then what to do next. Agreeing analyses is a next step here: the assistant proposes items, you accept, then the analysis plan is written |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
 | Consolidate contributions | You review the inbox; the assistant recommends, you decide |
@@ -118,14 +119,17 @@ Say these in chat. The assistant should use ordinary verbs.
 | Run approved Stata analysis | If start chose Stata: run one named `.do` file for an agreed analysis on an assigned **run on real data** task. Configure this computer’s Stata path; do not assume one. Windows first |
 | Update the project record | After you accept something, put it in the right file |
 | Audit the research chain | Independent check: plan → code → output → manuscript → claims. Use a **new chat**, not the one that wrote the files. Works on a kit paper or on a folder that was never set up with the kit (the assistant asks where the four pieces are). The saved report keeps **two** statuses: whether numbers match, and whether the claims are supported. Matching numbers is not enough. Diagnose only. If this paper already has a task list and anything needs work, add one task pointing at the report, then stop. Next work: **Do T-004** in a new chat, not a pasted prompt. If there is no task list, remaining work stays in the report |
+| Audit literature claims | Independent check of literature statements against identifiable sources (new chat). Does not trust a draft evidence packet or NotebookLM as authority. Not the same as **Map the evidence** |
+| Map the evidence | Draft a source-grounded evidence packet for a named question. Not an audit. Not an approved claim |
+| Sync the bibliography | Refresh this paper’s source list from a Zotero collection or from `references.bib`. Citation keys still come from that export. Optional PDF copies stay in this paper’s sources folder |
+| Adjust this project to the new kit version | After you updated the kit, replace this paper’s generated kit files (or a small instruction patch if it has none). Science files stay as they are |
 | Audit APA presentation | Independent check of the rendered Word file and a PDF exported from it. Four statuses (render, tables, figures, manuscript frame). Not the research chain. Diagnose only |
-| Adjust this project to the new kit version | After you updated the kit, align this paper’s instructions and version note. Science files stay as they are |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own. Further independent checks (beyond the research-chain and APA presentation audits) may be added later; they are not in this version.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own, writing to Zotero, a required Python program, or treating NotebookLM as verification. **Audit literature claims** is in this version (independent check; it does not certify the paper). This workflow is experimental; it does not guarantee quality.
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
-**Start the project:** get **one kit folder** from GitHub. Start each paper from that kit. The assistant asks the interview questions (with defaults) and waits; after the answers, setup is copy-then-patch, not a second interview. Understand the project is the next message (it reads any protocol or draft then). The assistant uses a paper file if it exists, otherwise the kit. How it talks is in `policies/how-to-talk.md`.
+**Start the project:** empty Drive folder plus **Start the project from** the GitHub URL is enough for a self-contained paper (Claude does not need the kit folder). Or keep one kit folder and start papers from it. The assistant asks the interview questions (with defaults) and waits; after the answers, setup is copy-then-patch. Understand the project is the next message. Generated kit files are replaced from GitHub with **Update the kit** in that paper, or from a local kit with **Adjust this project**. Do not edit them. How it talks is in `policies/how-to-talk.md`.
 
 You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`. First-level folders stay numbered (`01-data` … `07-record`, `99-archive`). The manuscript sits in `05-outputs/manuscript/` next to figures and tables.
 
@@ -137,7 +141,7 @@ Small extra setup may be needed for a specific tool. That setup lives in the kit
 
 ## Start on day one
 
-See [`START.md`](START.md). Get one kit folder, then start each paper from it. Paper files override the kit when present.
+See [`START.md`](START.md). **Start the project from** the GitHub URL in an empty paper folder, or get one kit folder and start papers from it. Paper files override the kit when present.
 
 Then fill the overview. If you copied a protocol, preregistration, or draft and the overview is empty, the assistant should draft it **in that reply** and write the file after you accept. It should leave the intellectual anchor for you to dictate — it must not invent why you are doing the paper. The analysis plan may start empty until you accept items. Add decision notes when a real choice appears — including one past choice that still governs the work, if you want it on the record. Do not expect a reconstructed history of earlier AI use.
 

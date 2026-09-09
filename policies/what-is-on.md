@@ -14,7 +14,8 @@ You may edit this file. The assistant should follow it.
 ## Optional (this version)
 
 - [ ] **Record of material AI use** — a short note when AI did substantial work (some journals ask). Default is off. Tick this box to turn it on. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See `policies/ai-policy.md`.
+- [ ] **Map the evidence** — draft source-grounded packets when you say **Map the evidence**. Default is off as a reminder; the phrase still runs if you say it.
 
 ## Not in this version
 
-Journal disclosure forms, Word toolchains, Word comment ingest, and automatic background audits. On-demand “audit the research chain” and “audit APA presentation” are in this version (independent checks; they do not certify the paper). Further independent checks may be added later. **Explore alternative framings** is in this version (optional; not for routine editing). A Google Docs review copy (suggestions there, open comments to the inbox) is in this version. If this paper’s `layout.yml` has `code: stata`, a local Stata run (**Run approved Stata analysis**) is in this version. Do not offer the others as kit features.
+Journal disclosure forms, Word toolchains, Word comment ingest, and automatic background audits. On-demand “audit the research chain”, “audit literature claims”, and “audit APA presentation” are in this version (independent checks; they do not certify the paper). Writing to Zotero, a required Python program, and treating NotebookLM as verification are not in this version. **Explore alternative framings** is in this version (optional; not for routine editing). A Google Docs review copy (suggestions there, open comments to the inbox) is in this version. If this paper’s `layout.yml` has `code: stata`, a local Stata run (**Run approved Stata analysis**) is in this version. Do not offer the others as kit features.
