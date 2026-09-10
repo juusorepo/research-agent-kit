@@ -1,3 +1,3 @@
-# Sources (optional copies)
+# Project corpus (materialised copies)
 
-PDF copies for sharing and NotebookLM live here (`paths.sources` in `layout.yml`). Canonical identity is the Zotero item (`zotero:<item-key>`). Restricted files stay out.
+Copies of included sources for sharing, Drive, and NotebookLM (`paths.sources` in `layout.yml`). Zotero remains canonical (`zotero:<item-key>`). Restricted files stay out.

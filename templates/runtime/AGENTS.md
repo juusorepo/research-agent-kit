@@ -56,7 +56,7 @@ Resolve each skill by the lookup above. The phrase is enough — no long prompt.
 | Review the manuscript · AI review · Scan for generic prose · Plain-language review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; a focused prose scan flags candidate passages only; not an audit of the research chain |
 | Explore alternative framings · Give me genuinely different interpretations · Diverge before synthesis · Challenge the current framing | `skills/explore-alternative-framings/SKILL.md` | Independent alternatives before synthesis; optional; not routine editing |
 | Map the evidence | `skills/map-the-evidence/SKILL.md` | Draft a source-grounded evidence packet; not an audit; not an approved claim |
-| Sync the bibliography · Update project sources | `skills/sync-project-sources/SKILL.md` | Read-only source list from a Zotero collection; optional PDF copies in `08-sources/` |
+| Sync the bibliography · Update project sources | `skills/sync-project-sources/SKILL.md` | Read-only source list from a Zotero collection; copies in `08-sources/` when asked |
 | Update the project record | `skills/update-project-record/SKILL.md` | After acceptance, write it into the shared record |
 | Adjust this project to the new kit version | `skills/adjust-project-to-kit/SKILL.md` | Replace generated kit files from a local kit, or from GitHub if the kit folder is not here; do not edit science files |
 

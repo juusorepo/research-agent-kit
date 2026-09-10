@@ -1,0 +1,18 @@
+# Map kit operations to connector tool names.
+# Copy a shape’s `capabilities` into this paper’s layout.yml under `notebooklm:`.
+# Do not guess names from whatever tools are installed.
+
+operations:
+  - list_collections
+  - list_sources
+  - query_grounded
+  - sync_source
+  - remove_source
+
+# Fill in the names your connector actually exposes. Example only:
+# shapes:
+#   example:
+#     capabilities:
+#       query_grounded: notebook_query
+#       list_sources: notebook_sources
+#       list_collections: list_notebooks

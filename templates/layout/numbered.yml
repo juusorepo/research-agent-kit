@@ -35,3 +35,14 @@ paths:
   audits: 07-record/audits
   sources: 08-sources
   source_records: 07-record/sources
+# Optional: this paper’s Zotero collection (canonical). 08-sources is the materialised corpus (rebuildable later).
+# zotero:
+#   library: user
+#   collection_key:
+# notebooklm:
+#   enabled: false
+#   channel: local_corpus
+#   capabilities:
+#     query_grounded:
+#     list_sources:
+#     list_collections:

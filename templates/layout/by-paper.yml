@@ -26,3 +26,15 @@ paths:
   manuscript: papers/{paper}/manuscript
   review_copy: papers/{paper}/manuscript/review-copy.yml
   metadata: papers/{paper}/outputs
+# Optional: this paper’s Zotero collection (canonical). 08-sources is the materialised corpus (rebuildable later).
+# zotero:
+#   library: user
+#   collection_key:
+# notebooklm:
+#   enabled: false
+#   channel: local_corpus
+#   capabilities:
+#     query_grounded:
+#     list_sources:
+#     list_collections:
+

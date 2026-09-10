@@ -96,7 +96,7 @@ Do not skip the questions because the defaults are fine. They may answer “defa
 6. Keep a short note when AI does substantial work from now on? (**no**)
 7. Do you already have a protocol, analysis plan, or draft paper? (**usual: yes**) We will read those files before suggesting what to do next.
 8. Should this paper work when the assistant cannot see the kit folder (ChatGPT, a co-author, NotebookLM)? (**yes** if a paper folder is already open; **no** if we are creating a folder next to the kit)
-9. Is this folder a Google Drive synced project (for sharing this folder and pointing NotebookLM at `08-sources/` here)? (**yes** if they already opened a paper folder; **no** if we are creating a sibling of the kit)
+9. Is this folder a Google Drive synced project (for sharing this folder, and — in this version — pointing NotebookLM at `08-sources/` here yourself)? (**yes** if they already opened a paper folder; **no** if we are creating a sibling of the kit)
 
 ### Opening message
 

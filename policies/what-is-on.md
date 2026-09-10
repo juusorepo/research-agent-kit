@@ -15,6 +15,7 @@ You may edit this file. The assistant should follow it.
 
 - [ ] **Record of material AI use** — a short note when AI did substantial work (some journals ask). Default is off. Tick this box to turn it on. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See `policies/ai-policy.md`.
 - [ ] **Map the evidence** — draft source-grounded packets when you say **Map the evidence**. Default is off as a reminder; the phrase still runs if you say it.
+- [ ] **Experimental NotebookLM connector** — the assistant may query your NotebookLM notebook if a connector is available in this tool (Cursor or Claude Code). Not official Google. Non-sensitive sources only. Default is off. If you tick this, the assistant will ask which notebook tools to use — it does not guess names. If off, it uses this paper’s `08-sources/` folder and any note you paste, unless you asked to query the notebook in that chat.
 
 ## Not in this version
 

@@ -15,7 +15,7 @@ This is a research project folder. First-level folders are numbered. Assistant f
 | `05-outputs/manuscript` | The paper you are writing (plus `review-copy.yml` for a Google Docs snapshot) |
 | `06-docs` | Preregistration, ethics, extra context you add (does not override the analysis plan) |
 | `07-record` | Research decision notes, collaborator inbox, working notes, audit reports, source records |
-| `08-sources` | Optional PDF copies for sharing and NotebookLM (not the Zotero library; restricted files stay out) |
+| `08-sources` | This paper’s materialised source corpus (copies for sharing and NotebookLM). Zotero stays canonical. Restricted files stay out |
 | `99-archive` | Old versions. If delete fails, put discards in `99-archive/quarantine/`. |
 
 Project overview, analysis plan, status, and tasks sit at the top of a one-paper folder. If this folder holds several papers, each paper’s record is under `07-record/<name>/` and its manuscript under `05-outputs/<name>/manuscript`. See `MEMORY.md` for how those files relate.

@@ -4,7 +4,7 @@ description: Refresh this paper’s source list from a linked Zotero collection.
 license: MIT
 compatibility: Requires a project filesystem. No Python required. Zotero desktop or a Zotero API is optional.
 metadata:
-  version: "0.1.1"
+  version: "0.1.3"
 ---
 
 # Sync the bibliography
@@ -29,7 +29,7 @@ This is **not** **Map the evidence**. This is **not** writing to Zotero unless t
 
 - Manuscript citations use `references.bib` next to the manuscript (Zotero Better BibTeX or another export). If that file is empty or a key is missing, ask them to export or attach it. Do not invent keys, DOIs, or years.
 - Stable source identity, when a Zotero item is known, is `zotero:` plus the Zotero item key (for example `zotero:Z7K4M2`). Filenames, Drive file ids, and NotebookLM labels are not the identity.
-- Records live under `layout.yml` path `source_records` (default `07-record/sources/`). Optional PDF copies live under path `sources` (default `08-sources/`). Those PDFs are copies for sharing and NotebookLM in **this** Google Drive folder. Do not create a second Drive library. Do not rename files inside Zotero.
+- Records live under `layout.yml` path `source_records` (default `07-record/sources/`). Optional copies live under path `sources` (default `08-sources/`). That folder is this paper’s **materialised corpus** (sharing, Drive, NotebookLM). Zotero remains canonical. In this version, copies happen when they asked (or they already use the folder). Rebuilding `08-sources/` from the registry is later. Do not create a second Drive library. Do not rename files inside Zotero.
 
 ---
 
@@ -52,8 +52,9 @@ If `zotero.collection_key` is missing, ask them for the collection name or key (
 
    `<itemkey>__<first-author>__<year>__<short-title>.pdf`
 
-   Leave Zotero attachments untouched. Skip the copy when `data_policy` forbids sending the file out of this machine, or the source is marked restricted. Never upload to NotebookLM from this skill.
-5. If they want items **added** to Zotero: output a clean DOI/ISBN list for them to paste into Zotero’s Add by Identifier. Do not create Zotero items in this version.
+   Leave Zotero attachments untouched. Skip the copy when `data_policy` forbids sending the file out of this machine, or the source is marked restricted. Never upload to NotebookLM from this skill. Do not watch Zotero and push every new PDF into a notebook. Automatic corpus rebuild is later.
+   5. If they want those copies **in a NotebookLM notebook** as well: that is `sync_source` in `adapters/notebooklm/README.md`. Do it only if they asked in this chat, the files are not restricted, capabilities are set, and a connector is available. Otherwise tell them this version still needs them to add `08-sources/` in NotebookLM themselves (temporary). Later the kit should materialise the corpus and manage notebook sources.
+6. If they want items **added** to Zotero: output a clean DOI/ISBN list for them to paste into Zotero’s Add by Identifier. Do not create Zotero items in this version.
 
 Do not crawl Zotero’s disk storage or WebDAV. Use Zotero’s own interface or API if present.
 
@@ -65,6 +66,7 @@ Do not crawl Zotero’s disk storage or WebDAV. Use Zotero’s own interface or 
 - Write to Zotero
 - Treat the sources folder as canonical instead of Zotero
 - Copy a second corpus to another Drive folder
-- Upload files to NotebookLM
+- Upload files to NotebookLM unless they asked in this chat and the adapter allows `sync_source`
+- Watch Zotero and push new PDFs into a notebook automatically
 - Override the analysis plan, accepted decisions, or approved results
 - Open row-level real data

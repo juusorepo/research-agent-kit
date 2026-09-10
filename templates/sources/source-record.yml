@@ -21,3 +21,4 @@ representations:
     filename: ""
   notebooklm:
     source_label: ""
+    source_id: ""

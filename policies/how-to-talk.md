@@ -22,6 +22,7 @@ Speak as to a **social science researcher**, not a software developer.
 - “map the evidence”
 - “sync the bibliography”
 - “audit literature claims”
+- “experimental NotebookLM connector” (optional; query a notebook only if allowed)
 
 ## Avoid in chat (unless the researcher used the word first)
 

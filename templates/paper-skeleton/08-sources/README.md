@@ -1,3 +1,3 @@
-# Sources (optional copies)
+# Project corpus (materialised copies)
 
-PDF copies for sharing and NotebookLM live here (`paths.sources` in `layout.yml`, default `08-sources/`). Canonical identity is the Zotero item (`zotero:<item-key>`). The manuscript bibliography is still `references.bib`. Restricted files stay out. Source records (short YAML files) live under `07-record/sources/`.
+Copies of included sources for sharing, Drive, and NotebookLM (`paths.sources` in `layout.yml`, default `08-sources/`). Zotero remains canonical (`zotero:<item-key>`). In this version you may add PDFs here by hand or via **Sync the bibliography**; later this folder should be rebuildable from the source registry. The manuscript bibliography is still `references.bib`. Restricted files stay out. Source records live under `07-record/sources/`.

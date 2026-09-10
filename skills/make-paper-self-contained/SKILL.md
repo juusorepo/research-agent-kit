@@ -55,7 +55,7 @@ In one short message:
 
 - This paper will get **generated kit files** under `.rak/runtime/` and a generated `AGENTS.md`. Those files are replaced later with **Update the kit** from GitHub, or **Adjust this project to the new kit version** if the kit folder is open. Do not edit them.
 - Science files, data-use rules, and ticks stay as they are.
-- If this paper has no sources folder yet, it will get `08-sources/` (PDF copies for NotebookLM). Existing source paths and PDFs stay put.
+- If this paper has no sources folder yet, it will get `08-sources/` (this paper’s source copies for sharing and NotebookLM). Existing source paths and PDFs stay put.
 - If this paper already has a long `AGENTS.md` they wrote themselves: it will be **replaced** by the generated file. If they need extra instructions, those belong in `policies/how-to-talk.md` or `.agents/skills/`.
 
 Then wait for yes, unless this copy is part of Start after they already answered.
@@ -112,7 +112,7 @@ Do not copy `dev/`, tests, examples, SPEC, `start-research-project`, `adjust-pro
 
 Say: this paper’s generated kit files are in place. An assistant can work from this folder without the kit. To refresh those files, say **Update the kit from https://github.com/juusorepo/research-agent-kit** (temporary fetch; not a full clone). **Adjust this project** still works if the kit folder is open. Do not edit `.rak/runtime/` or the generated `AGENTS.md`. Understand the project is the next message if they just started.
 
-If this paper already had a Google Drive synced folder, they can share **this folder** with co-authors and point NotebookLM at `08-sources/` **inside it** (or the path in `layout.yml`). Do not copy sources elsewhere.
+If this paper already had a Google Drive synced folder, they can share **this folder** with co-authors. In this version they still point NotebookLM at `08-sources/` **inside it** themselves (or the path in `layout.yml`) — that manual step is temporary. Do not copy sources elsewhere.
 
 ---
 
