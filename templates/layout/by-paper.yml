@@ -19,7 +19,7 @@ paths:
   notes: papers/{paper}/notes
   contributions: papers/{paper}/contributions
   audits: papers/{paper}/audits
-  sources: sources
+  sources: 08-sources
   source_records: papers/{paper}/sources
   scripts: papers/{paper}/analysis
   outputs: papers/{paper}/outputs

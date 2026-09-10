@@ -4,12 +4,12 @@ description: Draft a source-grounded evidence packet for a named question. Use w
 license: MIT
 compatibility: Requires a project filesystem. No Python required.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Map the evidence
 
-One job. Write a **draft** evidence packet for a question they named, from sources in this paper (PDFs in `sources/`, attached files, or a note they pasted from NotebookLM). Stop for acceptance. This is **doing the research**, not an independent check.
+One job. Write a **draft** evidence packet for a question they named, from sources in this paper (PDFs in `08-sources/` or `paths.sources`, attached files, or a note they pasted from NotebookLM). Stop for acceptance. This is **doing the research**, not an independent check.
 
 Follow `policies/how-to-talk.md` if present. Say *draft evidence packet*, *not in these sources*, *researcher decision needed*. Do not say verified, grounded-synthesis, or evidential status as if it were authority.
 
@@ -33,7 +33,7 @@ Optional. If `what-is-on.md` lists **Map the evidence** and the box is unticked,
 
 - The question they named
 - Intellectual anchor if written
-- `07-record/sources/` and `sources/` (layout paths)
+- `07-record/sources/` and `08-sources/` (layout paths `source_records` and `sources`)
 - `references.bib`
 - Any NotebookLM export they pasted — treat it as **retrieval notes**, not as approved interpretation
 
@@ -74,4 +74,4 @@ If they want an independent check of manuscript claims, tell them to open a **ne
 - Upgrade association to causation
 - Invent sources or citation keys
 - Override the analysis plan, accepted decisions, or approved results
-- Copy PDFs to another folder for NotebookLM (this paper’s `sources/` is the folder)
+- Copy PDFs to another folder for NotebookLM (this paper’s `08-sources/` folder, or `paths.sources`, is the folder)

@@ -6,7 +6,7 @@ NotebookLM is a **reading and retrieval** surface. It does not verify claims. A 
 
 ## Same folder, no extra copy
 
-If this paper lives in a **Google Drive for Desktop** folder, NotebookLM should use **this paper’s** `sources/` directory (path `sources` in `layout.yml`). Co-authors share that folder. Do **not** copy PDFs into a second Drive library for NotebookLM.
+If this paper lives in a **Google Drive for Desktop** folder, NotebookLM should use **this paper’s** `08-sources/` directory (path `sources` in `layout.yml`). Co-authors share that folder. Do **not** copy PDFs into a second Drive library for NotebookLM.
 
 Source identity stays `zotero:<item-key>` when a source record exists (`07-record/sources/`). NotebookLM titles or ids are labels only. Prefer exported filenames that start with the Zotero item key.
 
@@ -14,13 +14,13 @@ Source identity stays `zotero:<item-key>` when a source record exists (`07-recor
 
 | Skill | Role |
 |---|---|
-| Sync the bibliography | Optional PDF copies into `sources/` |
+| Sync the bibliography | Optional PDF copies into `08-sources/` |
 | Map the evidence | May read a pasted NotebookLM note as retrieval input, not as authority |
 | Audit literature claims | Reads the manuscript and identifiable sources; does **not** trust NotebookLM or a research packet |
 
 ## Community connectors
 
-Unofficial NotebookLM MCP servers exist. Treat them as **experimental**. Do not enable them by default. Do not put session cookies or secrets in the paper folder. If the assistant cannot reach NotebookLM, the researcher pastes an export or points at `sources/`.
+Unofficial NotebookLM MCP servers exist. Treat them as **experimental**. Do not enable them by default. Do not put session cookies or secrets in the paper folder. If the assistant cannot reach NotebookLM, the researcher pastes an export or points at `08-sources/`.
 
 Do not send restricted or confidential files to NotebookLM. Follow `policies/data-policy.md`.
 

@@ -51,7 +51,7 @@ One folder is one paper unless you say this project has several papers that shar
 
 The file agents follow is `AGENTS.md`. There is no `CLAUDE.md` in the paper folder.
 
-Numbered science folders (`01-data` … `07-record`, `99-archive`); the paper lives in `05-outputs/manuscript/`.
+Numbered science folders (`01-data` … `08-sources`, `99-archive`); the paper lives in `05-outputs/manuscript/`.
 
 ## Later
 

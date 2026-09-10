@@ -4,7 +4,7 @@ description: Write generated kit files into this paper so an assistant can work 
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. Needs the kit folder readable to copy from.
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Make this paper self-contained
@@ -37,7 +37,7 @@ Never write these, even after they accept:
 
 - Overview, analysis plan, decision notes, outputs, manuscript, data, scripts
 - Contributions, notes, audits, proposals, AI-use events
-- `layout.yml` (except you may add missing `paths.sources` / `paths.source_records` only if those keys are absent — do not rename existing paths)
+- `layout.yml` (except you may add missing `paths.sources` / `paths.source_records` only if those keys are absent — default `08-sources` and `07-record/sources`. Do not rename existing paths. Do not move PDFs.)
 - `policies/data-policy.md` and `data_access`
 - `policies/what-is-on.md` ticks
 - `TASKS.md`
@@ -55,6 +55,7 @@ In one short message:
 
 - This paper will get **generated kit files** under `.rak/runtime/` and a generated `AGENTS.md`. Those files are replaced later with **Update the kit** from GitHub, or **Adjust this project to the new kit version** if the kit folder is open. Do not edit them.
 - Science files, data-use rules, and ticks stay as they are.
+- If this paper has no sources folder yet, it will get `08-sources/` (PDF copies for NotebookLM). Existing source paths and PDFs stay put.
 - If this paper already has a long `AGENTS.md` they wrote themselves: it will be **replaced** by the generated file. If they need extra instructions, those belong in `policies/how-to-talk.md` or `.agents/skills/`.
 
 Then wait for yes, unless this copy is part of Start after they already answered.
@@ -75,6 +76,7 @@ Read `templates/runtime/layers.yml` in the **kit**. Copy only what that file lis
 8. Copy kit `templates/project/kit-lock.yml` onto this paper’s `kit-lock.yml` **only for** `kit:` and `skills:` (do not invent numbers). Set `runtime: materialised`. Keep `update_policy:` if already present; otherwise write `update_policy: latest-compatible`. Keep any extra top-level keys this paper already had. Do not delete paper-only keys.
 9. Write `.rak/runtime.manifest.json`: kit version, `generated_at` (ISO date), and every generated file path with `sha256` and `layer` (`core` / `profile` / `audit`). Include the paper-root `AGENTS.md`. Use SHA-256 of file bytes (PowerShell `Get-FileHash -Algorithm SHA256`, or `sha256sum`).
 10. If `STATUS.md` exists, under existing headings add or refresh **one factual line** that this paper now has generated kit files so an assistant can work from this folder alone. Do not rewrite other STATUS content.
+11. **Sources folder.** Read `paths.sources` in `layout.yml`. If that key is missing: if a folder named `sources/` already has files, add `sources: sources`; otherwise add `sources: 08-sources`. If `paths.source_records` is missing, add `source_records: 07-record/sources` (or `07-record/{paper}/sources` when this paper uses numbered-multipaper). Do not rename an existing path. Create the sources directory if it does not exist. If it is empty, copy `templates/paper-skeleton/08-sources/README.md` from the kit into it (name the file `README.md`). Create the source-records directory if it does not exist; do not invent YAML records. Do not move PDFs from an old `sources/` folder.
 
 If a file already under `.rak/runtime/` or the paper-root `AGENTS.md` is listed in an existing manifest but the hash no longer matches: **stop** before overwrite. Offer (1) discard the edit and copy, or (2) move the file to `.agents/skills/` or paper `policies/` and then copy. Do not three-way merge.
 
@@ -110,7 +112,7 @@ Do not copy `dev/`, tests, examples, SPEC, `start-research-project`, `adjust-pro
 
 Say: this paper’s generated kit files are in place. An assistant can work from this folder without the kit. To refresh those files, say **Update the kit from https://github.com/juusorepo/research-agent-kit** (temporary fetch; not a full clone). **Adjust this project** still works if the kit folder is open. Do not edit `.rak/runtime/` or the generated `AGENTS.md`. Understand the project is the next message if they just started.
 
-If this paper already had a Google Drive synced folder, they can share **this folder** with co-authors and point NotebookLM at `sources/` **inside it**. Do not copy sources elsewhere.
+If this paper already had a Google Drive synced folder, they can share **this folder** with co-authors and point NotebookLM at `08-sources/` **inside it** (or the path in `layout.yml`). Do not copy sources elsewhere.
 
 ---
 
@@ -122,4 +124,5 @@ If this paper already had a Google Drive synced folder, they can share **this fo
 - Require Python
 - Treat generated files as the analysis plan or as approved results
 - Upload confidential files to an external tool
+- Move PDFs from an existing sources folder
 - Invent numbers, analyses, or citation keys

@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.6.0"
+  version: "0.6.1"
 ---
 
 # Start the project
@@ -96,7 +96,7 @@ Do not skip the questions because the defaults are fine. They may answer “defa
 6. Keep a short note when AI does substantial work from now on? (**no**)
 7. Do you already have a protocol, analysis plan, or draft paper? (**usual: yes**) We will read those files before suggesting what to do next.
 8. Should this paper work when the assistant cannot see the kit folder (ChatGPT, a co-author, NotebookLM)? (**yes** if a paper folder is already open; **no** if we are creating a folder next to the kit)
-9. Is this folder a Google Drive synced project (for sharing this folder and pointing NotebookLM at `sources/` here)? (**yes** if they already opened a paper folder; **no** if we are creating a sibling of the kit)
+9. Is this folder a Google Drive synced project (for sharing this folder and pointing NotebookLM at `08-sources/` here)? (**yes** if they already opened a paper folder; **no** if we are creating a sibling of the kit)
 
 ### Opening message
 
@@ -167,7 +167,7 @@ Copy the matching extra tree. Do not read those files.
 
 Do not add a second skill for a “fast start.”
 
-First-level folders must be numbered (`01-data` … `07-record`, `99-archive`) plus `policies/`. The manuscript lives in `05-outputs/manuscript/` (or `05-outputs/<name>/manuscript` if several papers). Do not put `decisions`, `notes`, `contributions`, `proposals`, `ai-use`, or `audits` at the top level.
+First-level folders must be numbered (`01-data` … `08-sources`, `99-archive`) plus `policies/`. The manuscript lives in `05-outputs/manuscript/` (or `05-outputs/<name>/manuscript` if several papers). Do not put `decisions`, `notes`, `contributions`, `proposals`, `ai-use`, or `audits` at the top level.
 
 ### After the folder exists
 

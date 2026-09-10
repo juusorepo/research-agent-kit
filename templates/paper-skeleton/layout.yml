@@ -33,7 +33,7 @@ paths:
   proposals: 07-record/proposals
   ai_use: 07-record/ai-use
   audits: 07-record/audits
-  sources: sources
+  sources: 08-sources
   source_records: 07-record/sources
 # Optional: this paper’s Zotero collection (canonical bibliography + PDFs)
 # zotero:

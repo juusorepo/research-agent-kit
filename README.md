@@ -121,7 +121,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Audit the research chain | Independent check: plan → code → output → manuscript → claims. Use a **new chat**, not the one that wrote the files. Works on a kit paper or on a folder that was never set up with the kit (the assistant asks where the four pieces are). The saved report keeps **two** statuses: whether numbers match, and whether the claims are supported. Matching numbers is not enough. Diagnose only. If this paper already has a task list and anything needs work, add one task pointing at the report, then stop. Next work: **Do T-004** in a new chat, not a pasted prompt. If there is no task list, remaining work stays in the report |
 | Audit literature claims | Independent check of literature statements against identifiable sources (new chat). Does not trust a draft evidence packet or NotebookLM as authority. Not the same as **Map the evidence** |
 | Map the evidence | Draft a source-grounded evidence packet for a named question. Not an audit. Not an approved claim |
-| Sync the bibliography | Refresh this paper’s source list from a Zotero collection or from `references.bib`. Citation keys still come from that export. Optional PDF copies stay in this paper’s sources folder |
+| Sync the bibliography | Refresh this paper’s source list from a Zotero collection or from `references.bib`. Citation keys still come from that export. Optional PDF copies stay in `08-sources/` |
 | Adjust this project to the new kit version | After you updated the kit, replace this paper’s generated kit files (or a small instruction patch if it has none). Science files stay as they are |
 | Audit APA presentation | Independent check of the rendered Word file and a PDF exported from it. Four statuses (render, tables, figures, manuscript frame). Not the research chain. Diagnose only |
 
@@ -131,7 +131,7 @@ The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
 **Start the project:** empty Drive folder plus **Start the project from** the GitHub URL is enough for a self-contained paper (Claude does not need the kit folder). Or keep one kit folder and start papers from it. The assistant asks the interview questions (with defaults) and waits; after the answers, setup is copy-then-patch. Understand the project is the next message. Generated kit files are replaced from GitHub with **Update the kit** in that paper, or from a local kit with **Adjust this project**. Do not edit them. How it talks is in `policies/how-to-talk.md`.
 
-You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`. First-level folders stay numbered (`01-data` … `07-record`, `99-archive`). The manuscript sits in `05-outputs/manuscript/` next to figures and tables.
+You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`. First-level folders stay numbered (`01-data` … `08-sources`, `99-archive`). The manuscript sits in `05-outputs/manuscript/` next to figures and tables.
 
 The kit ships a **Quarto manuscript** (APA format) that reads **approved** result files only — the same approach as a quantitative paper that builds tables from those files and includes figures already written to `05-outputs/figures`. It does not read row-level data. Tables and figures that go into the paper follow the manuscript display list (APA 7); posters and talks do not. `renv` and `{targets}` are later work.
 
