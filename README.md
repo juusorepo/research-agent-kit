@@ -112,7 +112,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Prepare a review copy | Google Docs snapshot for co-authors. You render a Word file first; the assistant uploads it. Not the paper file itself |
 | Ingest review comments | Leftover open comments → inbox. Skip wording already accepted in the Doc |
 | Sync the review copy | After you accept suggestions in the Doc, update the manuscript once |
-| Review the manuscript | AI pass; findings go to the inbox. Not an audit of the research chain |
+| Review the manuscript · Scan for generic prose | AI pass; findings go to the inbox. A prose scan flags vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction as candidate passages; it does not rewrite, score, or judge authorship. Not an audit of the research chain |
 | Explore alternative framings | Genuinely different interpretations, generated independently, then you choose. Optional. Not for routine editing |
 | Document a research decision | Record an important choice (not every Table 1) |
 | Develop analysis with safe data | Write and test analysis without crossing the data line |

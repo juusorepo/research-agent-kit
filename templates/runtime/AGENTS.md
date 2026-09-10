@@ -53,7 +53,7 @@ Resolve each skill by the lookup above. The phrase is enough — no long prompt.
 | Prepare a review copy | `skills/prepare-review-copy/SKILL.md` | Google Docs snapshot from a Word file you rendered; not the canonical manuscript |
 | Ingest review comments | `skills/ingest-review-comments/SKILL.md` | Open Doc comments → inbox; skip accepted suggestions |
 | Sync the review copy | `skills/sync-review-copy/SKILL.md` | After suggestions are accepted in the Doc, update the manuscript |
-| Review the manuscript · AI review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; not an audit of the research chain |
+| Review the manuscript · AI review · Scan for generic prose · Plain-language review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; a focused prose scan flags candidate passages only; not an audit of the research chain |
 | Explore alternative framings · Give me genuinely different interpretations · Diverge before synthesis · Challenge the current framing | `skills/explore-alternative-framings/SKILL.md` | Independent alternatives before synthesis; optional; not routine editing |
 | Map the evidence | `skills/map-the-evidence/SKILL.md` | Draft a source-grounded evidence packet; not an audit; not an approved claim |
 | Sync the bibliography · Update project sources | `skills/sync-project-sources/SKILL.md` | Read-only source list from a Zotero collection; optional PDF copies in this paper’s sources folder |

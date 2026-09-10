@@ -65,7 +65,7 @@ The assistant diagnoses; it does not repair. The full report is a saved file. It
 
 If start chose Stata, you can later say **Run approved Stata analysis** for one named `.do` file on an assigned run-on-real-data task. Put this computer’s Stata path in `stata_bin.local.yml` (not in git) or `STATA_BIN` — do not assume a path.
 
-Co-author review: render a Word file of the paper first (see the manuscript README), then say **Prepare a review copy**. Accept small wording in the Google Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox. Say **Explore alternative framings** when you want genuinely different interpretations before any combined wording.
+Co-author review: render a Word file of the paper first (see the manuscript README), then say **Prepare a review copy**. Accept small wording in the Google Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox. Say **Scan for generic prose** for a focused, detection-only pass: it flags candidate vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction, but does not rewrite or judge authorship. Say **Explore alternative framings** when you want genuinely different interpretations before any combined wording.
 
 New kit version from GitHub into the **kit** folder? Open the kit and paste:
 
