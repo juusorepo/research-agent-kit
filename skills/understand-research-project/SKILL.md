@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use when they sa
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.4.4"
+  version: "0.4.5"
 ---
 
 # Understand the project
@@ -73,6 +73,7 @@ If they already have a filled analysis plan or a near-final draft, do not offer 
 - Open proposals, contributions, and proposed decisions
 - Open tasks (id, kind of work, whether assigned to this run). Mention `later` items only so they are not forgotten; do not offer them as the next step.
 - What is optional and off
+- Whether **Author voice** is ticked, and whether a voice note is written (only if the box is on)
 
 ## Then suggest what to do next
 
@@ -96,6 +97,7 @@ Only after the read above. If the task list has an **open** item that fits, name
 16. Map the evidence — **only** if they asked to map sources for a named question (draft packet; not an audit)
 17. Sync the bibliography — **only** if they asked to refresh the source list from Zotero or `references.bib`
 18. Update the kit — **only** if they asked to refresh generated kit files from GitHub in this paper, or to fetch a new public kit into the kit folder
+19. Draft or edit in my voice — **only** if **Author voice** is ticked and they asked to write or restyle manuscript prose. If the box is off, do not offer it. If the box is on and the voice note is empty, they may dictate it or say **Build my voice note**
 
 ## Must not
 
@@ -110,3 +112,4 @@ Only after the read above. If the task list has an **open** item that fits, name
 - Treat the overview Data section as agreeing an analysis or as an approved result
 - Invent the intellectual anchor, or treat an empty one as blocking technical work
 - Treat the intellectual anchor as an agreed analysis, approved result, or something the agent must agree with
+- Invent a voice note, or apply author voice when the box is off

@@ -113,6 +113,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Ingest review comments | Leftover open comments → inbox. Skip wording already accepted in the Doc |
 | Sync the review copy | After you accept suggestions in the Doc, update the manuscript once |
 | Review the manuscript · Scan for generic prose | AI pass; findings go to the inbox. A prose scan flags vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction as candidate passages; it does not rewrite, score, or judge authorship. Not an audit of the research chain |
+| Draft this in my voice · Edit this in my voice | Optional. Off until you tick **Author voice** in that paper’s `policies/what-is-on.md`. Drafts or restyles manuscript prose; does not rewrite during a scan. Integrity (numbers, hedges, citations) wins over style |
 | Explore alternative framings | Genuinely different interpretations, generated independently, then you choose. Optional. Not for routine editing |
 | Document a research decision | Record an important choice (not every Table 1) |
 | Develop analysis with safe data | Write and test analysis without crossing the data line |
@@ -125,7 +126,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Adjust this project to the new kit version | After you updated the kit, replace this paper’s generated kit files (or a small instruction patch if it has none). Science files stay as they are |
 | Audit APA presentation | Independent check of the rendered Word file and a PDF exported from it. Four statuses (render, tables, figures, manuscript frame). Not the research chain. Diagnose only |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own, writing to Zotero, a required Python program, or treating NotebookLM as verification. **Audit literature claims** is in this version (independent check; it does not certify the paper). This workflow is experimental; it does not guarantee quality.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). **Author voice** is also off until you tick it in that paper; other papers stay ordinary. Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own, writing to Zotero, a required Python program, or treating NotebookLM as verification. **Audit literature claims** is in this version (independent check; it does not certify the paper). This workflow is experimental; it does not guarantee quality.
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 

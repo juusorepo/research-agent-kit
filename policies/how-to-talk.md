@@ -22,6 +22,7 @@ Speak as to a **social science researcher**, not a software developer.
 - “map the evidence”
 - “sync the bibliography”
 - “audit literature claims”
+- voice note, “draft in my voice”, “edit in my voice”, “author voice” (only if that paper ticked it)
 - “experimental NotebookLM connector” (optional; query a notebook only if allowed)
 
 ## Avoid in chat (unless the researcher used the word first)
@@ -30,6 +31,7 @@ Speak as to a **social science researcher**, not a software developer.
 - agent-accessible, data_access, by-paper, preset, layout.yml
 - “verified result” for an approved file
 - RDR, epistemic checkpoint, epistemic control
+- humanizer, detector, slop, voice profile
 - that the kit ensures integrity, certifies the paper, or makes the research safe
 - queue, ticket, handoff
 - migrate, upgrade (for a kit version)

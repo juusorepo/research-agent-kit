@@ -5,6 +5,7 @@ These files are small on purpose. Do not turn them into logs.
 | File | Role | How to treat it |
 |---|---|---|
 | `RESEARCH_CONTEXT.md` | Stable orientation: problem, questions, design, data and its limits, constructs, terms, constraints. May include an **intellectual anchor** (why this project exists in the researcher’s own terms) | Canonical orientation. Rewrite in place. The Data section describes available data; it does not override the analysis plan, accepted notes, or approved results. The intellectual anchor is researcher-owned: preserve it unless they explicitly revise it. It is not an agreed analysis, approved result, or factual authority. |
+| `07-record/author-voice.md` | Optional **voice note** (how manuscript prose should sound in this paper) | Researcher-owned. Only used if **Author voice** is ticked. Empty is fine. Not the intellectual anchor and not chat tone. |
 | `STATUS.md` | Hot memory: stage, active work, blockers, open scientific questions | Hint only. Rewrite in place under the template headings. The analysis plan wins if they disagree. |
 | `TASKS.md` | Remaining work. Kind of work is the role for the next run. | Temporary. Not the analysis plan. |
 | `ANALYSIS_PLAN.md` | What analyses are **agreed** | Canonical. Agents propose; you accept. |

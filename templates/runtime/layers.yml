@@ -22,6 +22,7 @@ profile:
     - ingest-review-comments
     - sync-review-copy
     - review-the-manuscript
+    - author-voice
     - sync-project-sources
     - map-the-evidence
   skills_if_stata:

@@ -36,6 +36,7 @@ Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SK
 | Ingest review comments | `skills/ingest-review-comments/SKILL.md` | Open Doc comments → inbox; skip accepted suggestions |
 | Sync the review copy | `skills/sync-review-copy/SKILL.md` | After suggestions are accepted in the Doc, update the manuscript |
 | Review the manuscript · AI review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; not an audit of the research chain |
+| Draft this in my voice · Edit this in my voice | `skills/author-voice/SKILL.md` | Optional; off until ticked. Draft or edit manuscript prose |
 | Update the project record | `skills/update-project-record/SKILL.md` | After acceptance, write it into the shared record |
 | Adjust this project to the new kit version | `skills/adjust-project-to-kit/SKILL.md` | Align this paper’s instructions and version note; do not edit science files |
 | Update the kit · Update the skills (in the kit folder, not a paper) | `skills/update-the-kit/SKILL.md` | Fetch a new kit or skills version into the kit |
@@ -70,6 +71,7 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - A copied protocol or draft paper is background. It does not agree an analysis. Numbers in a draft manuscript are not approved results.
 - If they copied existing files and the analysis plan is still empty, draft the overview and plan items from those files **in this reply**, then stop for acceptance. Do not write the overview file until they accept. Do not reconstruct a log of past decisions or past AI use unless they ask to record a specific choice now.
 - If the change would alter design, measurement, sample, analysis, interpretation, or what the project may claim, say **researcher decision needed**, write a proposed research decision note if needed, and **stop**.
+- If this paper’s `policies/what-is-on.md` has **Author voice** ticked: before drafting or editing manuscript prose, follow `skills/author-voice/SKILL.md`. If the box is off or missing, do not apply author voice.
 - Follow `data_access`. In `restricted` mode, do not read or run row-level real data.
 - Analysis reads `01-data/processed`, not `01-data/raw`. Raw stays original.
 - Every result file needs a sidecar metadata record (`status: provisional` until approved).

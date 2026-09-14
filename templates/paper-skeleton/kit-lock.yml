@@ -3,16 +3,17 @@ runtime: optional
 update_policy: latest-compatible
 skills:
   start-research-project: 0.6.1
-  understand-research-project: 0.4.4
+  understand-research-project: 0.4.5
   develop-analysis-with-safe-data: 0.1.5
   document-research-decision: 0.1.3
-  update-project-record: 0.3.3
+  update-project-record: 0.3.4
   contribute-to-project: 0.3.1
   consolidate-contributions: 0.3.0
   prepare-review-copy: 0.3.1
   ingest-review-comments: 0.3.0
   sync-review-copy: 0.3.1
-  review-the-manuscript: 0.3.4
+  review-the-manuscript: 0.3.5
+  author-voice: 0.1.0
   explore-alternative-framings: 0.1.0
   audit-research-chain: 0.3.1
   audit-apa-presentation: 0.1.0

@@ -4,7 +4,7 @@ description: AI pass on the manuscript as open issues in contributions/. Use whe
 license: MIT
 compatibility: Requires a project filesystem. An external review tool is optional.
 metadata:
-  version: "0.3.4"
+  version: "0.3.5"
 ---
 
 # Review the manuscript (AI)
@@ -23,7 +23,7 @@ This is **not** `audit-research-chain` (plan → code → output → claim). It 
    - generic filler that could describe almost any study;
    - repetitive, formulaic rhetorical setups or endings; or
    - a sentence whose abstraction or tangled structure prevents a clear reading.
-   Quote the passage, name the pattern, and give a short rationale. Do not rewrite it, score the manuscript, or infer whether a person or AI wrote it. Do not flag quotations, necessary methods language, tables or figure notes, warranted uncertainty, disciplinary terms, or properly cited claims merely because they are formal or abstract. A passage is a candidate for the researcher to judge, not a defect established by the scan.
+   Quote the passage, name the pattern, and give a short rationale. Do not rewrite it, score the manuscript, or infer whether a person or AI wrote it. Do not flag quotations, necessary methods language, tables or figure notes, warranted uncertainty, disciplinary terms, or properly cited claims merely because they are formal or abstract. A passage is a candidate for the researcher to judge, not a defect established by the scan. If this paper has **Author voice** ticked and they want flagged passages rewritten, that is **Edit this in my voice** in a **later** message. Do not rewrite here. If they asked to scan and to draft or edit in their voice in the same message, do this scan only, then stop.
 4. Unless this is a focused prose scan, for tables and figures in the **paper**, also check `templates/analysis/manuscript-displays.md` (paper file if they added it, otherwise the kit). APA cosmetics (lines, italics, numbering, call-outs, notes) are `type: editorial`. A caption that overclaims, or notes that do not match the test, stay issues. This is not an audit of the research chain. Skip this list if they asked you to review a poster or a talk. If they asked to check the **rendered Word/PDF** (clipping, heading order, title page), stop and use **Audit APA presentation** instead.
 5. Unless this is a focused prose scan, if an intellectual anchor is written, also check intellectual continuity. These are proposals (`type: interpretation` or `issue`), not a restore of old wording and not a block on conceptual development:
    - Is the original research problem still visible?
