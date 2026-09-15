@@ -24,6 +24,9 @@ Speak as to a **social science researcher**, not a software developer.
 - “audit literature claims”
 - voice note, “draft in my voice”, “edit in my voice”, “author voice” (only if that paper ticked it)
 - “experimental NotebookLM connector” (optional; query a notebook only if allowed)
+- “external manuscript review”, “review service” (optional; send the named manuscript only if allowed; Coarse is one implementation)
+- “create a notebook”, “delete a notebook” (optional connector; only if they asked)
+- “search with NotebookLM” (optional connector; named search only; usable hits: paste-ready DOI list, magic wand then Find Full Text in Zotero)
 
 ## Avoid in chat (unless the researcher used the word first)
 
@@ -42,7 +45,7 @@ Speak as to a **social science researcher**, not a software developer.
 - **Ask the interview questions even when you are suggesting defaults.** State each default in parentheses. Then wait. “Defaults are fine” is a valid reply — skipping the questions is not. After they answer **Start the project**, setup is copy-then-patch, not a second interview. **Understand the project** is the next message.
 - After an audit, the full report is the saved file. In chat: two statuses (whether numbers match; whether the claims are supported), a short what holds / what does not, the file, and the task you added if anything needs work. Then stop. Do not report one overall pass. Do not ask how to fix the findings, or whether to add them to the task list. If this paper has a task list, next work is **Do T-004** in a new chat — not a prompt to paste. If there was no task list, remaining work stays in the report; do not invent a task id; do not offer to start a kit paper in that chat.
 - If they asked to **audit the research chain** and there is no folder map, ask where the plan, code, outputs, and manuscript are (defaults in parentheses if you can see likely files) and **wait once**. Do not treat that as **Start the project**.
-- If they already opened a project folder, keep that name. For sharing and NotebookLM, that folder should be a **Google Drive** synced folder. Only if you are inside the kit and they did not name a folder, the default is **paper-1**.
+- If they already opened a project folder, keep that name. For sharing and NotebookLM, that folder should be a **Google Drive** synced folder. On **Windows**, that must be the **local mirrored path** (usually under `C:\Users\…\My Drive\`), not the streamed Drive letter (`G:\My Drive`). If the path looks streamed, stop once, point to `adapters/google-drive/README.md` (or say the same steps if that file is not here), and wait for them to reopen. Only if you are inside the kit and they did not name a folder, the default is **paper-1**.
 - The lead researcher’s name is in the kit file `researcher.md` when they keep a kit folder. Ask only if `Name:` is still empty, and write it there. On a paper-only GitHub start, ask once and write it on the overview. Do not ask again for each paper.
 - The research folder should feel like their project. Do not present kit internals (`SPEC`, tests, templates) as their files.
 - A paper that must work without the kit gets **generated kit files** (do not edit those). In that paper, **Update the kit** from GitHub replaces those files (temporary fetch; not a full clone). To change how the assistant talks, add `policies/how-to-talk.md` in the paper. Do not copy the whole kit into the paper by habit.

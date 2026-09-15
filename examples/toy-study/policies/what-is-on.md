@@ -14,6 +14,7 @@ You may edit this file. The assistant should follow it.
 
 - [ ] **Record of material AI use** — a short note when AI did substantial work (some journals ask). Default is off. Tick this box to turn it on. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See `policies/ai-policy.md`.
 - [ ] **Author voice** — when drafting or editing manuscript prose, follow this paper’s voice note and avoid generic filler. Default is off.
+- [ ] **External manuscript review** — send the named manuscript to a review service only if this paper allows it. Default is off.
 
 ## Not in this version
 

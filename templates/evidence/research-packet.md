@@ -41,4 +41,4 @@ This file is a **draft**. It is not an agreed analysis, not an approved result, 
 ## Provenance
 
 - Written with skill: map-the-evidence
-- Retrieval notes (NotebookLM or other): input only, not authority
+- Retrieval notes (NotebookLM or other): locators into sources in this packet; check by opening the source, not with a citation tool

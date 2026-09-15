@@ -4,7 +4,7 @@ description: Refresh this paper’s source list from a linked Zotero collection.
 license: MIT
 compatibility: Requires a project filesystem. No Python required. Zotero desktop or a Zotero API is optional.
 metadata:
-  version: "0.1.3"
+  version: "0.1.6"
 ---
 
 # Sync the bibliography
@@ -53,8 +53,8 @@ If `zotero.collection_key` is missing, ask them for the collection name or key (
    `<itemkey>__<first-author>__<year>__<short-title>.pdf`
 
    Leave Zotero attachments untouched. Skip the copy when `data_policy` forbids sending the file out of this machine, or the source is marked restricted. Never upload to NotebookLM from this skill. Do not watch Zotero and push every new PDF into a notebook. Automatic corpus rebuild is later.
-   5. If they want those copies **in a NotebookLM notebook** as well: that is `sync_source` in `adapters/notebooklm/README.md`. Do it only if they asked in this chat, the files are not restricted, capabilities are set, and a connector is available. Otherwise tell them this version still needs them to add `08-sources/` in NotebookLM themselves (temporary). Later the kit should materialise the corpus and manage notebook sources.
-6. If they want items **added** to Zotero: output a clean DOI/ISBN list for them to paste into Zotero’s Add by Identifier. Do not create Zotero items in this version.
+   5. If they want those copies **in a NotebookLM notebook** as well: that is `sync_source` in `adapters/notebooklm/README.md`. Asking to add `08-sources/` to this paper’s notebook, or to use the connector with that folder, **is** that ask. Do not stop for a second authorization. Skip restricted files. If they asked to **create** that notebook first, that is `create_collection` (same conditions).
+6. If they want items **added** to Zotero (including after **Search with NotebookLM**): do **not** write to Zotero and do not hunt for a Zotero connector. Put a **paste-ready** list in chat (one DOI or ISBN per line; title + URL if there is no identifier). Tell them: open this paper’s Zotero collection (name or key from `layout.yml` if present); click the **magic wand** (Add Item by Identifier); paste; **Select All**, right-click, **Find Full Text**; then say **Sync the bibliography**. Do not invent DOIs or citation keys. Usable search hits are not project sources until they are in Zotero.
 
 Do not crawl Zotero’s disk storage or WebDAV. Use Zotero’s own interface or API if present.
 
@@ -63,10 +63,10 @@ Do not crawl Zotero’s disk storage or WebDAV. Use Zotero’s own interface or 
 ## Must not
 
 - Invent bibliography records or citation keys
-- Write to Zotero
-- Treat the sources folder as canonical instead of Zotero
+- Hunt for a Zotero connector or local API to create items; give a paste-ready identifier list instead
+- Treat NotebookLM search hits, Drive file ids, or notebook labels as source identity instead of `zotero:<item-key>`
 - Copy a second corpus to another Drive folder
-- Upload files to NotebookLM unless they asked in this chat and the adapter allows `sync_source`
+- Ask for a second yes before adding non-restricted files from `paths.sources` when they already asked to use this paper’s notebook
 - Watch Zotero and push new PDFs into a notebook automatically
 - Override the analysis plan, accepted decisions, or approved results
 - Open row-level real data

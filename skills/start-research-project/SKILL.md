@@ -55,6 +55,8 @@ They only need to say **Start the project**. Do not ask them to name the kit or 
 - **Paper only, and you cannot read a local kit:** if they gave a GitHub URL, or they said **Start the project from** the public kit, this is a **GitHub paper start** (below). Do not stop. If they did not give GitHub and there is no local kit: ask once for the public URL (default https://github.com/juusorepo/research-agent-kit) or to open the kit.
 - If more than one non-kit folder is open and it is unclear which is this paper, ask once.
 
+**Windows Drive path.** If this computer is Windows and the paper (or kit) path looks like streamed Google Drive — usually `G:\My Drive\...` — **stop once** before writing files. Ask them to set Google Drive to **Mirror files** and reopen from the local path (usually `C:\Users\<name>\My Drive\...`). Full note: `adapters/google-drive/README.md` (say the same steps if you cannot read that file). Do not continue until they have seen this. If they say continue anyway, continue. Cursor, Claude, Codex, and similar tools may be unable to run from the streamed letter. “Available offline” is not enough.
+
 ### GitHub paper start (no local kit)
 
 They opened **this** folder (often empty Drive) and said **Start the project** with the GitHub address. The result must be a **paper**, not a kit.

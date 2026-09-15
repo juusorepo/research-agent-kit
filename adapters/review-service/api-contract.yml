@@ -1,0 +1,61 @@
+# HTTP operations for an optional manuscript review service.
+# Copy a service’s paths into this paper’s layout.yml under review_service.capabilities
+# if they differ from defaults. Do not guess paths. Do not put tokens in this file.
+
+operations:
+  - review_start
+  - review_status
+  - review_result
+
+defaults:
+  review_start: POST /reviews
+  review_status: GET /reviews/{id}
+  review_result: GET /reviews/{id}/result
+
+channels:
+  local_api:
+    start_sends: path
+  hosted_api:
+    start_sends: upload
+
+status:
+  - queued
+  - running
+  - complete
+  - failed
+
+recommendation:
+  - accept
+  - minor_revision
+  - major_revision
+  - reject
+  - other
+
+# review_start body (JSON)
+# channel: local_api | hosted_api (from this paper’s layout.yml)
+# filename: original file name
+# media_type: e.g. application/pdf, text/markdown
+# path: absolute file path the service can read (local_api only)
+# content_base64: file bytes (hosted_api; omit path)
+#
+# review_start returns immediately:
+#   review_id, status (queued or running)
+#
+# review_status:
+#   review_id, status, error (string or null)
+# Poll until complete or failed. Do not hold review_start open until the review
+# finishes. Do not start a second review of the same file unless they asked.
+#
+# review_result (only when status is complete):
+#   review_id
+#   status: complete
+#   recommendation: one of the values above
+#   summary: short overall feedback (may be empty)
+#   comments: list of { id, quote, body, section, severity }
+#     severity: major | minor | editorial | other (optional)
+#     section: optional
+#   markdown: full report as received
+#
+# Auth: if layout.yml has review_service.token_env, send
+# Authorization: Bearer <that environment variable’s value>.
+# Never echo the token. Never write it into the paper folder.

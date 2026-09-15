@@ -35,7 +35,7 @@ Resolve each skill file by the paper-first rule above: `.agents/skills/<name>/SK
 | Prepare a review copy | `skills/prepare-review-copy/SKILL.md` | Google Docs snapshot from a Word file you rendered; not the canonical manuscript |
 | Ingest review comments | `skills/ingest-review-comments/SKILL.md` | Open Doc comments → inbox; skip accepted suggestions |
 | Sync the review copy | `skills/sync-review-copy/SKILL.md` | After suggestions are accepted in the Doc, update the manuscript |
-| Review the manuscript · AI review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; not an audit of the research chain |
+| Review the manuscript · AI review · coarse-review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; optional external review service if this paper allows it; not an audit of the research chain |
 | Draft this in my voice · Edit this in my voice | `skills/author-voice/SKILL.md` | Optional; off until ticked. Draft or edit manuscript prose |
 | Update the project record | `skills/update-project-record/SKILL.md` | After acceptance, write it into the shared record |
 | Adjust this project to the new kit version | `skills/adjust-project-to-kit/SKILL.md` | Align this paper’s instructions and version note; do not edit science files |

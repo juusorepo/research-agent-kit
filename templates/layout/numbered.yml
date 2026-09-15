@@ -46,3 +46,18 @@ paths:
 #     query_grounded:
 #     list_sources:
 #     list_collections:
+#     create_collection:
+#     remove_collection:
+#     research_sources:
+#     research_status:
+# Optional: manuscript review service (same operations on this computer or hosted).
+# Do not put tokens in this file. Restricted manuscripts must not be sent.
+# review_service:
+#   enabled: false
+#   channel: local_api
+#   base_url:
+#   token_env: REVIEW_SERVICE_TOKEN
+#   capabilities:
+#     review_start: POST /reviews
+#     review_status: GET /reviews/{id}
+#     review_result: GET /reviews/{id}/result

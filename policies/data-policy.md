@@ -44,6 +44,8 @@ These are **examples**. Replace them.
 
 **Typically shareable with co-authors:** project overview, analysis plan, research decision notes, scripts, AI-safe result files, the canonical manuscript, and `docs/` that contain no restricted extracts.
 
+A named manuscript sent to an optional review service (this computer or hosted) is an **external send**. Restricted or confidential files must not go. Setup: `adapters/review-service/README.md` when the kit is readable.
+
 **Stay on the authorised analyst’s machine:** row-level real data, local path config, local-only full extracts, secrets.
 
 The project `.gitignore` implements the common cases. This section is the rule.

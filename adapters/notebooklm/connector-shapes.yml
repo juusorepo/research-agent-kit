@@ -4,15 +4,26 @@
 
 operations:
   - list_collections
+  - create_collection
+  - remove_collection
   - list_sources
   - query_grounded
+  - research_sources
+  - research_status
   - sync_source
   - remove_source
 
-# Fill in the names your connector actually exposes. Example only:
-# shapes:
-#   example:
-#     capabilities:
-#       query_grounded: notebook_query
-#       list_sources: notebook_sources
-#       list_collections: list_notebooks
+shapes:
+  # Machine-level connector: notebooklm-mcp-cli (nlm / notebooklm-mcp).
+  # Not shipped in the kit. Attach once in Cursor and Codex.
+  notebooklm-mcp-cli:
+    capabilities:
+      list_collections: notebook_list
+      create_collection: notebook_create
+      remove_collection: notebook_delete
+      list_sources: notebook_get
+      query_grounded: notebook_query
+      research_sources: research_start
+      research_status: research_status
+      sync_source: source_add
+      remove_source: source_delete

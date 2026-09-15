@@ -41,10 +41,12 @@ Resolve each skill file by the lookup above: `.agents/skills/<name>/SKILL.md` if
 | Prepare a review copy | `skills/prepare-review-copy/SKILL.md` | Google Docs snapshot from a Word file you rendered; not the canonical manuscript |
 | Ingest review comments | `skills/ingest-review-comments/SKILL.md` | Open Doc comments → inbox; skip accepted suggestions |
 | Sync the review copy | `skills/sync-review-copy/SKILL.md` | After suggestions are accepted in the Doc, update the manuscript |
-| Review the manuscript · AI review · Scan for generic prose · Plain-language review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; a focused prose scan flags candidate passages only; not an audit of the research chain |
+| Review the manuscript · AI review · coarse-review · Scan for generic prose · Plain-language review | `skills/review-the-manuscript/SKILL.md` | AI findings as contributions; optional external review service if this paper allows it; a focused prose scan flags candidate passages only; not an audit of the research chain |
 | Draft this in my voice · Edit this in my voice · Build my voice note | `skills/author-voice/SKILL.md` | Optional; off until ticked. Draft or edit manuscript prose; does not rewrite during a scan |
 | Explore alternative framings · Give me genuinely different interpretations · Diverge before synthesis · Challenge the current framing | `skills/explore-alternative-framings/SKILL.md` | Independent alternatives before synthesis; optional; not routine editing |
 | Map the evidence | `skills/map-the-evidence/SKILL.md` | Draft a source-grounded evidence packet; not an audit |
+| Create a notebook · Delete a notebook | `skills/map-the-evidence/SKILL.md` | Create or delete this paper’s NotebookLM notebook only if they asked; write a packet only if they also named a question |
+| Search with NotebookLM · Delegate a search to the notebook | `skills/map-the-evidence/SKILL.md` | Named web/Drive search only if they asked; usable hits go to Zotero first, not into the notebook |
 | Sync the bibliography · Update project sources | `skills/sync-project-sources/SKILL.md` | Read-only source list from a Zotero collection; copies in `08-sources/` when asked |
 | Update the project record | `skills/update-project-record/SKILL.md` | After acceptance, write it into the shared record |
 | Adjust this project to the new kit version | `skills/adjust-project-to-kit/SKILL.md` | Replace generated kit files from a local kit, or from GitHub if the kit folder is not here; do not edit science files |

@@ -22,6 +22,8 @@ The assistant writes your name in `researcher.md` in this folder. You will not b
 
 ## 2. Start a new project or paper
 
+On **Windows**, if the paper lives in Google Drive, open it from the **local mirrored folder** (usually `C:\Users\<you>\My Drive\...`), not from the streamed Drive letter (`G:\My Drive\...`). “Available offline” is not enough. Cursor, Claude, Codex, and similar tools may be unable to run from the streamed path. Steps: [`adapters/google-drive/README.md`](adapters/google-drive/README.md).
+
 ### 2a. You have the kit folder
 
 **Easiest for sharing:** create an empty folder in **Google Drive for Desktop**. Open the **kit** folder **and** that empty paper folder. Paste:
@@ -65,7 +67,7 @@ The assistant diagnoses; it does not repair. The full report is a saved file. It
 
 If start chose Stata, you can later say **Run approved Stata analysis** for one named `.do` file on an assigned run-on-real-data task. Put this computer’s Stata path in `stata_bin.local.yml` (not in git) or `STATA_BIN` — do not assume a path.
 
-Co-author review: render a Word file of the paper first (see the manuscript README), then say **Prepare a review copy**. Accept small wording in the Google Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox. Say **Scan for generic prose** for a focused, detection-only pass: it flags candidate vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction, but does not rewrite or judge authorship. After a scan, if that paper has **Author voice** ticked, say **Edit this in my voice** to restyle accepted passages — not in the same run. Say **Draft this in my voice** for a first abstract or results section (tick **Author voice** in that paper’s `policies/what-is-on.md` first). Say **Explore alternative framings** when you want genuinely different interpretations before any combined wording.
+Co-author review: render a Word file of the paper first (see the manuscript README), then say **Prepare a review copy**. Accept small wording in the Google Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox. If that paper ticks **External manuscript review** (or you ask for **coarse-review**), the assistant may send the named manuscript to the review service in the folder map — not an audit, and not for a prose scan. Say **Scan for generic prose** for a focused, detection-only pass: it flags candidate vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction, but does not rewrite or judge authorship. After a scan, if that paper has **Author voice** ticked, say **Edit this in my voice** to restyle accepted passages — not in the same run. Say **Draft this in my voice** for a first abstract or results section (tick **Author voice** in that paper’s `policies/what-is-on.md` first). Say **Explore alternative framings** when you want genuinely different interpretations before any combined wording.
 
 New kit version from GitHub into the **kit** folder? Open the kit and paste:
 
