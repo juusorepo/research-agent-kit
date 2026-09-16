@@ -14,8 +14,9 @@ In **this chat**, do not reprint the whole report. Write: the **four gate status
 2. Material checked (source file, Word, PDF, optional `.bib` / journal instructions / screenshots)
 3. Four gate statuses, then a few sentences of assessment — **not** one overall PASS
 4. Findings, ordered by severity
-5. What could not be checked, and why
-6. If a task row was added, name it. Do not list how to repair each finding. The `next` field on each finding is enough.
+5. What could not be checked, and why — required; do not omit this section
+6. **Hash list** — path and SHA-256 for the source, Word, and PDF you actually read. Do not summarise this as “files identical.”
+7. If a task row was added, name it. Do not list how to repair each finding. The `next` field on each finding is enough.
 
 Include this compact status. Do not let it replace the findings. Do **not** add a combined PASS line.
 

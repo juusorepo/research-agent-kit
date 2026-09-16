@@ -10,6 +10,7 @@ origin: human
 what: "One sentence on the material contribution."
 human_review: pending
 adopted: true
+# check: is the whole run. Per-statement literature checks go in claim-checks.md
 check: synthetic-tests
 epistemic_control: already-agreed
 decision_ref: —

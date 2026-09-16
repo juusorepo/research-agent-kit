@@ -4,7 +4,7 @@ description: Get the kit from GitHub into one folder, or start a paper that foll
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.6.1"
+  version: "0.6.2"
 ---
 
 # Start the project
@@ -70,7 +70,7 @@ They opened **this** folder (often empty Drive) and said **Start the project** w
 
 Do not use **Copy the Research Agent Kit** in a paper folder — that would turn this folder into a kit.
 
-Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/` as a whole, or `CLAUDE.md` into the paper. Copy **only** `templates/paper-skeleton/` (below), then — if they want this paper to work without the kit folder — generated kit files via `skills/make-paper-self-contained/SKILL.md`. The agent file is `AGENTS.md`. Follow the kit `policies/ai-policy.md` unless the paper adds its own.
+Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/` as a whole, or `adapters/` into the paper. Copy **only** `templates/paper-skeleton/` (below), then — if they want this paper to work without the kit folder — generated kit files via `skills/make-paper-self-contained/SKILL.md`. The skeleton already includes a thin `CLAUDE.md` that points at `AGENTS.md`. Follow the kit `policies/ai-policy.md` unless the paper adds its own.
 
 ### 0. Look before you interview
 
@@ -182,7 +182,7 @@ First-level folders must be numbered (`01-data` … `08-sources`, `99-archive`) 
 ## Must not
 
 - Dump kit internals or copy `skills/` into the paper except the generated bundle when they asked for a folder that works without the kit
-- Copy `CLAUDE.md` or other tool-branded files into the paper
+- Copy `adapters/` into the paper, or replace the skeleton `CLAUDE.md` with a second rule set
 - Ask them to download ZIP or clone the kit themselves
 - Skip a **local** kit that is already open (use it). If there is no local kit, GitHub paper start is allowed
 - Leave a full GitHub clone in the paper folder (`skills/` or `templates/` at the paper root)

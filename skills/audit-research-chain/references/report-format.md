@@ -12,11 +12,12 @@ In **this chat**, do not reprint the whole report. Write: the **two gate statuse
 
 1. Scope audited (full chain, which link, or data construction)
 2. **Where the files were** — plan, code, outputs, manuscript (or “none / not provided”). Required when there was no folder map
-3. Material checked (plan items, scripts, result files, manuscript sections; the one central claim if data construction was asked)
+3. Material checked (plan items, scripts, result files, manuscript sections; the one central claim if data construction was asked; the claim-to-source table if literature claims were asked)
 4. Two gate statuses, then a few sentences of assessment — **not** one overall PASS
 5. Findings, ordered by severity
-6. Links that could not be checked, and why
-7. If a task row was added, name it. If none was added (no task list), say so. Do not list how to repair each finding. The `next` field on each finding is enough.
+6. Links that could not be checked, and why — required; do not omit this section
+7. **Hash list** — path and SHA-256 for each file you actually read. Omit files you did not read. Do not summarise this as “N artifacts identical.”
+8. If a task row was added, name it. If none was added (no task list), say so. Do not list how to repair each finding. The `next` field on each finding is enough.
 
 If plan or accepted notes conflict with STATUS or the task list about what is agreed, record that as a finding. Do not give it a fifth status row.
 
@@ -40,6 +41,26 @@ If they asked to audit literature claims, add (omit it otherwise):
 Literature claims             PASS / ISSUES / NOT VERIFIED
 (source existence, support, and design warrant kept separate in findings)
 ```
+
+Include a **claim-to-source** table in that saved report (not only in chat):
+
+```
+| statement | key | role | depth | section | passage |
+```
+
+- `role` — `background` | `precedent` | `comparator` | `counterargument`
+- `depth` — `abstract` | `methods` | `results` | `not enough information`
+- `section` — named section of the source (required for `comparator` and `counterargument`)
+- `passage` — a quoted span, or **not enough information**
+
+Then a **key coverage** block:
+
+```
+Cited in prose, no row: …
+In packet sources list, no checked statement: …
+```
+
+Write `none` on a line that is clean. A missing table, or a `comparator`/`counterargument` row whose depth is `abstract`, is ISSUES.
 
 Do not treat a research packet as passing this check.
 

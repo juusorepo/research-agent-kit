@@ -4,7 +4,7 @@ description: Turn a collaborator's useful remark or an open review issue into a 
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # Contribute to the project
@@ -16,6 +16,8 @@ Write a file in the contributions folder (see `layout.yml` `paths.contributions`
 Set `source` (`collaborator`, `docs-comment`, `journal-review`, or `ai-review`). If this is a Google Doc comment, set `external_id` and `excerpt`. If this is a comment from an external review service, set `external_id` to `review-service:<review id>:<comment id>`. Do not write a file for a wording **suggestion** that belongs on the review copy.
 
 If they asked to keep alternative framings from **Explore alternative framings**, write **one contribution file per alternative** (`type: interpretation`). Do not merge them into one averaged proposal.
+
+For a **Scan for generic prose** finding (`source: ai-review`), set `severity` and `fix_scope`, and fill `related` when another new finding or an open task is the same work or changes how this one should be fixed. Omit `suggested_replacement` unless this paper’s `what-is-on.md` has **Propose wording in prose scans** ticked. Never apply a replacement in this run.
 
 ## Must not
 

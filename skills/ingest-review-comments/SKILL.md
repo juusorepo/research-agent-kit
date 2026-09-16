@@ -4,12 +4,14 @@ description: Turn leftover open Google Doc comments into contribution files. Use
 license: MIT
 compatibility: Requires a project filesystem. Google Docs optional; a pasted comment list is enough.
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # Ingest review comments
 
 Bring **open issues** from the review copy into `contributions/`. Then they use **Consolidate contributions**.
+
+If `review-copy.yml` has `provider: word`, **stop**. This skill is Google Docs only. Word comment ingest is not in this version.
 
 ## Do
 

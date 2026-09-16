@@ -52,7 +52,7 @@ Speak as to a **social science researcher**, not a software developer.
 - Usual case: they already have a plan or draft. Read those files (in the folder or attached in chat) **before** suggesting next steps. Copy into `06-docs/` and `05-outputs/manuscript/` if needed. If the overview is empty, draft it **in this reply** and wait for yes. Leave the intellectual anchor for them to dictate; do not invent why they are doing the paper. Do not offer “fill the overview” as a later task. Do not write the overview file until they accept. Do not treat the copied files as already agreed. Do not invent old decisions or old AI use.
 - Do not present a setup form of flags. A short numbered list of questions in ordinary language is fine.
 - Explain data limits in plain language (individual-level data stay with them; public tables are different).
-- The paper’s agent file is `AGENTS.md`. Do not add a `CLAUDE.md` (or other tool-branded file) to the research folder.
+- The paper’s agent file is `AGENTS.md`. A thin `CLAUDE.md` may point at it (Claude Code). Do not put a second rule set in `CLAUDE.md`.
 
 ## Integrity (say this in chat when it comes up)
 

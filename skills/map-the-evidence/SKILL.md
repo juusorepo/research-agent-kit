@@ -4,12 +4,14 @@ description: Draft a source-grounded evidence packet for a named question. Use w
 license: MIT
 compatibility: Requires a project filesystem. No Python required.
 metadata:
-  version: "0.1.9"
+  version: "0.2.0"
 ---
 
 # Map the evidence
 
 One job. Write a **draft** evidence packet for a question they named, from sources in this paper. Retrieval may use local PDFs (`08-sources/` or `paths.sources`), a note they pasted, or an **experimental NotebookLM connector** if this paper allows it (`adapters/notebooklm/README.md`). Stop after the draft packet. This is **doing the research**, not an independent check.
+
+A packet grounds **which source**, not **what the source computed**. Its rows are abstract-level unless a Methods or Results passage is quoted.
 
 Follow `policies/how-to-talk.md` if present. Say *draft evidence packet*, *not in these sources*, *researcher decision needed*. Do not say verified, grounded-synthesis, or evidential status as if it were authority.
 
@@ -57,6 +59,7 @@ Do not call `sync_source` or `remove_source` unless they asked to add or remove 
 ```
 not in these sources  ≠  no evidence exists  ≠  evidence of no effect
   ≠  this design cannot identify the effect
+source-grounded (which source)  ≠  what the source computed
 source-grounded       ≠  the inference is warranted
 association reported  ≠  causal claim
 ```
@@ -69,7 +72,7 @@ Provider confidence (a tool is sure it found a sentence) is not scientific confi
 
 1. If they did not name a question, ask once (default: the manuscript’s main question if there is a draft) and wait.
 2. Map relevant sources. Keep source identity `zotero:<item-key>` when a record exists; otherwise use the bibliography key from `references.bib`. Do not invent keys.
-3. For each included point, separate: quoted or closely located passage; what the **source authors** claim; what you extracted; study design if stated; population; what kind of inference the source itself makes; limitations.
+3. For each included point, separate: quoted or closely located passage; what the **source authors** claim; what you extracted; study design if stated; population; what kind of inference the source itself makes; limitations. Put the statement in the claim-to-source table with `role` (`background` | `precedent` | `comparator` | `counterargument`). A source in **Sources in scope** needs a row.
 4. List agreements, apparent contradictions (and whether they might be different populations or measures), and what is **not answerable from current sources**.
 5. Save a draft packet under `paths.record` (default `07-record/notes/`) named `evidence-packet-<short>.md` plus a sidecar `status: provisional` (use `templates/evidence/research-packet.md` and `templates/output-metadata.yml`, with `analysis_ref` only if an agreed plan item already exists; otherwise leave it empty and say the packet is not an agreed analysis).
 6. Stop. Candidate wording for the paper is not approved. Causal language must not be stronger than the sources support.

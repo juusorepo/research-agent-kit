@@ -8,6 +8,6 @@ A contribution is a **proposal** (an open issue). It must not edit `RESEARCH_CON
 
 Path: remark or open comment → this folder → the lead researcher reviews → then, if accepted, the canonical record is updated.
 
-Use `template.md`. Name files `C-001-short-title.md`. If the issue came from a Doc comment, set `external_id` so a later ingest does not duplicate it. If it came from an external review service, set `external_id` to `review-service:<review id>:<comment id>`.
+Use `template.md`. Name files `C-001-short-title.md`. If the issue came from a Doc comment, set `external_id` so a later ingest does not duplicate it. If it came from an external review service, set `external_id` to `review-service:<review id>:<comment id>`. A prose-scan finding also sets `severity`, `fix_scope`, and `related` when another finding or an open task is tied to it.
 
 A full report from that service may sit in `reviews/` under this folder. It is background for the inbox items, not an approved result.

@@ -4,7 +4,7 @@ description: Layout and APA-7 presentation check of the rendered manuscript (Wor
 license: MIT
 compatibility: Requires a project filesystem. Needs the canonical manuscript plus a rendered Word file and a PDF exported from that Word file. A useful partial check is expected when a file is missing.
 metadata:
-  version: "0.1.0"
+  version: "0.1.2"
 ---
 
 # Audit APA presentation
@@ -15,7 +15,9 @@ This is an **audit**. It is not implementation, approval, or a peer review.
 
 It is **not** `audit-research-chain` (plan → code → output → claims). It is **not** `review-the-manuscript` (peer-style findings in the inbox). Do not fold this into either.
 
-If this same chat produced or changed the manuscript or the Word/PDF you would be checking, **stop**. Ask them to start a **separate** run (a new chat is enough).
+If this same chat produced or changed the manuscript or the Word/PDF you would be checking, **stop**. Ask them to start a **separate** run (a new chat is enough). Do not write the brief in a chat that did the render.
+
+This check is **this computer** when the Word/PDF is large (see `policies/what-is-on.md`, Where to run). In this run write only the saved report (including SHA-256 of the source, Word, and PDF you actually read); if needed, one task row; if the AI-use box is ticked, one AI-use event. Do not edit the manuscript.
 
 Follow [checklist](references/checklist.md) and [report format](references/report-format.md).
 
@@ -33,7 +35,7 @@ Required:
 
 | File | Role |
 |---|---|
-| Canonical manuscript (`.qmd`, or Word/Markdown source) | Map: labels, captions, call-outs, YAML |
+| Canonical manuscript (`.qmd`, or Word/Markdown source) | Map: labels, captions, call-outs, YAML. If `paper.qmd` uses includes, map labels from the `_*.qmd` files too. |
 | Rendered **Word** file | What they would submit-like send |
 | **PDF exported from that Word file** | What you can see: clipping, captions, icons, heading order |
 
@@ -89,6 +91,8 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 ## Must not
 
 - Repair the manuscript in this run
+- Edit anything except the saved report, at most one task row, and an AI-use event if that box is ticked
+- Assert that files were unchanged without hashing the files you actually read
 - Invent bibliography records
 - Restate or scrape the APA Publication Manual
 - Use web search as required evidence

@@ -41,7 +41,7 @@ Read `review_service` in this paper’s `layout.yml` (see the commented block in
 | Channel | When |
 |---|---|
 | *(none)* | Default. The assistant reads the manuscript itself. |
-| `local_api` | This paper names a base URL. `review_start` sends a **path** the service can read. Do not upload the file unless the service rejects path. |
+| `local_api` | This paper names a base URL. `review_start` sends a **path** the service can read. Do not upload the file unless the service rejects path. If `paper.qmd` uses includes, send the rendered Word when it is current, or a temporary concatenation outside the manuscript folder — not `paper.qmd` alone. |
 | `hosted_api` | This paper names a base URL. `review_start` **uploads** the named manuscript. The file leaves this machine. |
 
 Classification when a channel is in use:

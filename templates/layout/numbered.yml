@@ -35,6 +35,8 @@ paths:
   audits: 07-record/audits
   sources: 08-sources
   source_records: 07-record/sources
+# Co-author review channel is `provider` in review-copy.yml (`google-docs` default, or `word` to share a .docx on OneDrive).
+# Sync the review copy and Ingest review comments stay Google Docs only.
 # Optional: this paper’s Zotero collection (canonical). 08-sources is the materialised corpus (rebuildable later).
 # zotero:
 #   library: user

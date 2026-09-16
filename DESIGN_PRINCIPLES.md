@@ -84,6 +84,8 @@ The workflow should remain intelligible even if the preferred agent changes.
 
 The framework is therefore **agent-agnostic at the workflow level**, while acknowledging that different agents have different technical capabilities.
 
+Some features need the files on this computer (hashes, large artifacts, a local statistics program). Those are local. Planning, reviewing prose, and deciding can run anywhere the shared record is. `policies/what-is-on.md` says which is which.
+
 ---
 
 ## 2. Preserve scientific ownership
@@ -293,7 +295,9 @@ Examples include:
 * Does the manuscript accurately describe the statistical result?
 * Does the scientific claim exceed what the design permits?
 
-The run that produced a change should not be treated as sufficient independent verification of that same change. Use a **new chat** (and, where possible, a different checker) for an independent check.
+The run that produced a change should not be treated as sufficient independent verification of that same change. Use a **new chat** (and, where possible, a different checker) for an independent check. The researcher names the scope. The run that produced the files does not also write the audit brief.
+
+An audit should emit a hash list of files it actually read, not a sentence that integrity held. What could not be checked belongs in the report. In this version the write limit (report, at most one task row, optional AI-use note) is instruction, not a file lock.
 
 Independent check is a **separate job** from doing the research. In this version the main check is the research-chain audit (two statuses: numbers/reproducibility; estimand/claim validity; **not verified** when a link cannot be traced). It can run on a paper that uses the kit folder map, or on a folder that does not: then the researcher names where the plan, code, outputs, and manuscript are. Further independent checks may be added later. They must not become a second analysis plan, and they must not repair the files they are checking.
 
@@ -318,7 +322,7 @@ Relevant information may include:
 * what the researcher did with the contribution;
 * how the contribution was checked.
 
-This provenance can later support transparent team communication and publication disclosure.
+This provenance can later support transparent team communication and publication disclosure. A material AI-use note describes a **run**. A literature statement checked against a source is a row in `claim-checks.md`.
 
 The optional on-disk log is a project file and defaults to off. **Disclosure in the paper** when AI affected reliability remains the researcher’s duty. Turning the log off does not mean the use may stay hidden.
 
@@ -368,7 +372,7 @@ while maintaining governance over what becomes accepted project knowledge.
 
 Collaborators and their agents may propose analyses, interpretations, literature findings, or manuscript changes. Those contributions should be distinguishable from the authoritative project record until they have been reviewed appropriately.
 
-For co-author wording, use a **review copy** (Google Docs). Suggestions are accepted there; leftover open comments become inbox items. Do not duplicate every small edit in the project folder.
+For co-author wording, use a **review copy** (Google Docs). Suggestions are accepted there; leftover open comments become inbox items. Do not duplicate every small edit in the project folder. Syncing the Drive folder does not merge Doc edits into the Quarto paper.
 
 This makes AI-assisted collaboration a property of the project rather than a collection of disconnected private chats.
 
@@ -381,7 +385,7 @@ The framework should reuse established or emerging conventions wherever they are
 Examples include:
 
 * Git for file history;
-* `AGENTS.md` for repository-level agent guidance;
+* `AGENTS.md` for repository-level agent guidance (a thin `CLAUDE.md` in a paper only points at that file so Claude Code can start);
 * Agent Skills for reusable procedural capabilities;
 * research-compendium principles for reproducible project organisation;
 * decision-record approaches for documenting consequential choices.
@@ -428,7 +432,7 @@ Durable project knowledge belongs in portable project files.
 
 ### One fact, one authority
 
-Avoid duplicated sources of truth.
+Avoid duplicated sources of truth. A manuscript section lives in one file. Quarto `{{< include >}}` composes the paper at render; a script that copies parts into a second `.qmd` creates two authorities.
 
 ### Event-driven project updates
 

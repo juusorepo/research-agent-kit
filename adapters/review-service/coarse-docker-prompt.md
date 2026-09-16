@@ -32,7 +32,15 @@ review, markdown, paper_text = review_paper(pdf_path=Path("paper.pdf"), ...)
 
 Package: `coarse-ink` on PyPI (import name `coarse`). Pin a version (1.9.x or newer). Python 3.12+.
 
-**Default LLM path in the container:** provider keys (`OPENROUTER_API_KEY` is enough). Skip confirmation prompts (`--yes` / equivalent). This image must run **non-interactively**.
+**Default LLM path in the container:** provider keys (`OPENROUTER_API_KEY` is enough). This image must run **non-interactively**.
+
+**Skip the cost prompt.** Coarse prints `Proceed with estimated cost $X? [Y/n]:` and waits. In Docker nobody can type `Y`, so the review dies after OCR with `review pipeline failed`. You **must** disable that prompt on every run:
+
+- CLI: `coarse-ink review … --yes` (or the documented skip-confirm flag)
+- Python: the `review_paper(…)` argument that skips confirmation (often `yes=True` / `skip_confirm=True` — use whatever this `coarse-ink` version actually exports; if unsure, read the function signature)
+- Also set `stdin` to `/dev/null` (or `DEVNULL`) so a missed flag cannot hang on the prompt
+
+A log line that contains `Proceed with estimated cost` is a **bug in this service**, not a client error. Do not mark the review `complete` until the pipeline has finished without that prompt.
 
 **Do not** use `claude -p`, `codex exec`, or `gemini -p` as the default backend. Those need a logged-in desktop CLI and will not work for a hosted container. A later optional extra may mount a host CLI; it is out of scope for v1.
 
@@ -203,6 +211,7 @@ Same image later: put it on a URL, keep `hosted_api`, require `REVIEW_SERVICE_TO
 - Echo `REVIEW_SERVICE_TOKEN` or provider keys in logs
 - Expose Coarse’s interactive CLI, web UI, or extra REST surface as something RAK should call (internal extras are fine if undocumented for the client)
 - Treat the report as an audit or as an approved scientific result
+- Wait on `Proceed with estimated cost` (or any other interactive prompt)
 - Fetch papers from arbitrary URLs in v1 (no SSRF). Only `path` (mapped) or `content_base64`
 
 ## Done when

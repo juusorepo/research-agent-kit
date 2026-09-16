@@ -10,6 +10,10 @@ excerpt:
 external_id:
 round:
 status: proposed
+severity: # prose scan: minor | moderate | major
+fix_scope: # prose scan: word | sentence | paragraph | section
+related: [] # other C-NNN or T-NNN
+suggested_replacement: # omit unless Propose wording in prose scans is ticked; proposal only
 ---
 
 # Contribution

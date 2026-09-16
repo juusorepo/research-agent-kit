@@ -53,7 +53,7 @@ If the data are restricted, agents do not read row-level files. The longer *why*
 | **Data-use rules** (`policies/data-policy.md`) | What may AI do with the data? (`restricted` vs `agent-accessible`) |
 | **AI in research** (`policies/ai-policy.md`) | How this kit sits next to national guidance. A paper may override. |
 | **Extra context** (`06-docs/`) | Preregistration, ethics, proposals. Background only — it does not override the analysis plan |
-| **Manuscript** (`05-outputs/manuscript/`) | The file the paper is written in (Quarto by default). A Google Docs copy for co-authors is a review copy |
+| **Manuscript** (`05-outputs/manuscript/`) | The file the paper is written in (Quarto by default). A Google Docs copy for co-authors is a review copy — Drive sync does not merge it back |
 
 The **analysis plan** is stricter than a loose methods paragraph, but it is still an analysis plan:
 
@@ -109,10 +109,10 @@ Say these in chat. The assistant should use ordinary verbs.
 | Understand the project | Where things stand (canonical vs proposal vs note), then what to do next. Agreeing analyses is a next step here: the assistant proposes items, you accept, then the analysis plan is written |
 | Contribute to the project | Collaborator inbox — does not overwrite the record |
 | Consolidate contributions | You review the inbox; the assistant recommends, you decide |
-| Prepare a review copy | Google Docs snapshot for co-authors. You render a Word file first; the assistant uploads it. Not the paper file itself |
+| Prepare a review copy | Native Google Doc snapshot of the Quarto paper. Saying the phrase is enough to render Word when the snapshot is missing. Word is a conversion step, not a second manuscript. Not the paper file itself |
 | Ingest review comments | Leftover open comments → inbox. Skip wording already accepted in the Doc |
 | Sync the review copy | After you accept suggestions in the Doc, update the manuscript once |
-| Review the manuscript · Scan for generic prose | AI pass; findings go to the inbox. Optional **external manuscript review** (this computer or hosted; Coarse is one service) if you tick it or ask in that chat. A prose scan flags vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction as candidate passages; it does not rewrite, score, or judge authorship, and it does not send the file. Not an audit of the research chain |
+| Review the manuscript · Scan for generic prose | AI pass; findings go to the inbox. Optional **external manuscript review** (this computer or hosted; Coarse is one service) if you tick it or ask in that chat. A prose scan flags vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction as candidate passages; it does not score or judge authorship, and it does not send the file. Findings note severity and whether an open task already covers them. Proposed wording only if you tick **Propose wording in prose scans**. Not an audit of the research chain |
 | Draft this in my voice · Edit this in my voice | Optional. Off until you tick **Author voice** in that paper’s `policies/what-is-on.md`. Drafts or restyles manuscript prose; does not rewrite during a scan. Integrity (numbers, hedges, citations) wins over style |
 | Explore alternative framings | Genuinely different interpretations, generated independently, then you choose. Optional. Not for routine editing |
 | Document a research decision | Record an important choice (not every Table 1) |
@@ -126,7 +126,7 @@ Say these in chat. The assistant should use ordinary verbs.
 | Adjust this project to the new kit version | After you updated the kit, replace this paper’s generated kit files (or a small instruction patch if it has none). Science files stay as they are |
 | Audit APA presentation | Independent check of the rendered Word file and a PDF exported from it. Four statuses (render, tables, figures, manuscript frame). Not the research chain. Diagnose only |
 
-Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). **Author voice** is also off until you tick it in that paper; other papers stay ordinary. **External manuscript review** is off until you tick it or ask in that chat; findings stay proposals. Not in this version: journal disclosure forms, Word toolchains, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own, writing to Zotero, a required Python program, or treating NotebookLM as verification. **Audit literature claims** is in this version (independent check; it does not certify the paper). This workflow is experimental; it does not guarantee quality.
+Optional in this version: a record of material AI use — **off** unless you tick it in `policies/what-is-on.md`. Off means no extra kit file. You still disclose in the paper when AI affected reliability. See [`policies/ai-policy.md`](policies/ai-policy.md). **Author voice** is also off until you tick it in that paper; other papers stay ordinary. **Propose wording in prose scans** is off until you tick it; the scan still does not edit the manuscript. **External manuscript review** is off until you tick it or ask in that chat; findings stay proposals. Not in this version: journal disclosure forms, Word as the canonical manuscript, Word comment ingest, automatic background audits, the assistant starting unassigned tasks on its own, writing to Zotero, a required Python program, or treating NotebookLM as verification. **Audit literature claims** is in this version (independent check; it does not certify the paper). This workflow is experimental; it does not guarantee quality.
 
 The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
@@ -134,9 +134,9 @@ The workflow design is in [`DESIGN_PRINCIPLES.md`](DESIGN_PRINCIPLES.md).
 
 You can change folder names later by editing `layout.yml`. Assistants should follow that file rather than assuming `02-scripts`. First-level folders stay numbered (`01-data` … `08-sources`, `99-archive`). The manuscript sits in `05-outputs/manuscript/` next to figures and tables.
 
-The kit ships a **Quarto manuscript** (APA format) that reads **approved** result files only — the same approach as a quantitative paper that builds tables from those files and includes figures already written to `05-outputs/figures`. It does not read row-level data. Tables and figures that go into the paper follow the manuscript display list (APA 7); posters and talks do not. `renv` and `{targets}` are later work.
+The kit ships a **Quarto manuscript** (APA format) that reads **approved** result files only — the same approach as a quantitative paper that builds tables from those files and includes figures already written to `05-outputs/figures`. The paper is a thin `paper.qmd` plus `_*.qmd` section files (one copy of each section). It does not read row-level data. Tables and figures that go into the paper follow the manuscript display list (APA 7); posters and talks do not. `renv` and `{targets}` are later work.
 
-Small extra setup may be needed for a specific tool. That setup lives in the kit `adapters/` folder and only *points* at these files (Stata, Drive, Docs, NotebookLM, and an optional manuscript review service). On **Windows**, a Google Drive paper should be opened from the local mirrored folder, not `G:\My Drive` — see `adapters/google-drive/`. Papers use `AGENTS.md`. Do not add a `CLAUDE.md` to the research folder.
+Small extra setup may be needed for a specific tool. That setup lives in the kit `adapters/` folder and only *points* at these files (Stata, Drive, Docs, NotebookLM, Claude Code, and an optional manuscript review service). On **Windows**, a Google Drive paper should be opened from the local mirrored folder, not `G:\My Drive` — see `adapters/google-drive/`. Papers use `AGENTS.md`. A thin `CLAUDE.md` points at that file so Claude Code can start; see `adapters/claude/`.
 
 ---
 

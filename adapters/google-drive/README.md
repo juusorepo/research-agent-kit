@@ -33,6 +33,8 @@ Observed failures (Codex on Windows; treat the same class of error in Cursor or 
 
 The paper stays in Google Drive. Sharing, co-author access, and source-folder use are unchanged. Mirroring needs enough local disk space for the synchronized My Drive contents.
 
+A Google Docs **review copy** still uses a Word conversion (Quarto has no Docs output). Render that Word file **outside** the synced Drive folder, then import a native Google Doc into the manuscript folder. Do not treat a Drive-hosted `.docx` as the co-author paper. Drive syncing this folder does not merge Doc edits into Quarto — that is **Sync the review copy**.
+
 ## If an assistant cannot start programs here
 
 1. Look at the folder path.

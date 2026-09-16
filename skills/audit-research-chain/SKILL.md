@@ -1,10 +1,10 @@
 ---
 name: audit-research-chain
-description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Works with a kit folder map or, if that file is missing, a short intake. Report numbers/reproducibility and estimand/claim validity as separate statuses. Use when they say Audit the research chain. Use when they say Audit literature claims or Check claim support to check literature statements against identifiable sources (opt-in; do not trust a research packet or NotebookLM). Use when they say Audit data construction to trace one named central claim (opt-in only). Diagnose only.
+description: Audit whether scientific meaning held from agreed analysis plan through code, output, manuscript, and claims. Works with a kit folder map or, if that file is missing, a short intake. Report numbers/reproducibility and estimand/claim validity as separate statuses. Use when they say Audit the research chain. Use when they say Audit literature claims or Check claim support to check literature statements against identifiable sources (opt-in; grounding depth follows claim role; do not trust a research packet or NotebookLM). Use when they say Audit data construction to trace one named central claim (opt-in only). Diagnose only.
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run. A kit folder map is not required.
 metadata:
-  version: "0.3.1"
+  version: "0.3.4"
 ---
 
 # Audit the research chain
@@ -15,7 +15,16 @@ Check whether scientific meaning stayed intact:
 
 This is an **audit**. It is not implementation, approval, or revision.
 
-If this same chat produced or changed the files you would be checking, **stop**. Ask them to start a **separate audit run** (a new chat is enough). Do not call that independent verification.
+If this same chat produced or changed the files you would be checking, **stop**. Ask them to start a **separate audit run** (a new chat is enough). Do not call that independent verification. Do not write the audit brief in a chat that did the work.
+
+## Execution contract
+
+This check is **this computer** when artifacts are large (see `policies/what-is-on.md`, Where to run). Hashing a file you have not transferred is not an audit.
+
+- **Scope.** Use the scope they named. If they only said **Audit the research chain**, the scope is the four links — do not narrow it.
+- **Writes.** In this run write only: the saved report (including the hash list); if a tasks file already exists, at most one task row; if the AI-use box is ticked, one AI-use event. Do not edit code, inputs, results, sidecars, or the manuscript. That limit is instruction, not a file lock. Where the environment can restrict writes, use that.
+- **Hashes.** List SHA-256 of files you actually read. Do not write that integrity held without the list. If you cannot hash a file (not on this filesystem, not transferred), that link is **NOT VERIFIED**. Do not upload tens of megabytes to a cloud session to finish the check unless they asked.
+- **What you could not check.** The report must include that section. Keep this chat (or the tool’s transcript) with the report if the tool stores one.
 
 Follow [checklists](references/checklists.md) and [report format](references/report-format.md).
 
@@ -63,13 +72,15 @@ They ask to audit the research chain, or one link:
 Keep **four questions separate** (do not collapse):
 
 1. Does the cited source exist (as a record they can point to)?
-2. Is there a relevant passage in that source?
+2. Is there a relevant passage in that source **at the depth this statement’s role requires**?
 3. Does that passage support the statement as written?
 4. Does the study design warrant the strength or causal language?
 
 Quote a span, or say **not enough information**. **Not found in these sources** is not **no evidence exists**. Association is not causation. Example that must **not** pass claim warrant: source says students who chose tutoring later had higher scores; manuscript says tutoring improved scores.
 
-Do **not** treat a research packet, evidential-status note, NotebookLM answer, or provider confidence as authority. Read the manuscript and identifiable sources (PDFs, quoted exports they attached, `references.bib`). A packet may be background, like `06-docs/`.
+Record `role` on the claim-to-source table. `background` may rest on title and abstract. `comparator` and `counterargument` need a quoted Methods or Results passage (section named). A statement whose role has changed re-enters this check.
+
+Do **not** treat a research packet, evidential-status note, NotebookLM answer, or provider confidence as authority. Read the manuscript and identifiable sources (PDFs, quoted exports they attached, `references.bib`). A packet may be background, like `06-docs/`. If `claim-checks.md` exists beside the audit reports, you may use it to find a passage; still read the source. A row there is not a pass. Do not write that file in this run.
 
 If they do not say a scope, do a **full** audit of the four links. Do not add data construction or literature claims unless they asked.
 
@@ -171,11 +182,15 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 
 - Start the project, copy a skeleton, or write a folder map in this run
 - Repair the work you are auditing
+- Edit anything except the saved report, at most one task row, and an AI-use event if that box is ticked
+- Assert that files were unchanged without a hash list of files you actually read
+- Narrow the scope they did not name
 - Flatten the two gates into one overall PASS
 - Fail Numbers or Claims for APA cosmetics (italic title, vertical lines, typeface)
 - Add data construction unless they asked
 - Add literature-claim checking unless they asked
 - Trust a research packet or NotebookLM as what a source supports
+- When literature claims is in scope: pass a `comparator` or `counterargument` on title and abstract alone, or skip the citation-key coverage diff
 - Ask how to frame or fix a finding, or which unagreed design to pick
 - Start an unassigned task, or another assistant, from this run (writing one task *row* is not starting the task)
 - Treat a draft or synthetic output as an approved result

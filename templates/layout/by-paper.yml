@@ -26,6 +26,8 @@ paths:
   manuscript: papers/{paper}/manuscript
   review_copy: papers/{paper}/manuscript/review-copy.yml
   metadata: papers/{paper}/outputs
+# Co-author review channel is `provider` in review-copy.yml (`google-docs` default, or `word` to share a .docx on OneDrive).
+# Sync the review copy and Ingest review comments stay Google Docs only.
 # Optional: this paper’s Zotero collection (canonical). 08-sources is the materialised corpus (rebuildable later).
 # zotero:
 #   library: user

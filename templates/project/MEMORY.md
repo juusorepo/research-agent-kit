@@ -11,9 +11,10 @@ These files are small on purpose. Do not turn them into logs.
 | `ANALYSIS_PLAN.md` | What analyses are **agreed** | Canonical. Agents propose; you accept. |
 | `07-record/decisions/` | Research decision notes for important choices | Canonical once **accepted**. `INDEX.md` is a compact list, not a narrative. |
 | `07-record/contributions/` | Inbox from collaborators, leftover Doc comments, journal points, AI review | **Proposal only.** Open issues, not accepted wording suggestions. |
-| `review-copy.yml` (next to the manuscript) | Pointer to the current Google Docs review copy | Snapshot. Canonical paper is the manuscript folder. |
+| `review-copy.yml` (next to the manuscript) | Pointer to the current Google Docs review copy | Snapshot. Canonical paper is `paper.qmd` plus its `_*.qmd` section files. Drive syncing does not merge Doc edits into Quarto. |
 | `07-record/notes/` | Working notebook | For later recall. **Do not load by default.** |
 | `07-record/ai-use/` | Optional notes of substantial AI work | Off unless ticked in `policies/what-is-on.md`. One short file per event — not a prompt log. Off does not replace disclosure in the paper. |
+| `07-record/claim-checks.md` | Per-statement literature checks (citation key, manuscript location, source, what was verified) | Written when a source was actually opened. Not an approved claim. Do not load by default. The `check:` field on an AI-use event is the whole run. |
 | `07-record/audits/` | Reports from checking the research chain | History of a check. **Not** the analysis plan or an approved result. Do not load by default. |
 
 Conversation or Google Doc comment → contribution (inbox) → your review → canonical record.  

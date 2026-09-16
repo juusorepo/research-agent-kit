@@ -1,8 +1,21 @@
-# Pointer to the current Google Docs review copy. Snapshot only.
-# The canonical manuscript is the path `manuscript` in layout.yml.
+# Pointer to the current review copy. Snapshot only.
+# Canonical paper is paper.qmd plus _*.qmd section files (or the file they edit).
+# Drive/OneDrive syncing the folder does not merge review-copy edits into Quarto.
+#
+# provider: google-docs  (default) — native Google Doc; Sync and Ingest apply.
+# provider: word         — share a .docx (OneDrive). No comment ingest in this version.
 provider: google-docs
+canonical_source: paper.qmd
+snapshot_id:
 file_id:
 url:
 round:
 updated_at:
 synced_at:
+source_docx:
+# previous:
+#   - round: 1
+#     file_id:
+#     url:
+#     snapshot_id:
+#     updated_at:

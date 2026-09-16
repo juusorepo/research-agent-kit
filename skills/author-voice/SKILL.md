@@ -4,7 +4,7 @@ description: Draft or edit manuscript prose in this paper’s voice when Author 
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required.
 metadata:
-  version: "0.1.0"
+  version: "0.1.2"
 ---
 
 # Author voice
@@ -47,7 +47,7 @@ If they asked to **scan** and to **draft/edit in my voice** in the same message:
 - `policies/what-is-on.md` (the tick)
 - The voice note, if it exists: `layout.yml` `paths.author_voice`, else `07-record/author-voice.md`
 - The intellectual anchor, if written, and any linked framing memo
-- The named section, plus approved results and the analysis plan when the section reports findings
+- The named section file (`_intro.qmd` or whichever include holds it; `paper.qmd` only if that section still lives there, or for title and abstract in YAML), plus approved results and the analysis plan when the section reports findings
 - Inbox findings from a recent **Scan for generic prose**, if they pointed at them
 
 Empty voice note does not block. Draft or edit with the anti-generic rules below, and invite them to dictate the note (or say **Build my voice note**). Do not invent the note.
@@ -90,7 +90,7 @@ Do not redraft an existing section from scratch after a scan. That throws away i
 1. Confirm this is manuscript prose, not code or a results table.
 2. Make the minimum change. Keep their progression unless it blocks a clear reading.
 3. For each change, distinguish: error; clarity problem; generic-AI or generic-academic pattern; intentional author characteristic. Do not normalise an unusual choice the voice note protects, or that they have not asked to change.
-4. If they pointed at scan findings, restyle those passages (and only those, unless they named the whole section). Skip findings they rejected.
+4. If they pointed at scan findings, restyle those passages (and only those, unless they named the whole section). Skip findings they rejected. If a finding already has a `suggested_replacement`, start from that wording unless they asked otherwise.
 5. Run the check at the end of this file.
 6. Show the edited prose in chat. Do not write the manuscript until they accept (**Update the project record**).
 7. **Stop.** Do not start a second rewrite in this run.
@@ -133,6 +133,7 @@ Do not flag or strip warranted uncertainty, disciplinary terms, necessary method
 
 - Run when Author voice is off
 - Edit the manuscript, analysis plan, or accepted decision notes in this run
+- Write a second copy of a section into `paper.qmd` when that section already lives in a `_*.qmd` include
 - Rewrite during **Scan for generic prose**
 - Scan and rewrite in the same run
 - Learn from edits without an explicit yes

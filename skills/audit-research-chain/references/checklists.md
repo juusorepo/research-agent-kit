@@ -13,13 +13,39 @@ Run this **only** if they asked to **audit literature claims** or **check claim 
 Keep four statuses uncollapsed for each named statement:
 
 1. Source existence — cited record found / probable / ambiguous / not found / not checked. **Not found ≠ does not exist.**
-2. Relevant evidence — a passage in that source addresses the statement, or not enough information
+2. Relevant evidence — a passage in that source addresses the statement **at the depth this role requires**, or not enough information
 3. Support — the passage supports the wording, contradicts it, or is too weak to say
 4. Design warrant — causal or effectiveness language the study design cannot support
 
 Do not treat a research packet, NotebookLM note, or evidential-status YAML as what the source says. Read identifiable sources.
 
-Golden case: “Students choosing tutoring had higher subsequent scores” does **not** warrant “Tutoring improved scores.” Citation may exist (source grounded) while causal warrant fails.
+For each named statement, record `role` (`background` | `precedent` | `comparator` | `counterargument`):
+
+- `background` — title and abstract may suffice
+- `comparator` and `counterargument` — quoted passage from **Methods or Results**; record the section name
+
+A statement whose role has changed (for example background reused as a comparator) re-enters checking.
+
+**Operand rule.** If a `comparator` or `counterargument` names a computed quantity (score, agreement, disagreement, accuracy, threshold, burden), the passage must come from where that quantity is defined. Title and abstract are inadmissible.
+
+Golden cases:
+
+- “Students choosing tutoring had higher subsequent scores” does **not** warrant “Tutoring improved scores.” Citation may exist (source grounded) while causal warrant fails.
+- Source title and abstract say *multi-model disagreement*; Methods define the score as concordance with an existing human label. That may pass as `background`. It must **not** pass as a `comparator`.
+
+### Citation-key coverage (mechanical)
+
+Extract citation keys from manuscript prose (`[@key]`, `[@key; @key2]`; not `references.bib` alone). Diff against the claim-to-source **key** column. Flag a key cited in prose with no row. Flag the reverse: a source listed in a packet’s Sources in scope that no checked statement uses.
+
+If the manuscript has no citation keys, key coverage is **NOT VERIFIED**. Still check named statements. Do not invent keys.
+
+```powershell
+Get-ChildItem -Path <manuscript-dir> -Include *.qmd,*.md,*.tex -File -Recurse |
+  Select-String -Pattern '\[@([^\]]+)\]' -AllMatches |
+  ForEach-Object { $_.Matches } | ForEach-Object { $_.Groups[1].Value } |
+  ForEach-Object { $_ -split ';' } | ForEach-Object { $_.Trim().TrimStart('@') } |
+  Where-Object { $_ } | Sort-Object -Unique
+```
 
 ## What is currently agreed (always)
 
@@ -94,7 +120,7 @@ Do not treat APA cosmetics (italic title, vertical lines, typeface) as a Numbers
 
 Do not require a particular manuscript or output format. Use whatever provenance this paper has. If machine-linked citations exist, use them. If they do not, audit as far as possible and state the limit.
 
-Review copies (Google Docs, emailed Word) are snapshots. The canonical manuscript is `paths.manuscript` when a folder map exists, otherwise the manuscript file they named.
+Review copies (Google Docs, emailed Word) are snapshots. The canonical manuscript is `paths.manuscript` when a folder map exists, otherwise the manuscript file they named. If `paper.qmd` uses include shortcodes, the `_*.qmd` files are the section text — read them; do not treat the shell as the full paper.
 
 ## Gate 2 — estimand / claim validity
 

@@ -4,7 +4,7 @@ description: Retrieve project memory and suggest the next step. Use when they sa
 license: MIT
 compatibility: Requires a project filesystem.
 metadata:
-  version: "0.4.5"
+  version: "0.4.6"
 ---
 
 # Understand the project
@@ -31,7 +31,7 @@ Do not invent files. Do not assume a blank project.
 6. `contributions/` — only if the question is about a pending proposal
 7. `notes/` and Git — **only if the researcher asks or the files above are not enough**. Do not load `audits/` as current scientific authority.
 
-Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-use rules, how-to-talk and `policies/ai-policy.md` (paper if present, else `.rak/runtime/policies/` if present, else kit), manuscript folder (is there a draft?), result-file metadata. If you cannot read the kit **and** there is no `.rak/runtime/`, stop and ask them to open the kit. If `.rak/runtime/` is present, continue.
+Also read: `layout.yml` (`kit_path`), this paper’s `what-is-on.md` and data-use rules, how-to-talk and `policies/ai-policy.md` (paper if present, else `.rak/runtime/policies/` if present, else kit), manuscript folder (is there a draft? if `paper.qmd` uses include shortcodes, the `_*.qmd` files are the draft text), result-file metadata. If you cannot read the kit **and** there is no `.rak/runtime/`, stop and ask them to open the kit. If `.rak/runtime/` is present, continue.
 
 ## Say what kind of source it is
 

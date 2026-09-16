@@ -53,39 +53,14 @@ if (!file.exists(helpers)) {
 source(helpers)
 ```
 
-# Introduction
+<!-- Section text lives in the `_*.qmd` files. Edit those. Title and abstract stay in the YAML above. -->
 
-# Method
+{{< include _intro.qmd >}}
 
-## Data
+{{< include _method.qmd >}}
 
-## Measures
+{{< include _results.qmd >}}
 
-## Analytical strategy
-
-# Results
-
-Do not type estimates by hand.
-When an approved result file exists, load it in the setup chunk with `require_approved(read_result("….json"))` and build the table or figure from that object.
-Number and title are the captions below (`tbl-cap` / `fig-cap`). Do not draw them on the PNG.
-
-```{r}
-#| label: tbl-example
-#| tbl-cap: "Replace this example once an approved result file exists."
-#| eval: false
-
-# obj <- require_approved(read_result("OUT-001.json"), "OUT-001")
-# flextable::flextable(as.data.frame(obj$table)) |> style_flextable()
-```
-
-```{r}
-#| label: fig-example
-#| fig-cap: "Replace with a figure written from an approved result."
-#| eval: false
-
-# knitr::include_graphics(figure_path("fig-example.png"))
-```
-
-# Discussion
+{{< include _discussion.qmd >}}
 
 # References
