@@ -385,7 +385,7 @@ The framework should reuse established or emerging conventions wherever they are
 Examples include:
 
 * Git for file history;
-* `AGENTS.md` for repository-level agent guidance (a thin `CLAUDE.md` in a paper only points at that file so Claude Code can start);
+* `AGENTS.md` for repository-level agent guidance;
 * Agent Skills for reusable procedural capabilities;
 * research-compendium principles for reproducible project organisation;
 * decision-record approaches for documenting consequential choices.

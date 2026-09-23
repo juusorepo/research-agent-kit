@@ -92,11 +92,14 @@ Each substantive finding:
 | expected | what the authoritative file says |
 | observed | what you found |
 | why it matters | scientific consequence |
+| against notes | accepted notes that govern this finding, or `none`. Listing a note under material checked is not enough |
 | next | kind of work, researcher decision needed, or leave as note |
 
 A finding is an audit observation, **not** a research decision.
 
 If `next` names work, name the **kind of work**. Do not treat **researcher decision needed** as write analysis code. Notes stay notes — they do not become tasks.
+
+If an accepted note forbids the action you would put in `next`, do not file that `next`. File the plan-or-manuscript mismatch instead (`next`: update the analysis plan, or work on the manuscript).
 
 Do not put an implementation sketch in `next` (script design, extra checks, new metadata fields) unless that design is already agreed.
 

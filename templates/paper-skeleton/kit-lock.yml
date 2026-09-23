@@ -2,24 +2,24 @@ kit: 0.4.6
 runtime: optional
 update_policy: latest-compatible
 skills:
-  start-research-project: 0.6.2
+  start-research-project: 0.6.5
   understand-research-project: 0.4.6
   develop-analysis-with-safe-data: 0.1.5
   document-research-decision: 0.1.3
   update-project-record: 0.3.5
-  contribute-to-project: 0.3.3
-  consolidate-contributions: 0.3.0
+  contribute-to-project: 0.3.4
+  consolidate-contributions: 0.3.1
   prepare-review-copy: 0.4.0
-  ingest-review-comments: 0.3.1
+  ingest-review-comments: 0.3.2
   sync-review-copy: 0.3.3
-  review-the-manuscript: 0.4.2
+  review-the-manuscript: 0.4.3
   author-voice: 0.1.2
   explore-alternative-framings: 0.1.0
-  audit-research-chain: 0.3.4
+  audit-research-chain: 0.3.5
   audit-apa-presentation: 0.1.2
   run-approved-stata-analysis: 0.4.0
   update-the-kit: 0.4.0
   adjust-project-to-kit: 0.5.2
   make-paper-self-contained: 0.1.3
-  sync-project-sources: 0.1.3
+  sync-project-sources: 0.1.7
   map-the-evidence: 0.2.0

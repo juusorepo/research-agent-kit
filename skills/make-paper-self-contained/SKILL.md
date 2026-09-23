@@ -77,7 +77,6 @@ Read `templates/runtime/layers.yml` in the **kit**. Copy only what that file lis
 9. Write `.rak/runtime.manifest.json`: kit version, `generated_at` (ISO date), and every generated file path with `sha256` and `layer` (`core` / `profile` / `audit`). Include the paper-root `AGENTS.md`. Use SHA-256 of file bytes (PowerShell `Get-FileHash -Algorithm SHA256`, or `sha256sum`).
 10. If `STATUS.md` exists, under existing headings add or refresh **one factual line** that this paper now has generated kit files so an assistant can work from this folder alone. Do not rewrite other STATUS content.
 11. **Sources folder.** Read `paths.sources` in `layout.yml`. If that key is missing: if a folder named `sources/` already has files, add `sources: sources`; otherwise add `sources: 08-sources`. If `paths.source_records` is missing, add `source_records: 07-record/sources` (or `07-record/{paper}/sources` when this paper uses numbered-multipaper). Do not rename an existing path. Create the sources directory if it does not exist. If it is empty, copy `templates/paper-skeleton/08-sources/README.md` from the kit into it (name the file `README.md`). Create the source-records directory if it does not exist; do not invent YAML records. Do not move PDFs from an old `sources/` folder.
-12. If this paper has no `CLAUDE.md`, copy `templates/paper-skeleton/CLAUDE.md`. Do not overwrite an existing one.
 
 If a file already under `.rak/runtime/` or the paper-root `AGENTS.md` is listed in an existing manifest but the hash no longer matches: **stop** before overwrite. Offer (1) discard the edit and copy, or (2) move the file to `.agents/skills/` or paper `policies/` and then copy. Do not three-way merge.
 
@@ -120,8 +119,7 @@ If this paper already had a Google Drive synced folder, they can share **this fo
 ## Must not
 
 - Edit science files, data-use rules, or ticks
-- Copy the whole kit, `adapters/`, or workshop files
-- Overwrite this paper’s `CLAUDE.md`
+- Copy the whole kit, `CLAUDE.md`, or workshop files
 - Three-way merge `AGENTS.md`
 - Require Python
 - Treat generated files as the analysis plan or as approved results

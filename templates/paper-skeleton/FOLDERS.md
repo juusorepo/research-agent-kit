@@ -1,6 +1,6 @@
 # Folders
 
-This is a research project folder. First-level folders are numbered. Assistant files (`AGENTS.md`, `CLAUDE.md`, `layout.yml`, `policies/`) stay in the background.
+This is a research project folder. First-level folders are numbered. Assistant files (`AGENTS.md`, `layout.yml`, `policies/`) stay in the background.
 
 | Folder | What goes here |
 |---|---|

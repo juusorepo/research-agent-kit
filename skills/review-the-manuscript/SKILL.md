@@ -4,7 +4,7 @@ description: AI pass on the manuscript as open issues in contributions/. Use whe
 license: MIT
 compatibility: Requires a project filesystem. An external review service is optional.
 metadata:
-  version: "0.4.2"
+  version: "0.4.3"
 ---
 
 # Review the manuscript (AI)
@@ -41,6 +41,8 @@ This is **not** `audit-research-chain` (plan → code → output → claim). It 
    - If the framing changed, was that change deliberate and researcher-approved?
    If a finding would narrow or replace the anchor, say **researcher decision needed**. If the anchor is empty, skip this check; do not invent one.
 6. Write each atomic finding as a contribution (`source: ai-review`) via **Contribute to the project**. Wording nits can be `type: editorial`. Method or claim issues stay issues; say **researcher decision needed** when the science would change. If a review service returned comments, file **one contribution per comment** (and one for the overall recommendation if present). Do not dump the whole report as a single inbox item. Skip a comment whose `external_id` already exists.
+   Classify what must happen before the finding can be answered: `none` for manuscript work only; `project-result-check` for checking an existing project result or claim; `literature-check` for source support; `rerun-agreed-analysis` for another run of an already-agreed analysis; or `new-analysis` for a new or changed analysis. Put the value in `evidence_route` and state the concrete need under **Evidence needed**. A route is not approval. Do not perform the check, rerun, or new analysis in this review run.
+   For `project-result-check`, recommend a separate **Audit the research chain** run for the relevant link. For `literature-check`, recommend **Audit literature claims** when a named source is supposed to support an existing statement, or **Map the evidence** when suitable sources still need to be found. For `rerun-agreed-analysis`, point to the agreed analysis and recommend a later assigned task. For `new-analysis`, recommend an analysis proposal; if the science would change, also say **researcher decision needed**. Do not create the proposal, decision, or task in this review run.
    For a **prose scan**, assign the `C-NNN` ids first, then on each file set `severity` (`minor` | `moderate` | `major`) and `fix_scope` (`word` | `sentence` | `paragraph` | `section`). Put interacting findings in `related` (other `C-NNN`). If an **open** task already covers the same work, still file the finding, put that `T-NNN` in `related`, and set suggested home to that existing task — it needs no new decision. If **Propose wording in prose scans** is ticked, add `suggested_replacement` (if **Author voice** is also ticked, follow the voice note). Leave `suggested_replacement` off when the box is off.
 7. Do **not** push findings into Google Docs in this skill unless they also asked to prepare a review copy. The inbox is enough.
 8. If `policies/what-is-on.md` has material AI-use ticked, record one event after they have seen the inbox (or use **Update the project record**). If the box is off, do not write `ai-use/`.

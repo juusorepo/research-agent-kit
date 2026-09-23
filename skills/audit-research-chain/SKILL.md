@@ -4,7 +4,7 @@ description: Audit whether scientific meaning held from agreed analysis plan thr
 license: MIT
 compatibility: Requires a project filesystem. Running analysis code is optional and must follow this paper’s data-use rules. A useful partial audit is expected when code cannot be run. A kit folder map is not required.
 metadata:
-  version: "0.3.4"
+  version: "0.3.5"
 ---
 
 # Audit the research chain
@@ -103,7 +103,7 @@ Where this paper’s data-use rules prevent tracing a link (including closed row
 
 | Question | What wins |
 |---|---|
-| What analyses are agreed? | Analysis plan — or, on intake, only the file they named as what was agreed. If they said there is none, there is none |
+| What analyses are agreed? | Analysis plan, **as narrowed by accepted research decision notes**. A plan line that an accepted note has voided is not live. Report that mismatch; do not recommend the voided action. On intake: only the file they named as what was agreed. If they said there is none, there is none |
 | Why was an important choice made? | Accepted research decision notes (absent on intake unless they pointed at them) |
 | How was this result produced and approved? | Output metadata on the result file (if none, the code→output link may be NOT VERIFIED) |
 | What do we currently report? | Canonical manuscript (`paths.manuscript`), or the manuscript they named on intake |
@@ -114,7 +114,17 @@ Do not infer the intended analysis from the manuscript or the overview when an a
 
 **What is agreed** is always in scope. Read the analysis plan and accepted decision notes before judging any link. `STATUS.md` and the task list are not scientific authority.
 
-If authoritative files conflict, **report the conflict** as a finding (`next`: **researcher decision needed**). Do not pick a winner. Do not ask which file should win in this run.
+## Apply accepted notes (reading is not applying)
+
+Listing a note under material checked is not applying it.
+
+Before you file a finding — including its `next` — ask: **does an accepted research decision note forbid this?** If yes, do not file that recommendation. If the plan or manuscript still states the voided thing, that mismatch is the finding. `next` is update the analysis plan (or work on the manuscript), not the voided analysis.
+
+Name the notes you applied on that finding (`against notes`). Write `none` if none govern it.
+
+An accepted note that voids or narrows a plan item is already the decision. Applying it is not picking a winner. Do not treat the superseded clause as what is agreed.
+
+If two accepted authorities conflict and neither supersedes the other, report the conflict (`next`: **researcher decision needed**). Do not pick a winner. Do not ask which file should win in this run.
 
 Copied protocols and extra docs are background. Draft outputs are not approved results. An audit report is **history**, not a new analysis plan.
 
@@ -197,5 +207,7 @@ If this paper’s `what-is-on.md` has the AI-use box ticked, record one material
 - Call an approved result a *verified result*
 - Load working notes or old audit reports as current scientific authority
 - Treat the overview Data section as overriding the plan, accepted notes, or result files
+- File a recommendation that an accepted research decision note forbids
+- Treat a plan line as live when an accepted note has voided or narrowed it
 - Cross a restricted data line in order to “complete” the audit
 - Print a prompt for them to paste to a later coding chat

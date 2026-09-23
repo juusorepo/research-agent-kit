@@ -86,4 +86,4 @@ Do not say *spec*, *slug*, *RDR*, *checkpoint*, or *verified result* for an appr
 - Work only on a task assigned to this run. They assign it by naming the task (for example **Do T-004**). Kind of work on that row is the role for this run.
 - Do not invent real results. Do not treat draft or synthetic numbers as approved.
 
-If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use the kit skill `start-research-project`. Read the name from the kit `researcher.md`. Ask the interview questions (with defaults) and wait. Read existing and uploaded files before suggesting next steps. Keep this folder’s name. Do not replace the paper `CLAUDE.md` with a second rule set. Do not require Python or R.
+If the researcher says **Start the project** or **Initiate**, and `layout.yml` is missing, use the kit skill `start-research-project`. Read the name from the kit `researcher.md`. Ask the interview questions (with defaults) and wait. Read existing and uploaded files before suggesting next steps. Keep this folder’s name. Do not copy `CLAUDE.md`. Do not require Python or R.

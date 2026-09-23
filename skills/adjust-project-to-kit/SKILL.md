@@ -101,7 +101,6 @@ Do not write files in this inspect turn.
 2. `kit-lock.yml` — copy `kit:` and `skills:` from the kit template. Keep `runtime: materialised`. Keep `update_policy` unless they unpinned. Keep extra top-level keys this paper already had. Do not invent numbers.
 3. Replace `.rak/runtime.manifest.json` with new hashes.
 4. `STATUS.md` — under existing headings, add or refresh **one factual line** that generated kit files now follow the kit in `kit-lock.yml`. Do not rewrite other STATUS content.
-5. If this paper has no `CLAUDE.md`, copy `templates/paper-skeleton/CLAUDE.md`. Do not overwrite an existing one.
 
 Say what changed. Remind them: agreed analyses, decision notes, outputs, manuscript, data, and data-use rules were not edited. If `.agents/skills/` has a fork, warn that this paper is not on the stock skill for that name.
 
@@ -119,7 +118,7 @@ If `kit:` already matches and nothing else needs a patch: say it is already alig
 
 Propose **exact line patches**. Do **not** replace the whole of `AGENTS.md` or `what-is-on.md` on this path. Keep every paper-specific sentence unless they accepted deleting that exact text.
 
-Typical patch: copy `kit:` and `skills:` into `kit-lock.yml`; add any missing skill-trigger **row** to `AGENTS.md`. If this paper has no `CLAUDE.md`, offer the skeleton pointer.
+Typical patch: copy `kit:` and `skills:` into `kit-lock.yml`; add any missing skill-trigger **row** to `AGENTS.md`.
 
 Wait for yes / only some / not now. Do not write files in this inspect turn.
 

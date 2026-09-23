@@ -18,15 +18,17 @@ This folder is the kit.
 My name is
 ```
 
-The assistant writes your name in `researcher.md` in this folder. You will not be asked again for each paper. Skip this if you only work in a paper folder (Claude on Drive): go to **2b**.
+The assistant writes your name in `researcher.md` in this folder. You will not be asked again for each paper. Skip this if you only work in a paper folder: go to **2b** (you have a kit elsewhere) or **2c** (no local kit).
 
 ## 2. Start a new project or paper
 
 On **Windows**, if the paper lives in Google Drive, open it from the **local mirrored folder** (usually `C:\Users\<you>\My Drive\...`), not from the streamed Drive letter (`G:\My Drive\...`). “Available offline” is not enough. Cursor, Claude, Codex, and similar tools may be unable to run from the streamed path. Steps: [`adapters/google-drive/README.md`](adapters/google-drive/README.md).
 
-### 2a. You have the kit folder
+Two ways (both current). **Paper reads the local kit:** keep this kit folder; Cursor can open the kit and the paper together. **Self-contained paper:** generated kit files in the paper so Codex, Claude, or a co-author can work in that folder alone. **2b** and **2c** both write those files. **Make this paper self-contained** adds them later if you skipped them at start.
 
-**Easiest for sharing:** create an empty folder in **Google Drive for Desktop**. Open the **kit** folder **and** that empty paper folder. Paste:
+### 2a. Cursor — kit and paper both open
+
+**Easiest when both folders are open:** create an empty folder in **Google Drive for Desktop**. Open the **kit** folder **and** that empty paper folder. Paste:
 
 ```
 Start the project
@@ -34,24 +36,39 @@ Start the project
 
 The assistant finds the kit, writes only into the paper, asks a short list of questions (with defaults), and waits. After you answer, setup is copy-then-patch. If you said this paper should work without the kit folder (the default when a paper folder is already open), it also writes **generated kit files** into the paper — do not edit those.
 
-### 2b. Paper folder only (Claude, Drive, no kit)
+### 2b. Codex — paper folder first, local kit (no GitHub)
 
-Create an empty folder (Drive if co-authors or NotebookLM will use it). Open **only that folder**. Paste:
+Create an empty folder (Drive if co-authors or NotebookLM will use it). Open Codex **only in that folder**. Paste, with your kit folder path on the third line:
+
+```
+Start the project
+This folder is the paper.
+The kit is at C:\Users\<you>\path\to\research-agent-kit
+Read skills/start-research-project/SKILL.md from that kit. Do not fetch GitHub.
+```
+
+The assistant reads the start skill from that kit, asks the interview (this folder stays the paper), copies from the local kit, and writes **generated kit files** here so later chats in this folder do not need the kit open. It also records the path to the local kit. It must not fetch GitHub into this folder. Do not say **Copy the Research Agent Kit** here — that would turn this folder into a kit.
+
+If you forget the kit path, it asks once where the kit is.
+
+### 2c. Paper folder only, no local kit (GitHub)
+
+Create an empty folder. Open **only that folder**. Paste:
 
 ```
 Start the project from https://github.com/juusorepo/research-agent-kit
 This folder is the paper. Fetch the kit into a temporary folder, not here.
 ```
 
-The assistant fetches the public kit into a **temporary** folder, writes a self-contained paper **here**, then deletes the temporary copy. This folder must not become a clone of the whole repository. Do not say **Copy the Research Agent Kit** here — that would turn this folder into a kit.
+The assistant fetches the public kit into a **temporary** folder, writes a self-contained paper **here**, then deletes the temporary copy. This folder must not become a copy of the whole public kit. Use this only when you have no kit folder on this computer.
 
-If `researcher.md` has no name yet (kit path only), add `My name is` once. On a paper-only start, the assistant asks your name and writes it on the overview.
+If you used **2b** and the kit `researcher.md` has no name yet, add `My name is` once. On **2c**, the assistant asks your name and writes it on the overview.
 
 Usual case: you already have a protocol, analysis plan, or draft. Put those in `06-docs/` and `05-outputs/manuscript/` (or attach them in chat). After the folder exists, say **Understand the project**. The assistant should **read those files before** suggesting next steps.
 
 One folder is one paper unless you say this project has several papers that share data and scripts. Then the numbered data and scripts stay shared; each paper gets its own record under `07-record/<name>/` and manuscript under `05-outputs/<name>/manuscript`.
 
-The file agents follow is `AGENTS.md`. A new paper also gets a thin `CLAUDE.md` that points at it (Claude Code auto-loads that name). Do not put a second rule set in `CLAUDE.md`. Shared conventions for several papers can live in a parent-folder `CLAUDE.md`.
+The file agents follow is `AGENTS.md`. There is no `CLAUDE.md` in the paper folder. If you use Claude Code and it does not load that file, add a one-line `CLAUDE.md` that says `@AGENTS.md` — see `adapters/claude/`.
 
 Numbered science folders (`01-data` … `08-sources`, `99-archive`); the paper lives in `05-outputs/manuscript/` as `paper.qmd` plus `_*.qmd` section files.
 
@@ -67,7 +84,7 @@ The assistant diagnoses; it does not repair. The full report is a saved file. It
 
 If start chose Stata, you can later say **Run approved Stata analysis** for one named `.do` file on an assigned run-on-real-data task. Put this computer’s Stata path in `stata_bin.local.yml` (not in git) or `STATA_BIN` — do not assume a path.
 
-Co-author review: say **Prepare a review copy**. The assistant may render Word as a conversion step and import a native Google Doc (reuse a current Drive `.docx` if it is already there). Co-authors work in the Doc. Drive syncing the folder does not merge those edits into Quarto — accept small wording in the Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox. If that paper ticks **External manuscript review** (or you ask for **coarse-review**), the assistant may send the named manuscript to the review service in the folder map — not an audit, and not for a prose scan. Say **Scan for generic prose** for a focused, detection-only pass: it flags candidate vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction, but does not score or judge authorship, and it does not edit the manuscript. Each finding notes how serious it is and whether an open task already covers it. Tick **Propose wording in prose scans** if you want a suggested replacement on the finding (still not applied). After a scan, if that paper has **Author voice** ticked, say **Edit this in my voice** to restyle accepted passages — not in the same run. Say **Draft this in my voice** for a first abstract or results section (tick **Author voice** in that paper’s `policies/what-is-on.md` first). Say **Explore alternative framings** when you want genuinely different interpretations before any combined wording.
+Co-author review: say **Prepare a review copy**. The assistant may render Word as a conversion step and import a native Google Doc (reuse a current Drive `.docx` if it is already there). Co-authors work in the Doc. Drive syncing the folder does not merge those edits into Quarto — accept small wording in the Doc, then **Sync the review copy**. Say **Ingest review comments** for leftover open comments. **Review the manuscript** files an AI pass in the same inbox. Each open review point says whether it needs manuscript work, an existing-result check, a literature check, a rerun of an agreed analysis, or a proposed new analysis; the review does not start that work. If that paper ticks **External manuscript review** (or you ask for **coarse-review**), the assistant may send the named manuscript to the review service in the folder map — not an audit, and not for a prose scan. Say **Scan for generic prose** for a focused, detection-only pass: it flags candidate vague attribution, generic filler, puffery, formulaic rhetoric, and unclear abstraction, but does not score or judge authorship, and it does not edit the manuscript. Each finding notes how serious it is and whether an open task already covers it. Tick **Propose wording in prose scans** if you want a suggested replacement on the finding (still not applied). After a scan, if that paper has **Author voice** ticked, say **Edit this in my voice** to restyle accepted passages — not in the same run. Say **Draft this in my voice** for a first abstract or results section (tick **Author voice** in that paper’s `policies/what-is-on.md` first). Say **Explore alternative framings** when you want genuinely different interpretations before any combined wording.
 
 New kit version from GitHub into the **kit** folder? Open the kit and paste:
 

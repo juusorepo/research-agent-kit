@@ -29,6 +29,7 @@ paths:
 # Co-author review channel is `provider` in review-copy.yml (`google-docs` default, or `word` to share a .docx on OneDrive).
 # Sync the review copy and Ingest review comments stay Google Docs only.
 # Optional: this paper’s Zotero collection (canonical). 08-sources is the materialised corpus (rebuildable later).
+# To read Zotero on this computer, follow Find Zotero on this computer in the sync-project-sources skill (.rak/runtime/skills/ if present, otherwise the kit). Use curl. Do not use PowerShell Invoke-WebRequest.
 # zotero:
 #   library: user
 #   collection_key:

@@ -2,10 +2,12 @@
 
 Tool setup only. Research rules live in `AGENTS.md` and the skills. Do **not** copy this folder into a paper.
 
-Claude Code auto-loads `CLAUDE.md` when you enter a folder. A paper started from the kit already has a thin `CLAUDE.md` that points at `AGENTS.md`. That is enough.
+Claude Code reads `CLAUDE.md`, not `AGENTS.md`. If you use Claude Code in a paper, add this one-line file at the paper root:
 
-If an older paper has no `CLAUDE.md`, copy `templates/paper-skeleton/CLAUDE.md`. Do not paste kit rules into it.
+```
+@AGENTS.md
+```
 
-Several papers under one parent folder: put shared conventions in the parent’s `CLAUDE.md`. Keep each paper’s file to that paper.
+That import is enough. Do not paste kit rules into it. The kit does not generate this file.
 
 This kit folder uses `AGENTS.md`. There is no kit-root `CLAUDE.md`.

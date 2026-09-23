@@ -1,10 +1,10 @@
 ---
 name: start-research-project
-description: Get the kit from GitHub into one folder, or start a paper that follows the kit. Use when they say Copy the Research Agent Kit, Start the project, or Initiate. An empty folder plus the GitHub URL starts a self-contained paper (temporary fetch; do not leave the full kit in that folder). After the start interview, copy the paper skeleton and patch; do not read template files.
+description: Get the kit from GitHub into one folder, or start a paper that follows the kit. Use when they say Copy the Research Agent Kit, Start the project, or Initiate. An empty paper folder plus a local kit path starts the paper from that kit (do not fetch GitHub). An empty folder plus the GitHub URL starts a self-contained paper when there is no local kit. After the start interview, copy the paper skeleton and patch; do not read template files.
 license: MIT
 compatibility: Requires a project filesystem. No Python or R required. May fetch from GitHub.
 metadata:
-  version: "0.6.2"
+  version: "0.6.5"
 ---
 
 # Start the project
@@ -12,7 +12,7 @@ metadata:
 Two jobs. Do not mix them.
 
 1. **Get the kit** — one folder. Defaults and skills live here. They say this folder **is the kit**.
-2. **Start a paper** — science files in a folder. From a local kit, or from GitHub into **this** empty (or already-open) paper folder as a **self-contained** paper.
+2. **Start a paper** — science files in a folder. From a local kit (the kit is open, or they named its path), or from GitHub into **this** empty (or already-open) paper folder as a **self-contained** paper when there is no local kit.
 
 Follow `policies/how-to-talk.md` if present. No Python or R required. The researcher does not need to download the kit themselves.
 
@@ -44,22 +44,43 @@ When they say **Update the kit** or **Update the skills**: use `skills/update-th
 
 ## Start a paper
 
-They only need to say **Start the project**. Do not ask them to name the kit or the paper again if you can see the folders.
+They only need to say **Start the project**. Do not ask them to name the kit or the paper again if you can see the folders. If this folder is the paper and they named a local kit, read this skill from that kit and write only **here**.
+
+**Two ways to use the kit** (both current; not a replacement of one by the other):
+
+- **Paper reads the local kit** — keep a kit folder on disk. The paper’s folder map points at it. Usual in Cursor when the kit and the paper are both open. Question 8 default **no**.
+- **Self-contained paper** — generated kit files in the paper, so Codex, Claude, ChatGPT, or a co-author can work in that folder alone. Question 8 default **yes**. **Local kit into this paper** and **GitHub paper start** both do this. **Make this paper self-contained** adds those files to an existing paper.
 
 **Which folder is which**
 
 - **Kit** = the folder with `START.md` + `skills/` + `templates/`. Never write science files here (`01-data`, overview, analysis plan, manuscript, …). The only kit write allowed at start is `researcher.md` if the name is still empty.
 - **Paper** = any other opened folder. If one is already open, **keep its name** and write the project **only there**.
-- **Only the kit is open:** after the interview, create a sibling folder (default **paper-1**). Prefer they instead open an empty **Google Drive** folder (for sharing and NotebookLM) plus the kit, then keep that paper name.
+- **They already named a path in this chat** (and that folder is not yet open): after they reply, use that path. Do not also create **paper-1**.
+- **Only the kit is open, and they have not given a path:** in the interview, ask **where** to create the paper folder, then wait. Default: a folder named **paper-1** next to the kit (this paper then reads the local kit). Prefer they name a **Google Drive** folder (for sharing and NotebookLM) — on Windows, the local mirrored path.
 - **Kit plus paper are both open:** use their local kit; write only into the paper. Never create a sibling of the kit if they already named or opened a paper folder (including a Drive folder).
-- **Paper only, and you cannot read a local kit:** if they gave a GitHub URL, or they said **Start the project from** the public kit, this is a **GitHub paper start** (below). Do not stop. If they did not give GitHub and there is no local kit: ask once for the public URL (default https://github.com/juusorepo/research-agent-kit) or to open the kit.
+- **Paper only, and they named a local kit (or you can already read one):** **local kit into this paper** (below). Do **not** fetch GitHub. Keep this folder’s name.
+- **Paper only, and you cannot read a local kit:** if they gave a kit path that failed, ask them to correct it. If they did not give a path: **ask once** where the local kit is, then wait. Do not fetch GitHub unless they have no kit folder and they gave the GitHub URL (or they said **Start the project from** the public kit). That last case is **GitHub paper start**.
 - If more than one non-kit folder is open and it is unclear which is this paper, ask once.
+
+**Zotero on this computer.** If they ask whether Zotero can be read, or which collection to link: follow **Find Zotero on this computer** in `skills/sync-project-sources/SKILL.md` from this kit (or from `.rak/runtime/skills/` if that copy is already in the paper). Do not add a Zotero question to the interview. Do not tell them to turn on “Allow other applications on this computer to communicate with Zotero” unless that check cannot connect.
 
 **Windows Drive path.** If this computer is Windows and the paper (or kit) path looks like streamed Google Drive — usually `G:\My Drive\...` — **stop once** before writing files. Ask them to set Google Drive to **Mirror files** and reopen from the local path (usually `C:\Users\<name>\My Drive\...`). Full note: `adapters/google-drive/README.md` (say the same steps if you cannot read that file). Do not continue until they have seen this. If they say continue anyway, continue. Cursor, Claude, Codex, and similar tools may be unable to run from the streamed letter. “Available offline” is not enough.
 
+### Local kit into this paper (paper folder already open)
+
+They opened **this** folder (often empty Drive) and said **Start the project** with a **local kit** path. Usual for Codex: one folder open, not the kit. The result must be a **paper**, not a kit. Prefer this over GitHub whenever a local kit exists.
+
+1. Read `skills/start-research-project/SKILL.md` from that **local kit** if you do not already have this file. Then interview (below). Question 1: keep this paper folder. Question 8 default **yes**. Question 9 default **yes** if this looks like Drive.
+2. After they reply: copy `templates/paper-skeleton/` from the **local kit** into **this** folder (same copy commands; `$kit` is the local kit). Patch paper name. For `KIT_PATH`, write a relative path from this paper to that kit (forward slashes). If a relative path cannot be written, write the path they gave (forward slashes) — do not empty it. Patch data-use and AI-use ticks as usual.
+3. **Name:** read `researcher.md` in that kit. If it is set, use it. If it is empty, ask once and write it there. Write it on the overview Lead researcher line. Do not create `researcher.md` in the paper.
+4. Always run **Make this paper self-contained** copy steps from the **local kit** in this same turn (question 8 is yes). Do not wait again. Do **not** delete the local kit.
+5. This paper must **not** contain `START.md`, kit `README.md`, `skills/` at the root, `templates/` at the root, `adapters/`, `examples/`, or `researcher.md`.
+
+Do not use **Copy the Research Agent Kit** in a paper folder — that would turn this folder into a kit.
+
 ### GitHub paper start (no local kit)
 
-They opened **this** folder (often empty Drive) and said **Start the project** with the GitHub address. The result must be a **paper**, not a kit.
+They opened **this** folder (often empty Drive) and said **Start the project** with the GitHub address. Use this only when there is **no** local kit. The result must be a **paper**, not a kit.
 
 1. Fetch the public kit into a **temporary** folder (ZIP `https://github.com/juusorepo/research-agent-kit/archive/refs/heads/main.zip` or `git clone --depth 1`). Not into this paper. If the extract has `research-agent-kit-main/`, that is the kit root.
 2. Read `skills/start-research-project/SKILL.md` from that temporary kit if you do not already have this file. Then interview (below). Question 8 default **yes**. Question 9 default **yes** if this looks like Drive.
@@ -70,7 +91,7 @@ They opened **this** folder (often empty Drive) and said **Start the project** w
 
 Do not use **Copy the Research Agent Kit** in a paper folder — that would turn this folder into a kit.
 
-Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/` as a whole, or `adapters/` into the paper. Copy **only** `templates/paper-skeleton/` (below), then — if they want this paper to work without the kit folder — generated kit files via `skills/make-paper-self-contained/SKILL.md`. The skeleton already includes a thin `CLAUDE.md` that points at `AGENTS.md`. Follow the kit `policies/ai-policy.md` unless the paper adds its own.
+Do **not** copy `dev/`, `SPEC.md`, `tests/`, `examples/`, `templates/` as a whole, or `CLAUDE.md` into the paper. Copy **only** `templates/paper-skeleton/` (below), then — if they want this paper to work without the kit folder — generated kit files via `skills/make-paper-self-contained/SKILL.md`. The agent file is `AGENTS.md`. Follow the kit `policies/ai-policy.md` unless the paper adds its own.
 
 ### 0. Look before you interview
 
@@ -90,15 +111,15 @@ Do not skip the questions because the defaults are fine. They may answer “defa
 
 **Questions:**
 
-1. Folder name? (keep the paper folder if one is already open; if you are creating a folder next to the kit, **paper-1**)
+1. Where should I create the paper folder? (keep the paper folder if one is already open; if they already gave a path in this chat, use it; otherwise **paper-1** next to the kit). They may give a full path. A Google Drive folder is best for sharing and NotebookLM (Windows: the local mirrored path, not `G:\My Drive`).
 2. One paper in this folder, or several that share the same data and scripts? (**one paper**)
 3. Manuscript in Quarto, Word, or Markdown? (**Quarto**)
 4. Analysis in R or Stata? (**R**)
 5. Keep individual-level data closed to the assistant? (**yes**)
 6. Keep a short note when AI does substantial work from now on? (**no**)
 7. Do you already have a protocol, analysis plan, or draft paper? (**usual: yes**) We will read those files before suggesting what to do next.
-8. Should this paper work when the assistant cannot see the kit folder (ChatGPT, a co-author, NotebookLM)? (**yes** if a paper folder is already open; **no** if we are creating a folder next to the kit)
-9. Is this folder a Google Drive synced project (for sharing this folder, and — in this version — pointing NotebookLM at `08-sources/` here yourself)? (**yes** if they already opened a paper folder; **no** if we are creating a sibling of the kit)
+8. Should this paper work when the assistant cannot see the kit folder (ChatGPT, Codex in this paper alone, a co-author, NotebookLM)? (**yes** if a paper folder is already open, or they named a folder that is not next to the kit; **no** if we are creating a folder next to the kit)
+9. Is this folder a Google Drive synced project (for sharing this folder, and — in this version — pointing NotebookLM at `08-sources/` here yourself)? (**yes** if they already opened a paper folder, or they named a Drive path; **no** if we are creating a sibling of the kit)
 
 ### Opening message
 
@@ -106,15 +127,15 @@ Do not skip the questions because the defaults are fine. They may answer “defa
 >
 > Please confirm or change these (defaults in parentheses). “Defaults are fine” is enough once you have seen the list:
 >
-> 1. Folder name (**keep this paper folder** if one is already open; otherwise **paper-1**)
+> 1. Where to create the paper folder (**keep this paper folder** if one is already open; otherwise **paper-1** next to the kit). A full path is fine. For sharing, a Google Drive mirrored folder is best.
 > 2. One paper here, or several sharing data and scripts? (**one paper**)
 > 3. Manuscript: Quarto, Word, or Markdown? (**Quarto**)
 > 4. Analysis: R or Stata? (**R**)
 > 5. Keep individual-level data closed? (**yes**)
 > 6. Record substantial AI use from now on? (**no**)
 > 7. Do you already have a protocol, analysis plan, or draft? (**yes — we will read it before deciding next steps**)
-> 8. Work without the kit folder? (**yes** if this paper folder is already open; **no** if creating a folder next to the kit)
-> 9. Google Drive synced folder for sharing / NotebookLM? (**yes** if this paper folder is already open; **no** otherwise)
+> 8. Work without the kit folder? (**yes** if this paper folder is already open or not next to the kit; **no** if creating a folder next to the kit)
+> 9. Google Drive synced folder for sharing / NotebookLM? (**yes** if this paper folder is already open or they named a Drive path; **no** otherwise)
 >
 > If the kit already has your name, I will use it.
 
@@ -124,18 +145,18 @@ Do **not** read template bodies. Copy, then patch a few lines. Do not assemble t
 
 The skeleton is a ready-made numbered paper (one paper, Quarto, R, individual-level data closed, material AI-use notes off). It includes `kit-lock.yml` (same `kit:` / `skills:` as `templates/project/kit-lock.yml`).
 
-1. Create the paper folder if needed (sibling of the kit, default **paper-1**). If a paper folder is already open, use it. Create the directory only (`mkdir` / `New-Item`). Do not initialise git.
+1. Create the paper folder if needed. If a paper folder is already open, use it. If they named a path, use that path. Otherwise a sibling of the kit, default **paper-1**. Create the directory only (`mkdir` / `New-Item`). Do not initialise git.
 2. Copy `templates/paper-skeleton/` into that folder with **one** command (block below). Numbered folders are already there.
 3. Apply **four patches only** (search-and-replace in those two files; do not restudy them):
    - **Paper folder name** — in `layout.yml`, replace `PAPER_SLUG` with that name
-   - **Path to the kit** — in `layout.yml`, replace `KIT_PATH` with a relative path from the paper to the kit (forward slashes)
+   - **Path to the kit** — in `layout.yml`, replace `KIT_PATH` with a relative path from the paper to the kit (forward slashes). On **GitHub paper start** only, write an empty path. On **local kit into this paper**, do not empty it.
    - **Individual-level data allowed or closed** — in `policies/data-policy.md`, keep `restricted` if closed (default); write `agent-accessible` only if they allowed it
    - **Material AI-use notes on or off** — in `policies/what-is-on.md`, tick the box only if they said yes
 4. Write the kit `researcher.md` name onto the overview Lead researcher line. Skip if that line already has a name.
 
 If the paper folder already has research files, copy only missing paths. Never overwrite overview, analysis plan, manuscript, data, or scripts.
 
-5. If they said this paper should work without the kit folder (question 8, default **yes** when a paper folder was already open): after the four patches, follow `skills/make-paper-self-contained/SKILL.md` copy steps in this same turn. Do not wait again. Do not copy `skills/` into the paper except as that generated bundle.
+5. If they said this paper should work without the kit folder (question 8, default **yes** when a paper folder was already open or is not next to the kit): after the four patches, follow `skills/make-paper-self-contained/SKILL.md` copy steps in this same turn. Do not wait again. Do not copy `skills/` into the paper except as that generated bundle.
 
 #### Copy command (Windows PowerShell)
 
@@ -177,14 +198,14 @@ First-level folders must be numbered (`01-data` … `08-sources`, `99-archive`) 
 2. If they said they have those files and they are not in the folder, ask them to put them there.
 3. If a protocol or draft is already present, name the files you found. Do not invent a blank-project analysis.
 4. Do **not** run **Understand the project** in this turn. That is the next message, once protocol or draft is in the folder — or they confirm the folder is empty.
-5. If they are still in the kit folder, tell them to **open the new project folder** (keep the kit available) and say **Understand the project**.
+5. If they started in the paper folder, they are already there: **Understand the project** is the next message. If they are still in the kit folder, tell them to **open the new project folder** and say **Understand the project**. If this paper reads the local kit, keep the kit available (Cursor can open both). If it is self-contained, the paper folder alone is enough.
 
 ## Must not
 
 - Dump kit internals or copy `skills/` into the paper except the generated bundle when they asked for a folder that works without the kit
-- Copy `adapters/` into the paper, or replace the skeleton `CLAUDE.md` with a second rule set
+- Copy `CLAUDE.md` or other tool-branded files into the paper
 - Ask them to download ZIP or clone the kit themselves
-- Skip a **local** kit that is already open (use it). If there is no local kit, GitHub paper start is allowed
+- Skip a **local** kit that is already open, or that they named in this chat, in favour of GitHub. GitHub paper start is allowed only when there is no local kit
 - Leave a full GitHub clone in the paper folder (`skills/` or `templates/` at the paper root)
 - Skip the interview questions, or write folders before they reply
 - Add project files to the kit (except `researcher.md` when the name is still empty)
@@ -203,3 +224,4 @@ First-level folders must be numbered (`01-data` … `08-sources`, `99-archive`) 
 - Use another person’s unpublished manuscript or plan without permission
 - Treat an AI-suggested citation as a source already read
 - Invent bibliography records, citation keys, DOIs, or years
+- Say Zotero on this computer is unavailable, or ask them to enable “Allow other applications on this computer to communicate with Zotero”, unless the curl check in `skills/sync-project-sources/SKILL.md` failed to connect

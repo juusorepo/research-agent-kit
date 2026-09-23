@@ -10,4 +10,6 @@ Path: remark or open comment → this folder → the lead researcher reviews →
 
 Use `template.md`. Name files `C-001-short-title.md`. If the issue came from a Doc comment, set `external_id` so a later ingest does not duplicate it. If it came from an external review service, set `external_id` to `review-service:<review id>:<comment id>`. A prose-scan finding also sets `severity`, `fix_scope`, and `related` when another finding or an open task is tied to it.
 
+For a review issue, `evidence_route` distinguishes manuscript-only work from an existing-result check, literature check, rerun of an agreed analysis, or proposed new analysis. State the concrete request under **Evidence needed**. The route does not accept the review point or authorise the work.
+
 A full report from that service may sit in `reviews/` under this folder. It is background for the inbox items, not an approved result.
