@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.4.6 — 2026-09-25
 
 **Sync the bibliography** checks Zotero on this computer at `127.0.0.1:23119` with `curl` (on Windows, `curl.exe`). A failed PowerShell request is not a closed Zotero. The assistant asks you to allow other applications only when that check cannot connect. It then asks which collection, and writes the collection key in the folder map. Saying **Can you read Zotero** or **Link the Zotero collection** uses the same check.
 
@@ -20,7 +20,7 @@ A new Quarto paper is a thin `paper.qmd` (YAML, setup, includes) plus one `_*.qm
 
 A **Scan for generic prose** still does not score the manuscript, infer authorship, or edit the file. Each finding now carries severity and how large a fix is, points at related findings or an open task when the same work is already on the list, and checks repetition across sections (for example abstract and introduction), not only inside one section. **Propose wording in prose scans** is a separate tick: off keeps diagnose-only; on adds a suggested replacement that is never applied in that run.
 
-The **Unreleased** kit can send a named manuscript to an optional **review service** (this computer or hosted; Coarse is one implementation). **Review the manuscript** still files proposals in the inbox. The kit only starts the review, polls until it finishes, and fetches the report — it does not depend on one vendor command line or one assistant product. Restricted files stay off the service. A prose scan never sends the file.
+This kit can send a named manuscript to an optional **review service** (this computer or hosted; Coarse is one implementation). **Review the manuscript** still files proposals in the inbox. The kit only starts the review, polls until it finishes, and fetches the report — it does not depend on one vendor command line or one assistant product. Restricted files stay off the service. A prose scan never sends the file.
 
 On Windows, open a Google Drive paper from the **local mirrored folder**, not the streamed Drive letter (`G:\My Drive`). “Available offline” is not enough. Cursor, Claude, Codex, and similar tools may be unable to start programs there. The note is `adapters/google-drive/README.md`.
 
